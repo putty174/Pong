@@ -11,28 +11,20 @@ namespace PongServer
 		{
 			bool done = false;
 			int port = 4000;
-			int connected = 0;
-			Socket[] players = new Socket[2];
+			byte[] data;
 
 			IPEndPoint ip = new IPEndPoint (IPAddress.Any, port);
-			UdpClient listener = new UdpClient (port);
-			Socket sock = listener.Client;
+			UdpClient listener = new UdpClient (ip);
+			IPEndPoint send = new IPEndPoint (IPAddress.Any, 0);
 
 			try
 			{
-				while(connected < 2)
-				{
-					Console.WriteLine ("Waiting for connetion... ");
-					byte[] data = listener.Receive (ref ip);
-
-					Console.WriteLine("Recieved broadcast from {0} :\n {1}\n", ip.ToString(), Encoding.ASCII.GetString(data,0,data.Length));
-					Console.WriteLine("Adding {0} to players", ip.ToString());
-					players[connected] = listener.Client;
-					connected++;
-				}
-
 				while(!done)
 				{
+					data = listener.Receive(ref send);
+
+					Console.WriteLine("Message recieved from {0}: ", send.ToString());
+					Console.WriteLine(Encoding.ASCII.GetString(data, 0, data.Length));
 				}
 			}
 			catch (Exception e)
