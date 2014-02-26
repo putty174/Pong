@@ -20,21 +20,20 @@ namespace PongServer
 		{
 			bool done = false;
 			int port = 4000;
-			int attempt = 0;
+			byte[] data;
 
 			IPEndPoint ip = new IPEndPoint (IPAddress.Any, port);
-			UdpClient listener = new UdpClient (port);
+			UdpClient listener = new UdpClient (ip);
+			IPEndPoint send = new IPEndPoint (IPAddress.Any, 0);
 
 			try
 			{
 				while(!done)
 				{
-					attempt++;
-					Console.WriteLine ("Waiting for connetion... ");
-					byte[] data = listener.Receive (ref ip);
-					Console.WriteLine("Attempt: " + attempt);
+					data = listener.Receive(ref send);
 
-					Console.WriteLine("Recieved broadcast from {0} :\n {1}\n", ip.ToString(), Encoding.ASCII.GetString(data,0,data.Length));
+					Console.WriteLine("Message recieved from {0}: ", send.ToString());
+					Console.WriteLine(Encoding.ASCII.GetString(data, 0, data.Length));
 				}
 			}
 			catch (Exception e)
