@@ -104,10 +104,31 @@ namespace PongServer
 				newSocket.Send (data);//Send the data object from this server to that client object
 			}
 
+			//
+			while(true)
+			{
+				//
+				if(!newSocket.Connected)
+				{
+					Console.WriteLine ("Client Disconnected. ");
+					break;
+				}
+
+				//
+				data = new byte[1024];
+				recv = newSocket.ReceiveFrom (data, ref tmpRemote);
+
+				//
+				if(recv == 0) break;
+
+				//
+				Console.WriteLine (Encoding.ASCII.GetString (data, 0, recv));
 
 
+			}
 
 
+			newSocket.Close ();
 
 
 		}

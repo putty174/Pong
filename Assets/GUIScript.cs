@@ -4,6 +4,7 @@ using System.Collections;
 public class GUIScript : MonoBehaviour {
 
 	private GameProcess process;
+	//public GameProcess process;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class GUIScript : MonoBehaviour {
 
 			//guiText.text = "Connecting...";
 			if (process.returnSocket().Connect() )
+			//if(GameProcess.returnSocket().Connect())
 			{	
 				
 				//show = !show;
