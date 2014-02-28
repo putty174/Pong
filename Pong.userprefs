@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../cs113Project/cs113Project/Assets/Player/PlayerView.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\Sorry\Assets\Gui.cs">
     <Files>
-      <File FileName="../cs113Project/cs113Project/Assets/EnemySpawner.cs" Line="438" Column="8" />
-      <File FileName="../cs113Project/cs113Project/Assets/Enemies/Enemy.cs" Line="124" Column="24" />
-      <File FileName="../cs113Project/cs113Project/Assets/Player/Player.cs" Line="1" Column="1" />
-      <File FileName="../cs113Project/cs113Project/Assets/Player/PlayerView.cs" Line="83" Column="5" />
+      <File FileName="..\Sorry\Assets\GameProcess.cs" Line="63" Column="29" />
+      <File FileName="..\Sorry\Assets\Gui.cs" Line="25" Column="15" />
+      <File FileName="Assets\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUIScript.cs" Line="27" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
