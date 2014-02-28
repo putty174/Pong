@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Downloads/Sorry_Latest_Build_Monday/Sorry/Assets/Sockets.cs">
+    <Files>
+      <File FileName="Assets/Sockets.cs" Line="40" Column="23" />
+      <File FileName="Assets/GUIScript.cs" Line="32" Column="7" />
+      <File FileName="../../../Downloads/Sorry_Latest_Build_Monday/Sorry/Assets/Sockets.cs" Line="22" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -7,6 +7,7 @@ public class GUIScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		process = GameObject.Find("_GameManager").GetComponent<GameProcess>();
 	
 	}
 	
@@ -26,9 +27,9 @@ public class GUIScript : MonoBehaviour {
 			//guiText.text = "Connecting...";
 			if (process.returnSocket().Connect() )
 			{	
-				
+				Debug.Log("Hi");
 				//show = !show;
-				guiText.text = "Connect Succeeded";
+				//guiText.text = "Connect Succeeded";
 
 				
 				
