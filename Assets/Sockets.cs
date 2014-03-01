@@ -13,7 +13,8 @@ public class Sockets : MonoBehaviour {
 	const string ipAddress = "128.195.11.124";
 	const int portNumber = 4000;
 
-	public UdpClient client;
+	//public UdpClient client;
+	public TcpClient client;
 
 	public NetworkStream networkStream;
 	public int clientNumber;
@@ -38,7 +39,8 @@ public class Sockets : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		client = new UdpClient();
+		//client = new UdpClient();
+		client = new TcpClient();
 
 
 		//serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
@@ -59,11 +61,14 @@ public class Sockets : MonoBehaviour {
 	{
 		try
 		{
-			client = new UdpClient(ipAddress, portNumber);
+			//client = new UdpClient(ipAddress, portNumber);
+			client = new TcpClient(ipAddress, portNumber);
+
 			serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
 			isConnected = true;
 
-			sendUDPPacket("ANYONE OUT THERE?");
+			//sendUDPPacket("ANYONE OUT THERE?");
+			SendMessage ("ANYONE OUT THERE?");
 
 			
 
@@ -83,8 +88,8 @@ public class Sockets : MonoBehaviour {
 		{
 			byte[] data = Encoding.UTF8.GetBytes(toSend);
 
-			client.Send(data, data.Length, serverRemote);
-
+			//client.Send(data, data.Length, serverRemote);
+			//client.SendTimeout(serverRemote, data);
 
 
 

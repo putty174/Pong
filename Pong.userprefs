@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PongServer/PongServer/Server.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sockets.cs">
     <Files>
       <File FileName="PongServer/PongServer/Server.cs" Line="111" Column="4" />
-      <File FileName="../Unused or Backup Unity or Other Project Content goes here/Server cs from Pong-Master1Version1/Server.cs" Line="17" Column="44" />
+      <File FileName="Assets/Sockets.cs" Line="92" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
