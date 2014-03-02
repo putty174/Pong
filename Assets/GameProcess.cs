@@ -5,12 +5,14 @@ public class GameProcess : MonoBehaviour {
 
 	//PRIVATE MEMBERS
 	private Sockets sockets;
+	private Client client;
 	private GUIScript gui;
 
 	// Use this for initialization
 	void Start () {
 
 		sockets = new Sockets();
+		client = new Client();
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 	
@@ -24,5 +26,10 @@ public class GameProcess : MonoBehaviour {
 	public Sockets returnSocket ()
 	{
 		return sockets;
+	}
+
+	public Client returnClient()
+	{
+		return client;
 	}
 }

@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\BallScript.cs" />
      <Compile Include="Assets\BoardScript.cs" />
+     <Compile Include="Assets\Client.cs" />
      <Compile Include="Assets\GUIScript.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameProcess.cs" />
