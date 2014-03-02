@@ -15,7 +15,12 @@ public class Sockets : MonoBehaviour {
 	const string ipAddress = "128.195.11.124";
 	const int portNumber = 4000;
 
+<<<<<<< HEAD
 	public UdpClient udpClient;
+=======
+	//public UdpClient client;
+	public TcpClient client;
+>>>>>>> FETCH_HEAD
 
 	public NetworkStream networkStream;
 	public int clientNumber;
@@ -42,6 +47,13 @@ public class Sockets : MonoBehaviour {
 		isConnected = false;
 
 
+<<<<<<< HEAD
+=======
+	// Use this for initialization
+	void Start () {
+		//client = new UdpClient();
+		client = new TcpClient();
+>>>>>>> FETCH_HEAD
 
 
 
@@ -52,7 +64,19 @@ public class Sockets : MonoBehaviour {
 		
 		try
 		{
+<<<<<<< HEAD
 			byte[] packetData = Encoding.ASCII.GetBytes(toSend);
+=======
+			//client = new UdpClient(ipAddress, portNumber);
+			client = new TcpClient(ipAddress, portNumber);
+
+			serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
+			isConnected = true;
+
+			//sendUDPPacket("ANYONE OUT THERE?");
+			SendMessage ("ANYONE OUT THERE?");
+
+>>>>>>> FETCH_HEAD
 			
 			udpClient.Send(packetData, packetData.Length);
 		}
@@ -69,6 +93,7 @@ public class Sockets : MonoBehaviour {
 	{
 		try
 		{
+<<<<<<< HEAD
 			serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
 			udpClient = new UdpClient();
 			udpClient.Connect(serverRemote);
@@ -76,6 +101,13 @@ public class Sockets : MonoBehaviour {
 			{
 				Debug.Log("connected!");
 				sendUDPPacket("ANYONE OUT THERE?");
+=======
+			byte[] data = Encoding.UTF8.GetBytes(toSend);
+
+			//client.Send(data, data.Length, serverRemote);
+			//client.SendTimeout(serverRemote, data);
+
+>>>>>>> FETCH_HEAD
 
 			}
 

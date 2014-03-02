@@ -4,12 +4,16 @@ using System.Collections;
 public class GUIScript : MonoBehaviour {
 
 	private GameProcess process;
+	public GUIText guiText;
 	//public GameProcess process;
 
 	// Use this for initialization
 	void Start () {
 		process = GameObject.Find("_GameManager").GetComponent<GameProcess>();
+<<<<<<< HEAD
 	
+=======
+>>>>>>> FETCH_HEAD
 	}
 	
 	// Update is called once per frame

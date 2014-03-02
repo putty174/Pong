@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="../../../Downloads/Sorry_Latest_Build_Monday/Sorry/Assets/Gui.cs">
     <Files>
@@ -8,6 +9,13 @@
       <File FileName="../../../Downloads/Sorry_Latest_Build_Monday/Sorry/Assets/ThreadSock.cs" Line="1" Column="1" />
       <File FileName="Assets/GUIScript.cs" Line="11" Column="42" />
       <File FileName="../../../Downloads/Sorry_Latest_Build_Monday/Sorry/Assets/Gui.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sockets.cs">
+    <Files>
+      <File FileName="PongServer/PongServer/Server.cs" Line="111" Column="4" />
+      <File FileName="Assets/Sockets.cs" Line="92" Column="6" />
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
