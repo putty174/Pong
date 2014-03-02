@@ -47,10 +47,21 @@ public class Sockets : MonoBehaviour {
 
 	}
 
-	void Start()
+	public void sendUDPPacket(string toSend)
 	{
-
-
+		
+		try
+		{
+			byte[] packetData = Encoding.ASCII.GetBytes(toSend);
+			
+			udpClient.Send(packetData, packetData.Length);
+		}
+		catch(Exception ex)
+		{
+			print (ex.Message + " : OnPacket");
+		}
+		
+		
 	}
 
 
@@ -68,27 +79,6 @@ public class Sockets : MonoBehaviour {
 
 			}
 
-
-
-
-			//tmpRemote = (EndPoint)sender;
-			//clientSocket.Bind(serverRemote);
-
-			//client = new UdpClient(ipAddress, portNumber);
-
-
-
-
-
-
-
-
-
-
-			
-
-
-
 		}
 		catch(Exception ex)
 		{
@@ -99,20 +89,7 @@ public class Sockets : MonoBehaviour {
 		return udpClient.Client.Connected;
 	}
 
-	public void sendUDPPacket(string toSend)
-	{
 
-			byte[] packetData = System.Text.ASCIIEncoding.ASCII.GetBytes(toSend);
-
-			udpClient.Send(packetData, packetData.Length);
-
-
-
-
-
-
-
-	}
 
 
 

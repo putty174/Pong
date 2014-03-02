@@ -4,6 +4,7 @@ using System.Collections;
 public class GUIScript : MonoBehaviour {
 
 	private GameProcess process;
+	//public GameProcess process;
 
 	// Use this for initialization
 	void Start () {
