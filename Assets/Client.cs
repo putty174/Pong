@@ -54,4 +54,36 @@ public class Client : MonoBehaviour {
 		if ( client == null ) return false;
 		return client.Connected;
 	}
+
+	public void Send(String message)
+	{
+		try
+		{
+			Byte[] data = System.Text.Encoding.ASCII.GetBytes (message);
+			nws.Write (data, 0, data.Length);
+			Console.WriteLine ("Sent: " + message);
+		}
+		catch(ArgumentException e)
+		{
+			Console.WriteLine(e.ToString());
+		}
+	}
+
+	public String Recieve()
+	{
+		String message = null;
+		try
+		{
+			Byte[] data = new byte[256];
+			Int32 bytes = nws.Read(data,0,data.Length);
+			message = System.Text.Encoding.ASCII.GetString(data,0,bytes);
+			Console.WriteLine("Recieved: " + message);
+			return message;
+		}
+		catch (ArgumentException e)
+		{
+			Console.WriteLine ("Exception: " + e.ToString());
+		}
+		return message;
+	}
 }
