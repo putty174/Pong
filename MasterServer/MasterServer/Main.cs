@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Text;
 using System.Net.Sockets;
+using System.Linq;
 
 
 namespace MasterServer
@@ -42,21 +43,43 @@ namespace MasterServer
 			listener = new TcpListener(IPAddress.Any, portNumber);
 			listenThread = new Thread(new ThreadStart(ListendForTCPClients));
 			listenThread.Start();
+
 			
 			
 		}
 		
-		private void ListendForTCPClients()
+		public void ListendForTCPClients()
 		{
 			this.listener.Start();
-			
-			while(connectedPlayers <= maxPlayers)
+
+			Console.WriteLine(" >> " + "Welcome to the Pong2D server!");
+			Console.WriteLine(" >> " + "Wainting for clients.....");
+
+			try
 			{
-				TcpClient client = this.listener.AcceptTcpClient();
-				Console.WriteLine("Connected to the server!");
-				++connectedPlayers;
-				clientList[connectedPlayers] = client;
+				while(connectedPlayers <= maxPlayers)
+				{
+					TcpClient client = this.listener.AcceptTcpClient();
+					++connectedPlayers;
+					Console.WriteLine(" >> " + "Client No: " + Convert.ToString(connectedPlayers) + " has connected!"); 
+					clientList[connectedPlayers] = client;
+					
+				}
+				Console.WriteLine("<< 2 clinets have connected to the the Pong2D server");
+				Console.WriteLine("<< Waiting for clients to send the start command....");
 			}
+			catch(Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}
+			finally
+			{
+				this.listener.Stop();
+			}
+
+
+
+
 			
 			
 		}
