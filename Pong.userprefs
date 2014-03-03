@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sockets.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../cs113Project/cs113Project/Assets/EnemySpawner.cs">
     <Files>
-      <File FileName="PongServer/PongServer/Server.cs" Line="111" Column="4" />
-      <File FileName="Assets/Sockets.cs" Line="92" Column="6" />
+      <File FileName="../cs113Project/cs113Project/Assets/EnemySpawner.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
