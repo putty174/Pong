@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Client.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameProcess.cs">
     <Files>
-      <File FileName="Assets\GameProcess.cs" Line="25" Column="13" />
-      <File FileName="Assets\Client.cs" Line="61" Column="4" />
+      <File FileName="Assets\GameProcess.cs" Line="22" Column="18" />
+      <File FileName="Assets\Client.cs" Line="74" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

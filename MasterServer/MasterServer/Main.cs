@@ -82,11 +82,17 @@ namespace MasterServer
 					for(int i = stream1.Read(data1,0,data1.Length);mes1 != "HA"; i = stream1.Read(data1,0,data1.Length))
 					{
 						mes1 = System.Text.Encoding.ASCII.GetString(data1,0,i);
+						byte[] send = Encoding.ASCII.GetBytes("Client 1");
+						stream1.Write (send,0,send.Length);
+						stream2.Write(send,0,send.Length);
 						Console.WriteLine(" >> Client 1: {0}", mes1);
 					}
 					for(int i = stream2.Read(data2,0,data2.Length);mes2 != "HA"; i = stream2.Read (data2,0,data2.Length))
 					{
 						mes2 = System.Text.Encoding.ASCII.GetString(data2,0,i);
+						byte[] send = Encoding.ASCII.GetBytes("Client 2");
+						stream1.Write (send,0,send.Length);
+						stream2.Write(send,0,send.Length);
 						Console.WriteLine(" >> Client 2: {0}", mes2);
 					}
 					Console.WriteLine("");

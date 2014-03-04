@@ -24,6 +24,7 @@ public class GameProcess : MonoBehaviour {
 		{
 			client.Send ("HA");
 		}
+		Debug.Log (client.Recieve ());
 	}
 
 	public Sockets returnSocket ()
