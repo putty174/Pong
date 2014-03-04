@@ -20,7 +20,10 @@ public class GameProcess : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown ("space"))
+		{
+			client.Send ("HA");
+		}
 	}
 
 	public Sockets returnSocket ()
