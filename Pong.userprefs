@@ -1,16 +1,14 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sockets.cs">
-    <Files>
-      <File FileName="Assets/Sockets.cs" Line="1" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Client.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BallScript.cs">
     <Files>
-      <File FileName="Assets\Client.cs" Line="16" Column="25" />
-      <File FileName="e:\Users\Max\Documents\GitHub\Pong\Assets\BallScript.cs" Line="1" Column="1" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/GUIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/BallScript.cs" Line="133" Column="6" />
+      <File FileName="Assets/PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Client.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameProcess.cs" Line="1" Column="1" />
+      <File FileName="Assets/GoalScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/PlayerScript.js" Line="20" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
