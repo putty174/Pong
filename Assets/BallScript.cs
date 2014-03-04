@@ -26,8 +26,10 @@ public class BallScript : MonoBehaviour {
 
 
 
-	public GameObject player1;
-	public GameObject player2;
+	public GameObject player1Top;
+	public GameObject player1Bottom;
+	public GameObject player2Top;
+	public GameObject player2Bottom;
 
 
 
@@ -104,7 +106,7 @@ public class BallScript : MonoBehaviour {
 	{
 
 		var randomUpAngle1 = Random.Range (0,80);//Random angle away from player 1 if ball hits top of paddle
-		var randomDownAngle1 = Random.Range (0, -80);//Random angle away from player 1 if ball hits bottom of paddle
+		var randomDownAngle1 = Random.Range (-80, 0);//Random angle away from player 1 if ball hits bottom of paddle
 		
 		var randomUpAngle2 = Random.Range (100, 180);
 		var randomDownAngle2 = Random.Range (-180, -100);
@@ -124,6 +126,17 @@ public class BallScript : MonoBehaviour {
 			velocityY = velocityY/2 + colInfo.collider.rigidbody2D.velocity.y/3;
 			//}
 		}
+		if(colInfo.collider.tag == "Player1Top")
+		{
+			transform.Rotate (0,0,randomUpAngle1);
+		}
+		if(colInfo.collider.tag == "Player1Bottom")
+		{
+			transform.Rotate (0,0,randomDownAngle1);
+		}
+
+
+
 
 		if(colInfo.collider.tag == "Player2")
 		{
@@ -134,6 +147,14 @@ public class BallScript : MonoBehaviour {
 			var velocityY = rigidbody2D.velocity.y * -1.0f;
 			velocityY = velocityY/2 + colInfo.collider.rigidbody2D.velocity.y/3;
 			//}
+		}
+		if(colInfo.collider.tag == "Player2Top")
+		{
+			transform.Rotate (0,0,randomUpAngle2);
+		}
+		if(colInfo.collider.tag == "Player2Bottom")
+		{
+			transform.Rotate (0,0,randomDownAngle2);
 		}
 
 	
