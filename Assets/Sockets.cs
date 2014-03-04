@@ -5,15 +5,22 @@ using System.Net.Sockets;
 using System.Text;
 using System.Net;
 using System;
-using System.Diagnostics;
+//using System.Diagnostics;
 using System.Threading;
 
 public class Sockets : MonoBehaviour {
 
+	// Port and IP data for socket client
+
 	const string ipAddress = "128.195.11.124";
 	const int portNumber = 4000;
 
-	public UdpClient client;
+
+	public UdpClient udpClient;
+
+	//public UdpClient client;
+	public TcpClient client;
+
 
 	public NetworkStream networkStream;
 	public int clientNumber;
@@ -26,75 +33,95 @@ public class Sockets : MonoBehaviour {
 	public Queue receiverBuffer;
 
 
+	IPEndPoint serverRemote; 
+	//Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+	//IPEndPoint sender = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
 
-	IPEndPoint serverRemote;
+
+	EndPoint tmpRemote;
 
 	public Sockets()
 	{
 
-		isConnected = false;
 
+		isConnected = false;
 	}
+
+
 
 	// Use this for initialization
 	void Start () {
-		client = new UdpClient();
+		//client = new UdpClient();
+		client = new TcpClient();
 
 
-		//serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
+
+
+	}
+
+	public void sendUDPPacket(string toSend)
+	{
 		
+		try
+		{
 
+			byte[] packetData = Encoding.ASCII.GetBytes(toSend);
+
+			//client = new UdpClient(ipAddress, portNumber);
+			client = new TcpClient(ipAddress, portNumber);
+
+			serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
+			isConnected = true;
+
+			//sendUDPPacket("ANYONE OUT THERE?");
+			SendMessage ("ANYONE OUT THERE?");
+
+
+			
+			udpClient.Send(packetData, packetData.Length);
+		}
+		catch(Exception ex)
+		{
+			print (ex.Message + " : OnPacket");
+		}
 		
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 
 
 	public bool Connect()
 	{
 		try
 		{
-			client = new UdpClient(ipAddress, portNumber);
+
 			serverRemote = new IPEndPoint(IPAddress.Parse(ipAddress), portNumber);
-			isConnected = true;
+			udpClient = new UdpClient();
+			udpClient.Connect(serverRemote);
+			if(udpClient.Client.Connected)
+			{
+				Debug.Log("connected!");
+				sendUDPPacket("ANYONE OUT THERE?");
 
-			sendUDPPacket("ANYONE OUT THERE?");
+			//byte[] data = Encoding.UTF8.GetBytes(toSend);
 
-			
+			//client.Send(data, data.Length, serverRemote);
+			//client.SendTimeout(serverRemote, data);
 
 
+
+			}
 
 		}
-		catch(Exception e)
+		catch(Exception ex)
 		{
+			print ( ex.Message + " : OnConnect");
 		}
 		isConnected = true;
-		return isConnected;
+		if ( udpClient == null ) return false;
+		return udpClient.Client.Connected;
 	}
 
-	public void sendUDPPacket(string toSend)
-	{
-		try
-		{
-			byte[] data = Encoding.UTF8.GetBytes(toSend);
 
-			client.Send(data, data.Length, serverRemote);
-
-
-
-
-		}
-		catch(Exception e)
-		{
-		}
-
-
-	}
 
 
 

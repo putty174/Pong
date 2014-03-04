@@ -10,6 +10,7 @@ public class GUIScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		process = GameObject.Find("_GameManager").GetComponent<GameProcess>();
+
 	}
 	
 	// Update is called once per frame
@@ -26,12 +27,11 @@ public class GUIScript : MonoBehaviour {
 		{
 
 			//guiText.text = "Connecting...";
-			if (process.returnSocket().Connect() )
-			//if(GameProcess.returnSocket().Connect())
+			if (process.returnClient().Connect() )
 			{	
-				
+				Debug.Log("Hi");
 				//show = !show;
-				guiText.text = "Connect Succeeded";
+				//guiText.text = "Connect Succeeded";
 
 				
 				
