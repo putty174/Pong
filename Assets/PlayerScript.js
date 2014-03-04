@@ -5,6 +5,11 @@ var down : KeyCode;
 
 var speed : float = 10;
 
+
+
+
+
+
 function Start () {
 
 }
