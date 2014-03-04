@@ -56,12 +56,14 @@ namespace MasterServer
 
 			try
 			{
-				while(connectedPlayers <= maxPlayers - 1)
+				Console.WriteLine(connectedPlayers);
+				while(connectedPlayers < maxPlayers)
 				{
 					TcpClient client = this.listener.AcceptTcpClient();
 					Console.WriteLine(" >> " + "Client No: " + Convert.ToString(connectedPlayers + 1) + " has connected!"); 
 					clientList[connectedPlayers] = client;
 					connectedPlayers++;
+
 				}
 				Console.WriteLine("<< 2 clinets have connected to the the Pong2D server");
 				Console.WriteLine("<< Waiting for clients to send the start command....");
@@ -72,18 +74,26 @@ namespace MasterServer
 				String mes1, mes2;
 				while(true)
 				{
+					mes1 = "";
+					mes2 = "";
 					NetworkStream stream1 = clientList[0].GetStream();
 					NetworkStream stream2 = clientList[1].GetStream();
 
-					for(int i = stream1.Read(data1,0,data1.Length);i != 0; i = stream1.Read(data1,0,data1.Length))
+					for(int i = stream1.Read(data1,0,data1.Length);mes1 != "HA"; i = stream1.Read(data1,0,data1.Length))
 					{
 						mes1 = System.Text.Encoding.ASCII.GetString(data1,0,i);
-						Console.WriteLine("Recieved: {0}", mes1);
+						byte[] send = Encoding.ASCII.GetBytes("Client 1");
+						stream1.Write (send,0,send.Length);
+						stream2.Write(send,0,send.Length);
+						Console.WriteLine(" >> Client 1: {0}", mes1);
 					}
-					for(int i = stream2.Read(data2,0,data2.Length);i != 0; i = stream2.Read (data2,0,data2.Length))
+					for(int i = stream2.Read(data2,0,data2.Length);mes2 != "HA"; i = stream2.Read (data2,0,data2.Length))
 					{
 						mes2 = System.Text.Encoding.ASCII.GetString(data2,0,i);
-						Console.WriteLine("Recieved: {0}", mes2);
+						byte[] send = Encoding.ASCII.GetBytes("Client 2");
+						stream1.Write (send,0,send.Length);
+						stream2.Write(send,0,send.Length);
+						Console.WriteLine(" >> Client 2: {0}", mes2);
 					}
 					Console.WriteLine("");
 				}

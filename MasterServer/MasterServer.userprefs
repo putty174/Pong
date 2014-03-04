@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MasterServer\Main.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\Assets\GameProcess.cs">
     <Files>
-      <File FileName="MasterServer\Main.cs" Line="55" Column="6" />
+      <File FileName="..\Assets\Client.cs" Line="78" Column="20" />
+      <File FileName="..\Assets\GameProcess.cs" Line="26" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
