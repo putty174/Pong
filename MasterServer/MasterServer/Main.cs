@@ -71,9 +71,11 @@ namespace MasterServer
 				byte[] data1 = new byte[1024];
 				byte[] data2 = new byte[1024];
 
-				String mes1 = "", mes2 = "";
+				String mes1, mes2;
 				while(true)
 				{
+					mes1 = "";
+					mes2 = "";
 					NetworkStream stream1 = clientList[0].GetStream();
 					NetworkStream stream2 = clientList[1].GetStream();
 
