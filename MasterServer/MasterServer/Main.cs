@@ -71,18 +71,18 @@ namespace MasterServer
 				byte[] data1 = new byte[1024];
 				byte[] data2 = new byte[1024];
 
-				String mes1, mes2;
+				String mes1 = "", mes2 = "";
 				while(true)
 				{
 					NetworkStream stream1 = clientList[0].GetStream();
 					NetworkStream stream2 = clientList[1].GetStream();
 
-					for(int i = stream1.Read(data1,0,data1.Length);i != 0; i = stream1.Read(data1,0,data1.Length))
+					for(int i = stream1.Read(data1,0,data1.Length);mes1 != "HA"; i = stream1.Read(data1,0,data1.Length))
 					{
 						mes1 = System.Text.Encoding.ASCII.GetString(data1,0,i);
 						Console.WriteLine(" >> Client 1: {0}", mes1);
 					}
-					for(int i = stream2.Read(data2,0,data2.Length);i != 0; i = stream2.Read (data2,0,data2.Length))
+					for(int i = stream2.Read(data2,0,data2.Length);mes2 != "HA"; i = stream2.Read (data2,0,data2.Length))
 					{
 						mes2 = System.Text.Encoding.ASCII.GetString(data2,0,i);
 						Console.WriteLine(" >> Client 2: {0}", mes2);
