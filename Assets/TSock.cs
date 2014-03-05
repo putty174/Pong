@@ -14,6 +14,7 @@ public class TSock : MonoBehaviour
 	{
 		ns = nsIn;
 		sock = sIn;
+		buffer = new byte[1024];
 	}
 
 	public void process()

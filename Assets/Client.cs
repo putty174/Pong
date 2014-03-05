@@ -46,6 +46,7 @@ public class Client : MonoBehaviour {
 	public Client()
 	{
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
+		receiverBuffer = new Queue ();
 	}
 
 	// Use this for initialization
@@ -100,23 +101,5 @@ public class Client : MonoBehaviour {
 		{
 			Console.WriteLine(e.ToString());
 		}
-	}
-
-	public String Recieve()
-	{
-		String message = "";
-		try
-		{
-			Byte[] data = new byte[256];
-			Int32 bytes = nws.Read(data,0,data.Length);
-			message = System.Text.Encoding.ASCII.GetString(data,0,bytes);
-			Console.WriteLine("Recieved: " + message);
-			return message;
-		}
-		catch (ArgumentException e)
-		{
-			Console.WriteLine ("Exception: " + e.ToString());
-		}
-		return message;
 	}
 }

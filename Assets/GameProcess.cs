@@ -8,6 +8,8 @@ public class GameProcess : MonoBehaviour {
 	private Client client;
 	private GUIScript gui;
 
+	private byte[] buffer;
+
 	// Use this for initialization
 	void Start () {
 
@@ -24,9 +26,16 @@ public class GameProcess : MonoBehaviour {
 		{
 			client.Send ("HA");
 		}
-		if (client != null)
+		if(client.receiverBuffer.Count > 0)
 		{
-			Debug.Log (client.Recieve ());
+			lock(client.receiverBuffer)
+			{
+				while(client.receiverBuffer.Count > 0)
+				{
+					buffer = (byte[]) client.receiverBuffer.Dequeue();
+					Debug.Log(System.Text.Encoding.ASCII.GetString(buffer));
+				}
+			}
 		}
 	}
 
