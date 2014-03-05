@@ -15,8 +15,8 @@ public class Client : MonoBehaviour {
 	public NetworkStream nws;
 	public Thread t = null;
 	IPEndPoint serverEndPoint; 
-
-
+	public bool isConnected = false;
+	public Queue receiverBuffer;
 
 	//Positions of assets
 
@@ -74,10 +74,10 @@ public class Client : MonoBehaviour {
 			client.Connect(serverEndPoint);
 			nws = client.GetStream();
 			TSock ts = new TSock(nws, this);
-			t = new Thread(new ThreadStart(ts.process()));
+			t = new Thread(new ThreadStart(ts.process));
 			t.IsBackground = true;
 			t.Start();
-
+			isConnected = true;
 		}
 		catch ( Exception ex )
 		{
