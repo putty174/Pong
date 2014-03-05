@@ -55,7 +55,7 @@ public class BallScript : MonoBehaviour {
 
 	void Update()
 	{
-
+		//________SEND POSITIONS TO SERVER HERE_________
 
 
 
