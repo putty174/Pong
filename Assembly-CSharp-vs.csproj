@@ -53,7 +53,8 @@
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameProcess.cs" />
      <Compile Include="Assets\GoalScript.cs" />
-     <Compile Include="Assets\PlayerScript.cs" />
+     <Compile Include="Assets\Player1.cs" />
+     <Compile Include="Assets\Player2.cs" />
      <Compile Include="Assets\ScoreManager.cs" />
      <Compile Include="Assets\Sockets.cs" />
      <Compile Include="Assets\TSock.cs" />
