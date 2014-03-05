@@ -68,8 +68,8 @@ namespace MasterServer
 				Console.WriteLine("<< 2 clinets have connected to the the Pong2D server");
 				Console.WriteLine("<< Waiting for clients to send the start command....");
 
-				byte[] data1 = new byte[1];
-				byte[] data2 = new byte[1];
+				byte[] data1 = new byte[1024];
+				byte[] data2 = new byte[1024];
 				byte[] send;
 
 				String mes1, mes2;

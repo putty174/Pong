@@ -3,6 +3,9 @@ using System.Collections;
 
 public class GameProcess : MonoBehaviour {
 
+	private GameObject p1;
+		private GameObject p2;
+
 	//PRIVATE MEMBERS
 	private Sockets sockets;
 	private Client client;
@@ -17,15 +20,15 @@ public class GameProcess : MonoBehaviour {
 		client = new Client();
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
-	
+
+		p1 = GameObject.Find ("Player1");
+		p2 = GameObject.Find ("Player2");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown ("space"))
-		{
-			client.Send ("HA");
-		}
+		client.Send ("Player 1: " + p1.transform);
+		client.Send ("Player 2: " + p2.transform);
 		if(client.receiverBuffer.Count > 0)
 		{
 			lock(client.receiverBuffer)

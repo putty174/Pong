@@ -1,20 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameProcess.cs">
     <Files>
-      <File FileName="Assets\Player1.cs" Line="5" Column="2" />
-      <File FileName="Assets\Player1Script.js" Line="1" Column="1" />
-      <File FileName="Assets\GameProcess.cs" Line="1" Column="1" />
-      <File FileName="Assets\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\BoardScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\BallScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player2.cs" Line="5" Column="22" />
+      <File FileName="Assets\GameProcess.cs" Line="33" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Player2.cs" selected="True" />
+            <Node name="GameProcess.cs" selected="True" />
           </Node>
         </State>
       </Pad>
