@@ -37,13 +37,11 @@ public class Client : MonoBehaviour {
 		{
 			client = new TcpClient();
 			client.Connect(serverEndPoint);
-			if(client.Connected)
-			{
-
-				nws = client.GetStream();
-
-				Debug.Log ("I have Connected!");
-			}
+			nws = client.GetStream();
+			TSock ts = new TSock(nws, this);
+			t = new Thread(new ThreadStart(ts.process()));
+			t.IsBackground = true;
+			t.Start();
 
 		}
 		catch ( Exception ex )
@@ -71,7 +69,7 @@ public class Client : MonoBehaviour {
 
 	public String Recieve()
 	{
-		String message = null;
+		String message = "";
 		try
 		{
 			Byte[] data = new byte[256];
