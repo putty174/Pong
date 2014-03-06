@@ -45,6 +45,7 @@ public class GUIScript : MonoBehaviour {
 		if(GUI.Button(new Rect(20,Screen.height - 260, 80, 20), "Send"))
 		{
 			//Application.loadedLevel(1);
+            process.returnClient().Send("Start");
 		}
 
 

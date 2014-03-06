@@ -37,6 +37,11 @@ namespace MasterServer
 		TcpClient[] clientList;
 		Thread listenThread1;
 		Thread listenThread2;
+
+        bool startGame;
+        bool client1Start = false;
+        bool client2Start = false;
+
 		
 		public MainServer()
 		{
@@ -65,7 +70,7 @@ namespace MasterServer
 					connectedPlayers++;
 
 				}
-				Console.WriteLine("<< 2 clinets have connected to the the Pong2D server");
+				Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
 				Console.WriteLine("<< Waiting for clients to send the start command....");
 
 				byte[] data1 = new byte[1];
@@ -95,6 +100,27 @@ namespace MasterServer
 					Console.WriteLine(" >> Client 2: {0}", mes2);
 
 					Console.WriteLine("");
+
+
+                    while (startGame == false)
+                    {
+                        if (mes1 == "Start")
+                        {
+                            client1Start = true;
+                        }
+                        if (mes2 == "Start")
+                        {
+                            client2Start = true;
+                        }
+
+                        if (startGame == true)
+                        {
+                            send = Encoding.ASCII.GetBytes("StartGame");
+                        }
+                    }
+
+                    
+                    
 				}
 			}
 			catch(Exception ex)

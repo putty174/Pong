@@ -3,3 +3,5 @@ E:\Users\Max\Documents\GitHub\Pong\MasterServer\MasterServer\bin\Debug\MasterSer
 E:\Users\Max\Documents\GitHub\Pong\MasterServer\MasterServer\obj\x86\Debug\MasterServer.csprojResolveAssemblyReference.cache
 E:\Users\Max\Documents\GitHub\Pong\MasterServer\MasterServer\obj\x86\Debug\MasterServer.exe
 E:\Users\Max\Documents\GitHub\Pong\MasterServer\MasterServer\obj\x86\Debug\MasterServer.pdb
+C:\Users\Khai Nguyen\Pong\MasterServer\MasterServer\obj\x86\Debug\MasterServer.exe
+C:\Users\Khai Nguyen\Pong\MasterServer\MasterServer\obj\x86\Debug\MasterServer.pdb
