@@ -27,8 +27,8 @@ public class GameProcess : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		client.Send ("Player 1: " + p1.transform);
-		client.Send ("Player 2: " + p2.transform);
+		client.Send ("Player 1: " + p1.transform.position);
+		client.Send ("Player 2: " + p2.transform.position);
 		if(client.receiverBuffer.Count > 0)
 		{
 			lock(client.receiverBuffer)
