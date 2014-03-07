@@ -45,23 +45,15 @@ public class BallScript : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
-		Invoke("BallStart", 3);
+	void Start () { 
 	}
 
 	void Update()
 	{
 		changeBallColor ();
-
-
 		//________SEND POSITIONS TO SERVER HERE_________
-
 		ballPosition = transform.position;
-
 	}
-
-
-
 
 	public void BallStart()
 	{
@@ -82,15 +74,8 @@ public class BallScript : MonoBehaviour {
 	public void BallReset()
 	{
 		rigidbody2D.velocity = new Vector2(0,0);
-
-
-
 		transform.position = Vector3.zero;
-
-		Invoke("BallStart", .5f);
 	}
-
-
 
 	void OnCollisionEnter2D(Collision2D colInfo)
 	{

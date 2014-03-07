@@ -13,7 +13,7 @@ Platform assembly: E:\Users\Max\Documents\GitHub\Pong\Pong_Data\Managed\Assembly
 Loading E:\Users\Max\Documents\GitHub\Pong\Pong_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: E:\Users\Max\Documents\GitHub\Pong\Pong_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading E:\Users\Max\Documents\GitHub\Pong\Pong_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.054 seconds
+- Completed reload, in  0.172 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -756,172 +756,13 @@ NullReferenceException: Object reference not set to an instance of an object
  
 (Filename:  Line: -1)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Client.Send (System.String message) [0x00000] in <filename unknown>:0 
-  at GameProcess.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
 Hi
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
 Client 2
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
@@ -930,2259 +771,1409 @@ Client 2
  
 (Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.4, 0.0)
-Sent: Player 2: (8.0, 4.4, 0.0)
-Sent: Player 1: (-8.0, 4.3, 0.0)
-Sent: Player 2: (8.0, 4.3, 0.0)
-Sent: Player 1: (-8.0, 4.1, 0.0)
-Sent: Player 2: (8.0, 4.1, 0.0)
-Sent: Player 1: (-8.0, 3.9, 0.0)
-Sent: Player 2: (8.0, 3.9, 0.0)
-Sent: Player 1: (-8.0, 3.6, 0.0)
-Sent: Player 2: (8.0, 3.6, 0.0)
-Sent: Player 1: (-8.0, 3.3, 0.0)
-Sent: Player 2: (8.0, 3.3, 0.0)
-Sent: Player 1: (-8.0, 3.2, 0.0)
-Sent: Player 2: (8.0, 3.2, 0.0)
-Sent: Player 1: (-8.0, 3.0, 0.0)
-Sent: Player 2: (8.0, 3.0, 0.0)
-Sent: Player 1: (-8.0, 2.8, 0.0)
-Sent: Player 2: (8.0, 2.8, 0.0)
-Sent: Player 1: (-8.0, 2.6, 0.0)
-Sent: Player 2: (8.0, 2.6, 0.0)
-Sent: Player 1: (-8.0, 2.5, 0.0)
-Sent: Player 2: (8.0, 2.5, 0.0)
-Sent: Player 1: (-8.0, 2.4, 0.0)
-Sent: Player 2: (8.0, 2.4, 0.0)
-Sent: Player 1: (-8.0, 2.4, 0.0)
-Sent: Player 2: (8.0, 2.4, 0.0)
-Sent: Player 1: (-8.0, 2.4, 0.0)
-Sent: Player 2: (8.0, 2.4, 0.0)
-Sent: Player 1: (-8.0, 2.4, 0.0)
-Sent: Player 2: (8.0, 2.4, 0.0)
-Sent: Player 1: (-8.0, 2.4, 0.0)
-Sent: Player 2: (8.0, 2.4, 0.0)
-Sent: Player 1: (-8.0, 2.6, 0.0)
-Sent: Player 2: (8.0, 2.6, 0.0)
-Sent: Player 1: (-8.0, 2.7, 0.0)
-Sent: Player 2: (8.0, 2.7, 0.0)
-Sent: Player 1: (-8.0, 2.8, 0.0)
-Sent: Player 2: (8.0, 2.8, 0.0)
-Sent: Player 1: (-8.0, 2.8, 0.0)
-Sent: Player 2: (8.0, 2.8, 0.0)
-Sent: Player 1: (-8.0, 3.3, 0.0)
-Sent: Player 2: (8.0, 3.3, 0.0)
-Sent: Player 1: (-8.0, 3.3, 0.0)
-Sent: Player 2: (8.0, 3.3, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 3.3, 0.0)
-Sent: Player 2: (8.0, 3.3, 0.0)
-Sent: Player 1: (-8.0, 3.0, 0.0)
-Sent: Player 2: (8.0, 3.0, 0.0)
-Sent: Player 1: (-8.0, 2.8, 0.0)
-Sent: Player 2: (8.0, 2.8, 0.0)
-Sent: Player 1: (-8.0, 2.5, 0.0)
-Sent: Player 2: (8.0, 2.5, 0.0)
-Sent: Player 1: (-8.0, 2.2, 0.0)
-Sent: Player 2: (8.0, 2.2, 0.0)
-Sent: Player 1: (-8.0, 1.7, 0.0)
-Sent: Player 2: (8.0, 1.7, 0.0)
-Sent: Player 1: (-8.0, 0.8, 0.0)
-Sent: Player 2: (8.0, 0.8, 0.0)
-Sent: Player 1: (-8.0, 0.8, 0.0)
-Sent: Player 2: (8.0, 0.8, 0.0)
-Sent: Player 1: (-8.0, 0.4, 0.0)
-Sent: Player 2: (8.0, 0.4, 0.0)
-Sent: Player 1: (-8.0, -0.1, 0.0)
-Sent: Player 2: (8.0, -0.1, 0.0)
-Sent: Player 1: (-8.0, -0.3, 0.0)
-Sent: Player 2: (8.0, -0.3, 0.0)
-Sent: Player 1: (-8.0, -0.5, 0.0)
-Sent: Player 2: (8.0, -0.5, 0.0)
-Sent: Player 1: (-8.0, -0.7, 0.0)
-Sent: Player 2: (8.0, -0.7, 0.0)
-Sent: Player 1: (-8.0, -0.8, 0.0)
-Sent: Player 2: (8.0, -0.8, 0.0)
-Sent: Player 1: (-8.0, -1.2, 0.0)
-Sent: Player 2: (8.0, -1.2, 0.0)
-Sent: Player 1: (-8.0, -1.3, 0.0)
-Sent: Player 2: (8.0, -1.3, 0.0)
-Sent: Player 1: (-8.0, -1.5, 0.0)
-Sent: Player 2: (8.0, -1.5, 0.0)
-Sent: Player 1: (-8.0, -1.6, 0.0)
-Sent: Player 2: (8.0, -1.6, 0.0)
-Sent: Player 1: (-8.0, -1.7, 0.0)
-Sent: Player 2: (8.0, -1.7, 0.0)
-Sent: Player 1: (-8.0, -1.7, 0.0)
-Sent: Player 2: (8.0, -1.7, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.9, 0.0)
-Sent: Player 2: (8.0, -1.9, 0.0)
-Sent: Player 1: (-8.0, -2.0, 0.0)
-Sent: Player 2: (8.0, -2.0, 0.0)
-Sent: Player 1: (-8.0, -2.0, 0.0)
-Sent: Player 2: (8.0, -2.0, 0.0)
-Sent: Player 1: (-8.0, -2.1, 0.0)
-Sent: Player 2: (8.0, -2.1, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.5, 0.0)
-Sent: Player 2: (8.0, -2.5, 0.0)
-Sent: Player 1: (-8.0, -2.6, 0.0)
-Sent: Player 2: (8.0, -2.6, 0.0)
-Sent: Player 1: (-8.0, -2.6, 0.0)
-Sent: Player 2: (8.0, -2.6, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.6, 0.0)
-Sent: Player 2: (8.0, -2.6, 0.0)
-Sent: Player 1: (-8.0, -2.5, 0.0)
-Sent: Player 2: (8.0, -2.5, 0.0)
-Sent: Player 1: (-8.0, -2.5, 0.0)
-Sent: Player 2: (8.0, -2.5, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.4, 0.0)
-Sent: Player 2: (8.0, -2.4, 0.0)
-Sent: Player 1: (-8.0, -2.5, 0.0)
-Sent: Player 2: (8.0, -2.5, 0.0)
-Sent: Player 1: (-8.0, -2.6, 0.0)
-Sent: Player 2: (8.0, -2.6, 0.0)
-Sent: Player 1: (-8.0, -2.7, 0.0)
-Sent: Player 2: (8.0, -2.7, 0.0)
-Sent: Player 1: (-8.0, -2.8, 0.0)
-Sent: Player 2: (8.0, -2.8, 0.0)
-Sent: Player 1: (-8.0, -2.9, 0.0)
-Sent: Player 2: (8.0, -2.9, 0.0)
-Sent: Player 1: (-8.0, -2.9, 0.0)
-Sent: Player 2: (8.0, -2.9, 0.0)
-Sent: Player 1: (-8.0, -2.9, 0.0)
-Sent: Player 2: (8.0, -2.9, 0.0)
-Sent: Player 1: (-8.0, -3.0, 0.0)
-Sent: Player 2: (8.0, -3.0, 0.0)
-Sent: Player 1: (-8.0, -3.0, 0.0)
-Sent: Player 2: (8.0, -3.0, 0.0)
-Sent: Player 1: (-8.0, -3.0, 0.0)
-Sent: Player 2: (8.0, -3.0, 0.0)
-Sent: Player 1: (-8.0, -3.1, 0.0)
-Sent: Player 2: (8.0, -3.1, 0.0)
-Sent: Player 1: (-8.0, -3.2, 0.0)
-Sent: Player 2: (8.0, -3.2, 0.0)
-Sent: Player 1: (-8.0, -3.3, 0.0)
-Sent: Player 2: (8.0, -3.3, 0.0)
-Sent: Player 1: (-8.0, -3.3, 0.0)
-Sent: Player 2: (8.0, -3.3, 0.0)
-Sent: Player 1: (-8.0, -3.4, 0.0)
-Sent: Player 2: (8.0, -3.4, 0.0)
-Sent: Player 1: (-8.0, -3.5, 0.0)
-Sent: Player 2: (8.0, -3.5, 0.0)
-Sent: Player 1: (-8.0, -3.6, 0.0)
-Sent: Player 2: (8.0, -3.6, 0.0)
-Sent: Player 1: (-8.0, -3.7, 0.0)
-Sent: Player 2: (8.0, -3.7, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.9, 0.0)
-Sent: Player 2: (8.0, -3.9, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Sent: Player 1: (-8.0, -3.8, 0.0)
-Sent: Player 2: (8.0, -3.8, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -3.7, 0.0)
-Sent: Player 2: (8.0, -3.7, 0.0)
-Sent: Player 1: (-8.0, -2.1, 0.0)
-Sent: Player 2: (8.0, -2.1, 0.0)
-Sent: Player 1: (-8.0, 0.0, 0.0)
-Sent: Player 2: (8.0, 0.0, 0.0)
-Sent: Player 1: (-8.0, 1.6, 0.0)
-Sent: Player 2: (8.0, 1.6, 0.0)
-Sent: Player 1: (-8.0, 3.7, 0.0)
-Sent: Player 2: (8.0, 3.7, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 1Client 2Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 2Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.1, 0.0)
-Sent: Player 2: (8.0, 4.1, 0.0)
-Sent: Player 1: (-8.0, 3.5, 0.0)
-Sent: Player 2: (8.0, 3.5, 0.0)
-Sent: Player 1: (-8.0, 2.9, 0.0)
-Sent: Player 2: (8.0, 2.9, 0.0)
-Sent: Player 1: (-8.0, 2.5, 0.0)
-Sent: Player 2: (8.0, 2.5, 0.0)
-Sent: Player 1: (-8.0, 1.8, 0.0)
-Sent: Player 2: (8.0, 1.8, 0.0)
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.8, 0.0)
-Sent: Player 2: (8.0, 0.8, 0.0)
-Sent: Player 1: (-8.0, 0.7, 0.0)
-Sent: Player 2: (8.0, 0.7, 0.0)
-Sent: Player 1: (-8.0, 0.7, 0.0)
-Sent: Player 2: (8.0, 0.7, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -1.1, 0.0)
-Sent: Player 2: (8.0, -1.1, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -1.1, 0.0)
-Sent: Player 2: (8.0, -1.1, 0.0)
-Sent: Player 1: (-8.0, -1.1, 0.0)
-Sent: Player 2: (8.0, -1.1, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -1.3, 0.0)
-Sent: Player 2: (8.0, -1.3, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -1.3, 0.0)
-Sent: Player 2: (8.0, -1.3, 0.0)
-Sent: Player 1: (-8.0, -1.4, 0.0)
-Sent: Player 2: (8.0, -1.4, 0.0)
-Sent: Player 1: (-8.0, -1.5, 0.0)
-Sent: Player 2: (8.0, -1.5, 0.0)
-Sent: Player 1: (-8.0, -1.6, 0.0)
-Sent: Player 2: (8.0, -1.6, 0.0)
-Sent: Player 1: (-8.0, -1.7, 0.0)
-Sent: Player 2: (8.0, -1.7, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.9, 0.0)
-Sent: Player 2: (8.0, -1.9, 0.0)
-Sent: Player 1: (-8.0, -1.9, 0.0)
-Sent: Player 2: (8.0, -1.9, 0.0)
-Sent: Player 1: (-8.0, -1.9, 0.0)
-Sent: Player 2: (8.0, -1.9, 0.0)
-Sent: Player 1: (-8.0, -1.9, 0.0)
-Sent: Player 2: (8.0, -1.9, 0.0)
-Sent: Player 1: (-8.0, -1.9, 0.0)
-Sent: Player 2: (8.0, -1.9, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.6, 0.0)
-Sent: Player 2: (8.0, -1.6, 0.0)
-Sent: Player 1: (-8.0, -1.5, 0.0)
-Sent: Player 2: (8.0, -1.5, 0.0)
-Sent: Player 1: (-8.0, -1.3, 0.0)
-Sent: Player 2: (8.0, -1.3, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 3.7, 0.0)
-Sent: Player 2: (8.0, 3.7, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 3.8, 0.0)
-Sent: Player 2: (8.0, 3.8, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 3.8, 0.0)
-Sent: Player 2: (8.0, 3.8, 0.0)
-Sent: Player 1: (-8.0, 3.8, 0.0)
-Sent: Player 2: (8.0, 3.8, 0.0)
-Sent: Player 1: (-8.0, 3.8, 0.0)
-Sent: Player 2: (8.0, 3.8, 0.0)
-Sent: Player 1: (-8.0, 3.9, 0.0)
-Sent: Player 2: (8.0, 3.9, 0.0)
-Sent: Player 1: (-8.0, 3.9, 0.0)
-Sent: Player 2: (8.0, 3.9, 0.0)
-Sent: Player 1: (-8.0, 4.0, 0.0)
-Sent: Player 2: (8.0, 4.0, 0.0)
-Sent: Player 1: (-8.0, 4.0, 0.0)
-Sent: Player 2: (8.0, 4.0, 0.0)
-Sent: Player 1: (-8.0, 4.1, 0.0)
-Sent: Player 2: (8.0, 4.1, 0.0)
-Sent: Player 1: (-8.0, 4.1, 0.0)
-Sent: Player 2: (8.0, 4.1, 0.0)
-Sent: Player 1: (-8.0, 4.2, 0.0)
-Sent: Player 2: (8.0, 4.2, 0.0)
-Sent: Player 1: (-8.0, 4.2, 0.0)
-Sent: Player 2: (8.0, 4.2, 0.0)
-Sent: Player 1: (-8.0, 4.2, 0.0)
-Sent: Player 2: (8.0, 4.2, 0.0)
-Sent: Player 1: (-8.0, 4.2, 0.0)
-Sent: Player 2: (8.0, 4.2, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Sent: Player 1: (-8.0, 1.4, 0.0)
-Sent: Player 2: (8.0, 1.4, 0.0)
-Sent: Player 1: (-8.0, 1.3, 0.0)
-Sent: Player 2: (8.0, 1.3, 0.0)
-Sent: Player 1: (-8.0, 1.3, 0.0)
-Sent: Player 2: (8.0, 1.3, 0.0)
-Sent: Player 1: (-8.0, 1.3, 0.0)
-Sent: Player 2: (8.0, 1.3, 0.0)
-Sent: Player 1: (-8.0, 1.3, 0.0)
-Sent: Player 2: (8.0, 1.3, 0.0)
-Sent: Player 1: (-8.0, 1.2, 0.0)
-Sent: Player 2: (8.0, 1.2, 0.0)
-Sent: Player 1: (-8.0, 1.2, 0.0)
-Sent: Player 2: (8.0, 1.2, 0.0)
-Sent: Player 1: (-8.0, 1.2, 0.0)
-Sent: Player 2: (8.0, 1.2, 0.0)
-Sent: Player 1: (-8.0, 1.1, 0.0)
-Sent: Player 2: (8.0, 1.1, 0.0)
-Sent: Player 1: (-8.0, 1.1, 0.0)
-Sent: Player 2: (8.0, 1.1, 0.0)
-Sent: Player 1: (-8.0, 1.1, 0.0)
-Sent: Player 2: (8.0, 1.1, 0.0)
-Sent: Player 1: (-8.0, 1.0, 0.0)
-Sent: Player 2: (8.0, 1.0, 0.0)
-Sent: Player 1: (-8.0, 1.0, 0.0)
-Sent: Player 2: (8.0, 1.0, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 0.9, 0.0)
-Sent: Player 2: (8.0, 0.9, 0.0)
-Sent: Player 1: (-8.0, 1.0, 0.0)
-Sent: Player 2: (8.0, 1.0, 0.0)
-Sent: Player 1: (-8.0, 1.1, 0.0)
-Sent: Player 2: (8.0, 1.1, 0.0)
-Sent: Player 1: (-8.0, 1.1, 0.0)
-Sent: Player 2: (8.0, 1.1, 0.0)
-Sent: Player 1: (-8.0, 1.2, 0.0)
-Sent: Player 2: (8.0, 1.2, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 1Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 1Client 2Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Client 2Client 1Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 2Client 1Client 2
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -4.5, 0.0)
-Sent: Player 2: (8.0, -4.5, 0.0)
-Sent: Player 1: (-8.0, -3.7, 0.0)
-Sent: Player 2: (8.0, -3.7, 0.0)
-Sent: Player 1: (-8.0, -2.9, 0.0)
-Sent: Player 2: (8.0, -2.9, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -2.2, 0.0)
-Sent: Player 2: (8.0, -2.2, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.8, 0.0)
-Sent: Player 2: (8.0, -1.8, 0.0)
-Sent: Player 1: (-8.0, -1.6, 0.0)
-Sent: Player 2: (8.0, -1.6, 0.0)
-Sent: Player 1: (-8.0, -1.6, 0.0)
-Sent: Player 2: (8.0, -1.6, 0.0)
-Sent: Player 1: (-8.0, -1.7, 0.0)
-Sent: Player 2: (8.0, -1.7, 0.0)
-Sent: Player 1: (-8.0, -1.7, 0.0)
-Sent: Player 2: (8.0, -1.7, 0.0)
-Sent: Player 1: (-8.0, -1.7, 0.0)
-Sent: Player 2: (8.0, -1.7, 0.0)
-Sent: Player 1: (-8.0, -1.5, 0.0)
-Sent: Player 2: (8.0, -1.5, 0.0)
-Sent: Player 1: (-8.0, -1.3, 0.0)
-Sent: Player 2: (8.0, -1.3, 0.0)
-Sent: Player 1: (-8.0, -0.9, 0.0)
-Sent: Player 2: (8.0, -0.9, 0.0)
-Sent: Player 1: (-8.0, -0.4, 0.0)
-Sent: Player 2: (8.0, -0.4, 0.0)
-Sent: Player 1: (-8.0, 1.3, 0.0)
-Sent: Player 2: (8.0, 1.3, 0.0)
-Sent: Player 1: (-8.0, 3.2, 0.0)
-Sent: Player 2: (8.0, 3.2, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
-Sent: Player 1: (-8.0, 4.5, 0.0)
-Sent: Player 2: (8.0, 4.5, 0.0)
+Client 2
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Client 2
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Client 2
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.2, 0.0)
+Sent: (8.0, 4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.1, 0.0)
+Sent: (8.0, 4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.1, 0.0)
+Sent: (8.0, 4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.0, 0.0)
+Sent: (8.0, 4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.0, 0.0)
+Sent: (8.0, 4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.0, 0.0)
+Sent: (8.0, 4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 3.9, 0.0)
+Sent: (8.0, 3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 3.8, 0.0)
+Sent: (8.0, 3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 3.7, 0.0)
+Sent: (8.0, 3.7, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 3.3, 0.0)
+Sent: (8.0, 3.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 2.9, 0.0)
+Sent: (8.0, 2.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 2.9, 0.0)
+Sent: (8.0, 2.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 2.6, 0.0)
+Sent: (8.0, 2.6, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 2.2, 0.0)
+Sent: (8.0, 2.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 1.8, 0.0)
+Sent: (8.0, 1.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 1.4, 0.0)
+Sent: (8.0, 1.4, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 1.1, 0.0)
+Sent: (8.0, 1.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -0.2, 0.0)
+Sent: (8.0, -0.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -1.1, 0.0)
+Sent: (8.0, -1.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -1.7, 0.0)
+Sent: (8.0, -1.7, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.2, 0.0)
+Sent: (8.0, -2.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.4, 0.0)
+Sent: (8.0, -2.4, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.5, 0.0)
+Sent: (8.0, -2.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.6, 0.0)
+Sent: (8.0, -2.6, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.7, 0.0)
+Sent: (8.0, -2.7, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.9, 0.0)
+Sent: (8.0, -2.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.0, 0.0)
+Sent: (8.0, -3.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.1, 0.0)
+Sent: (8.0, -3.1, 0.0)
+Sent: 0.36 0.04 0
+Sent: (-8.0, -3.2, 0.0)
+Sent: (8.0, -3.2, 0.0)
+Sent: 0.72 0.08 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: 1.08 0.12 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 1.44 0.16 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: 1.8 0.2 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: 1.8 0.2 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: 2.16 0.24 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 2.52 0.28 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 2.88 0.32 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 3.24 0.36 0
+Sent: (-8.0, -4.3, 0.0)
+Sent: (8.0, -4.3, 0.0)
+Sent: 3.599999 0.3999999 0
+Sent: (-8.0, -4.4, 0.0)
+Sent: (8.0, -4.4, 0.0)
+Sent: 3.599999 0.3999999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 3.959999 0.4399999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 4.319999 0.4799999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 4.679999 0.5199999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 5.039999 0.5599999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 5.4 0.6 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 5.4 0.6 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 5.76 0.64 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 6.12 0.68 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 6.48 0.72 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 6.84 0.7600001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 6.84 0.7600001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 7.2 0.8000001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 7.56 0.8400001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 7.920001 0.8800001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 8.280001 0.9200001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 8.64 0.9600002 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 8.64 0.9600002 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 9 1 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 9.36 1.04 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 9.719999 1.08 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 10.08 1.12 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 10.44 1.16 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 10.44 1.16 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -0.36 -0.04 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -0.72 -0.08 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -1.08 -0.12 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -1.44 -0.16 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -1.44 -0.16 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -1.8 -0.2 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -2.16 -0.24 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -2.52 -0.28 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -2.88 -0.32 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -3.24 -0.36 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -3.24 -0.36 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -3.599999 -0.3999999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -3.959999 -0.4399999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -4.319999 -0.4799999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -4.679999 -0.5199999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -4.679999 -0.5199999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -5.039999 -0.5599999 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -5.4 -0.6 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -5.76 -0.64 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -6.12 -0.68 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -6.48 -0.72 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -6.48 -0.72 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -6.84 -0.7600001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -7.2 -0.8000001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -7.56 -0.8400001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -7.920001 -0.8800001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -8.280001 -0.9200001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -8.280001 -0.9200001 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -8.64 -0.9600002 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -9 -1 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -9.36 -1.04 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -9.719999 -1.08 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -10.08 -1.12 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -10.08 -1.12 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: -10.44 -1.16 0
+Sent: (-8.0, -4.3, 0.0)
+Sent: (8.0, -4.3, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: -0.36 -0.04 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: -0.72 -0.08 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: -0.72 -0.08 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: -1.08 -0.12 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: -1.44 -0.16 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: -1.8 -0.2 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: -2.16 -0.24 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: -2.52 -0.28 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: -2.52 -0.28 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: -2.88 -0.32 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: -3.24 -0.36 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: -3.599999 -0.3999999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -3.959999 -0.4399999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -4.319999 -0.4799999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -4.319999 -0.4799999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -4.679999 -0.5199999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -5.039999 -0.5599999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -5.4 -0.6 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -5.76 -0.64 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -6.12 -0.68 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -6.12 -0.68 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -6.48 -0.72 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -6.84 -0.7600001 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -7.2 -0.8000001 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -7.56 -0.8400001 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -7.920001 -0.8800001 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -8.280001 -0.9200001 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -8.280001 -0.9200001 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -8.64 -0.9600002 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -9 -1 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -9.36 -1.04 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -9.719999 -1.08 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -9.719999 -1.08 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -10.08 -1.12 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: -10.44 -1.16 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.7, 0.0)
+Sent: (8.0, -3.7, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0.36 0.04 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0.36 0.04 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 0.72 0.08 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 1.08 0.12 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 1.44 0.16 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 1.8 0.2 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 2.16 0.24 0
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 2.16 0.24 0
+Sent: (-8.0, -3.9, 0.0)
+Sent: (8.0, -3.9, 0.0)
+Sent: 2.52 0.28 0
+Sent: (-8.0, -3.6, 0.0)
+Sent: (8.0, -3.6, 0.0)
+Sent: 2.88 0.32 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 3.24 0.36 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 3.599999 0.3999999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: 3.959999 0.4399999 0
+Sent: (-8.0, -3.4, 0.0)
+Sent: (8.0, -3.4, 0.0)
+Sent: 3.959999 0.4399999 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 4.319999 0.4799999 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 4.679999 0.5199999 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 5.039999 0.5599999 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 5.4 0.6 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 5.76 0.64 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 5.76 0.64 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 6.12 0.68 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 6.48 0.72 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 6.84 0.7600001 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 7.2 0.8000001 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 7.56 0.8400001 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 7.56 0.8400001 0
+Sent: (-8.0, -3.3, 0.0)
+Sent: (8.0, -3.3, 0.0)
+Sent: 7.920001 0.8800001 0
+Sent: (-8.0, -3.5, 0.0)
+Sent: (8.0, -3.5, 0.0)
+Sent: 8.280001 0.9200001 0
+Sent: (-8.0, -3.8, 0.0)
+Sent: (8.0, -3.8, 0.0)
+Sent: 8.64 0.9600002 0
+Sent: (-8.0, -4.2, 0.0)
+Sent: (8.0, -4.2, 0.0)
+Sent: 9 1 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 9.36 1.04 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 9.36 1.04 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 9.719999 1.08 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 10.08 1.12 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 10.44 1.16 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.1, 0.0)
+Sent: (8.0, -4.1, 0.0)
+Sent: 0 0 0
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -2.4, 0.0)
+Sent: (8.0, -2.4, 0.0)
+Sent: 0 0 0
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.7, 0.0)
+Sent: (8.0, -0.7, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.3, 0.0)
+Sent: (8.0, -0.3, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.2, 0.0)
+Sent: (8.0, -0.2, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.2, 0.0)
+Sent: (8.0, -0.2, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.2, 0.0)
+Sent: (8.0, -0.2, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.2, 0.0)
+Sent: (8.0, -0.2, 0.0)
+Sent: 0 0 0
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -0.8, 0.0)
+Sent: (8.0, -0.8, 0.0)
+Sent: 0 0 0
+Client 2Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -1.7, 0.0)
+Sent: (8.0, -1.7, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -2.6, 0.0)
+Sent: (8.0, -2.6, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.0, 0.0)
+Sent: (8.0, -4.0, 0.0)
+Sent: 0 0 0
+Client 2Client 1Client 1Client 2Client 1Client 2Client 1Client 2Client 1Client 2Client 1
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -4.5, 0.0)
+Sent: (8.0, -4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, -2.1, 0.0)
+Sent: (8.0, -2.1, 0.0)
+Sent: 0.36 0.04 0
+Sent: (-8.0, 1.1, 0.0)
+Sent: (8.0, 1.1, 0.0)
+Sent: 0.36 0.04 0
+Sent: (-8.0, 2.0, 0.0)
+Sent: (8.0, 2.0, 0.0)
+Sent: 0.72 0.08 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 1.08 0.12 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 1.44 0.16 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 1.8 0.2 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 2.16 0.24 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 2.16 0.24 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 2.52 0.28 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 2.88 0.32 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 3.24 0.36 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 3.599999 0.3999999 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 3.959999 0.4399999 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 3.959999 0.4399999 0
+Sent: (-8.0, 2.5, 0.0)
+Sent: (8.0, 2.5, 0.0)
+Sent: 4.319999 0.4799999 0
+Sent: (-8.0, 2.6, 0.0)
+Sent: (8.0, 2.6, 0.0)
+Sent: 4.679999 0.5199999 0
+Sent: (-8.0, 2.7, 0.0)
+Sent: (8.0, 2.7, 0.0)
+Sent: 5.039999 0.5599999 0
+Sent: (-8.0, 2.9, 0.0)
+Sent: (8.0, 2.9, 0.0)
+Sent: 5.4 0.6 0
+Sent: (-8.0, 3.0, 0.0)
+Sent: (8.0, 3.0, 0.0)
+Sent: 5.76 0.64 0
+Sent: (-8.0, 3.2, 0.0)
+Sent: (8.0, 3.2, 0.0)
+Sent: 5.76 0.64 0
+Sent: (-8.0, 3.3, 0.0)
+Sent: (8.0, 3.3, 0.0)
+Sent: 6.12 0.68 0
+Sent: (-8.0, 3.5, 0.0)
+Sent: (8.0, 3.5, 0.0)
+Sent: 6.48 0.72 0
+Sent: (-8.0, 3.7, 0.0)
+Sent: (8.0, 3.7, 0.0)
+Sent: 6.84 0.7600001 0
+Sent: (-8.0, 3.9, 0.0)
+Sent: (8.0, 3.9, 0.0)
+Sent: 7.2 0.8000001 0
+Sent: (-8.0, 4.3, 0.0)
+Sent: (8.0, 4.3, 0.0)
+Sent: 7.2 0.8000001 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 7.56 0.8400001 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 7.920001 0.8800001 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 8.280001 0.9200001 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 8.64 0.9600002 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 9 1 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 9 1 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 9.36 1.04 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 9.719999 1.08 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 10.08 1.12 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 10.44 1.16 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0 0 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0.36 0.04 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 0.72 0.08 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 1.08 0.12 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 1.44 0.16 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 1.8 0.2 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 1.8 0.2 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 2.16 0.24 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 2.52 0.28 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 2.88 0.32 0
+Sent: (-8.0, 4.5, 0.0)
+Sent: (8.0, 4.5, 0.0)
+Sent: 3.24 0.36 0

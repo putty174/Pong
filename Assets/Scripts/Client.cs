@@ -9,7 +9,7 @@ using System.Threading;
 
 public class Client : MonoBehaviour {
 
-	const string serverLocation = "169.234.25.33";
+	const string serverLocation = "128.195.11.124";
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
