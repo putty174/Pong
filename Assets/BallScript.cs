@@ -31,8 +31,6 @@ public class BallScript : MonoBehaviour {
 	public GameObject player2Top;
 	public GameObject player2Bottom;
 
-
-
 	// velocity reset
 	private int velocityReset;
 
@@ -40,17 +38,7 @@ public class BallScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		Invoke("BallStart", 3);
-		
-
-
-
-
-
-
-
-	
 	}
 
 	void Update()

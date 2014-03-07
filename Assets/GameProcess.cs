@@ -4,7 +4,8 @@ using System.Collections;
 public class GameProcess : MonoBehaviour {
 
 	private GameObject p1;
-		private GameObject p2;
+	private GameObject p2;
+	private GameObject ball;
 
 	//PRIVATE MEMBERS
 	private Sockets sockets;
