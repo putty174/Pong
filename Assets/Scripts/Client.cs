@@ -9,7 +9,7 @@ using System.Threading;
 
 public class Client : MonoBehaviour {
 
-	const string serverLocation = "169.234.25.33";
+	const string serverLocation = "128.195.11.124";
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
@@ -87,6 +87,21 @@ public class Client : MonoBehaviour {
 		}
 		if ( client == null ) return false;
 		return client.Connected;
+	}
+
+	public bool StartGame()
+	{
+		try
+		{
+			nws.WriteByte(255);
+		}
+		catch(Exception ex)
+		{
+			print ( ex.Message + " : OnStartGame");
+		}
+
+		Debug.Log("start game");
+		return true;
 	}
 
 	public void Send(String message)
