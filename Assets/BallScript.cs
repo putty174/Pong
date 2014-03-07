@@ -3,6 +3,11 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
+
+	public static Vector3 ballPosition;
+
+
+
 	// Start speed of the ball
 	public float ballSpeed = 100;
 
@@ -20,6 +25,9 @@ public class BallScript : MonoBehaviour {
 
 	// A ball reset trigger 
 	private bool ballReset = false;
+
+
+	private int ballIsHit = 1;
 
 	// velocity
 	//private int velocityY = rigidbody2D.velocity.y;
@@ -43,9 +51,12 @@ public class BallScript : MonoBehaviour {
 
 	void Update()
 	{
+		changeBallColor ();
+
+
 		//________SEND POSITIONS TO SERVER HERE_________
 
-
+		ballPosition = transform.position;
 
 	}
 
@@ -113,6 +124,10 @@ public class BallScript : MonoBehaviour {
 			var velocityY = rigidbody2D.velocity.y;
 			velocityY = velocityY/2 + colInfo.collider.rigidbody2D.velocity.y/3;
 			//}
+
+			ballIsHit = ballIsHit * -1;
+
+
 		}
 		if(colInfo.collider.tag == "Player1Top")
 		{
@@ -134,6 +149,9 @@ public class BallScript : MonoBehaviour {
 			//else{
 			var velocityY = rigidbody2D.velocity.y * -1.0f;
 			velocityY = velocityY/2 + colInfo.collider.rigidbody2D.velocity.y/3;
+
+			ballIsHit = ballIsHit * -1;
+
 			//}
 		}
 		if(colInfo.collider.tag == "Player2Top")
@@ -147,6 +165,22 @@ public class BallScript : MonoBehaviour {
 
 	
 	}
+
+
+
+	void changeBallColor()
+	{
+		if(ballIsHit == -1)
+		{
+			transform.GetComponent<SpriteRenderer>().color = Color.green;
+		}
+
+		if(ballIsHit == 1)
+		{
+			transform.GetComponent<SpriteRenderer>().color = Color.white;
+		}
+	}
+
 
 
 //	void OnCollisionEnter2D(Collision2D colInfo)
