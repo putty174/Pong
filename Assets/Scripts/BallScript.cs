@@ -26,6 +26,13 @@ public class BallScript : MonoBehaviour {
 
 
 
+	public GameObject player1Top;
+	public GameObject player1Bottom;
+	public GameObject player2Top;
+	public GameObject player2Bottom;
+
+
+
 	// velocity reset
 	private int velocityReset;
 
@@ -46,16 +53,38 @@ public class BallScript : MonoBehaviour {
 	
 	}
 
+	void Update()
+	{
+		//________SEND POSITIONS TO SERVER HERE_________
+
+
+
+	}
+
+
+
+
 	public void BallStart()
 	{
 
+
+
 		var randomNumber = Random.Range(0,2);
+
+		//if collides with player 1, go positive constant direction
 		if(randomNumber <= 0.5)
 		{
+
+
+
 			rigidbody2D.AddForce(new Vector2 (ballSpeed, 10));
 		}
 		else
 		{
+
+
+
+			//if collides with player 2, go negative constant directioin
 			rigidbody2D.AddForce(new Vector2 (-ballSpeed, -10));
 		}
 	}
@@ -70,6 +99,67 @@ public class BallScript : MonoBehaviour {
 
 		Invoke("BallStart", .5f);
 	}
+
+
+
+	void OnCollisionEnter2D(Collision2D colInfo)
+	{
+
+		var randomUpAngle1 = Random.Range (0,80);//Random angle away from player 1 if ball hits top of paddle
+		var randomDownAngle1 = Random.Range (-80, 0);//Random angle away from player 1 if ball hits bottom of paddle
+		
+		var randomUpAngle2 = Random.Range (100, 180);
+		var randomDownAngle2 = Random.Range (-180, -100);
+
+
+
+
+
+		if(colInfo.collider.tag == "Player1")
+		{
+			//if(true)
+			//{
+			//}
+
+			//else{
+			var velocityY = rigidbody2D.velocity.y;
+			velocityY = velocityY/2 + colInfo.collider.rigidbody2D.velocity.y/3;
+			//}
+		}
+		if(colInfo.collider.tag == "Player1Top")
+		{
+			transform.Rotate (0,0,randomUpAngle1);
+		}
+		if(colInfo.collider.tag == "Player1Bottom")
+		{
+			transform.Rotate (0,0,randomDownAngle1);
+		}
+
+
+
+
+		if(colInfo.collider.tag == "Player2")
+		{
+			//if(true)
+			//{
+			//}
+			//else{
+			var velocityY = rigidbody2D.velocity.y * -1.0f;
+			velocityY = velocityY/2 + colInfo.collider.rigidbody2D.velocity.y/3;
+			//}
+		}
+		if(colInfo.collider.tag == "Player2Top")
+		{
+			transform.Rotate (0,0,randomUpAngle2);
+		}
+		if(colInfo.collider.tag == "Player2Bottom")
+		{
+			transform.Rotate (0,0,randomDownAngle2);
+		}
+
+	
+	}
+
 
 //	void OnCollisionEnter2D(Collision2D colInfo)
 //	{

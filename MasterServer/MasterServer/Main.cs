@@ -15,7 +15,9 @@ namespace MasterServer
 
 		public static void Main (string[] args)
 		{
-			
+			Console.WriteLine(" >> " + "Welcome to the Pong2D server!");
+			Console.WriteLine(" >> " + "Wainting for clients.....");
+
 			MainServer ms = new MainServer();
 			
 		}
@@ -35,6 +37,9 @@ namespace MasterServer
 		TcpClient[] clientList;
 		Thread listenThread1;
 		Thread listenThread2;
+		string clientNo;
+		NetworkStream stream1;
+		NetworkStream stream2;
 		
 		public MainServer()
 		{
@@ -52,41 +57,62 @@ namespace MasterServer
 		{
 			this.listener.Start();
 
-			Console.WriteLine(" >> " + "Welcome to the Pong2D server!");
-			Console.WriteLine(" >> " + "Wainting for clients.....");
-
 			try
 			{
-				while(connectedPlayers <= maxPlayers)
+				Console.WriteLine(connectedPlayers);
+				while(connectedPlayers < maxPlayers)
 				{
-					TcpClient client = this.listener.AcceptTcpClient();
-					++connectedPlayers;
-					Console.WriteLine(" >> " + "Client No: " + Convert.ToString(connectedPlayers) + " has connected!"); 
-					clientList[connectedPlayers] = client;
-					
+					TcpClient tcpClient = this.listener.AcceptTcpClient();
+					Console.WriteLine(" >> " + "Client No: " + Convert.ToString(connectedPlayers + 1) + " has connected!"); 
+					clientList[connectedPlayers] = tcpClient;
+					if(connectedPlayers == 0)
+					{
+						stream1 = clientList[connectedPlayers].GetStream;
+						stream1.WriteByte(0);
+					}
+					else if(connectedPlayers == 1)
+					{
+						stream2 = clientList[connectedPlayers].GetStream;
+						stream2.WriteByte(1);
+					}
+				
+
+
+					//handleClient client = new handleClient(); 
+					//client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
+
+					connectedPlayers++;
+
 				}
 				Console.WriteLine("<< 2 clinets have connected to the the Pong2D server");
 				Console.WriteLine("<< Waiting for clients to send the start command....");
 
 				byte[] data1 = new byte[1024];
 				byte[] data2 = new byte[1024];
+				byte[] send;
 
 				String mes1, mes2;
 				while(true)
 				{
+					mes1 = "";
+					mes2 = "";
 					NetworkStream stream1 = clientList[0].GetStream();
 					NetworkStream stream2 = clientList[1].GetStream();
 
-					for(int i = stream1.Read(data1,0,data1.Length);i != 0; i = stream1.Read(data1,0,data1.Length))
-					{
-						mes1 = System.Text.Encoding.ASCII.GetString(data1,0,i);
-						Console.WriteLine("Recieved: {0}", mes1);
-					}
-					for(int i = stream2.Read(data2,0,data2.Length);i != 0; i = stream2.Read (data2,0,data2.Length))
-					{
-						mes2 = System.Text.Encoding.ASCII.GetString(data2,0,i);
-						Console.WriteLine("Recieved: {0}", mes2);
-					}
+					stream1.Read(data1,0,data1.Length);
+					mes1 = System.Text.Encoding.ASCII.GetString(data1,0,data1.Length);
+					send = Encoding.ASCII.GetBytes("Client 1");
+					stream1.Write (send,0,send.Length);
+					stream2.Write(send,0,send.Length);
+					Console.WriteLine(" >> Client 1: {0}", mes1);
+
+					stream2.Read(data2,0,data2.Length);
+					mes2 = System.Text.Encoding.ASCII.GetString(data2,0,data1.Length);
+					send = Encoding.ASCII.GetBytes("Client 2");
+					stream1.Write (send,0,send.Length);
+					stream2.Write(send,0,send.Length);
+					Console.WriteLine(" >> Client 2: {0}", mes2);
+
 					Console.WriteLine("");
 				}
 			}
@@ -98,12 +124,58 @@ namespace MasterServer
 			{
 				this.listener.Stop();
 			}
-
-
-
-
-			
-			
 		}
+
 	}
+
+
+//	public class handleClient
+//	{
+//		TcpClient clientSocket;
+//		string clientNo;
+//		public void startClient(TcpClient inClientSocket, string clientNo)
+//		{
+//			this.clientSocket = inClientSocket;
+//			this.clientNo = clientNo;
+//
+//		}
+//
+//		private void ChattingTime()
+//		{
+//
+//			int requestCount = 0;
+//			byte[] bytesFrom = new byte[1024];
+//			string dataFromClient = null;
+//			Byte[] sendBytes = null;
+//			string serverResponse = null;
+//			string rCount = null;
+//			requestCount = 0;
+//			
+//			String mes1, mes2;
+//			while(true)
+//			{
+//				try
+//				{
+//					requestCount = requestCount + 1;
+//					NetworkStream nws = clientSocket.GetStream();
+//					nws.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
+//					dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
+//					dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
+//					Console.WriteLine(" >> " + "From client-" + clientNo + dataFromClient);
+//					
+//					rCount = Convert.ToString(requestCount);
+//					serverResponse = "Server to clinet(" + clientNo + ") " + rCount;
+//					sendBytes = Encoding.ASCII.GetBytes(serverResponse);
+//					nws.Write(sendBytes, 0, sendBytes.Length);
+//					nws.Flush();
+//					Console.WriteLine(" >> " + serverResponse);
+//				}
+//				catch(Exception ex)
+//				{
+//					Console.WriteLine(" >> " + ex.ToString());
+//				}
+//
+//			}
+//		}
+//	}
 }
