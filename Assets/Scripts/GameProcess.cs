@@ -59,12 +59,12 @@ public class GameProcess : MonoBehaviour {
 		 //            + BallScript.ballPosition.z);
 
 		//OK for TCP
-		client.Send (""+p1.transform.position);
-		client.Send (""+p2.transform.position);
-		
-		client.Send (BallScript.ballPosition.x + " " 
-		             + BallScript.ballPosition.y + " " 
-		             + BallScript.ballPosition.z);
+//		client.Send (""+p1.transform.position);
+//		client.Send (""+p2.transform.position);
+//		
+//		client.Send (BallScript.ballPosition.x + " " 
+//		             + BallScript.ballPosition.y + " " 
+//		             + BallScript.ballPosition.z);
 
 
 
