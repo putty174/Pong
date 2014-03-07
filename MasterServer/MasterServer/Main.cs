@@ -104,16 +104,16 @@ namespace MasterServer
 					send = Encoding.ASCII.GetBytes("Client 1");
 					stream1.Write (send,0,send.Length);
 					stream2.Write(send,0,send.Length);
-					Console.WriteLine(" >> Client 1: {0}", mes1);
+					Console.WriteLine(" >> Client 1: " + mes1 + System.Environment.NewLine);
 
 					stream2.Read(data2,0,data2.Length);
 					mes2 = System.Text.Encoding.ASCII.GetString(data2,0,data1.Length);
 					send = Encoding.ASCII.GetBytes("Client 2");
 					stream1.Write (send,0,send.Length);
 					stream2.Write(send,0,send.Length);
-					Console.WriteLine(" >> Client 2: {0}", mes2);
+                    Console.WriteLine(" >> Client 2: " + mes2 + System.Environment.NewLine);
 
-					Console.WriteLine("");
+					Console.WriteLine(System.Environment.NewLine);
 				}
 			}
 			catch(Exception ex)
