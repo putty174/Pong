@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
 
 	void OnGUI () {
 		GUI.skin = skin;
-		GUI.Label (new Rect (Screen.width/2 - 50, 20, 150,150), title);
+		GUI.Label (new Rect (Screen.width/2 - 50, 20, 300,300), title);
 	}
 
 	// Use this for initialization
