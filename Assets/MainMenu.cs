@@ -3,11 +3,12 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
-	GUISkin skin;
-	public Texture2D logoTexture;
+	public GUISkin skin;
+	string title = "Pong2D";
 
 	void OnGUI () {
-		GUI.Label (new Rect (0,0,100,50), logoTexture);
+		GUI.skin = skin;
+		GUI.Label (new Rect (Screen.width/2 - 50, 20, 150,150), title);
 	}
 
 	// Use this for initialization

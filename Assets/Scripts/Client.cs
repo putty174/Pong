@@ -89,6 +89,21 @@ public class Client : MonoBehaviour {
 		return client.Connected;
 	}
 
+	public bool StartGame()
+	{
+		try
+		{
+			nws.WriteByte(255);
+		}
+		catch(Exception ex)
+		{
+			print ( ex.Message + " : OnStartGame");
+		}
+
+		Debug.Log("start game");
+		return true;
+	}
+
 	public void Send(String message)
 	{
 		try
