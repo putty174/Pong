@@ -38,8 +38,12 @@ namespace MasterServer
 		Thread listenThread1;
 		Thread listenThread2;
 		string clientNo;
+
 		NetworkStream stream1;
 		NetworkStream stream2;
+        int mes1, mes2;
+        bool start1, start2;
+        byte[] send;
 		
 		public MainServer()
 		{
@@ -67,12 +71,12 @@ namespace MasterServer
 					clientList[connectedPlayers] = tcpClient;
 					if(connectedPlayers == 0)
 					{
-						stream1 = clientList[connectedPlayers].GetStream;
+						stream1 = clientList[connectedPlayers].GetStream();
 						stream1.WriteByte(0);
 					}
 					else if(connectedPlayers == 1)
 					{
-						stream2 = clientList[connectedPlayers].GetStream;
+						stream2 = clientList[connectedPlayers].GetStream();
 						stream2.WriteByte(1);
 					}
 				
@@ -87,33 +91,9 @@ namespace MasterServer
 				Console.WriteLine("<< 2 clinets have connected to the the Pong2D server");
 				Console.WriteLine("<< Waiting for clients to send the start command....");
 
-				byte[] data1 = new byte[1024];
-				byte[] data2 = new byte[1024];
-				byte[] send;
-
-				String mes1, mes2;
 				while(true)
 				{
-					mes1 = "";
-					mes2 = "";
-					NetworkStream stream1 = clientList[0].GetStream();
-					NetworkStream stream2 = clientList[1].GetStream();
-
-					stream1.Read(data1,0,data1.Length);
-					mes1 = System.Text.Encoding.ASCII.GetString(data1,0,data1.Length);
-					send = Encoding.ASCII.GetBytes("Client 1");
-					stream1.Write (send,0,send.Length);
-					stream2.Write(send,0,send.Length);
-					Console.WriteLine(" >> Client 1: " + mes1 + System.Environment.NewLine);
-
-					stream2.Read(data2,0,data2.Length);
-					mes2 = System.Text.Encoding.ASCII.GetString(data2,0,data1.Length);
-					send = Encoding.ASCII.GetBytes("Client 2");
-					stream1.Write (send,0,send.Length);
-					stream2.Write(send,0,send.Length);
-                    Console.WriteLine(" >> Client 2: " + mes2 + System.Environment.NewLine);
-
-					Console.WriteLine(System.Environment.NewLine);
+                    process();
 				}
 			}
 			catch(Exception ex)
@@ -125,6 +105,33 @@ namespace MasterServer
 				this.listener.Stop();
 			}
 		}
+
+        public void process()
+        {
+            mes1 = 0;
+            mes2 = 0;
+
+            mes1 = stream1.ReadByte();
+            mes2 = stream2.ReadByte();
+            if (mes1 == 255 && !start1)
+            {
+                start1 = true;
+            }
+            if (mes2 == 255 && !start2)
+            {
+                start2 = true;
+            }
+            if (start1 && start2)
+            {
+                stream1.WriteByte(0);
+                stream2.WriteByte(0);
+            }
+
+            Console.WriteLine(" >> Client 1: " + mes1 + System.Environment.NewLine);
+            Console.WriteLine(" >> Client 2: " + mes2 + System.Environment.NewLine);
+
+            Console.WriteLine(System.Environment.NewLine);
+        }
 
 	}
 

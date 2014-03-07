@@ -7,6 +7,7 @@ public class GameProcess : MonoBehaviour {
 	private GameObject p1;
 	private GameObject p2;
 	private GameObject ball;
+	private BallScript bscript;
 
 	//PRIVATE MEMBERS
 	private Sockets sockets;
@@ -25,11 +26,17 @@ public class GameProcess : MonoBehaviour {
 
 		p1 = GameObject.Find ("Player1");
 		p2 = GameObject.Find ("Player2");
+		ball = GameObject.Find ("GameBall");
+		bscript = (BallScript) ball.GetComponent("BallScript");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(Input.GetKeyDown("space"))
+		{
+			Debug.Log("HA");
+			bscript.BallStart();
+		}
 		//Assuming that the implementation is that Game contains the Client.cs code
 		//and a main function to make a client object, like GameProcess.cs
 
@@ -52,12 +59,12 @@ public class GameProcess : MonoBehaviour {
 		 //            + BallScript.ballPosition.z);
 
 		//OK for TCP
-		client.Send (""+p1.transform.position);
-		client.Send (""+p2.transform.position);
-		
-		client.Send (BallScript.ballPosition.x + " " 
-		             + BallScript.ballPosition.y + " " 
-		             + BallScript.ballPosition.z);
+//		client.Send (""+p1.transform.position);
+//		client.Send (""+p2.transform.position);
+//		
+//		client.Send (BallScript.ballPosition.x + " " 
+//		             + BallScript.ballPosition.y + " " 
+//		             + BallScript.ballPosition.z);
 
 
 
@@ -72,10 +79,6 @@ public class GameProcess : MonoBehaviour {
 				}
 			}
 		}
-
-
-
-
 	}
 
 	public Sockets returnSocket ()
