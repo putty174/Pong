@@ -9,12 +9,14 @@ public class GameProcess : MonoBehaviour {
 	private GameObject ball;
 	private BallScript bscript;
 
+	private int player = -1;
+
 	//PRIVATE MEMBERS
 	private Sockets sockets;
 	private Client client;
 	private GUIScript gui;
 
-	private byte[] buffer;
+	private int buffer;
 
 	// Use this for initialization
 	void Start () {
@@ -32,11 +34,6 @@ public class GameProcess : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown("space"))
-		{
-			Debug.Log("HA");
-			bscript.BallStart();
-		}
 		//Assuming that the implementation is that Game contains the Client.cs code
 		//and a main function to make a client object, like GameProcess.cs
 
@@ -74,8 +71,29 @@ public class GameProcess : MonoBehaviour {
 			{
 				while(client.receiverBuffer.Count > 0)
 				{
-					buffer = (byte[]) client.receiverBuffer.Dequeue();
-					Debug.Log(System.Text.Encoding.ASCII.GetString(buffer));
+					buffer = (int) client.receiverBuffer.Dequeue();
+					switch(buffer)
+					{
+					case 0:
+						if(player == -1)
+						{
+							player = 1;
+							Debug.Log("Player 1");
+						}
+						else
+						{
+							bscript.BallStart();
+							Debug.Log("Start");
+						}
+						break;
+					case 1:
+						if(player == -1)
+						{
+							player = 2;
+							Debug.Log("Player 2");
+						}
+						break;
+					}
 				}
 			}
 		}

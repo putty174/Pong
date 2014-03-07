@@ -48,6 +48,8 @@ namespace MasterServer
 		public MainServer()
 		{
 			connectedPlayers = 0;
+            start1 = false;
+            start2 = false;
 			clientList = new TcpClient[maxPlayers];
 			listener = new TcpListener(IPAddress.Any, portNumber);
 			listenThread1 = new Thread (new ThreadStart (ListendForTCPClients));

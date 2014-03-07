@@ -7,14 +7,13 @@ using System.Net.Sockets;
 public class TSock : MonoBehaviour
 {
 	private NetworkStream ns;
-	private byte[] buffer;
+	private int buffer;
 	private Client sock;
 
 	public TSock (NetworkStream nsIn, Client sIn)
 	{
 		ns = nsIn;
 		sock = sIn;
-		buffer = new byte[1024];
 	}
 
 	public void process()
@@ -23,7 +22,7 @@ public class TSock : MonoBehaviour
 		{
 			while (sock.isConnected)
 			{
-				ns.Read(buffer,0,buffer.Length);
+				buffer = ns.ReadByte();
 				lock(sock.receiverBuffer)
 				{
 					sock.receiverBuffer.Enqueue(buffer);
