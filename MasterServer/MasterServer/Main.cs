@@ -67,12 +67,12 @@ namespace MasterServer
 					clientList[connectedPlayers] = tcpClient;
 					if(connectedPlayers == 0)
 					{
-						stream1 = clientList[connectedPlayers].GetStream;
+						stream1 = clientList[connectedPlayers].GetStream();
 						stream1.WriteByte(0);
 					}
 					else if(connectedPlayers == 1)
 					{
-						stream2 = clientList[connectedPlayers].GetStream;
+						stream2 = clientList[connectedPlayers].GetStream();
 						stream2.WriteByte(1);
 					}
 				
