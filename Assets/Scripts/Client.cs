@@ -112,7 +112,7 @@ public class Client : MonoBehaviour {
 	{
 		try
 		{
-			nws.WriteByte(255);
+			nws.WriteByte(0);
 		}
 		catch(Exception ex)
 		{

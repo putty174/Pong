@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour {
 		GUI.skin = skin;
 		GUIStyle centeredStyle = GUI.skin.GetStyle("Label");
 		centeredStyle.alignment = TextAnchor.UpperCenter;
+		GUI.Label (new Rect (Screen.width/2 -140, 20, 300,300), title);
 	}
 
 	// Use this for initialization
