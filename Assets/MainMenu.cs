@@ -7,10 +7,10 @@ public class MainMenu : MonoBehaviour {
 	string title = "Pong2D";
 
 	void OnGUI () {
+		GUI.color = Color.white;
 		GUI.skin = skin;
 		GUIStyle centeredStyle = GUI.skin.GetStyle("Label");
 		centeredStyle.alignment = TextAnchor.UpperCenter;
-		GUI.Label (new Rect (Screen.width/2 -25, 20, 300,300), title);
 	}
 
 	// Use this for initialization
