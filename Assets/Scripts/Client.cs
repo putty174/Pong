@@ -89,6 +89,25 @@ public class Client : MonoBehaviour {
 		return client.Connected;
 	}
 
+	public bool Disconnect()
+	{
+		try
+		{
+			nws.Close();
+			client.Close();
+			if(!client.Connected)
+			{
+				t.Abort();
+
+			}
+		}
+		catch(Exception ex)
+		{
+			print ( ex.Message + " : OnDisconnect");
+		}
+		return true;
+	}
+
 	public bool StartGame()
 	{
 		try
