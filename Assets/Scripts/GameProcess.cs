@@ -99,6 +99,18 @@ public class GameProcess : MonoBehaviour {
 		}
 	}
 
+	public void win(int player)
+	{
+		if(player == 1)
+		{
+			client.Send (0);
+		}
+		else
+		{
+			client.Send (1);
+		}
+	}
+
 	public Sockets returnSocket ()
 	{
 		return sockets;

@@ -12,20 +12,13 @@ namespace MasterServer
 {
 	class MainClass
 	{
-
 		public static void Main (string[] args)
 		{
 			Console.WriteLine(" >> " + "Welcome to the Pong2D server!");
 			Console.WriteLine(" >> " + "Wainting for clients.....");
 
 			MainServer ms = new MainServer();
-			
 		}
-
-
-
-
-
 	}
 
 	class MainServer : MainClass
@@ -44,6 +37,12 @@ namespace MasterServer
         int mes1, mes2;
         bool start1, start2;
         byte[] send;
+
+        DateTime t;
+        Random rand = new Random();
+        int oposx, oposy;
+        int nposx, nposy;
+        int vel;
 		
 		public MainServer()
 		{
@@ -56,8 +55,17 @@ namespace MasterServer
 			listenThread1.Start ();
 			listenThread2 = new Thread (new ThreadStart (ListendForTCPClients));
 			listenThread2.Start ();
-			
+            restart();
 		}
+
+        public void restart()
+        {
+            oposx = 128;
+            oposy = 128;
+            nposx = rand.Next(0, 255);
+            nposy = rand.Next(0, 255);
+            vel = 10;
+        }
 		
 		public void ListendForTCPClients()
 		{
@@ -65,7 +73,6 @@ namespace MasterServer
 
 			try
 			{
-				Console.WriteLine(connectedPlayers);
 				while(connectedPlayers < maxPlayers)
 				{
 					TcpClient tcpClient = this.listener.AcceptTcpClient();
@@ -81,9 +88,6 @@ namespace MasterServer
 						stream2 = clientList[connectedPlayers].GetStream();
 						stream2.WriteByte(1);
 					}
-				
-
-
 					//handleClient client = new handleClient(); 
 					//client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
 
@@ -95,6 +99,7 @@ namespace MasterServer
 
 				while(true)
 				{
+                    update();
                     process();
 				}
 			}
@@ -108,6 +113,11 @@ namespace MasterServer
 			}
 		}
 
+        public void update()
+        {
+
+        }
+
         public void process()
         {
             mes1 = 0;
@@ -115,16 +125,45 @@ namespace MasterServer
 
             mes1 = stream1.ReadByte();
             mes2 = stream2.ReadByte();
-            if (mes1 == 255 && !start1)
+            switch (mes1)
             {
-                start1 = true;
+                case 0:
+                    if (!start1)
+                    {
+                        start1 = true;
+                    }
+                    else
+                    {
+                        start1 = false;
+                        start2 = false;
+                        stream2.WriteByte(0);
+                    }
+                    break;
+                case 255:
+                    break;
             }
-            if (mes2 == 255 && !start2)
+
+            switch (mes2)
             {
-                start2 = true;
+                case 0:
+                    if (!start1)
+                    {
+                        start1 = true;
+                    }
+                    else
+                    {
+                        start1 = false;
+                        start2 = false;
+                        stream1.WriteByte(0);
+                    }
+                    break;
+                case 255:
+                    break;
             }
+
             if (start1 && start2)
             {
+                t = DateTime.Now;
                 stream1.WriteByte(0);
                 stream2.WriteByte(0);
             }
