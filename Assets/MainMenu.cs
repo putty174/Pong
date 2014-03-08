@@ -8,7 +8,9 @@ public class MainMenu : MonoBehaviour {
 
 	void OnGUI () {
 		GUI.skin = skin;
-		GUI.Label (new Rect (Screen.width/2 - 50, 20, 300,300), title);
+		GUIStyle centeredStyle = GUI.skin.GetStyle("Label");
+		centeredStyle.alignment = TextAnchor.UpperCenter;
+		GUI.Label (new Rect (Screen.width/2 -25, 20, 300,300), title);
 	}
 
 	// Use this for initialization
