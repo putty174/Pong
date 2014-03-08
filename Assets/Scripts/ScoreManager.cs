@@ -2,10 +2,8 @@
 using System.Collections;
 
 public class ScoreManager : MonoBehaviour {
-
 	// the score limit
 	static public int scoreLimit = 10;
-
 
 	// player 1's score
 	// static to let us easily use this variable from any object form our scene
@@ -22,16 +20,18 @@ public class ScoreManager : MonoBehaviour {
 
 	static public void ScoreCounter(string goal)
 	{
-		// player 1
+		// on player 1's goal
 		if(goal == "Goal1")
 		{
 			player2Score++;
+			GameProcess.win(2);
 		}
 
-		// player 2 
+		// on player 2's goal
 		else if(goal == "Goal2")
 		{
 			player1Score++;
+			GameProcess.win(1);
 		}
 
 		if(player1Score >= scoreLimit || player2Score >= scoreLimit)

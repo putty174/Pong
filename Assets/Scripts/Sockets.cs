@@ -121,7 +121,10 @@ public class Sockets : MonoBehaviour {
 		return udpClient.Client.Connected;
 	}
 
+    public void sendCommand(String command)
+    {
 
+    }
 
 
 

@@ -3,8 +3,6 @@ using System.Collections;
 
 public class GoalScript : MonoBehaviour {
 
-
-
 	public void OnTriggerEnter2D(Collider2D otherGameObject)
 	{
 		if(otherGameObject.name == "GameBall")

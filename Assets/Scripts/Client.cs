@@ -112,23 +112,27 @@ public class Client : MonoBehaviour {
 	{
 		try
 		{
+<<<<<<< HEAD
 			nws.WriteByte(0);
+=======
+			nws.WriteByte(255);
+			Debug.Log("start game");
+>>>>>>> FETCH_HEAD
 		}
 		catch(Exception ex)
 		{
 			print ( ex.Message + " : OnStartGame");
 		}
 
-		Debug.Log("start game");
+
 		return true;
 	}
 
-	public void Send(String message)
+	public void Send(int message)
 	{
 		try
 		{
-			Byte[] data = System.Text.Encoding.ASCII.GetBytes (message);
-			nws.Write (data, 0, data.Length);
+			nws.WriteByte(message);
 			Console.WriteLine ("Sent: " + message);
 		}
 		catch(ArgumentException e)
