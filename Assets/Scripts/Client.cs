@@ -86,6 +86,14 @@ public class Client : MonoBehaviour {
 			
 		}
 		if ( client == null ) return false;
+
+
+		//if(server.numOfClientsConnected = 2) playerThatClientControls = 2; 
+		//else playerThatClientControls = 1;
+
+
+
+
 		return client.Connected;
 	}
 
