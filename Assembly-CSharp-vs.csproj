@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Sockets.cs" />
      <Compile Include="Assets\Scripts\TSock.cs" />
-     <Compile Include="Assets\TSock.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
