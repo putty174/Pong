@@ -19,7 +19,10 @@ public class Player2 : MonoBehaviour {
 			y = -limit;
 
 
-		if(Client.playerThatClientControls == 2)
+		//if(Client.playerThatClientControls == 2)
+		//if(Client.playerThatClientControls == 1)
+		//if(GameProcess.buffer == 1)
+		if(GameProcess.player == 2)
 			transform.position = new Vector3 (8, y, 0);
 	}
 }
