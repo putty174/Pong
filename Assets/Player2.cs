@@ -17,7 +17,9 @@ public class Player2 : MonoBehaviour {
 			y = limit;
 		else if (y < -limit)
 			y = -limit;
-		
-		transform.position = new Vector3 (8, y, 0);
+
+
+		if(Client.playerThatClientControls == 2)
+			transform.position = new Vector3 (8, y, 0);
 	}
 }

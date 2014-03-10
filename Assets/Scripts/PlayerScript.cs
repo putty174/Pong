@@ -16,19 +16,24 @@ public class PlayerScript : MonoBehaviour {
 	
 	private bool isStopped = false;
 	
-	public GameObject playerToControl;
-	
+	private GameObject playerToControl;
+
+	public GameObject player1;
+	public GameObject player2;
+
 	
 	// Use this for initialization
 	void Start () {
 		
 		if(Client.playerThatClientControls == 1)
 		{
-			playerToControl = GameObject.Find("Player1");
+			//playerToControl = GameObject.Find("Player1");
+			playerToControl = player1;
 		}
 		else //if playerThatClientControls == 2
 		{
-			playerToControl = GameObject.Find ("Player2");
+			//playerToControl = GameObject.Find ("Player2");
+			playerToControl = player2;
 		}
 		
 	}
