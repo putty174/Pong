@@ -120,12 +120,8 @@ public class Client : MonoBehaviour {
 	{
 		try
 		{
-<<<<<<< HEAD
-			nws.WriteByte(0);
-=======
 			nws.WriteByte(255);
 			Debug.Log("start game");
->>>>>>> FETCH_HEAD
 		}
 		catch(Exception ex)
 		{
@@ -136,7 +132,7 @@ public class Client : MonoBehaviour {
 		return true;
 	}
 
-	public void Send(int message)
+	public void Send(byte message)
 	{
 		try
 		{

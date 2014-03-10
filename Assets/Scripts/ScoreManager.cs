@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public GUISkin skin;
 
+	GameProcess gp = GameObject.Find ("_GameManager").GetComponent<GameProcess>();
 
 
 	static public void ScoreCounter(string goal)
@@ -24,14 +25,14 @@ public class ScoreManager : MonoBehaviour {
 		if(goal == "Goal1")
 		{
 			player2Score++;
-			GameProcess.win(2);
+			gp.win(2);
 		}
 
 		// on player 2's goal
 		else if(goal == "Goal2")
 		{
 			player1Score++;
-			GameProcess.win(1);
+			gp.win(1);
 		}
 
 		if(player1Score >= scoreLimit || player2Score >= scoreLimit)

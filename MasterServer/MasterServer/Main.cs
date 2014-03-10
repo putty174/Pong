@@ -30,30 +30,24 @@ namespace MasterServer
 		TcpClient[] clientList;
 		Thread listenThread1;
 		Thread listenThread2;
-<<<<<<< HEAD
 
         bool startGame;
         bool client1Start = false;
         bool client2Start = false;
 
-=======
 		string clientNo;
 
 		NetworkStream stream1;
 		NetworkStream stream2;
         int mes1, mes2;
         bool start1, start2;
-        byte[] send;
-<<<<<<< HEAD
+        byte send;
 
         DateTime t;
         Random rand = new Random();
         int oposx, oposy;
         int nposx, nposy;
         int vel;
-=======
->>>>>>> e4dce6d2a1bcd6bd9da8616f30c5bf1d6c4f15f5
->>>>>>> d259792f59ec4b925ddf0ae9f12739649009fc44
 		
 		public MainServer()
 		{
@@ -110,59 +104,10 @@ namespace MasterServer
 
 				while(true)
 				{
-<<<<<<< HEAD
                     update();
-=======
-<<<<<<< HEAD
-					mes1 = "";
-					mes2 = "";
 					NetworkStream stream1 = clientList[0].GetStream();
 					NetworkStream stream2 = clientList[1].GetStream();
-
-					stream1.Read(data1,0,data1.Length);
-					mes1 = System.Text.Encoding.ASCII.GetString(data1,0,data1.Length);
-					send = Encoding.ASCII.GetBytes("Client 1");
-					stream1.Write (send,0,send.Length);
-					stream2.Write(send,0,send.Length);
-					Console.WriteLine(" >> Client 1: " + mes1 + System.Environment.NewLine);
-
-					stream2.Read(data2,0,data2.Length);
-					mes2 = System.Text.Encoding.ASCII.GetString(data2,0,data1.Length);
-					send = Encoding.ASCII.GetBytes("Client 2");
-					stream1.Write (send,0,send.Length);
-					stream2.Write(send,0,send.Length);
-                    Console.WriteLine(" >> Client 2: " + mes2 + System.Environment.NewLine);
-
-<<<<<<< HEAD
-					Console.WriteLine("");
-
-
-                    while (startGame == false)
-                    {
-                        if (mes1 == "Start")
-                        {
-                            client1Start = true;
-                        }
-                        if (mes2 == "Start")
-                        {
-                            client2Start = true;
-                        }
-
-                        if (startGame == true)
-                        {
-                            send = Encoding.ASCII.GetBytes("StartGame");
-                        }
-                    }
-
-                    
-                    
-=======
-					Console.WriteLine(System.Environment.NewLine);
->>>>>>> 20e58baa1c799acf62fdb6870f23f36106932f8e
-=======
->>>>>>> d259792f59ec4b925ddf0ae9f12739649009fc44
                     process();
->>>>>>> e4dce6d2a1bcd6bd9da8616f30c5bf1d6c4f15f5
 				}
 			}
 			catch(Exception ex)
@@ -177,7 +122,12 @@ namespace MasterServer
 
         public void update()
         {
-
+            if (start1 && start2)
+            {
+                stream1.WriteByte(255);
+                stream2.WriteByte(255);
+                t = DateTime.Now;
+            }
         }
 
         public void process()
@@ -186,10 +136,11 @@ namespace MasterServer
             mes2 = 0;
 
             mes1 = stream1.ReadByte();
-            mes2 = stream2.ReadByte();
             switch (mes1)
             {
                 case 0:
+                    break;
+                case 255:
                     if (!start1)
                     {
                         start1 = true;
@@ -201,13 +152,14 @@ namespace MasterServer
                         stream2.WriteByte(0);
                     }
                     break;
-                case 255:
-                    break;
             }
 
+            mes2 = stream2.ReadByte();
             switch (mes2)
             {
                 case 0:
+                    break;
+                case 255:
                     if (!start1)
                     {
                         start1 = true;
@@ -216,23 +168,13 @@ namespace MasterServer
                     {
                         start1 = false;
                         start2 = false;
-                        stream1.WriteByte(0);
+                        stream1.WriteByte(255);
                     }
                     break;
-                case 255:
-                    break;
-            }
-
-            if (start1 && start2)
-            {
-                t = DateTime.Now;
-                stream1.WriteByte(0);
-                stream2.WriteByte(0);
             }
 
             Console.WriteLine(" >> Client 1: " + mes1 + System.Environment.NewLine);
             Console.WriteLine(" >> Client 2: " + mes2 + System.Environment.NewLine);
-
             Console.WriteLine(System.Environment.NewLine);
         }
 

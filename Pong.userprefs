@@ -1,19 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Client.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScoreManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="21" Column="29" />
-      <File FileName="Assets/Scripts/Client.cs" Line="94" Column="3" />
-      <File FileName="Assets/Scripts/Sockets.cs" Line="112" Column="5" />
-      <File FileName="Assets/Scripts/PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="MasterServer/MasterServer/Main.cs" Line="67" Column="27" />
-      <File FileName="MasterServer/MasterServer/MainServer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUIScript.cs" Line="79" Column="38" />
-      <File FileName="Assets/Scripts/BallScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BoardScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GoalScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ScoreManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Client.cs" Line="140" Column="43" />
+      <File FileName="Assets\Scripts\Sockets.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
+      <File FileName="MasterServer\MasterServer\Main.cs" Line="1" Column="1" />
+      <File FileName="MasterServer\MasterServer\MainServer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUIScript.cs" Line="78" Column="44" />
+      <File FileName="Assets\Scripts\BallScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BoardScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GoalScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="28" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -74,10 +74,8 @@ public class GUIScript : MonoBehaviour {
 
 		if(GUI.Button(new Rect(20,Screen.height - 290, 80, 20), "Send"))
 		{
-<<<<<<< HEAD:Assets/GUIScript.cs
 			//Application.loadedLevel(1);
-            process.returnClient().Send("Start");
-=======
+            process.returnClient().Send(255);
 			if(process.returnClient().StartGame())
 			{
 				Debug.Log("Start Game command has been sent");
@@ -89,12 +87,6 @@ public class GUIScript : MonoBehaviour {
 		if(GUI.Button(new Rect(20, Screen.height - 90, 80, 20), "Send"))
 		{
 
->>>>>>> e4dce6d2a1bcd6bd9da8616f30c5bf1d6c4f15f5:Assets/Scripts/GUIScript.cs
 		}
-
-
-
-
-
 	}
 }
