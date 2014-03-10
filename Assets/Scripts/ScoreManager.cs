@@ -25,14 +25,14 @@ public class ScoreManager : MonoBehaviour {
 		if(goal == "Goal1")
 		{
 			player2Score++;
-			gp.win(2);
+			//gp.win(2);
 		}
 
 		// on player 2's goal
 		else if(goal == "Goal2")
 		{
 			player1Score++;
-			gp.win(1);
+			//gp.win(1);
 		}
 
 		if(player1Score >= scoreLimit || player2Score >= scoreLimit)
