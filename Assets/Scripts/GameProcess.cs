@@ -129,6 +129,11 @@ public class GameProcess : MonoBehaviour {
 				//client.Send ((byte)Player1.player1PosX);
 				//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
 
+				//get paddle position
+				// offeset so positive (add botwall.y)
+				// then use ratio to convert to 0~250
+				// send to server
+
 				client.Send ((byte)((int)(Player1.player1PosY * (250/13))));//player position * (manual byte range / boardwidth)
 				//Debug.Log ("Paddle 1 y position sent"+(byte)Player1.player1PosY);
 				Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player1.player1PosY * (250/13))));
