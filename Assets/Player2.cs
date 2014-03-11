@@ -39,6 +39,9 @@ public class Player2 : MonoBehaviour {
 			player2PosY = transform.position.y;
 
 			gp.sendPositions ();
+			gp.sendPositions ();
+			gp.sendPositions ();
+			gp.sendPositions ();
 		}
 	}
 }
