@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using System;
+using System.Collections.Generic;
+
 //An example main function
 public class GameProcess : MonoBehaviour {
 
@@ -72,33 +75,29 @@ public class GameProcess : MonoBehaviour {
 			{
 				while(client.receiverBuffer.Count > 0)
 				{
-                    if (player == -1)
-                    {
-                        buffer = (int)client.receiverBuffer.Dequeue();
-                        switch (buffer)
-                        {
-                            case 0:
-                                if (player == -1)
-                                {
-                                    player = 1;
-                                    Debug.Log("Player 1");
-                                }
-                                else
-                                {
-                                    bscript.BallStart();
-                                    Debug.Log("Start");
-                                }
-                                break;
-                            case 1:
-                                if (player == -1)
-                                {
-                                    player = 2;
-                                    Debug.Log("Player 2");
-                                }
-                                break;
-                        }
-                    }               
-                    
+					buffer = (int) client.receiverBuffer.Dequeue();
+					switch(buffer)
+					{
+					case 0:
+						if(player == -1)
+						{
+							player = 1;
+							Debug.Log("Player 1");
+						}
+						else
+						{
+							bscript.BallStart();
+							Debug.Log("Start");
+						}
+						break;
+					case 1:
+						if(player == -1)
+						{
+							player = 2;
+							Debug.Log("Player 2");
+						}
+						break;
+					}
 				}
 			}
 		}
@@ -116,10 +115,55 @@ public class GameProcess : MonoBehaviour {
 		}
 	}
 
-    public bool collide()
-    {
-        return true;
-    }
+
+	public void sendPositions ()
+	{
+		//********* COMPLETE THE FOLLOWING CODE
+		
+		try
+		{
+			if(player == 1)
+			{
+				//send Player1.x
+				//send Player1.y
+				//client.Send ((byte)Player1.player1PosX);
+				//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
+
+				client.Send ((byte)((int)(Player1.player1PosY * (250/13))));//player position * (manual byte range / boardwidth)
+				//Debug.Log ("Paddle 1 y position sent"+(byte)Player1.player1PosY);
+				Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player1.player1PosY * (250/13))));
+
+				//number 0 to 250 is the number that server recognizes as a position.  
+				//number 251 is recognized as pause in the server
+				//number 252 is ..
+				//etc.  
+
+				
+			}
+			else if (player == 2)
+			{
+				//send Player2.x
+				//send Player2.y
+				//client.Send ((byte)Player2.player2PosX);
+				//Debug.Log ("Paddle 2 x position sent"+(byte)Player2.player2PosX);
+
+				client.Send ((byte)((int)(Player2.player2PosY * (250/13))));//player position * (manual byte range / boardwidth)
+				//Debug.Log ("Paddle 2 y position sent"+(byte)Player2.player2PosY);
+				Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player2.player2PosY * (250/13))));
+				
+				
+			}
+			
+		}
+		catch(Exception ex)
+		{
+			print ( ex.Message + " : Sending positions" );
+		}
+
+	}
+
+
+
 
 	public Sockets returnSocket ()
 	{
