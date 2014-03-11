@@ -9,7 +9,8 @@ public class GameProcess : MonoBehaviour {
 	private GameObject ball;
 	private BallScript bscript;
 
-	private int player = -1;
+	//private int player = -1;
+	public static int player = -1;
 
 	//PRIVATE MEMBERS
 	private Sockets sockets;

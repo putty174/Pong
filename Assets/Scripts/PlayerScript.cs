@@ -25,7 +25,8 @@ public class PlayerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		if(Client.playerThatClientControls == 1)
+		//if(Client.playerThatClientControls == 1)
+		if(GameProcess.player == 1)
 		{
 			//playerToControl = GameObject.Find("Player1");
 			playerToControl = player1;

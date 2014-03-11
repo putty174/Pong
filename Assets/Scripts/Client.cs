@@ -91,7 +91,7 @@ public class Client : MonoBehaviour {
 		//if(server.numOfClientsConnected = 2) playerThatClientControls = 2; 
 		//else playerThatClientControls = 1;
 		//if(nws == 1)
-		if(receiverBuffer.GetHashCode() == 1)
+		if(receiverBuffer.Dequeue ().ToString() == "1")
 		{
 			playerThatClientControls = 2;
 		}
