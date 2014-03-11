@@ -134,9 +134,12 @@ public class GameProcess : MonoBehaviour {
 				// then use ratio to convert to 0~250
 				// send to server
 
-				client.Send ((byte)((int)(Player1.player1PosY * (250/13))));//player position * (manual byte range / boardwidth)
-				//Debug.Log ("Paddle 1 y position sent"+(byte)Player1.player1PosY);
-				Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player1.player1PosY * (250/13))));
+				byte temp1 = (byte)(Player1.player1PosY - GameObject.Find ("BottomWall").transform.position.y);
+				byte wallRatio = (byte)(250.0 / GameObject.Find ("TopWall").transform.position.y- GameObject.Find ("BottomWall").transform.position.y);
+
+				client.Send ((byte)(temp1 * wallRatio));//player position * (manual byte range / boardwidth)
+
+				Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
 
 				//number 0 to 250 is the number that server recognizes as a position.  
 				//number 251 is recognized as pause in the server
