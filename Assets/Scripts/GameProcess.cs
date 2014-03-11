@@ -72,29 +72,33 @@ public class GameProcess : MonoBehaviour {
 			{
 				while(client.receiverBuffer.Count > 0)
 				{
-					buffer = (int) client.receiverBuffer.Dequeue();
-					switch(buffer)
-					{
-					case 0:
-						if(player == -1)
-						{
-							player = 1;
-							Debug.Log("Player 1");
-						}
-						else
-						{
-							bscript.BallStart();
-							Debug.Log("Start");
-						}
-						break;
-					case 1:
-						if(player == -1)
-						{
-							player = 2;
-							Debug.Log("Player 2");
-						}
-						break;
-					}
+                    if (player == -1)
+                    {
+                        buffer = (int)client.receiverBuffer.Dequeue();
+                        switch (buffer)
+                        {
+                            case 0:
+                                if (player == -1)
+                                {
+                                    player = 1;
+                                    Debug.Log("Player 1");
+                                }
+                                else
+                                {
+                                    bscript.BallStart();
+                                    Debug.Log("Start");
+                                }
+                                break;
+                            case 1:
+                                if (player == -1)
+                                {
+                                    player = 2;
+                                    Debug.Log("Player 2");
+                                }
+                                break;
+                        }
+                    }               
+                    
 				}
 			}
 		}
@@ -111,6 +115,11 @@ public class GameProcess : MonoBehaviour {
 			client.Send (1);
 		}
 	}
+
+    public bool collide()
+    {
+        return true;
+    }
 
 	public Sockets returnSocket ()
 	{
