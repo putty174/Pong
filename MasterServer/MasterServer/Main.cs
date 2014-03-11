@@ -160,7 +160,7 @@ namespace MasterServer
             stream1.WriteByte((byte)Convert.ToInt32(nposx));
             stream1.WriteByte((byte)Convert.ToInt32(nposy));
             stream1.WriteByte((byte)Convert.ToInt32(vel));
-            stream1.WriteByte((byte)Convert.ToInt32(angle / (2 * Math.PI)));
+            stream1.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
             stream2.WriteByte((byte)lastTime.Second);
             
 
@@ -174,7 +174,7 @@ namespace MasterServer
             stream1.WriteByte((byte)Convert.ToInt32(nposx));
             stream1.WriteByte((byte)Convert.ToInt32(nposy));
             stream1.WriteByte((byte)Convert.ToInt32(vel));
-            stream1.WriteByte((byte)Convert.ToInt32(angle/(2*Math.PI)));
+            stream1.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
             stream1.WriteByte((byte)lastTime.Second);
 
             Console.WriteLine(" >> Client 1: " + pos1 + "," + vel1 + System.Environment.NewLine);
