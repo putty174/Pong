@@ -34,19 +34,23 @@ namespace MasterServer
         bool startGame;
         bool client1Start = false;
         bool client2Start = false;
-
-		string clientNo;
+        bool start1, start2;
 
 		NetworkStream stream1;
 		NetworkStream stream2;
-        int mes1, mes2;
-        bool start1, start2;
-        byte send;
+        int mes;
 
-        DateTime t;
+        DateTime startTime;
+        DateTime lastTime;
         Random rand = new Random();
-        int oposx, oposy;
-        int nposx, nposy;
+
+        int pos1, pos2;
+        int vel1, vel2;
+        int time1, time2;
+        int col1, col2;
+        double oposx, oposy;
+        double nposx, nposy;
+        double angle;
         int vel;
 		
 		public MainServer()
@@ -65,10 +69,12 @@ namespace MasterServer
 
         public void restart()
         {
+            startGame = false;
             oposx = 128;
             oposy = 128;
-            nposx = rand.Next(0, 255);
-            nposy = rand.Next(0, 255);
+            nposx = rand.Next(0, 250);
+            nposy = rand.Next(0, 250);
+            angle = rand.NextDouble() * 2 * Math.PI;
             vel = 10;
         }
 		
@@ -76,108 +82,145 @@ namespace MasterServer
 		{
 			this.listener.Start();
 
-			try
-			{
-				while(connectedPlayers < maxPlayers)
-				{
-					TcpClient tcpClient = this.listener.AcceptTcpClient();
-					Console.WriteLine(" >> " + "Client No: " + Convert.ToString(connectedPlayers + 1) + " has connected!"); 
-					clientList[connectedPlayers] = tcpClient;
-					if(connectedPlayers == 0)
-					{
-						stream1 = clientList[connectedPlayers].GetStream();
-						stream1.WriteByte(0);
-					}
-					else if(connectedPlayers == 1)
-					{
-						stream2 = clientList[connectedPlayers].GetStream();
-						stream2.WriteByte(1);
-					}
-					//handleClient client = new handleClient(); 
-					//client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
+            try
+            {
+                while (connectedPlayers < maxPlayers)
+                {
+                    TcpClient tcpClient = this.listener.AcceptTcpClient();
+                    Console.WriteLine(" >> " + "Client No: " + Convert.ToString(connectedPlayers + 1) + " has connected!");
+                    clientList[connectedPlayers] = tcpClient;
+                    if (connectedPlayers == 0)
+                    {
+                        stream1 = clientList[connectedPlayers].GetStream();
+                        stream1.WriteByte(0);
+                    }
+                    else if (connectedPlayers == 1)
+                    {
+                        stream2 = clientList[connectedPlayers].GetStream();
+                        stream2.WriteByte(1);
+                    }
+                    //handleClient client = new handleClient(); 
+                    //client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
 
-					connectedPlayers++;
+                    connectedPlayers++;
 
-				}
-				Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
-				Console.WriteLine("<< Waiting for clients to send the start command....");
+                }
 
-				while(true)
-				{
-                    update();
-					NetworkStream stream1 = clientList[0].GetStream();
-					NetworkStream stream2 = clientList[1].GetStream();
+                while (true)
+                {
+                    waitReady();
                     process();
-				}
-			}
-			catch(Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
-			}
-			finally
-			{
-				this.listener.Stop();
-			}
+                    update();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                this.listener.Stop();
+            }
 		}
 
-        public void update()
+        public void waitReady()
         {
-            if (start1 && start2)
+            while (!start1 && !start2)
             {
+                Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
+                Console.WriteLine("<< Waiting for clients to send the start command....");
+
+                mes = stream1.ReadByte();
+                if (mes == 255)
+                    start1 = true;
+
+                mes = stream2.ReadByte();
+                if (mes == 255)
+                    start2 = true;
+            }
+            if (start1 && start2 && !startGame)
+            {
+                startTime = DateTime.Now;
+                lastTime = startTime;
                 stream1.WriteByte(255);
                 stream2.WriteByte(255);
-                t = DateTime.Now;
+                startGame = true;
             }
         }
 
         public void process()
         {
-            mes1 = 0;
-            mes2 = 0;
+            pos1 = stream1.ReadByte();
+            stream2.WriteByte((byte)pos1);
+            vel1 = stream1.ReadByte();
+            stream2.WriteByte((byte)vel1);
+            col1 = stream1.ReadByte();
+            time1 = stream1.ReadByte();
 
-            mes1 = stream1.ReadByte();
-            switch (mes1)
-            {
-                case 0:
-                    break;
-                case 255:
-                    if (!start1)
-                    {
-                        start1 = true;
-                    }
-                    else
-                    {
-                        start1 = false;
-                        start2 = false;
-                        stream2.WriteByte(0);
-                    }
-                    break;
-            }
+            stream1.WriteByte((byte)Convert.ToInt32(nposx));
+            stream1.WriteByte((byte)Convert.ToInt32(nposy));
+            stream1.WriteByte((byte)Convert.ToInt32(vel));
+            stream1.WriteByte((byte)Convert.ToInt32(angle / (2 * Math.PI)));
+            stream2.WriteByte((byte)lastTime.Second);
+            
 
-            mes2 = stream2.ReadByte();
-            switch (mes2)
-            {
-                case 0:
-                    break;
-                case 255:
-                    if (!start1)
-                    {
-                        start1 = true;
-                    }
-                    else
-                    {
-                        start1 = false;
-                        start2 = false;
-                        stream1.WriteByte(255);
-                    }
-                    break;
-            }
+            pos2 = stream2.ReadByte();
+            stream1.WriteByte((byte)pos2);
+            vel2 = stream2.ReadByte();
+            stream1.WriteByte((byte)vel2);
+            col2 = stream2.ReadByte();
+            time2 = stream2.ReadByte();
 
-            Console.WriteLine(" >> Client 1: " + mes1 + System.Environment.NewLine);
-            Console.WriteLine(" >> Client 2: " + mes2 + System.Environment.NewLine);
+            stream1.WriteByte((byte)Convert.ToInt32(nposx));
+            stream1.WriteByte((byte)Convert.ToInt32(nposy));
+            stream1.WriteByte((byte)Convert.ToInt32(vel));
+            stream1.WriteByte((byte)Convert.ToInt32(angle/(2*Math.PI)));
+            stream1.WriteByte((byte)lastTime.Second);
+
+            Console.WriteLine(" >> Client 1: " + pos1 + "," + vel1 + System.Environment.NewLine);
+            Console.WriteLine(" >> Client 2: " + pos2 + "," + vel2 + System.Environment.NewLine);
             Console.WriteLine(System.Environment.NewLine);
         }
 
+        public void update()
+        {
+            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Seconds;
+            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Seconds;
+
+            if (nposx < 0)
+            {
+                nposx = Math.Abs(nposx);
+                angle = changeAngle(angle);
+            }
+            else if (nposx > 250)
+            {
+                nposx = 250 - (nposx - 250);
+                angle = changeAngle(angle);
+            }
+            if (nposy < 0)
+            {
+                nposy = Math.Abs(nposy);
+                angle = changeAngle(angle);
+            }
+            else if (nposy > 250)
+            {
+                nposy = 250 - (nposy - 250);
+                angle = changeAngle(angle);
+            }
+
+
+            lastTime = DateTime.Now;
+        }
+
+        public double changeAngle(double a)
+        {
+            if (a == 0)
+                return Math.PI;
+            else if (a == Math.PI)
+                return 0;
+            else
+                return (2 - a);
+        }
 	}
 
 
