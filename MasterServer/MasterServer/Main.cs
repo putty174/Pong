@@ -144,6 +144,10 @@ namespace MasterServer
                 lastTime = startTime;
                 stream1.WriteByte(255);
                 stream2.WriteByte(255);
+                stream1.WriteByte(128);
+                stream1.WriteByte(0);
+                stream2.WriteByte(128);
+                stream2.WriteByte(0);
                 startGame = true;
             }
         }
@@ -178,7 +182,7 @@ namespace MasterServer
             stream1.WriteByte((byte)lastTime.Second);
 
             Console.WriteLine(" >> Client 1: " + pos1 + " , " + vel1 + " , " + col1 + " , " + time1);
-            Console.WriteLine("     >> Client 2: " + pos2 + " , " + vel2 + " , " + col2 + " , " + time2);
+            Console.WriteLine("    >> Client 2: " + pos2 + " , " + vel2 + " , " + col2 + " , " + time2);
             Console.WriteLine(System.Environment.NewLine);
         }
 

@@ -98,7 +98,11 @@ public class Client : MonoBehaviour {
 			playerThatClientControls = 1;
 		}
 		
-		
+
+
+
+
+
 		
 		return client.Connected;
 	}

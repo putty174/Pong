@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-
 using System;
-using System.Collections.Generic;
+using System.Collections;
 
 //An example main function
 public class GameProcess : MonoBehaviour {
@@ -19,8 +17,18 @@ public class GameProcess : MonoBehaviour {
 	private Sockets sockets;
 	private Client client;
 	private GUIScript gui;
+    private Vector2 collisionLoc; //collision location
 
 	private int buffer;
+    private int opPosY;
+    private int opVel;
+    private int ballPosX;
+    private int ballPosY;
+	private int ballVel;
+    private int angle;
+    private int time;
+    private Vector2 hit;
+    private Vector2 pointOfCollision;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +42,7 @@ public class GameProcess : MonoBehaviour {
 		p2 = GameObject.Find ("Player2");
 		ball = GameObject.Find ("GameBall");
 		bscript = (BallScript) ball.GetComponent("BallScript");
+
 	}
 	
 	// Update is called once per frame
@@ -75,29 +84,48 @@ public class GameProcess : MonoBehaviour {
 			{
 				while(client.receiverBuffer.Count > 0)
 				{
-					buffer = (int) client.receiverBuffer.Dequeue();
-					switch(buffer)
-					{
-					case 0:
-						if(player == -1)
-						{
-							player = 1;
-							Debug.Log("Player 1");
-						}
-						else
-						{
+                    if (player == -1)
+                    {
+                        buffer = (int)client.receiverBuffer.Dequeue();
+                        switch (buffer)
+		                {
+	                    case 0:
+	                        if (player == -1)
+	                        {
+	                            player = 1;
+	                            Debug.Log("Player 1");
+	                        }
+	                        break;
+	                    case 1:
+	                        if (player == -1)
+	                        {
+	                            player = 2;
+	                            Debug.Log("Player 2");
+	                        }
+	                        break;
+						case 255:
 							bscript.BallStart();
 							Debug.Log("Start");
-						}
-						break;
-					case 1:
-						if(player == -1)
-						{
-							player = 2;
-							Debug.Log("Player 2");
-						}
-						break;
-					}
+							break;
+                        }
+                    }
+                    else
+                    {
+                        //Stores information on opponent position (Y), 
+                        //opponent velocity, ball position (X, Y),
+                        //angle of ball, server time.
+                        opPosY = (int)client.receiverBuffer.Dequeue();
+                        opVel = (int)client.receiverBuffer.Dequeue();
+                        ballPosX = (int)client.receiverBuffer.Dequeue();
+                        ballPosY = (int)client.receiverBuffer.Dequeue();
+						ballVel = (int) client.receiverBuffer.Dequeue();
+                        angle = (int)client.receiverBuffer.Dequeue();
+                        time = (int)client.receiverBuffer.Dequeue();
+
+						Debug.Log(opPosY);
+
+						bscript.position(ballPosX,ballPosY);
+                    }
 				}
 			}
 		}
@@ -116,6 +144,49 @@ public class GameProcess : MonoBehaviour {
 	}
 
 
+
+    //return estimated time of collision.
+    //Parameters (ball position, ball angle, ball velocity)
+    public int timeOfcollide(Vector2 pos, int angle, int velocity)
+    {
+        float dirX = (float)(velocity * Mathf.Cos(angle));
+        float dirY = (float)(velocity * Mathf.Sin(angle));
+        Vector2 dir = new Vector2(dirX, dirY);
+
+        ball.transform.position = pos;
+        ball.rigidbody2D.AddForce(dir);
+
+				//get paddle position
+				// offeset so positive (add botwall.y)
+				// then use ratio to convert to 0~250
+				// send to server
+        RaycastHit2D raycastHit = Physics2D.Raycast(pos, dir);
+        pointOfCollision = raycastHit.point;
+
+
+				
+
+				float temp1 = Player1.player1PosY - GameObject.Find ("BottomWall").transform.position.y;
+				float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
+				int result = Convert.ToInt32(temp1 * wallRatio);
+				client.Send((byte)result);//player position * (manual byte range / boardwidth)
+
+				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
+
+				//number 0 to 250 is the number that server recognizes as a position.  
+				//number 251 is recognized as pause in the server
+				//number 252 is ..
+				//etc.  
+        float distance = Vector2.Distance(pos, pointOfCollision) - 0.1f;
+        
+        return (int)(distance / velocity);
+    }
+
+    public bool collide()
+    {
+        return true;
+    }
+
 	public void sendPositions ()
 	{
 		//********* COMPLETE THE FOLLOWING CODE
@@ -128,28 +199,31 @@ public class GameProcess : MonoBehaviour {
 				//send Player1.y
 				//client.Send ((byte)Player1.player1PosX);
 				//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
-
+				
 				//get paddle position
 				// offeset so positive (add botwall.y)
 				// then use ratio to convert to 0~250
 				// send to server
-
-
 				
-
+				
+				
+				
 				float temp1 = Player1.player1PosY - GameObject.Find ("BottomWall").transform.position.y;
 				float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 				int result = Convert.ToInt32(temp1 * wallRatio);
+<<<<<<< HEAD
 				//Debug.Log(result);
+=======
+>>>>>>> FETCH_HEAD
 				client.Send((byte)result);//player position * (manual byte range / boardwidth)
-
+				
 				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
-
+				
 				//number 0 to 250 is the number that server recognizes as a position.  
 				//number 251 is recognized as pause in the server
 				//number 252 is ..
 				//etc.  
-
+				
 				
 			}
 			else if (player == 2)
@@ -158,7 +232,7 @@ public class GameProcess : MonoBehaviour {
 				//send Player2.y
 				//client.Send ((byte)Player2.player2PosX);
 				//Debug.Log ("Paddle 2 x position sent"+(byte)Player2.player2PosX);
-
+				
 				client.Send ((byte)((int)(Player2.player2PosY * (250/13))));//player position * (manual byte range / boardwidth)
 				//Debug.Log ("Paddle 2 y position sent"+(byte)Player2.player2PosY);
 				//Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player2.player2PosY * (250/13))));
@@ -171,7 +245,7 @@ public class GameProcess : MonoBehaviour {
 		{
 			print ( ex.Message + " : Sending positions" );
 		}
-
+		
 	}
 
 
