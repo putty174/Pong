@@ -1,26 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUIScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets/Scripts/Client.cs" Line="94" Column="12" />
-      <File FileName="Assets/Scripts/BallScript.cs" Line="90" Column="21" />
-      <File FileName="Assets/Player1.cs" Line="61" Column="5" />
-      <File FileName="Assets/Scripts/Client.cs" Line="94" Column="12" />
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="71" Column="3" />
-      <File FileName="Assets/Scripts/TSock.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GUIScript.cs" Line="35" Column="14" />
-      <File FileName="Assets/Player2.cs" Line="17" Column="25" />
-      <File FileName="MasterServer/MasterServer/Main.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="44" Column="58" />
-      <File FileName="Assets\Scripts\Sockets.cs" Line="33" Column="30" />
-      <File FileName="Assets\Scripts\TSock.cs" Line="12" Column="30" />
-      <File FileName="Assets\Player1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BallScript.cs" Line="165" Column="4" />
-      <File FileName="Assets\Scripts\GoalScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUIScript.cs" Line="64" Column="6" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/GameProcess.cs" Line="130" Column="22" />
+      <File FileName="Assets/Scripts/Client.cs" Line="135" Column="4" />
+      <File FileName="Assets/Player1.cs" Line="35" Column="49" />
+      <File FileName="Assets/Player2.cs" Line="36" Column="4" />
+      <File FileName="Assets/Scripts/PlayerScript.cs" Line="24" Column="2" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="18" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

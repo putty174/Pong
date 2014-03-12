@@ -16,6 +16,8 @@ public class Player1 : MonoBehaviour {
 	private float lastY;
 
 
+	public GameObject player2;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -40,6 +42,18 @@ public class Player1 : MonoBehaviour {
 			y = -limit;
 
 
+
+		if(GameProcess.player == 2)
+		{
+
+			//float temp1 = (float)GameProcess.opPosY + GameObject.Find ("BottomWall").transform.position.y;
+			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
+			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
+			Debug.Log("opponent position: " + GameProcess.opPosY);
+			player2.transform.position = new Vector3(8, GameProcess.opPosY, 0);
+		}
+
+
 		//if(Client.playerThatClientControls == 1)
 		//if(GameProcess.buffer == 1)
 		if(GameProcess.player == 1)
@@ -48,9 +62,9 @@ public class Player1 : MonoBehaviour {
 			player1PosX = transform.position.x;
 			player1PosY = transform.position.y;
 			deltaPosition = y - lastY;
-			Debug.Log("current possition: " + y);
-			Debug.Log("last position: " + lastY);
-			Debug.Log("delta position: " + deltaPosition);
+//			Debug.Log("current possition: " + y);
+//			Debug.Log("last position: " + lastY);
+//			Debug.Log("delta position: " + deltaPosition);
 			
 			if(deltaPosition > .04)
 			{
