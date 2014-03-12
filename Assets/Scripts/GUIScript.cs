@@ -47,6 +47,7 @@ public class GUIScript : MonoBehaviour {
 		}
 		else if(toggleButton == true)
 		{
+			Debug.Log ("time for disconnect button");
 			// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 			if(GUI.Button(new Rect(20,40,80,20), "Disconnect")) 
 			{
@@ -54,7 +55,7 @@ public class GUIScript : MonoBehaviour {
 				//guiText.text = "Connecting...";
 				if (process.returnClient().Disconnect() )
 				{	
-					Debug.Log("Hi");
+					Debug.Log("disconnected");
 					//show = !show;
 					//guiText.text = "Connect Succeeded";
 					toggleButton = false;

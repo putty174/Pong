@@ -7,6 +7,11 @@ public class Player2 : MonoBehaviour {
 	public static float player2PosX; 
 	public static float player2PosY;
 	//public static float player1PosZ;
+	float lastY = 128;
+
+	float deltaPosition;
+
+
 
 
 	private GameProcess gp;
@@ -22,11 +27,17 @@ public class Player2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float y = ((Input.mousePosition.y / Screen.height) * 12) - 6;
-		
+
+
+
+
+		 
 		if (y > limit)
 			y = limit;
 		else if (y < -limit)
 			y = -limit;
+
+
 
 
 		//if(Client.playerThatClientControls == 2)
@@ -35,13 +46,24 @@ public class Player2 : MonoBehaviour {
 		if(GameProcess.player == 2)
 		{
 			transform.position = new Vector3 (8, y, 0);
+
 			player2PosX = transform.position.x;
 			player2PosY = transform.position.y;
 
-			gp.sendPositions ();
-			gp.sendPositions ();
-			gp.sendPositions ();
-			gp.sendPositions ();
+			deltaPosition = y - lastY;
+			Debug.Log("current possition: " + y);
+			Debug.Log("last position: " + lastY);
+			Debug.Log("delta position: " + deltaPosition);
+			
+			if(deltaPosition > .04)
+			{
+				gp.sendPositions ();
+				gp.sendPositions ();
+				gp.sendPositions ();
+				gp.sendPositions ();
+			}
+
 		}
+		lastY = y;
 	}
 }

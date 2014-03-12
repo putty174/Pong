@@ -1,26 +1,20 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player2.cs">
     <Files>
-      <File FileName="Assets/Scripts/Client.cs" Line="145" Column="16" />
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="140" Column="9" />
+      <File FileName="Assets/Scripts/Client.cs" Line="94" Column="12" />
+      <File FileName="Assets/Scripts/BallScript.cs" Line="90" Column="21" />
+      <File FileName="Assets/Player1.cs" Line="61" Column="5" />
+      <File FileName="Assets/Scripts/Client.cs" Line="94" Column="12" />
+      <File FileName="Assets/Scripts/GameProcess.cs" Line="71" Column="3" />
       <File FileName="Assets/Scripts/TSock.cs" Line="1" Column="1" />
-      <File FileName="Assets/Player1.cs" Line="41" Column="4" />
-      <File FileName="Assets/Player2.cs" Line="12" Column="19" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MasterServer/MasterServer/Main.cs">
-    <Files>
-      <File FileName="MasterServer/MasterServer/Main.cs" Line="95" Column="46" />
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="140" Column="36" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Scripts/GUIScript.cs" Line="35" Column="14" />
+      <File FileName="Assets/Player2.cs" Line="17" Column="25" />
+      <File FileName="MasterServer/MasterServer/Main.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/jayhawkfan999/Documents/UnityProjects/Pong/Assets/Scripts/GameProcess.cs" line="140" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

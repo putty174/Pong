@@ -140,7 +140,7 @@ public class GameProcess : MonoBehaviour {
 				float temp1 = Player1.player1PosY - GameObject.Find ("BottomWall").transform.position.y;
 				float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 				int result = Convert.ToInt32(temp1 * wallRatio);
-				Debug.Log(result);
+				//Debug.Log(result);
 				client.Send((byte)result);//player position * (manual byte range / boardwidth)
 
 				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
