@@ -154,7 +154,10 @@ public class BallScript : MonoBehaviour {
 //	
 	}
 
-
+	public void position(int x, int y)
+	{
+		transform.position = new Vector3 (x, y, 0);
+	}
 
 	void changeBallColor()
 	{

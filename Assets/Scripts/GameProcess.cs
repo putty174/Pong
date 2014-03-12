@@ -24,6 +24,7 @@ public class GameProcess : MonoBehaviour {
     private int opVel;
     private int ballPosX;
     private int ballPosY;
+	private int ballVel;
     private int angle;
     private int time;
     private Vector2 hit;
@@ -87,26 +88,25 @@ public class GameProcess : MonoBehaviour {
                     {
                         buffer = (int)client.receiverBuffer.Dequeue();
                         switch (buffer)
-                        {
-                            case 0:
-                                if (player == -1)
-                                {
-                                    player = 1;
-                                    Debug.Log("Player 1");
-                                }
-                                else
-                                {
-                                    bscript.BallStart();
-                                    Debug.Log("Start");
-                                }
-                                break;
-                            case 1:
-                                if (player == -1)
-                                {
-                                    player = 2;
-                                    Debug.Log("Player 2");
-                                }
-                                break;
+		                {
+	                    case 0:
+	                        if (player == -1)
+	                        {
+	                            player = 1;
+	                            Debug.Log("Player 1");
+	                        }
+	                        break;
+	                    case 1:
+	                        if (player == -1)
+	                        {
+	                            player = 2;
+	                            Debug.Log("Player 2");
+	                        }
+	                        break;
+						case 255:
+							bscript.BallStart();
+							Debug.Log("Start");
+							break;
                         }
                     }
                     else
@@ -118,12 +118,14 @@ public class GameProcess : MonoBehaviour {
                         opVel = (int)client.receiverBuffer.Dequeue();
                         ballPosX = (int)client.receiverBuffer.Dequeue();
                         ballPosY = (int)client.receiverBuffer.Dequeue();
+						ballVel = (int) client.receiverBuffer.Dequeue();
                         angle = (int)client.receiverBuffer.Dequeue();
                         time = (int)client.receiverBuffer.Dequeue();
 
+						Debug.Log(opPosY);
+
+						bscript.position(ballPosX,ballPosY);
                     }
-                    
-                    
 				}
 			}
 		}
@@ -167,7 +169,6 @@ public class GameProcess : MonoBehaviour {
 				float temp1 = Player1.player1PosY - GameObject.Find ("BottomWall").transform.position.y;
 				float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 				int result = Convert.ToInt32(temp1 * wallRatio);
-				Debug.Log(result);
 				client.Send((byte)result);//player position * (manual byte range / boardwidth)
 
 				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
@@ -210,7 +211,6 @@ public class GameProcess : MonoBehaviour {
 				float temp1 = Player1.player1PosY - GameObject.Find ("BottomWall").transform.position.y;
 				float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 				int result = Convert.ToInt32(temp1 * wallRatio);
-				Debug.Log(result);
 				client.Send((byte)result);//player position * (manual byte range / boardwidth)
 				
 				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
