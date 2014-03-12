@@ -1,11 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../cs113Project/cs113Project/Assets/CutSceneTrigger.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TSock.cs">
     <Files>
-      <File FileName="../cs113Project/cs113Project/Assets/SpawnManager.cs" Line="12" Column="8" />
-      <File FileName="../cs113Project/cs113Project/Assets/EnemySpawner.cs" Line="1" Column="1" />
-      <File FileName="../cs113Project/cs113Project/Assets/CutSceneTrigger.cs" Line="243" Column="57" />
-      <File FileName="../cs113Project/cs113Project/Assets/Player/Player.cs" Line="518" Column="120" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="88" Column="31" />
+      <File FileName="Assets\Scripts\Sockets.cs" Line="33" Column="30" />
+      <File FileName="Assets\Scripts\TSock.cs" Line="12" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
