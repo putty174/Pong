@@ -4,6 +4,9 @@ using System.Collections;
 public class Player2 : MonoBehaviour {
 	float limit = 4.45f;
 
+	private float speed = 8.0f;
+
+
 	public static float player2PosX; 
 	public static float player2PosY;
 	//public static float player1PosZ;
@@ -28,16 +31,16 @@ public class Player2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float y = ((Input.mousePosition.y / Screen.height) * 12) - 6;
+		//float y = ((Input.mousePosition.y / Screen.height) * 12) - 6;
 
 
-
+		float transAmount = speed * Time.deltaTime;
 
 		 
-		if (y > limit)
-			y = limit;
-		else if (y < -limit)
-			y = -limit;
+		//if (y > limit)
+		//	y = limit;
+		//else if (y < -limit)
+		//	y = -limit;
 
 
 		//if(GameProcess.player == 1)
@@ -57,12 +60,25 @@ public class Player2 : MonoBehaviour {
 		//if(GameProcess.buffer == 1)
 		if(GameProcess.player == 2)
 		{
-			transform.position = new Vector3 (8, y, 0);
+			//transform.position = new Vector3 (8, y, 0);
+			if(Input.GetKey(KeyCode.UpArrow))
+			{
+				transform.Translate (0,transAmount,0);
+			}
+			
+			if(Input.GetKey (KeyCode.DownArrow))
+			{
+				transform.Translate (0,-transAmount,0);
+			}
+
+
 
 			player2PosX = transform.position.x;
 			player2PosY = transform.position.y;
 
-			deltaPosition = y - lastY;
+			//deltaPosition = y - lastY;
+			deltaPosition = transAmount - lastY;
+
 //			Debug.Log("current possition: " + y);
 //			Debug.Log("last position: " + lastY);
 //			Debug.Log("delta position: " + deltaPosition);
@@ -90,6 +106,8 @@ public class Player2 : MonoBehaviour {
 
 
 
-		lastY = y;
+		//lastY = y;
+		lastY = transAmount;
+
 	}
 }
