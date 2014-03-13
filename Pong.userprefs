@@ -1,15 +1,6 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
-    <Files>
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="130" Column="22" />
-      <File FileName="Assets/Scripts/Client.cs" Line="135" Column="4" />
-      <File FileName="Assets/Player1.cs" Line="35" Column="49" />
-      <File FileName="Assets/Player2.cs" Line="36" Column="4" />
-      <File FileName="Assets/Scripts/PlayerScript.cs" Line="24" Column="2" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="18" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

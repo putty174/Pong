@@ -84,6 +84,7 @@ public class GameProcess : MonoBehaviour {
 			{
 				while(client.receiverBuffer.Count > 0)
 				{
+					Debug.Log("Queue count: " + client.receiverBuffer.Count);
                     if (player == -1)
                     {
                         buffer = (int)client.receiverBuffer.Dequeue();
@@ -111,41 +112,27 @@ public class GameProcess : MonoBehaviour {
                     }
                     else
                     {
-//                        //Stores information on opponent position (Y), 
-//                        //opponent velocity, ball position (X, Y),
-//                        //angle of ball, server time.
-//                        opPosY = (int)client.receiverBuffer.Dequeue();
-//						Debug.Log("opponent position: " + opPosY);
-//
-//                        opVel = (int)client.receiverBuffer.Dequeue();
-//                        ballPosX = (int)client.receiverBuffer.Dequeue();
-//                        ballPosY = (int)client.receiverBuffer.Dequeue();
-//						ballVel = (int) client.receiverBuffer.Dequeue();
-//                        angle = (int)client.receiverBuffer.Dequeue();
-//                        time = (int)client.receiverBuffer.Dequeue();
-//
-//
-//
-//						bscript.position(ballPosX,ballPosY);
+						//                        //Stores information on opponent position (Y), 
+						//opponent velocity, ball position (X, Y),
+						//angle of ball, server time.
+						float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
+						opPosY = (int)client.receiverBuffer.Dequeue() / wallRatio;
+						
+						//opPosY = ((float)(client.receiverBuffer.Dequeue())) / wallRatio;
+						Debug.Log("opponent position: " + opPosY);
+						
+						//opVel = (int)client.receiverBuffer.Dequeue();
+						//ballPosX = (int)client.receiverBuffer.Dequeue();
+						//ballPosY = (int)client.receiverBuffer.Dequeue();
+						//ballVel = (int) client.receiverBuffer.Dequeue();
+						//angle = (int)client.receiverBuffer.Dequeue();
+						//time = (int)client.receiverBuffer.Dequeue();
+						
+						
+						
+						bscript.position(ballPosX,ballPosY);
                     }
-					//Stores information on opponent position (Y), 
-					//opponent velocity, ball position (X, Y),
-					//angle of ball, server time.
 
-					float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
-					opPosY = ((float)(client.receiverBuffer.Dequeue())) / wallRatio;
-					Debug.Log("opponent position: " + opPosY);
-					
-					opVel = (int)client.receiverBuffer.Dequeue();
-					ballPosX = (int)client.receiverBuffer.Dequeue();
-					ballPosY = (int)client.receiverBuffer.Dequeue();
-					ballVel = (int) client.receiverBuffer.Dequeue();
-					angle = (int)client.receiverBuffer.Dequeue();
-					time = (int)client.receiverBuffer.Dequeue();
-					
-					
-					
-					bscript.position(ballPosX,ballPosY);
 				}
 			}
 		}

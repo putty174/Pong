@@ -46,7 +46,8 @@ public class Player2 : MonoBehaviour {
 			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
 			Debug.Log("opponent position: " + GameProcess.opPosY);
-			//player1.transform.position = new Vector3(-8, GameProcess.opPosY, 0);
+			float oppY = ((GameProcess.opPosY / Screen.height) * 12) - 6;
+			transform.position = new Vector3(8, oppY, 0);
 		}
 
 
