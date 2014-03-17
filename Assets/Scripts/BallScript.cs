@@ -5,7 +5,7 @@ public class BallScript : MonoBehaviour {
 
 
 	public static Vector3 ballPosition;
-
+    
 
 
 	// Start speed of the ball
@@ -28,6 +28,8 @@ public class BallScript : MonoBehaviour {
 
 
 	private int ballIsHit = 1;
+
+    public static Vector2 ballContact;
 
 	// velocity
 	//private int velocityY = rigidbody2D.velocity.y;
@@ -79,8 +81,12 @@ public class BallScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D colInfo)
 	{
+        //GameProcess.collided = true; //tell GameProcess that there is a collision!
 		GameObject pad = colInfo.gameObject;
 		ContactPoint2D[] points = colInfo.contacts;
+        ballContact = points[0].point; //be sure to pass the contact point to GameProcess
+      
+
 		float y = points [0].point.y - pad.transform.position.y;
 
 		if (y > 0.5)
@@ -172,7 +178,11 @@ public class BallScript : MonoBehaviour {
 		}
 	}
 
-
+    public Vector2 getContact()
+    {
+        return ballContact;
+    }
+ 
 
 //	void OnCollisionEnter2D(Collision2D colInfo)
 //	{
