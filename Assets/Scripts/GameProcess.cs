@@ -77,7 +77,7 @@ public class GameProcess : MonoBehaviour {
 //		             + BallScript.ballPosition.z);
 
 
-
+		Debug.Log (client.receiverBuffer.Count);
 		if(client.receiverBuffer.Count > 0)
 		{
 			lock(client.receiverBuffer)
@@ -114,17 +114,20 @@ public class GameProcess : MonoBehaviour {
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
                         //angle of ball, server time.
-                        opPosY = (int)client.receiverBuffer.Dequeue();
-                        opVel = (int)client.receiverBuffer.Dequeue();
-                        ballPosX = (int)client.receiverBuffer.Dequeue();
-                        ballPosY = (int)client.receiverBuffer.Dequeue();
-						ballVel = (int) client.receiverBuffer.Dequeue();
-                        angle = (int)client.receiverBuffer.Dequeue();
-                        time = (int)client.receiverBuffer.Dequeue();
+						if(client.receiverBuffer.Count > 6)
+						{
+                        	opPosY = (int)client.receiverBuffer.Dequeue();
+	                        opVel = (int)client.receiverBuffer.Dequeue();
+	                        ballPosX = (int)client.receiverBuffer.Dequeue();
+	                        ballPosY = (int)client.receiverBuffer.Dequeue();
+							ballVel = (int) client.receiverBuffer.Dequeue();
+	                        angle = (int)client.receiverBuffer.Dequeue();
+	                        time = (int)client.receiverBuffer.Dequeue();
 
-						Debug.Log(opPosY);
+							Debug.Log(opPosY);
 
-						bscript.position(ballPosX,ballPosY);
+							bscript.position(ballPosX,ballPosY);
+						}
                     }
 				}
 			}

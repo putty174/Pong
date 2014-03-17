@@ -9,7 +9,7 @@ public class TSock : MonoBehaviour
 	private NetworkStream ns;
 	private int buffer;
 	private Client sock;
-	private int serverLength = 7;
+	private int serverLength = 21;
 
 	public TSock (NetworkStream nsIn, Client sIn)
 	{
@@ -26,12 +26,14 @@ public class TSock : MonoBehaviour
 				buffer = ns.ReadByte();
 				lock(sock.receiverBuffer)
 				{
+					Debug.Log(buffer);
 					sock.receiverBuffer.Enqueue(buffer);
-					if(sock.receiverBuffer.Count > 14)
-						for(int i = 0; i < serverLength; i++) {
-						sock.receiverBuffer.Dequeue();
+					if(sock.receiverBuffer.Count > serverLength)
+					{
+						for(int i = 0; i < 7; i++) {
+							sock.receiverBuffer.Dequeue();
+						}
 					}
-
 				}
 			}
 		}
