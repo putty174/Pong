@@ -118,7 +118,7 @@ public class GameProcess : MonoBehaviour {
 						float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 						opPosY = (int)client.receiverBuffer.Dequeue() / wallRatio;
 						
-						//opPosY = ((float)(client.receiverBuffer.Dequeue())) / wallRatio;
+
 						Debug.Log("opponent position: " + opPosY);
 						
 						//opVel = (int)client.receiverBuffer.Dequeue();
@@ -219,7 +219,7 @@ public class GameProcess : MonoBehaviour {
 				float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 				int result = Convert.ToInt32(temp1 * wallRatio);
 
-				//Debug.Log(result);
+				Debug.Log("result: " + result);
 
 				client.Send((byte)result);//player position * (manual byte range / boardwidth)
 				
