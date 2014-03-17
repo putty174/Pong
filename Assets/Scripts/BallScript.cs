@@ -65,7 +65,7 @@ public class BallScript : MonoBehaviour {
 		receivedBallVel = GameProcess.ballVel;
 
 		ballPosition = new Vector3(receivedBallX, receivedBallY, 0);
-
+		currentSpeed = receivedBallVel;
 
 	}
 
