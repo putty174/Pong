@@ -5,9 +5,9 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
-	private GameObject p1;
-	private GameObject p2;
 	private GameObject ball;
+	private Player1 p1;
+	private Player2 p2;
 	private BallScript bscript;
 	private GameObject bWall;
 
@@ -40,10 +40,9 @@ public class GameProcess : MonoBehaviour {
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
-		p1 = GameObject.Find ("Player1");
-		p2 = GameObject.Find ("Player2");
-		ball = GameObject.Find ("GameBall");
-		bscript = (BallScript) ball.GetComponent("BallScript");
+		p1 = (Player1) GameObject.Find ("Player1").GetComponent ("Player1");
+		p2 = (Player2) GameObject.Find ("Player2").GetComponent ("Player2");
+		bscript = (BallScript) GameObject.Find ("GameBall").GetComponent("BallScript");
 		bWall = GameObject.Find ("BottomWall");
 		wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - bWall.transform.position.y);
 	}
@@ -139,7 +138,11 @@ public class GameProcess : MonoBehaviour {
 						opPosY = (int)client.receiverBuffer.Dequeue();
 						if(player == 1)
 						{
-							p2.transform.position = new Vector3(0,opPosY / wallRatio,0);
+							p2.position(opPosY / wallRatio);
+						}
+						else if(player == 2)
+						{
+							p1.position(opPosY / wallRatio);
 						}
 						Debug.Log("opponent position: " + opPosY);
 

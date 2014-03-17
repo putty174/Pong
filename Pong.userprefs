@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScoreManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player2.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="150" Column="49" />
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="284" Column="1" />
-      <File FileName="Assets\Player1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player2.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Client.cs" Line="56" Column="3" />
-      <File FileName="Assets\Scripts\TSock.cs" Line="26" Column="26" />
-      <File FileName="Assets\Scripts\ScoreManager.cs" Line="49" Column="5" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="145" Column="38" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="287" Column="1" />
+      <File FileName="Assets\Player1.cs" Line="19" Column="28" />
+      <File FileName="Assets\Player2.cs" Line="23" Column="28" />
+      <File FileName="Assets\Scripts\Client.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TSock.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

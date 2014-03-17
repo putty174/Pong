@@ -16,8 +16,7 @@ public class Player1 : MonoBehaviour {
 	private GameProcess gp;
 	private float lastY;
 
-
-	public GameObject player2;
+	public GameObject player1;
 
 	// Use this for initialization
 	void Start () {
@@ -105,4 +104,8 @@ public class Player1 : MonoBehaviour {
 
 	}
 
+	public void position(float pos)
+	{
+		transform.position = new Vector3 (-8, pos, 0);
+	}
 }
