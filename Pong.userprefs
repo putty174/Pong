@@ -1,12 +1,40 @@
 ﻿<Properties>
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BallScript.cs">
+    <Files>
+      <File FileName="Assets/Scripts/BallScript.cs" Line="63" Column="21" />
+      <File FileName="Assets/Scripts/Client.cs" Line="1" Column="1" />
+      <File FileName="Assets/Player1.cs" Line="98" Column="64" />
+      <File FileName="Assets/Player2.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TSock.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Sockets.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameProcess.cs" Line="1" Column="1" />
+=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Client.cs">
     <Files>
       <File FileName="Assets/Player1.cs" Line="107" Column="8" />
       <File FileName="Assets/Player2.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets/Scripts/Client.cs" Line="55" Column="3" />
       <File FileName="Assets/Scripts/GameProcess.cs" Line="249" Column="1" />
       <File FileName="Assets/Scripts/ScoreManager.cs" Line="1" Column="1" />
+=======
+      <File FileName="MasterServer/MasterServer/Main.cs" Line="69" Column="33" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameProcess.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="40" Column="16" />
+      <File FileName="Assets\Player2.cs" Line="111" Column="3" />
+      <File FileName="Assets\Player1.cs" Line="98" Column="36" />
+      <File FileName="Assets\Scripts\Client.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TSock.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GUIScript.cs" Line="1" Column="1" />
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
