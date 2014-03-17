@@ -23,7 +23,7 @@ public class Player1 : MonoBehaviour {
 	
 		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
 		lastY = 128;
-
+		transform.position = new Vector3 (-8, 0, 0);
 
 
 	}
@@ -94,18 +94,13 @@ public class Player1 : MonoBehaviour {
 			//float temp1 = (float)GameProcess.opPosY + GameObject.Find ("BottomWall").transform.position.y;
 			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
-			Debug.Log("opponent position: " + GameProcess.opPosY);
-			float oppY = ((GameProcess.opPosY / Screen.height) * 12) - 6;
+//			Debug.Log("opponent position: " + GameProcess.opPosY);
+			float oppY = (GameProcess.opPosY / gp.wallRatio) + gp.bWall.transform.position.y;
 			transform.position = new Vector3(-8, oppY, 0);
 		}
 
 		//lastY = y;
 		lastY = transAmount;
 
-	}
-
-	public void position(float pos)
-	{
-		transform.position = new Vector3 (-8, pos, 0);
 	}
 }
