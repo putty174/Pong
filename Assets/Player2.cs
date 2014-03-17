@@ -14,7 +14,7 @@ public class Player2 : MonoBehaviour {
 
 	float deltaPosition;
 
-	private int speed = 10;
+	//private int speed = 10;
 
 
 	private GameProcess gp;
@@ -59,17 +59,15 @@ public class Player2 : MonoBehaviour {
 		//if(GameProcess.buffer == 1)
 		if(GameProcess.player == 2)
 		{
-<<<<<<< HEAD
+
 			//transform.position = new Vector3 (-8, speed, 0);
 			transform.Translate(new Vector3(-8, speed, 0));
 			//transform.rigidbody2D.AddForce(new Vector2(0,speed));
 			player2PosX = transform.position.x;
 			player2PosY = transform.position.y;
 			Debug.Log("my position: " + player2PosY);
-			deltaPosition = y - lastY;
-			Debug.Log("current possition: " + y);
-			Debug.Log("last position: " + lastY);
-			Debug.Log("delta position: " + deltaPosition);
+			deltaPosition = transAmount - lastY;
+
 			
 			if(deltaPosition > .04)
 			{
@@ -80,7 +78,7 @@ public class Player2 : MonoBehaviour {
 			}
 			
 			
-=======
+
 			//transform.position = new Vector3 (8, y, 0);
 			if(Input.GetKey(KeyCode.UpArrow))
 			{
@@ -122,17 +120,16 @@ public class Player2 : MonoBehaviour {
 			//Debug.Log("opponent position: " + GameProcess.opPosY);
 			float oppY = (GameProcess.opPosY / gp.wallRatio) + gp.bWall.transform.position.y;
 			transform.position = new Vector3(8, oppY, 0);
->>>>>>> FETCH_HEAD
+
 		}
 
 
 
 
 		//lastY = y;
-<<<<<<< HEAD
-=======
+
 		lastY = transAmount;
 
->>>>>>> FETCH_HEAD
+
 	}
 }

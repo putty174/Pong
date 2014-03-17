@@ -16,14 +16,14 @@ public class Player1 : MonoBehaviour {
 	private GameProcess gp;
 	private float lastY;
 
-<<<<<<< HEAD
-	private int speed = 10;
+
+	//private int speed = 10;
 
 
 	public GameObject player2;
-=======
+
 	public GameObject player1;
->>>>>>> FETCH_HEAD
+
 
 	// Use this for initialization
 	void Start () {
@@ -78,18 +78,16 @@ public class Player1 : MonoBehaviour {
 			//transform.position = new Vector3 (-8, y, 0);
 			player1PosX = transform.position.x;
 			player1PosY = transform.position.y;
-<<<<<<< HEAD
+
 //			Debug.Log("my position: " + player1PosY);
-			deltaPosition = y - lastY;
+			deltaPosition = transAmount - lastY;
 //			Debug.Log("current possition: " + y);
 //			Debug.Log("last position: " + lastY);
 //			Debug.Log("delta position: " + deltaPosition);
 			
 
 				gp.sendPositions ();
-				gp.sendPositions ();
-				gp.sendPositions ();
-				gp.sendPositions ();
+				
 
 				
 
@@ -97,24 +95,7 @@ public class Player1 : MonoBehaviour {
 
 
 
-		//lastY = y;
-=======
-			//deltaPosition = y - lastY;
-			deltaPosition = transAmount - lastY;
-//			Debug.Log("current possition: " + y);
-//			Debug.Log("last position: " + lastY);
-//			//Debug.Log("delta position: " + deltaPosition);
-			//
-//			if(deltaPosition > .04)
-//			{
-//				gp.sendPositions ();
-//				gp.sendPositions ();
-//				gp.sendPositions ();
-//				gp.sendPositions ();
-//			}
-//				
-			gp.sendPositions();
-		}
+
 		else
 		{
 			
@@ -128,7 +109,7 @@ public class Player1 : MonoBehaviour {
 
 		//lastY = y;
 		lastY = transAmount;
->>>>>>> FETCH_HEAD
+
 
 	}
 }
