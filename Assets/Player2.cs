@@ -4,6 +4,9 @@ using System.Collections;
 public class Player2 : MonoBehaviour {
 	float limit = 4.45f;
 
+	private float speed = 8.0f;
+
+
 	public static float player2PosX; 
 	public static float player2PosY;
 	//public static float player1PosZ;
@@ -18,7 +21,6 @@ public class Player2 : MonoBehaviour {
 
 	public GameObject player1;
 
-
 	// Use this for initialization
 	void Start () {
 	
@@ -28,16 +30,16 @@ public class Player2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float y = ((Input.mousePosition.y / Screen.height) * 12) - 6;
+		//float y = ((Input.mousePosition.y / Screen.height) * 12) - 6;
 
 
-
+		float transAmount = speed * Time.deltaTime;
 
 		 
-		if (y > limit)
-			y = limit;
-		else if (y < -limit)
-			y = -limit;
+		//if (y > limit)
+		//	y = limit;
+		//else if (y < -limit)
+		//	y = -limit;
 
 
 		if(GameProcess.player == 1)
@@ -57,6 +59,7 @@ public class Player2 : MonoBehaviour {
 		//if(GameProcess.buffer == 1)
 		if(GameProcess.player == 2)
 		{
+<<<<<<< HEAD
 			//transform.position = new Vector3 (-8, speed, 0);
 			transform.Translate(new Vector3(-8, speed, 0));
 			//transform.rigidbody2D.AddForce(new Vector2(0,speed));
@@ -77,11 +80,59 @@ public class Player2 : MonoBehaviour {
 			}
 			
 			
+=======
+			//transform.position = new Vector3 (8, y, 0);
+			if(Input.GetKey(KeyCode.UpArrow))
+			{
+				transform.Translate (0,transAmount,0);
+			}
+			
+			if(Input.GetKey (KeyCode.DownArrow))
+			{
+				transform.Translate (0,-transAmount,0);
+			}
+
+
+
+			player2PosX = transform.position.x;
+			player2PosY = transform.position.y;
+
+			//deltaPosition = y - lastY;
+			deltaPosition = transAmount - lastY;
+
+//			Debug.Log("current possition: " + y);
+//			Debug.Log("last position: " + lastY);
+//			Debug.Log("delta position: " + deltaPosition);
+			
+//			if(deltaPosition > .04)
+//			{
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//			}
+			gp.sendPositions();
+		}
+		else
+		{
+			
+			//float temp1 = (float)GameProcess.opPosY + GameObject.Find ("BottomWall").transform.position.y;
+			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
+			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
+			//Debug.Log("opponent position: " + GameProcess.opPosY);
+			float oppY = (GameProcess.opPosY / gp.wallRatio) + gp.bWall.transform.position.y;
+			transform.position = new Vector3(8, oppY, 0);
+>>>>>>> FETCH_HEAD
 		}
 
 
 
 
 		//lastY = y;
+<<<<<<< HEAD
+=======
+		lastY = transAmount;
+
+>>>>>>> FETCH_HEAD
 	}
 }

@@ -13,7 +13,7 @@ public class Client : MonoBehaviour {
 	public static Stopwatch uniClock;
 	public static DateTime dTime;
 	const string serverLocation = "128.195.11.124";
-	const int maxLimit = 7;
+	//const int maxLimit = 7;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
@@ -50,9 +50,13 @@ public class Client : MonoBehaviour {
 	public Client()
 	{
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
+<<<<<<< HEAD
 		receiverBuffer = new Queue (maxLimit);
 		dTime = getNTPTime(ref uniClock);
 
+=======
+		receiverBuffer = new Queue ();
+>>>>>>> FETCH_HEAD
 	}
 	
 	// Use this for initialization

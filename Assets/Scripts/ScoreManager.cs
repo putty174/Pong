@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour {
 	public GUISkin skin;
 
 	GameProcess gp;
+<<<<<<< HEAD
 
 
 	void Start()
@@ -24,6 +25,8 @@ public class ScoreManager : MonoBehaviour {
 		gp = GameObject.Find ("_GameManager").GetComponent<GameProcess>();
 	}
 
+=======
+>>>>>>> FETCH_HEAD
 
 
 	static public void ScoreCounter(string goal)
@@ -80,7 +83,14 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 
+<<<<<<< HEAD
 
+=======
+	// Use this for initialization
+	void Start () {
+		gp = GameObject.Find ("_GameManager").GetComponent<GameProcess> ();
+	}
+>>>>>>> FETCH_HEAD
 	
 	// Update is called once per frame
 	void Update () {
