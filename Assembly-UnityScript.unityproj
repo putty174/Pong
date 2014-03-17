@@ -46,9 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Player1Script.js" />
-     <Compile Include="Assets\Player2Script.js" />
-     <Compile Include="Assets\PlayerScript.js" />
      <Compile Include="Assets\Scripts\GameSetup.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

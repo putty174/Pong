@@ -148,6 +148,8 @@ namespace MasterServer
                 //stream1.WriteByte(0);
                 //stream2.WriteByte(128);
                 //stream2.WriteByte(0);
+                stream1.Flush();
+                stream2.Flush();
                 stream1.WriteByte(128);
                 stream2.WriteByte(128);
                 startGame = true;
