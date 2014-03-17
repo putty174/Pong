@@ -154,32 +154,37 @@ namespace MasterServer
 
         public void process()
         {
-            pos1 = stream1.ReadByte();
-            stream2.WriteByte((byte)pos1);
-            vel1 = stream1.ReadByte();
-            stream2.WriteByte((byte)vel1);
-            col1 = stream1.ReadByte();
-            time1 = stream1.ReadByte();
-
-            stream1.WriteByte((byte)Convert.ToInt32(nposx));
-            stream1.WriteByte((byte)Convert.ToInt32(nposy));
-            stream1.WriteByte((byte)Convert.ToInt32(vel));
-            stream1.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
-            stream2.WriteByte((byte)lastTime.Second);
             
 
-            pos2 = stream2.ReadByte();
-            stream1.WriteByte((byte)pos2);
-            vel2 = stream2.ReadByte();
-            stream1.WriteByte((byte)vel2);
-            col2 = stream2.ReadByte();
-            time2 = stream2.ReadByte();
+			//stream 1
+			pos2 = stream2.ReadByte();
+			stream1.WriteByte((byte)pos2);
+			//vel2 = stream2.ReadByte();
+			//stream1.WriteByte((byte)vel2);
+			//col2 = stream2.ReadByte();
+			//time2 = stream2.ReadByte();
 
-            stream1.WriteByte((byte)Convert.ToInt32(nposx));
-            stream1.WriteByte((byte)Convert.ToInt32(nposy));
-            stream1.WriteByte((byte)Convert.ToInt32(vel));
-            stream1.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
-            stream1.WriteByte((byte)lastTime.Second);
+			//stream 2
+			pos1 = stream1.ReadByte();
+			stream2.WriteByte((byte)pos1);
+			//vel1 = stream1.ReadByte();
+			//stream2.WriteByte((byte)vel1);
+			//col1 = stream1.ReadByte();
+			//time1 = stream1.ReadByte();
+
+			//stream 1
+            //stream1.WriteByte((byte)Convert.ToInt32(nposx));
+            //stream1.WriteByte((byte)Convert.ToInt32(nposy));
+            //stream1.WriteByte((byte)Convert.ToInt32(vel));
+            //stream1.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
+            //stream1.WriteByte((byte)lastTime.Second);
+            
+			//stream 2
+			//stream2.WriteByte((byte)Convert.ToInt32(nposx));
+            //stream2.WriteByte((byte)Convert.ToInt32(nposy));
+            //stream2.WriteByte((byte)Convert.ToInt32(vel));
+            //stream2.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
+           //stream2.WriteByte((byte)lastTime.Second);
 
             Console.WriteLine(" >> Client 1: " + pos1 + " , " + vel1 + " , " + col1 + " , " + time1);
             Console.WriteLine("    >> Client 2: " + pos2 + " , " + vel2 + " , " + col2 + " , " + time2);

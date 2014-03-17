@@ -10,6 +10,7 @@ using System.Threading;
 public class Client : MonoBehaviour {
 	
 	const string serverLocation = "128.195.11.124";
+	const int maxLimit = 7;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
@@ -46,7 +47,7 @@ public class Client : MonoBehaviour {
 	public Client()
 	{
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
-		receiverBuffer = new Queue ();
+		receiverBuffer = new Queue (maxLimit);
 	}
 	
 	// Use this for initialization
@@ -88,14 +89,14 @@ public class Client : MonoBehaviour {
 		//if(server.numOfClientsConnected = 2) playerThatClientControls = 2; 
 		//else playerThatClientControls = 1;
 		//if(nws == 1)
-		if(receiverBuffer.Dequeue ().ToString() == "1")
-		{
-			playerThatClientControls = 2;
-		}
-		else
-		{
-			playerThatClientControls = 1;
-		}
+//		if(receiverBuffer.Dequeue ().ToString() == "1")
+//		{
+//			playerThatClientControls = 2;
+//		}
+//		else
+//		{
+//			playerThatClientControls = 1;
+//		}
 		
 
 
@@ -149,6 +150,18 @@ public class Client : MonoBehaviour {
 			Console.WriteLine ("Sent: " + message);
 		}
 		catch(ArgumentException e)
+		{
+			Console.WriteLine(e.ToString());
+		}
+	}
+
+	public void recieve()
+	{
+		try
+		{
+			nws.ReadByte();
+		}
+		catch(Exception e)
 		{
 			Console.WriteLine(e.ToString());
 		}
