@@ -188,8 +188,10 @@ namespace MasterServer
             //stream2.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
            //stream2.WriteByte((byte)lastTime.Second);
 
-            Console.WriteLine(" >> Client 1: " + pos1 + " , " + vel1 + " , " + col1 + " , " + time1);
-            Console.WriteLine("    >> Client 2: " + pos2 + " , " + vel2 + " , " + col2 + " , " + time2);
+            //Console.WriteLine(" >> Client 1: " + pos1 + " , " + vel1 + " , " + col1 + " , " + time1);
+            //Console.WriteLine("    >> Client 2: " + pos2 + " , " + vel2 + " , " + col2 + " , " + time2);
+            Console.WriteLine(" >> Client 1: " + pos1);
+            Console.WriteLine("    >> Client 2 " + pos2);
             Console.WriteLine(System.Environment.NewLine);
         }
 

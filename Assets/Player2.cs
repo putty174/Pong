@@ -82,14 +82,14 @@ public class Player2 : MonoBehaviour {
 //			Debug.Log("last position: " + lastY);
 //			Debug.Log("delta position: " + deltaPosition);
 			
-			if(deltaPosition > .04)
-			{
-				gp.sendPositions ();
-				gp.sendPositions ();
-				gp.sendPositions ();
-				gp.sendPositions ();
-			}
-
+//			if(deltaPosition > .04)
+//			{
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//			}
+			gp.sendPositions();
 		}
 		else
 		{
