@@ -28,12 +28,12 @@ public class TSock : MonoBehaviour
 				{
 					Debug.Log(buffer);
 					sock.receiverBuffer.Enqueue(buffer);
-					if(sock.receiverBuffer.Count > serverLength)
-					{
-						for(int i = 0; i < 7; i++) {
-							sock.receiverBuffer.Dequeue();
-						}
-					}
+//					if(sock.receiverBuffer.Count > serverLength)
+//					{
+//						for(int i = 0; i < 7; i++) {
+//							sock.receiverBuffer.Dequeue();
+//						}
+//					}
 				}
 			}
 		}

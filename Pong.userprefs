@@ -1,30 +1,18 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TSock.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScoreManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\BallScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="150" Column="49" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="284" Column="1" />
       <File FileName="Assets\Player1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Sockets.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TSock.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\GoalScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUIScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Client.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameProcess.cs">
-    <Files>
-      <File FileName="Assets/Player1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="1" Column="1" />
->>>>>>> f24544e31bfd3c7613e8df4a38feb2bf16a7ca3c
+      <File FileName="Assets\Player2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Client.cs" Line="56" Column="3" />
+      <File FileName="Assets\Scripts\TSock.cs" Line="26" Column="26" />
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="49" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="E:\Users\Max\Documents\GitHub\Pong\Assets\Scripts\GUIScript.cs" line="81" />
-      <Breakpoint enabled="false" file="E:\Users\Max\Documents\GitHub\Pong\Assets\Scripts\GameProcess.cs" line="83" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

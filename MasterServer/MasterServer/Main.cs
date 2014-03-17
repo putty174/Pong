@@ -140,14 +140,16 @@ namespace MasterServer
             }
             if (start1 && start2 && !startGame)
             {
-                startTime = DateTime.Now;
-                lastTime = startTime;
-                stream1.WriteByte(255);
-                stream2.WriteByte(255);
+                //startTime = DateTime.Now;
+                //lastTime = startTime;
+                //stream1.WriteByte(255);
+                //stream2.WriteByte(255);
+                //stream1.WriteByte(128);
+                //stream1.WriteByte(0);
+                //stream2.WriteByte(128);
+                //stream2.WriteByte(0);
                 stream1.WriteByte(128);
-                stream1.WriteByte(0);
                 stream2.WriteByte(128);
-                stream2.WriteByte(0);
                 startGame = true;
             }
         }

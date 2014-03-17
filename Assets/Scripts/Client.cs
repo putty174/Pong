@@ -10,7 +10,7 @@ using System.Threading;
 public class Client : MonoBehaviour {
 	
 	const string serverLocation = "128.195.11.124";
-	const int maxLimit = 7;
+	//const int maxLimit = 7;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
@@ -47,7 +47,7 @@ public class Client : MonoBehaviour {
 	public Client()
 	{
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
-		receiverBuffer = new Queue (maxLimit);
+		receiverBuffer = new Queue ();
 	}
 	
 	// Use this for initialization
