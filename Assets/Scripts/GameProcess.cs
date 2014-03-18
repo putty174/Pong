@@ -5,7 +5,7 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
-	public bool gameStart;
+	public static bool gameStart;
 	private GameObject ball;
 	private Player1 p1;
 	private Player2 p2;
