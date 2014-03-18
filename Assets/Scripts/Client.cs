@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Net;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 
 using System.Threading;
@@ -52,22 +53,13 @@ public class Client : MonoBehaviour {
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
 		receiverBuffer = new Queue ();
 
-<<<<<<< HEAD
-		dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
-
-
-
-=======
-		uniClock = new Stopwatch();
-		//dTime = getNTPTime(ref uniClock);
-
-		
->>>>>>> FETCH_HEAD
 
 	}
 	
 	// Use this for initialization
 	void Start () {
+
+
 
 	}
 	
@@ -76,7 +68,7 @@ public class Client : MonoBehaviour {
 		
 		//________SEND POSITIONS TO SERVER HERE_________
 		
-		
+
 		
 		
 	}
@@ -85,8 +77,10 @@ public class Client : MonoBehaviour {
 	{
 		try
 		{
+
 			client = new TcpClient();
 			client.Connect(serverEndPoint);
+
 			nws = client.GetStream();
 			TSock ts = new TSock(nws, this);
 			t = new Thread(new ThreadStart(ts.process));

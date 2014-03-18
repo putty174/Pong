@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MasterServer/Main.cs">
     <Files>
-      <File FileName="MasterServer/Main.cs" Line="70" Column="31" />
+      <File FileName="MasterServer/Main.cs" Line="70" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
