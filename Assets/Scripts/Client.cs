@@ -56,14 +56,10 @@ public class Client : MonoBehaviour {
 
 		receiverBuffer = new Queue ();
 
-		//dTime = getNTPTime(ref uniClock);
 
+		//uniClock = new Stopwatch();
 
-		receiverBuffer = new Queue ();
-
-		uniClock = new Stopwatch();
-		dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
-
+		//dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
 
 
 
@@ -97,6 +93,7 @@ public class Client : MonoBehaviour {
 		{
 
 			client = new TcpClient();
+
 			client.Connect(serverEndPoint);
 
 			nws = client.GetStream();
