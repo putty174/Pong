@@ -43,6 +43,8 @@ public class GameProcess : MonoBehaviour {
 		sockets = new Sockets();
 		client = new Client();
 		opPosY = 128;
+		ballPosX = 128;
+		ballPosY = 128;
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
