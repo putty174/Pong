@@ -142,8 +142,8 @@ namespace MasterServer
             {
                 //startTime = DateTime.Now;
                 //lastTime = startTime;
-                //stream1.WriteByte(255);
-                //stream2.WriteByte(255);
+                stream1.WriteByte(255);
+                stream2.WriteByte(255);
                 //stream1.WriteByte(128);
                 //stream1.WriteByte(0);
                 //stream2.WriteByte(128);
