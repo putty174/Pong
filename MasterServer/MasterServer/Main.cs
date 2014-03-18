@@ -122,8 +122,6 @@ namespace MasterServer
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
-			listenThread1.Abort();
-			listenThread2.Abort();
         }
 		
 		public void ListendForTCPClients()
@@ -172,6 +170,8 @@ namespace MasterServer
             }
             finally
             {
+                listenThread1.Abort();
+                listenThread2.Abort();
                 this.listener.Stop();
             }
 		}
