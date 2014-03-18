@@ -11,6 +11,7 @@ public class GameProcess : MonoBehaviour {
 	private Player2 p2;
 	private BallScript bscript;
 	public GameObject bWall;
+	public GameObject lPaddle;
 
 	//private int player = -1;
 	public static int player = -1;
@@ -31,7 +32,8 @@ public class GameProcess : MonoBehaviour {
     private int time;
     private Vector2 hit;
     private Vector2 pointOfCollision;
-	public float wallRatio;
+	public static float wallRatio;
+	public static float paddleRatio;
 
 	// Use this for initialization
 	void Start () {
@@ -46,7 +48,9 @@ public class GameProcess : MonoBehaviour {
 		p1 = (Player1) GameObject.Find ("Player1").GetComponent ("Player1");
 		p2 = (Player2) GameObject.Find ("Player2").GetComponent ("Player2");
 		bscript = (BallScript) GameObject.Find ("GameBall").GetComponent("BallScript");
+		lPaddle = GameObject.Find ("Player1");
 		bWall = GameObject.Find ("BottomWall");
+		paddleRatio = (250.0f / (GameObject.Find("Player2").transform.position.x - GameObject.Find("Player1").transform.position.x));
 		wallRatio = (250.0f / (GameObject.Find ("TopWall").transform.position.y - bWall.transform.position.y));
 	}
 	
@@ -155,7 +159,10 @@ public class GameProcess : MonoBehaviour {
 //							p1.position((opPosY / wallRatio) + bWall.transform.position.y);
 //						}
 						//Debug.Log("opponent position: " + opPosY);
-						bscript.position(ballPosX,ballPosY);
+						ballPosX = (int) client.receiverBuffer.Dequeue();
+						ballPosY = (int) client.receiverBuffer.Dequeue();
+						angle = (int) client.receiverBuffer.Dequeue();
+						ballVel = (int) client.receiverBuffer.Dequeue();
                     }
 				}
 			}

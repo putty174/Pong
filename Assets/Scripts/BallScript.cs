@@ -32,12 +32,7 @@ public class BallScript : MonoBehaviour {
 	// velocity
 	//private int velocityY = rigidbody2D.velocity.y;
 
-
-
-	public GameObject player1Top;
-	public GameObject player1Bottom;
-	public GameObject player2Top;
-	public GameObject player2Bottom;
+	private GameProcess gp;
 
 	// velocity reset
 	private int velocityReset;
@@ -46,29 +41,32 @@ public class BallScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () { 
+		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
 	}
 
 	void Update()
 	{
 		changeBallColor ();
-		//________SEND POSITIONS TO SERVER HERE_________
-		ballPosition = transform.position;
+
+		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
+		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
+		transform.position = new Vector3 (x,y,0);
 	}
 
 	public void BallStart()
 	{
-		var randomNumber = Random.Range(0,2);
-
-		//if collides with player 1, go positive constant direction
-		if(randomNumber <= 0.5)
-		{
-			rigidbody2D.AddForce(new Vector2 (ballSpeed, 10));
-		}
-		else
-		{
-			//if collides with player 2, go negative constant directioin
-			rigidbody2D.AddForce(new Vector2 (-ballSpeed, -10));
-		}
+//		var randomNumber = Random.Range(0,2);
+//
+//		//if collides with player 1, go positive constant direction
+//		if(randomNumber <= 0.5)
+//		{
+//			rigidbody2D.AddForce(new Vector2 (ballSpeed, 10));
+//		}
+//		else
+//		{
+//			//if collides with player 2, go negative constant directioin
+//			rigidbody2D.AddForce(new Vector2 (-ballSpeed, -10));
+//		}
 	}
 
 	public void BallReset()

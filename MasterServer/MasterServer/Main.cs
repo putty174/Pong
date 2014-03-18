@@ -55,9 +55,11 @@ namespace MasterServer
         double nposx, nposy;
         double angle;
         int vel;
+        double angleRatio;
 		
 		public MainServer()
 		{
+            angleRatio = 2 * Math.PI / 250;
 			connectedPlayers = 0;
             start1 = false;
             start2 = false;
@@ -227,6 +229,15 @@ namespace MasterServer
                 angle = changeAngle(angle);
             }
 
+            stream1.WriteByte((byte)Convert.ToInt16(nposx));
+            stream1.WriteByte((byte)Convert.ToInt16(nposy));
+            stream1.WriteByte((byte)Convert.ToInt16(angle * angleRatio));
+            stream1.WriteByte((byte)vel);
+
+            stream2.WriteByte((byte)Convert.ToInt16(nposx));
+            stream2.WriteByte((byte)Convert.ToInt16(nposy));
+            stream2.WriteByte((byte)Convert.ToInt16(angle * angleRatio));
+            stream2.WriteByte((byte)vel);
 
             lastTime = DateTime.Now;
         }

@@ -98,7 +98,7 @@ public class Player2 : MonoBehaviour {
 			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
 			//Debug.Log("opponent position: " + GameProcess.opPosY);
-			float oppY = (GameProcess.opPosY / gp.wallRatio) + gp.bWall.transform.position.y;
+			float oppY = (GameProcess.opPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
 			transform.position = new Vector3(8, oppY, 0);
 		}
 
