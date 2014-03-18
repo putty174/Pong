@@ -5,6 +5,7 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
+	public bool gameStart;
 	private GameObject ball;
 	private Player1 p1;
 	private Player2 p2;
@@ -41,6 +42,7 @@ public class GameProcess : MonoBehaviour {
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
+		gameStart = false;
 		p1 = (Player1) GameObject.Find ("Player1").GetComponent ("Player1");
 		p2 = (Player2) GameObject.Find ("Player2").GetComponent ("Player2");
 		bscript = (BallScript) GameObject.Find ("GameBall").GetComponent("BallScript");
@@ -109,6 +111,7 @@ public class GameProcess : MonoBehaviour {
 	                        break;
 						case 255:
 							bscript.BallStart();
+							gameStart = true;
 							Debug.Log("Start");
 							break;
                         }
