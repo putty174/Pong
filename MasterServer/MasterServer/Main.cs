@@ -68,12 +68,12 @@ namespace MasterServer
             start2 = false;
 			clientList = new TcpClient[maxPlayers];
 
-            IPHostEntry host;
-            IPAddress thisComputer;
-            thisComputer = Dns.GetHostEntry("127.0.0.1").AddressList[0];
-            
+            //IPHostEntry host;
+            //IPAddress thisComputer;
+            //thisComputer = Dns.GetHostEntry("127.0.0.1").AddressList[0];
+            //listener = new TcpListener(thisComputer, portNumber);
 
-			listener = new TcpListener(thisComputer, portNumber);
+            listener = new TcpListener(IPAddress.Any, portNumber);
 			listenThread1 = new Thread (new ThreadStart (ListendForTCPClients));
 			listenThread1.Start ();
 			listenThread2 = new Thread (new ThreadStart (ListendForTCPClients));
