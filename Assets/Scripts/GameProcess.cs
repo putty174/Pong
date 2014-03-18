@@ -232,7 +232,7 @@ public class GameProcess : MonoBehaviour {
 		{
 			try
 			{
-<<<<<<< HEAD
+//<<<<<<< HEAD
 				//send Player1.x
 				//send Player1.y
 				//client.Send ((byte)Player1.player1PosX);
@@ -243,15 +243,15 @@ public class GameProcess : MonoBehaviour {
 				// then use ratio to convert to 0~250
 				// send to server
 				
-				float pos = (Player1.player1PosY - bWall.transform.position.y) * wallRatio;
-				int result = Convert.ToInt16(pos);
+				////float pos = (Player1.player1PosY - bWall.transform.position.y) * wallRatio;
+				////int result = Convert.ToInt16(pos);
 				//Debug.Log ("Player Position: " + result);
 				//Debug.Log("Player 1 Position: " + result);
-				client.Send((byte)result);//player position * (manual byte range / boardwidth)
+				////client.Send((byte)result);//player position * (manual byte range / boardwidth)
 
 
 
-				Debug.Log("result: " + result);
+//				Debug.Log("result: " + result);
 
 
 				
@@ -262,7 +262,7 @@ public class GameProcess : MonoBehaviour {
 				//number 252 is ..
 				//etc.  
 				
-=======
+//=======
 				if(player == 1)
 				{
 					//send Player1.x
@@ -309,7 +309,7 @@ public class GameProcess : MonoBehaviour {
 					
 					
 				}
->>>>>>> FETCH_HEAD
+//>>>>>>> FETCH_HEAD
 				
 			}
 			catch(Exception ex)

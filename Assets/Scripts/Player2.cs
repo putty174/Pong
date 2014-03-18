@@ -71,10 +71,10 @@ public class Player2 : MonoBehaviour {
 			
 			if(deltaPosition > .04)
 			{
-				gp.sendPositions ();
-				gp.sendPositions ();
-				gp.sendPositions ();
-				gp.sendPositions ();
+				//gp.sendPositions ();
+				//gp.sendPositions ();
+				//gp.sendPositions ();
+				//gp.sendPositions ();
 			}
 			
 			

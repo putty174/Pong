@@ -6,10 +6,10 @@ using System.Threading;
 using System.Text;
 using System.Net.Sockets;
 using System.Linq;
-<<<<<<< HEAD
+//<<<<<<< HEAD
 using System.Timers;
-=======
->>>>>>> FETCH_HEAD
+//=======
+//>>>>>>> FETCH_HEAD
 using System.Diagnostics;
 
 
@@ -421,10 +421,10 @@ host, in 64-bit timestamp format.
 			return dt;
 			
 		}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
-=======
->>>>>>> FETCH_HEAD
+//=======
+//>>>>>>> FETCH_HEAD
 	}
 
 

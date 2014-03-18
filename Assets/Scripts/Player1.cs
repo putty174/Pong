@@ -83,16 +83,16 @@ public class Player1 : MonoBehaviour {
 			deltaPosition = transAmount - lastY;
 //			Debug.Log("current possition: " + y);
 //			Debug.Log("last position: " + lastY);
-<<<<<<< HEAD:Assets/Player1.cs
+//<<<<<<< HEAD:Assets/Player1.cs
 //			Debug.Log("delta position: " + deltaPosition);
 			
 
-				gp.sendPositions ();
+//				gp.sendPositions ();
 				
 
 				
 
-=======
+//=======
 //			//Debug.Log("delta position: " + deltaPosition);
 			//
 //			if(deltaPosition > .04)
@@ -104,7 +104,7 @@ public class Player1 : MonoBehaviour {
 //			}
 //				
 			GameProcess.sendPositions();
->>>>>>> FETCH_HEAD:Assets/Scripts/Player1.cs
+//>>>>>>> FETCH_HEAD:Assets/Scripts/Player1.cs
 		}
 
 
