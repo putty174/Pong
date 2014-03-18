@@ -123,6 +123,7 @@ public class GameProcess : MonoBehaviour {
 							break;
 						default:
 							opPosY = buffer;
+							break;
 						}
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
