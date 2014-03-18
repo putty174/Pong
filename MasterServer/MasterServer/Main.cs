@@ -248,9 +248,9 @@ namespace MasterServer
 			
 			//IPAddress serverAddr = IPAddress.Parse("nist1-la.ustiming.org ");
 			
-			IPAddress serverAddr = IPAddress.Parse("128.195.11.124");
+			IPAddress serverAddr = IPAddress.Parse("64.147.116.229");
 			
-			IPEndPoint endPoint = new IPEndPoint(serverAddr, 4000);
+			IPEndPoint endPoint = new IPEndPoint(serverAddr, 123);
 			
 			byte[] ntpData = new byte[48];
 			
