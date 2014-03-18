@@ -161,18 +161,11 @@ public class GameProcess : MonoBehaviour {
 //							p1.position((opPosY / wallRatio) + bWall.transform.position.y);
 //						}
 						//Debug.Log("opponent position: " + opPosY);
-<<<<<<< HEAD
-						ballPosX = (int) client.receiverBuffer.Dequeue();
-						ballPosY = (int) client.receiverBuffer.Dequeue();
-						angle = (int) client.receiverBuffer.Dequeue();
-						ballVel = (int) client.receiverBuffer.Dequeue();
-						Debug.Log("Opp Pos: " + opPosY + ", BallX: " + ballPosX + ", BallY: " + ballPosY + ", Angle: " + angle + ", BallVel: " + ballVel);
-=======
+
 						//ballPosX = (int) client.receiverBuffer.Dequeue();
 						//ballPosY = (int) client.receiverBuffer.Dequeue();
 						//angle = (int) client.receiverBuffer.Dequeue();
 						//ballVel = (int) client.receiverBuffer.Dequeue();
->>>>>>> 977c01a98cf9c5eaa029f4b01a804b798491ca07
                     }
 				}
 			}

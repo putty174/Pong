@@ -103,8 +103,6 @@ namespace MasterServer
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
             vel = 10;
-
-<<<<<<< HEAD
             packet1[0] = (byte) 128;
             packet1[1] = (byte) 128;
             packet1[2] = (byte) 128;
@@ -124,12 +122,8 @@ namespace MasterServer
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
-=======
 			listenThread1.Abort();
 			listenThread2.Abort();
-
-
->>>>>>> 977c01a98cf9c5eaa029f4b01a804b798491ca07
         }
 		
 		public void ListendForTCPClients()
