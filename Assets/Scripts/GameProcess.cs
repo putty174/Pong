@@ -5,19 +5,20 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
-	public static bool gameStart;
+	public bool gameStart;
 	private GameObject ball;
 	private Player1 p1;
 	private Player2 p2;
 	private BallScript bscript;
-	public static GameObject bWall;
+	public GameObject bWall;
+	public GameObject lPaddle;
 
 	//private int player = -1;
 	public static int player = -1;
 
 	//PRIVATE MEMBERS
 	private Sockets sockets;
-	private static Client client;
+	private Client client;
 	private GUIScript gui;
     private Vector2 collisionLoc; //collision location
 
@@ -32,6 +33,7 @@ public class GameProcess : MonoBehaviour {
     private Vector2 hit;
     private Vector2 pointOfCollision;
 	public static float wallRatio;
+	public static float paddleRatio;
 
 	// Use this for initialization
 	void Start () {
@@ -46,7 +48,9 @@ public class GameProcess : MonoBehaviour {
 		p1 = (Player1) GameObject.Find ("Player1").GetComponent ("Player1");
 		p2 = (Player2) GameObject.Find ("Player2").GetComponent ("Player2");
 		bscript = (BallScript) GameObject.Find ("GameBall").GetComponent("BallScript");
+		lPaddle = GameObject.Find ("Player1");
 		bWall = GameObject.Find ("BottomWall");
+		paddleRatio = (250.0f / (GameObject.Find("Player2").transform.position.x - GameObject.Find("Player1").transform.position.x));
 		wallRatio = (250.0f / (GameObject.Find ("TopWall").transform.position.y - bWall.transform.position.y));
 	}
 	
@@ -145,14 +149,6 @@ public class GameProcess : MonoBehaviour {
 						//                        //Stores information on opponent position (Y), 
 						//opponent velocity, ball position (X, Y),
 						//angle of ball, server time.
-
-						float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
-						opPosY = (int)client.receiverBuffer.Dequeue() / wallRatio;
-						
-
-						Debug.Log("opponent position: " + opPosY);
-						
-
 						//opPosY = ((float)(client.receiverBuffer.Dequeue())) / wallRatio;
 //						if(player == 1)
 //						{
@@ -163,7 +159,10 @@ public class GameProcess : MonoBehaviour {
 //							p1.position((opPosY / wallRatio) + bWall.transform.position.y);
 //						}
 						//Debug.Log("opponent position: " + opPosY);
-						bscript.position(ballPosX,ballPosY);
+						ballPosX = (int) client.receiverBuffer.Dequeue();
+						ballPosY = (int) client.receiverBuffer.Dequeue();
+						angle = (int) client.receiverBuffer.Dequeue();
+						ballVel = (int) client.receiverBuffer.Dequeue();
                     }
 				}
 			}
@@ -183,7 +182,7 @@ public class GameProcess : MonoBehaviour {
 	}
 
 
-    /*
+
     //return estimated time of collision.
     //Parameters (ball position, ball angle, ball velocity)
     public int timeOfcollide(Vector2 pos, int angle, int velocity)
@@ -219,50 +218,18 @@ public class GameProcess : MonoBehaviour {
         
         return (int)(distance / velocity);
     }
-    */
 
     public bool collide()
     {
         return true;
     }
 
-	public static void sendPositions ()
+	public void sendPositions ()
 	{
 		if(gameStart)
 		{
 			try
 			{
-//<<<<<<< HEAD
-				//send Player1.x
-				//send Player1.y
-				//client.Send ((byte)Player1.player1PosX);
-				//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
-				
-				//get paddle position
-				// offeset so positive (add botwall.y)
-				// then use ratio to convert to 0~250
-				// send to server
-				
-				////float pos = (Player1.player1PosY - bWall.transform.position.y) * wallRatio;
-				////int result = Convert.ToInt16(pos);
-				//Debug.Log ("Player Position: " + result);
-				//Debug.Log("Player 1 Position: " + result);
-				////client.Send((byte)result);//player position * (manual byte range / boardwidth)
-
-
-
-//				Debug.Log("result: " + result);
-
-
-				
-				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
-				
-				//number 0 to 250 is the number that server recognizes as a position.  
-				//number 251 is recognized as pause in the server
-				//number 252 is ..
-				//etc.  
-				
-//=======
 				if(player == 1)
 				{
 					//send Player1.x
@@ -309,7 +276,6 @@ public class GameProcess : MonoBehaviour {
 					
 					
 				}
-//>>>>>>> FETCH_HEAD
 				
 			}
 			catch(Exception ex)

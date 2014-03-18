@@ -56,14 +56,14 @@ public class Client : MonoBehaviour {
 		receiverBuffer = new Queue ();
 
 
-		//uniClock = new Stopwatch();
-
+		uniClock = new Stopwatch();
+		dTime = getNTPTime(ref uniClock);
 		//dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
 
 
 
 
-		//dTime = getNTPTime(ref uniClock);
+
 
 
 
@@ -191,6 +191,78 @@ public class Client : MonoBehaviour {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+//<<<<<<< HEAD
+	public static DateTime getNTPTime( ref Stopwatch uniClock )
+	{
+		Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+		
+		//IPAddress serverAddr = IPAddress.Parse("nist1-la.ustiming.org ");
+		
+		IPAddress serverAddr = IPAddress.Parse("64.147.116.229");
+		
+		IPEndPoint endPoint = new IPEndPoint(serverAddr, 123);
+		
+		byte[] ntpData = new byte[48];
+		
+		ntpData[0] = 0x1B;
+		ulong currSeconds = (ulong)((DateTime.UtcNow - new DateTime(1900, 1, 1)).TotalSeconds);
+		ulong currMillisecs = (ulong)((DateTime.UtcNow - new DateTime(1900, 1, 1)).TotalMilliseconds);
+		ulong tempSeconds;
+		ntpData[40] = (byte)(currSeconds >> 24);
+		tempSeconds = currSeconds << 40;
+		ntpData[41] = (byte)(tempSeconds >> 56);
+		tempSeconds = currSeconds << 48;
+		ntpData[42] = (byte)(tempSeconds >> 56);
+		tempSeconds = currSeconds << 56;
+		ntpData[43] = (byte)(tempSeconds >> 56);
+		
+		currMillisecs = (ulong)(((UInt32)(currMillisecs / 1000)) * UInt32.MaxValue);
+		
+		ntpData[44] = (byte)(currMillisecs >> 24);
+		tempSeconds = currMillisecs << 40;
+		ntpData[45] = (byte)(tempSeconds >> 56);
+		tempSeconds = currMillisecs << 48;
+		ntpData[46] = (byte)(tempSeconds >> 56);
+		tempSeconds = currMillisecs << 56;
+		ntpData[47] = (byte)(tempSeconds >> 56);
+		
+		
+		sock.Connect(endPoint);
+		DateTime T1 = DateTime.UtcNow;
+		Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
+		sock.Send(ntpData);
+		while (sock.Receive(ntpData) < 44) { Console.WriteLine("getting NTP"); }
+		DateTime T4 = DateTime.UtcNow;
+		Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
+		//UInt32 destTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
+		sock.Close();
+		
+		Console.WriteLine("LI (lead indicator) : " + (ntpData[0] >> 6));
+		int temp = ntpData[0] << 2;
+		temp = temp >> 5;
+		Console.WriteLine("VN (version number) : " + temp);
+		temp = (byte)(ntpData[0] << 5);
+		temp = temp >> 5;
+		Console.WriteLine("Mode : " + temp);
+		Console.WriteLine("Stratum Level : " + ntpData[1]);
+		Console.WriteLine("Poll Interval :  " + ntpData[2]);
+		Console.WriteLine("Precision : " + ntpData[3]);
+		
+		/*
+These are the 4 time stamps that are retrieved from the NTP Packet.
+More on the details of these packets can be researched from the NTP documentation.
+
+Reference Timestamp: This is the local time at which the local clock was last set or corrected, in
+64-bit timestamp format.
+
+Originate Timestamp: This is the local time at which the request departed the client host for the
+service host, in 64-bit timestamp format.
+
+Receive Timestamp: This is the local time at which the request arrived at the service host, in 64-bit
+timestamp format.
+>>>>>>> FETCH_HEAD
 
 //=======
 
