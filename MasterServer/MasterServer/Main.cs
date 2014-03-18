@@ -239,7 +239,7 @@ namespace MasterServer
             Console.WriteLine(System.Environment.NewLine);
 
 
-			//update ();
+			update ();
 
         }
 
