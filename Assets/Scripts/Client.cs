@@ -57,14 +57,14 @@ public class Client : MonoBehaviour {
 		receiverBuffer = new Queue ();
 
 
-		//uniClock = new Stopwatch();
-
+		uniClock = new Stopwatch();
+		dTime = getNTPTime(ref uniClock);
 		//dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
 
 
 
 
-		//dTime = getNTPTime(ref uniClock);
+
 
 
 
@@ -199,9 +199,9 @@ public class Client : MonoBehaviour {
 		
 		//IPAddress serverAddr = IPAddress.Parse("nist1-la.ustiming.org ");
 		
-		IPAddress serverAddr = IPAddress.Parse(serverLocation);
+		IPAddress serverAddr = IPAddress.Parse("64.147.116.229");
 		
-		IPEndPoint endPoint = new IPEndPoint(serverAddr, portNumber);
+		IPEndPoint endPoint = new IPEndPoint(serverAddr, 123);
 		
 		byte[] ntpData = new byte[48];
 		
