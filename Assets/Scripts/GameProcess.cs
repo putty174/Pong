@@ -10,14 +10,14 @@ public class GameProcess : MonoBehaviour {
 	private Player1 p1;
 	private Player2 p2;
 	private BallScript bscript;
-	public GameObject bWall;
+	public static GameObject bWall;
 
 	//private int player = -1;
 	public static int player = -1;
 
 	//PRIVATE MEMBERS
 	private Sockets sockets;
-	private Client client;
+	private static Client client;
 	private GUIScript gui;
     private Vector2 collisionLoc; //collision location
 
@@ -31,7 +31,7 @@ public class GameProcess : MonoBehaviour {
     private int time;
     private Vector2 hit;
     private Vector2 pointOfCollision;
-	public float wallRatio;
+	public static float wallRatio;
 
 	// Use this for initialization
 	void Start () {
@@ -176,7 +176,7 @@ public class GameProcess : MonoBehaviour {
 	}
 
 
-
+    /*
     //return estimated time of collision.
     //Parameters (ball position, ball angle, ball velocity)
     public int timeOfcollide(Vector2 pos, int angle, int velocity)
@@ -212,13 +212,14 @@ public class GameProcess : MonoBehaviour {
         
         return (int)(distance / velocity);
     }
+    */
 
     public bool collide()
     {
         return true;
     }
 
-	public void sendPositions ()
+	public static void sendPositions ()
 	{
 		try
 		{
