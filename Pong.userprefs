@@ -1,5 +1,6 @@
 ﻿<Properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameProcess.cs">
     <Files>
@@ -10,6 +11,11 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Client.cs">
     <Files>
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Client.cs">
+    <Files>
+>>>>>>> cb393b27b0509abd4b4e62bbc85ce54fce6f2127
 <<<<<<< HEAD
       <File FileName="Assets/Scripts/Client.cs" Line="184" Column="62" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
@@ -20,6 +26,9 @@
       <File FileName="Assets\Scripts\GUIScript.cs" Line="52" Column="46" />
       <File FileName="Assets\Scripts\BallScript.cs" Line="58" Column="25" />
 >>>>>>> FETCH_HEAD
+<<<<<<< HEAD
+>>>>>>> cb393b27b0509abd4b4e62bbc85ce54fce6f2127
+=======
 >>>>>>> cb393b27b0509abd4b4e62bbc85ce54fce6f2127
     </Files>
   </MonoDevelop.Ide.Workbench>
