@@ -69,7 +69,7 @@ namespace MasterServer
 			listenThread1.Start ();
 			listenThread2 = new Thread (new ThreadStart (ListendForTCPClients));
 			listenThread2.Start ();
-			dTime = getNTPTime(ref uniClock);
+			//dTime = getNTPTime(ref uniClock);
             restart();
 		}
 
