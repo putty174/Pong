@@ -52,10 +52,17 @@ public class Client : MonoBehaviour {
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
 		receiverBuffer = new Queue ();
 
+<<<<<<< HEAD
 		dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
 
 
 
+=======
+		uniClock = new Stopwatch();
+		//dTime = getNTPTime(ref uniClock);
+
+		
+>>>>>>> FETCH_HEAD
 
 	}
 	
