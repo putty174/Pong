@@ -64,10 +64,14 @@ namespace MasterServer
 		
 		public MainServer()
 		{
+
+			//dTime = getNTPTime(ref uniClock);
+
             uniClock = new Stopwatch();
             dTime = getNTPTime(ref uniClock);
 
             angleRatio = 2 * Math.PI / 250;
+
 			connectedPlayers = 0;
             start1 = false;
             start2 = false;
@@ -100,6 +104,7 @@ namespace MasterServer
             angle = rand.NextDouble() * 2 * Math.PI;
             vel = 10;
 
+<<<<<<< HEAD
             packet1[0] = (byte) 128;
             packet1[1] = (byte) 128;
             packet1[2] = (byte) 128;
@@ -119,6 +124,12 @@ namespace MasterServer
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
+=======
+			listenThread1.Abort();
+			listenThread2.Abort();
+
+
+>>>>>>> 977c01a98cf9c5eaa029f4b01a804b798491ca07
         }
 		
 		public void ListendForTCPClients()
@@ -144,10 +155,12 @@ namespace MasterServer
                         packet2[0] = 1;
                         stream2.Write(packet2, 0, packet2.Length);
                     }
+
                     //handleClient client = new handleClient(); 
                     //client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
 
                     connectedPlayers++;
+
 
                 }
 
@@ -306,6 +319,9 @@ namespace MasterServer
                 return (2 - a);
         }
 
+
+
+
 		public static DateTime getNTPTime( ref Stopwatch uniClock )
 		{
 			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
@@ -428,6 +444,7 @@ host, in 64-bit timestamp format.
 			
 			return dt;
 		}
+
 	}
 
 
