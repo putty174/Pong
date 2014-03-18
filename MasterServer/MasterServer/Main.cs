@@ -237,6 +237,10 @@ namespace MasterServer
             Console.WriteLine(" >> Client 1: " + pos1);
             Console.WriteLine("    >> Client 2 " + pos2);
             Console.WriteLine(System.Environment.NewLine);
+
+
+			update ();
+
         }
 
         public void update()
@@ -272,12 +276,13 @@ namespace MasterServer
 			stream1.WriteByte ((byte)nposx);
 			stream1.WriteByte ((byte)nposy);
 			stream1.WriteByte ((byte)angle);
+			Console.WriteLine("ball positions sent to client 1: " + nposx + " " + nposy + " " + angle);
 
 			//Write to client 2
 			stream2.WriteByte ((byte)nposx);
 			stream2.WriteByte ((byte)nposy);
 			stream2.WriteByte ((byte)angle);
-
+			Console.WriteLine("ball positions sent to client 2: " + nposx + " " + nposy + " " + angle);
 
 
 
