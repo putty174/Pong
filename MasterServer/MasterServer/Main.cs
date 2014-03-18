@@ -269,7 +269,8 @@ namespace MasterServer
             else if (a == Math.PI)
                 return 0;
             else
-                return (2 - a);
+				return (2*Math.PI);
+                //return (2 - a);
         }
 
 
