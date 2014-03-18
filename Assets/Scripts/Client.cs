@@ -12,11 +12,11 @@ using System.Threading;
 
 public class Client : MonoBehaviour {
 
-	public Stopwatch uniClock;
-	public DateTime dTime;
+	Stopwatch uniClock;
+	DateTime dTime;
 
 	const string serverLocation = "128.195.11.124";
-	//const int maxLimit = 7;
+	const int maxLimit = 7;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
@@ -54,7 +54,7 @@ public class Client : MonoBehaviour {
 	{
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
 
-		receiverBuffer = new Queue ();
+		receiverBuffer = new Queue (maxLimit);
 
 
 		uniClock = new Stopwatch();
@@ -192,6 +192,7 @@ public class Client : MonoBehaviour {
 		}
 	}
 
+
 //<<<<<<< HEAD
 	public static DateTime getNTPTime( ref Stopwatch uniClock )
 	{
@@ -248,6 +249,8 @@ public class Client : MonoBehaviour {
 		Console.WriteLine("Stratum Level : " + ntpData[1]);
 		Console.WriteLine("Poll Interval :  " + ntpData[2]);
 		Console.WriteLine("Precision : " + ntpData[3]);
+
+
 		
 		/*
 These are the 4 time stamps that are retrieved from the NTP Packet.
@@ -261,11 +264,12 @@ service host, in 64-bit timestamp format.
 
 Receive Timestamp: This is the local time at which the request arrived at the service host, in 64-bit
 timestamp format.
+>>>>>>> FETCH_HEAD
 
-Transmit Timestamp: This is the local time at which the reply departed the service host for the client
-host, in 64-bit timestamp format.
+//=======
 
-*/
+//>>>>>>> FETCH_HEAD*/
+
 		TimeSpan calculationTime;
 		UInt32 refTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
 		UInt32 refTimeMicro = (UInt32)(ntpData[20] << 24) | (UInt32)(ntpData[21] << 16) | (UInt32)(ntpData[22] << 8) | (UInt32)(ntpData[23]);
@@ -313,15 +317,14 @@ host, in 64-bit timestamp format.
 		dt = dt.AddMilliseconds(networkDelay);
 		
 		
-		
-		
 		uniClock.Start();
 		
 		return dt;
+
+
 		
 	}
-//=======
 
-//>>>>>>> FETCH_HEAD
+	
 
 }
