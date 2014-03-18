@@ -12,10 +12,11 @@ using System.Threading;
 
 public class Client : MonoBehaviour {
 
-
+	Stopwatch uniClock;
+	DateTime dTime;
 
 	const string serverLocation = "128.195.11.124";
-	//const int maxLimit = 7;
+	const int maxLimit = 7;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
@@ -53,7 +54,7 @@ public class Client : MonoBehaviour {
 	{
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
 
-		receiverBuffer = new Queue ();
+		receiverBuffer = new Queue (maxLimit);
 
 
 		uniClock = new Stopwatch();
@@ -191,8 +192,7 @@ public class Client : MonoBehaviour {
 		}
 	}
 
-<<<<<<< HEAD
-=======
+
 //<<<<<<< HEAD
 	public static DateTime getNTPTime( ref Stopwatch uniClock )
 	{
@@ -249,6 +249,8 @@ public class Client : MonoBehaviour {
 		Console.WriteLine("Stratum Level : " + ntpData[1]);
 		Console.WriteLine("Poll Interval :  " + ntpData[2]);
 		Console.WriteLine("Precision : " + ntpData[3]);
+
+
 		
 		/*
 These are the 4 time stamps that are retrieved from the NTP Packet.
@@ -266,6 +268,63 @@ timestamp format.
 
 //=======
 
-//>>>>>>> FETCH_HEAD
+//>>>>>>> FETCH_HEAD*/
+
+		TimeSpan calculationTime;
+		UInt32 refTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
+		UInt32 refTimeMicro = (UInt32)(ntpData[20] << 24) | (UInt32)(ntpData[21] << 16) | (UInt32)(ntpData[22] << 8) | (UInt32)(ntpData[23]);
+		UInt32 refTimemilliseconds = (UInt32)(((double)refTimeMicro / UInt32.MaxValue) * 1000);
+		
+		UInt32 origTime = (UInt32)(ntpData[24] << 24) | (UInt32)(ntpData[25] << 16) | (UInt32)(ntpData[26] << 8) | (UInt32)(ntpData[27]);
+		UInt32 origTimeMicro = (UInt32)(ntpData[28] << 24) | (UInt32)(ntpData[29] << 16) | (UInt32)(ntpData[30] << 8) | (UInt32)(ntpData[31]);
+		UInt32 origTimemilliseconds = (UInt32)(((double)origTimeMicro / UInt32.MaxValue) * 1000);
+		
+		UInt32 recTime = (UInt32)(ntpData[32] << 24) | (UInt32)(ntpData[33] << 16) | (UInt32)(ntpData[34] << 8) | (UInt32)(ntpData[35]);
+		UInt32 recTimeMicro = (UInt32)(ntpData[36] << 24) | (UInt32)(ntpData[37] << 16) | (UInt32)(ntpData[38] << 8) | (UInt32)(ntpData[39]);
+		UInt32 recTimemilliseconds = (UInt32)(((double)recTimeMicro / UInt32.MaxValue) * 1000);
+		
+		UInt32 transTime = (UInt32)(ntpData[40] << 24) | (UInt32)(ntpData[41] << 16) | (UInt32)(ntpData[42] << 8) | (UInt32)(ntpData[43]);
+		UInt32 transTimeMicro = (UInt32)(ntpData[44] << 24) | (UInt32)(ntpData[45] << 16) | (UInt32)(ntpData[46] << 8) | (UInt32)(ntpData[47]);
+		UInt32 milliseconds = (UInt32)(((double)transTimeMicro / UInt32.MaxValue) * 1000);
+		
+		
+		DateTime BaseDateExample = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+		Console.WriteLine("Reference time stamp : " + BaseDateExample.AddSeconds(refTime).AddMilliseconds(refTimemilliseconds));
+		Console.WriteLine("Originate time stamp : " + BaseDateExample.AddSeconds(origTime).AddMilliseconds(origTimemilliseconds));
+		
+		
+		Console.WriteLine("Receive time stamp   : " + BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds) + " " + (BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds)).Millisecond);
+		Console.WriteLine("Transmit time stamp  : " + BaseDateExample.AddSeconds(transTime).AddMilliseconds(milliseconds) + " " + (BaseDateExample.AddSeconds(transTime).AddMilliseconds(milliseconds)).Millisecond);
+		
+		DateTime BaseDate = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+		DateTime dt = BaseDate.AddSeconds(transTime).AddMilliseconds(milliseconds);
+		
+		
+		DateTime BaseDate1 = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+		DateTime T2 = BaseDate1.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds);
+		
+		calculationTime = dt.Subtract(T2);
+		
+		
+		TimeSpan delay = T4.Subtract(T1);
+		double networkDelay = delay.Milliseconds / 2.0;
+		
+		//Console.WriteLine( "Network Latency to NTP Server : " + (delay / 2.0)) ;
+		
+		
+		//tsOffset = tsOffset.Add(dt.Subtract(T4));
+		
+		dt = dt.AddMilliseconds(networkDelay);
+		
+		
+		uniClock.Start();
+		
+		return dt;
+
+
+		
+	}
+
+	
 
 }
