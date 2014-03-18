@@ -59,6 +59,9 @@ namespace MasterServer
 		
 		public MainServer()
 		{
+            uniClock = new Stopwatch();
+            dTime = getNTPTime(ref uniClock);
+
             angleRatio = 2 * Math.PI / 250;
 			connectedPlayers = 0;
             start1 = false;
@@ -75,7 +78,7 @@ namespace MasterServer
 			listenThread1.Start ();
 			listenThread2 = new Thread (new ThreadStart (ListendForTCPClients));
 			listenThread2.Start ();
-			//dTime = getNTPTime(ref uniClock);
+			
             restart();
 		}
 
@@ -262,11 +265,13 @@ namespace MasterServer
 		{
 			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 			
+            
+
 			//IPAddress serverAddr = IPAddress.Parse("nist1-la.ustiming.org ");
 			
-			IPAddress serverAddr = IPAddress.Parse("128.195.11.124");
+			IPAddress serverAddr = IPAddress.Parse("64.147.116.229");
 			
-			IPEndPoint endPoint = new IPEndPoint(serverAddr, 4000);
+			IPEndPoint endPoint = new IPEndPoint(serverAddr, 123);
 			
 			byte[] ntpData = new byte[48];
 			
