@@ -5,8 +5,6 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
-
-
 	public bool gameStart;
 	private GameObject ball;
 	private Player1 p1;
@@ -21,6 +19,7 @@ public class GameProcess : MonoBehaviour {
 	//PRIVATE MEMBERS
 	private Sockets sockets;
 	private Client client;
+    //public static Client client;
 	private GUIScript gui;
     private Vector2 collisionLoc; //collision location
 
@@ -161,10 +160,10 @@ public class GameProcess : MonoBehaviour {
 //							p1.position((opPosY / wallRatio) + bWall.transform.position.y);
 //						}
 						//Debug.Log("opponent position: " + opPosY);
-						//ballPosX = (int) client.receiverBuffer.Dequeue();
-						//ballPosY = (int) client.receiverBuffer.Dequeue();
-						//angle = (int) client.receiverBuffer.Dequeue();
-						//ballVel = (int) client.receiverBuffer.Dequeue();
+						ballPosX = (int) client.receiverBuffer.Dequeue();
+						ballPosY = (int) client.receiverBuffer.Dequeue();
+						angle = (int) client.receiverBuffer.Dequeue();
+						ballVel = (int) client.receiverBuffer.Dequeue();
                     }
 				}
 			}
