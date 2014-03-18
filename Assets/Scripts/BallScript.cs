@@ -5,7 +5,7 @@ public class BallScript : MonoBehaviour {
 
 
 	public static Vector3 ballPosition;
-    
+
 
 
 	// Start speed of the ball
@@ -23,68 +23,50 @@ public class BallScript : MonoBehaviour {
 	// the direction of the ball
 	private Vector2 currentBallDirection;
 
-	 
-	
+	// A ball reset trigger 
+	private bool ballReset = false;
 
 
 	private int ballIsHit = 1;
 
-    public static Vector2 ballContact;
-
 	// velocity
 	//private int velocityY = rigidbody2D.velocity.y;
 
-
-
-	public GameObject player1Top;
-	public GameObject player1Bottom;
-	public GameObject player2Top;
-	public GameObject player2Bottom;
+	private GameProcess gp;
 
 	// velocity reset
 	private int velocityReset;
-
-	//Received ball positions
-	public static float receivedBallX;
-	public static float receivedBallY;
-	public static float receivedBallVel;
 
 
 
 	// Use this for initialization
 	void Start () { 
+		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
 	}
 
 	void Update()
 	{
 		changeBallColor ();
-		//________SEND POSITIONS TO SERVER HERE_________
-		ballPosition = transform.position;
 
-		//Receiving ball positions from server
-		receivedBallX = ((GameProcess.ballPosX/ Screen.width) * 12) - 6;
-		receivedBallY = ((GameProcess.ballPosY/ Screen.height) * 12) - 6;
-		receivedBallVel = GameProcess.ballVel;
-
-		ballPosition = new Vector3(receivedBallX, receivedBallY, 0);
-		currentSpeed = receivedBallVel;
-
+		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
+		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
+		transform.position = new Vector3 (x,y,0);
 	}
 
 	public void BallStart()
 	{
-		var randomNumber = Random.Range(0,2);
-
-		//if collides with player 1, go positive constant direction
-		if(randomNumber <= 0.5)
-		{
-			rigidbody2D.AddForce(new Vector2 (ballSpeed, 10));
-		}
-		else
-		{
-			//if collides with player 2, go negative constant directioin
-			rigidbody2D.AddForce(new Vector2 (-ballSpeed, -10));
-		}
+//		var randomNumber = Random.Range(0,2);
+//
+//		//if collides with player 1, go positive constant direction
+//		if(randomNumber <= 0.5)
+//		{
+//			rigidbody2D.AddForce(new Vector2 (ballSpeed, 10));
+//		}
+//		else
+//		{
+//			//if collides with player 2, go negative constant directioin
+//			rigidbody2D.AddForce(new Vector2 (-ballSpeed, -10));
+//		}
 	}
 
 	public void BallReset()
@@ -95,13 +77,8 @@ public class BallScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D colInfo)
 	{
-        //GameProcess.collided = true; //tell GameProcess that there is a collision!
 		GameObject pad = colInfo.gameObject;
 		ContactPoint2D[] points = colInfo.contacts;
-        ballContact = points[0].point; //be sure to pass the contact point to GameProcess
-        GameProcess.sendPositions();
-      
-
 		float y = points [0].point.y - pad.transform.position.y;
 
 		if (y > 0.5)
@@ -193,11 +170,7 @@ public class BallScript : MonoBehaviour {
 		}
 	}
 
-    public Vector2 getContact()
-    {
-        return ballContact;
-    }
- 
+
 
 //	void OnCollisionEnter2D(Collision2D colInfo)
 //	{

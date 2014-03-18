@@ -6,30 +6,19 @@ using System.Threading;
 using System.Text;
 using System.Net.Sockets;
 using System.Linq;
-//<<<<<<< HEAD
-using System.Timers;
-//=======
-//>>>>>>> FETCH_HEAD
 using System.Diagnostics;
 
 
 namespace MasterServer
 {
-
-
-
 	class MainClass
 	{
-
-
 		public static void Main (string[] args)
 		{
-
 			Console.WriteLine(" >> " + "Welcome to the Pong2D server!");
 			Console.WriteLine(" >> " + "Wainting for clients.....");
 
 			MainServer ms = new MainServer();
-
 		}
 	}
 
@@ -52,12 +41,6 @@ namespace MasterServer
 
 		NetworkStream stream1;
 		NetworkStream stream2;
-
-		//NetworkStream stream3;//for sending ball position
-		//NetworkStream stream4;
-		//TcpClient ball;//ball client.  wait, ball is in client 1 and 2
-
-
         int mes;
 
         DateTime startTime;
@@ -72,11 +55,11 @@ namespace MasterServer
         double nposx, nposy;
         double angle;
         int vel;
-
+        double angleRatio;
 		
 		public MainServer()
 		{
-			dTime = getNTPTime(ref uniClock);
+            angleRatio = 2 * Math.PI / 250;
 			connectedPlayers = 0;
             start1 = false;
             start2 = false;
@@ -86,12 +69,9 @@ namespace MasterServer
 			listenThread1.Start ();
 			listenThread2 = new Thread (new ThreadStart (ListendForTCPClients));
 			listenThread2.Start ();
-			//uniClock = new Stopwatch();
-			//dTime = getNTPTime(ref uniClock);
+			dTime = getNTPTime(ref uniClock);
             restart();
 		}
-
-
 
         public void restart()
         {
@@ -202,22 +182,6 @@ namespace MasterServer
 			//col1 = stream1.ReadByte();
 			//time1 = stream1.ReadByte();
 
-
-			//ball position
-			//oposx = stream2.ReadByte ();
-			//oposy = stream2.ReadByte ();
-			//stream1.WriteByte ((byte)oposx);
-			//stream1.WriteByte ((byte)oposy);
-
-
-			//ball position
-			//oposx = stream1.ReadByte ();
-			//oposy = stream1.ReadByte ();
-			//stream2.WriteByte ((byte)oposx);
-			//stream1.WriteByte ((byte)oposy);
-
-
-
 			//stream 1
             //stream1.WriteByte((byte)Convert.ToInt32(nposx));
             //stream1.WriteByte((byte)Convert.ToInt32(nposy));
@@ -237,10 +201,6 @@ namespace MasterServer
             Console.WriteLine(" >> Client 1: " + pos1);
             Console.WriteLine("    >> Client 2 " + pos2);
             Console.WriteLine(System.Environment.NewLine);
-
-
-			update ();
-
         }
 
         public void update()
@@ -248,8 +208,6 @@ namespace MasterServer
             nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Seconds;
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Seconds;
 
-
-			//ball conditions for pong game logic
             if (nposx < 0)
             {
                 nposx = Math.Abs(nposx);
@@ -271,20 +229,15 @@ namespace MasterServer
                 angle = changeAngle(angle);
             }
 
+            stream1.WriteByte((byte)Convert.ToInt16(nposx));
+            stream1.WriteByte((byte)Convert.ToInt16(nposy));
+            stream1.WriteByte((byte)Convert.ToInt16(angle * angleRatio));
+            stream1.WriteByte((byte)vel);
 
-			//Write to client 1
-			stream1.WriteByte ((byte)nposx);
-			stream1.WriteByte ((byte)nposy);
-			stream1.WriteByte ((byte)angle);
-			Console.WriteLine("ball positions sent to client 1: " + nposx + " " + nposy + " " + angle);
-
-			//Write to client 2
-			stream2.WriteByte ((byte)nposx);
-			stream2.WriteByte ((byte)nposy);
-			stream2.WriteByte ((byte)angle);
-			Console.WriteLine("ball positions sent to client 2: " + nposx + " " + nposy + " " + angle);
-
-
+            stream2.WriteByte((byte)Convert.ToInt16(nposx));
+            stream2.WriteByte((byte)Convert.ToInt16(nposy));
+            stream2.WriteByte((byte)Convert.ToInt16(angle * angleRatio));
+            stream2.WriteByte((byte)vel);
 
             lastTime = DateTime.Now;
         }
@@ -305,9 +258,9 @@ namespace MasterServer
 			
 			//IPAddress serverAddr = IPAddress.Parse("nist1-la.ustiming.org ");
 			
-			IPAddress serverAddr = IPAddress.Parse("64.147.116.229");
+			IPAddress serverAddr = IPAddress.Parse("128.195.11.124");
 			
-			IPEndPoint endPoint = new IPEndPoint(serverAddr, 123);
+			IPEndPoint endPoint = new IPEndPoint(serverAddr, 4000);
 			
 			byte[] ntpData = new byte[48];
 			
@@ -426,10 +379,6 @@ host, in 64-bit timestamp format.
 			return dt;
 			
 		}
-//<<<<<<< HEAD
-
-//=======
-//>>>>>>> FETCH_HEAD
 	}
 
 
