@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\GameProcess.cs" />
      <Compile Include="Assets\Scripts\GoalScript.cs" />
+     <Compile Include="Assets\Scripts\NTPTime.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Sockets.cs" />
