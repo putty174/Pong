@@ -161,6 +161,7 @@ public class GameProcess : MonoBehaviour {
 //							p1.position((opPosY / wallRatio) + bWall.transform.position.y);
 //						}
 						//Debug.Log("opponent position: " + opPosY);
+
 						//ballPosX = (int) client.receiverBuffer.Dequeue();
 						//ballPosY = (int) client.receiverBuffer.Dequeue();
 						//angle = (int) client.receiverBuffer.Dequeue();
