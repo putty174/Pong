@@ -11,13 +11,10 @@ using System.Linq;
 using System.Threading;
 
 public class Client : MonoBehaviour {
-//<<<<<<< HEAD
-	public static Stopwatch uniClock;
-	public static DateTime dTime;
-//=======
-	//public Stopwatch uniClock;
-	//public DateTime dTime;
-//>>>>>>> FETCH_HEAD
+
+	public Stopwatch uniClock;
+	public DateTime dTime;
+
 	const string serverLocation = "128.195.11.124";
 	//const int maxLimit = 7;
 	const int portNumber = 4000;
@@ -58,28 +55,22 @@ public class Client : MonoBehaviour {
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
 
 		receiverBuffer = new Queue ();
-//<<<<<<< HEAD
+
 		//dTime = getNTPTime(ref uniClock);
 
 
 		receiverBuffer = new Queue ();
-//=======
 
-<<<<<<< HEAD
-=======
-//<<<<<<< HEAD
+		uniClock = new Stopwatch();
 		dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
 
 
 
-//=======
-		uniClock = new Stopwatch();
+
+
 		//dTime = getNTPTime(ref uniClock);
 
-		
-//>>>>>>> FETCH_HEAD
-//>>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
+
 
 	}
 	
