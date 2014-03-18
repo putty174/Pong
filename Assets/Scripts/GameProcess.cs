@@ -89,7 +89,7 @@ public class GameProcess : MonoBehaviour {
 			{
 				while(client.receiverBuffer.Count > 0)
 				{
-					Debug.Log("Queue count: " + client.receiverBuffer.Count);
+					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
                     if (player == -1)
                     {
                         buffer = (int)client.receiverBuffer.Dequeue();
@@ -109,15 +109,22 @@ public class GameProcess : MonoBehaviour {
 	                            Debug.Log("Player 2");
 	                        }
 	                        break;
+                        }
+                    }
+                    else
+                    {
+						buffer = (int)client.receiverBuffer.Dequeue();
+						switch(buffer)
+						{
 						case 255:
 							bscript.BallStart();
 							gameStart = true;
 							Debug.Log("Start");
 							break;
-                        }
-                    }
-                    else
-                    {
+						default:
+							opPosY = buffer;
+							break;
+						}
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
                         //angle of ball, server time.
@@ -139,7 +146,6 @@ public class GameProcess : MonoBehaviour {
 						//opponent velocity, ball position (X, Y),
 						//angle of ball, server time.
 						//opPosY = ((float)(client.receiverBuffer.Dequeue())) / wallRatio;
-						opPosY = (int)client.receiverBuffer.Dequeue();
 //						if(player == 1)
 //						{
 //							p2.position((opPosY / wallRatio) + bWall.transform.position.y);
@@ -149,13 +155,6 @@ public class GameProcess : MonoBehaviour {
 //							p1.position((opPosY / wallRatio) + bWall.transform.position.y);
 //						}
 						//Debug.Log("opponent position: " + opPosY);
-
-						//opVel = (int)client.receiverBuffer.Dequeue();
-						//ballPosX = (int)client.receiverBuffer.Dequeue();
-						//ballPosY = (int)client.receiverBuffer.Dequeue();
-						//ballVel = (int) client.receiverBuffer.Dequeue();
-						//angle = (int)client.receiverBuffer.Dequeue();
-						//time = (int)client.receiverBuffer.Dequeue();
 						bscript.position(ballPosX,ballPosY);
                     }
 				}
@@ -221,61 +220,63 @@ public class GameProcess : MonoBehaviour {
 
 	public static void sendPositions ()
 	{
-		try
+		if(gameStart)
 		{
-			if(player == 1)
+			try
 			{
-				//send Player1.x
-				//send Player1.y
-				//client.Send ((byte)Player1.player1PosX);
-				//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
-				
-				//get paddle position
-				// offeset so positive (add botwall.y)
-				// then use ratio to convert to 0~250
-				// send to server
-				
-				float pos = (Player1.player1PosY - bWall.transform.position.y) * wallRatio;
-				int result = Convert.ToInt16(pos);
-				//Debug.Log ("Player Position: " + result);
-				//Debug.Log("Player 1 Position: " + result);
-				client.Send((byte)result);//player position * (manual byte range / boardwidth)
+				if(player == 1)
+				{
+					//send Player1.x
+					//send Player1.y
+					//client.Send ((byte)Player1.player1PosX);
+					//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
+					
+					//get paddle position
+					// offeset so positive (add botwall.y)
+					// then use ratio to convert to 0~250
+					// send to server
+					
+					float pos = (Player1.player1PosY - bWall.transform.position.y) * wallRatio;
+					int result = Convert.ToInt16(pos);
+					//Debug.Log ("Player Position: " + result);
+					//Debug.Log("Player 1 Position: " + result);
+					client.Send((byte)result);//player position * (manual byte range / boardwidth)
 
 
 
-				
-				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
-				
-				//number 0 to 250 is the number that server recognizes as a position.  
-				//number 251 is recognized as pause in the server
-				//number 252 is ..
-				//etc.  
-				
+					
+					//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
+					
+					//number 0 to 250 is the number that server recognizes as a position.  
+					//number 251 is recognized as pause in the server
+					//number 252 is ..
+					//etc.  
+					
+					
+				}
+				else if (player == 2)
+				{
+					//send Player2.x
+					//send Player2.y
+					//client.Send ((byte)Player2.player2PosX);
+					//Debug.Log ("Paddle 2 x position sent"+(byte)Player2.player2PosX);
+
+					float temp1 = Player2.player2PosY - bWall.transform.position.y;
+					int result = Convert.ToInt32(temp1 * wallRatio);
+					client.Send ((byte)result);//player position * (manual byte range / boardwidth)
+					//Debug.Log("Player 2 Position: " + result);
+					//Debug.Log ("Paddle 2 y position sent"+(byte)Player2.player2PosY);
+					//Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player2.player2PosY * (250/13))));
+					
+					
+				}
 				
 			}
-			else if (player == 2)
+			catch(Exception ex)
 			{
-				//send Player2.x
-				//send Player2.y
-				//client.Send ((byte)Player2.player2PosX);
-				//Debug.Log ("Paddle 2 x position sent"+(byte)Player2.player2PosX);
-
-				float temp1 = Player2.player2PosY - bWall.transform.position.y;
-				int result = Convert.ToInt32(temp1 * wallRatio);
-				client.Send ((byte)result);//player position * (manual byte range / boardwidth)
-				Debug.Log("Player 2 Position: " + result);
-				//Debug.Log ("Paddle 2 y position sent"+(byte)Player2.player2PosY);
-				//Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player2.player2PosY * (250/13))));
-				
-				
+				print ( ex.Message + " : Sending positions" );
 			}
-			
 		}
-		catch(Exception ex)
-		{
-			print ( ex.Message + " : Sending positions" );
-		}
-		
 	}
 
 
