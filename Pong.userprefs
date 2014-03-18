@@ -1,10 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameProcess.cs">
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MasterServer/MasterServer/Main.cs">
     <Files>
-      <File FileName="Assets/Scripts/Client.cs" Line="57" Column="41" />
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="100" Column="22" />
-      <File FileName="Assets/Scripts/TSock.cs" Line="33" Column="26" />
+      <File FileName="MasterServer/MasterServer/Main.cs" Line="57" Column="17" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameProcess.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="304" Column="1" />
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
