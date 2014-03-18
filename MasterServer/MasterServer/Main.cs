@@ -6,19 +6,30 @@ using System.Threading;
 using System.Text;
 using System.Net.Sockets;
 using System.Linq;
+//<<<<<<< HEAD
+using System.Timers;
+//=======
+//>>>>>>> FETCH_HEAD
 using System.Diagnostics;
 
 
 namespace MasterServer
 {
+
+
+
 	class MainClass
 	{
+
+
 		public static void Main (string[] args)
 		{
+
 			Console.WriteLine(" >> " + "Welcome to the Pong2D server!");
 			Console.WriteLine(" >> " + "Wainting for clients.....");
 
 			MainServer ms = new MainServer();
+
 		}
 	}
 
@@ -41,6 +52,12 @@ namespace MasterServer
 
 		NetworkStream stream1;
 		NetworkStream stream2;
+
+		//NetworkStream stream3;//for sending ball position
+		//NetworkStream stream4;
+		//TcpClient ball;//ball client.  wait, ball is in client 1 and 2
+
+
         int mes;
 
         DateTime startTime;
@@ -55,9 +72,11 @@ namespace MasterServer
         double nposx, nposy;
         double angle;
         int vel;
+
 		
 		public MainServer()
 		{
+			dTime = getNTPTime(ref uniClock);
 			connectedPlayers = 0;
             start1 = false;
             start2 = false;
@@ -71,6 +90,8 @@ namespace MasterServer
 			//dTime = getNTPTime(ref uniClock);
             restart();
 		}
+
+
 
         public void restart()
         {
@@ -181,6 +202,22 @@ namespace MasterServer
 			//col1 = stream1.ReadByte();
 			//time1 = stream1.ReadByte();
 
+
+			//ball position
+			//oposx = stream2.ReadByte ();
+			//oposy = stream2.ReadByte ();
+			//stream1.WriteByte ((byte)oposx);
+			//stream1.WriteByte ((byte)oposy);
+
+
+			//ball position
+			//oposx = stream1.ReadByte ();
+			//oposy = stream1.ReadByte ();
+			//stream2.WriteByte ((byte)oposx);
+			//stream1.WriteByte ((byte)oposy);
+
+
+
 			//stream 1
             //stream1.WriteByte((byte)Convert.ToInt32(nposx));
             //stream1.WriteByte((byte)Convert.ToInt32(nposy));
@@ -207,6 +244,8 @@ namespace MasterServer
             nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Seconds;
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Seconds;
 
+
+			//ball conditions for pong game logic
             if (nposx < 0)
             {
                 nposx = Math.Abs(nposx);
@@ -227,6 +266,19 @@ namespace MasterServer
                 nposy = 250 - (nposy - 250);
                 angle = changeAngle(angle);
             }
+
+
+			//Write to client 1
+			stream1.WriteByte ((byte)nposx);
+			stream1.WriteByte ((byte)nposy);
+			stream1.WriteByte ((byte)angle);
+
+			//Write to client 2
+			stream2.WriteByte ((byte)nposx);
+			stream2.WriteByte ((byte)nposy);
+			stream2.WriteByte ((byte)angle);
+
+
 
 
             lastTime = DateTime.Now;
@@ -369,6 +421,10 @@ host, in 64-bit timestamp format.
 			return dt;
 			
 		}
+//<<<<<<< HEAD
+
+//=======
+//>>>>>>> FETCH_HEAD
 	}
 
 

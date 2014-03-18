@@ -16,7 +16,14 @@ public class Player1 : MonoBehaviour {
 	private GameProcess gp;
 	private float lastY;
 
+
+	//private int speed = 10;
+
+
+	public GameObject player2;
+
 	public GameObject player1;
+
 
 	// Use this for initialization
 	void Start () {
@@ -43,20 +50,19 @@ public class Player1 : MonoBehaviour {
 
 
 
-		//if(GameProcess.player == 2)
-		//{
+		if(GameProcess.player == 2)
+		{
 
-			////float temp1 = (float)GameProcess.opPosY + GameObject.Find ("BottomWall").transform.position.y;
-			////float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
-			////float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
-			//Debug.Log("opponent position: " + GameProcess.opPosY);
-			//float oppY = ((GameProcess.opPosY / Screen.height) * 12) - 6;
-			//transform.position = new Vector3(-8, oppY, 0);
-		//}
+			float temp1 = (float)GameProcess.opPosY + GameObject.Find ("BottomWall").transform.position.y;
+			float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
+			float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
+			Debug.Log("opponent position: " + GameProcess.opPosY);
+			float oppY = ((GameProcess.opPosY / Screen.height) * 12) - 6;
+			transform.position = new Vector3(-8, oppY, 0);
+		}
 
 
-		//if(Client.playerThatClientControls == 1)
-		//if(GameProcess.buffer == 1)
+
 		if(GameProcess.player == 1)
 		{
 			if(Input.GetKey(KeyCode.UpArrow))
@@ -72,10 +78,21 @@ public class Player1 : MonoBehaviour {
 			//transform.position = new Vector3 (-8, y, 0);
 			player1PosX = transform.position.x;
 			player1PosY = transform.position.y;
-			//deltaPosition = y - lastY;
+
+//			Debug.Log("my position: " + player1PosY);
 			deltaPosition = transAmount - lastY;
 //			Debug.Log("current possition: " + y);
 //			Debug.Log("last position: " + lastY);
+//<<<<<<< HEAD:Assets/Player1.cs
+//			Debug.Log("delta position: " + deltaPosition);
+			
+
+//				gp.sendPositions ();
+				
+
+				
+
+//=======
 //			//Debug.Log("delta position: " + deltaPosition);
 			//
 //			if(deltaPosition > .04)
@@ -87,7 +104,12 @@ public class Player1 : MonoBehaviour {
 //			}
 //				
 			GameProcess.sendPositions();
+//>>>>>>> FETCH_HEAD:Assets/Scripts/Player1.cs
 		}
+
+
+
+
 		else
 		{
 			
@@ -101,6 +123,7 @@ public class Player1 : MonoBehaviour {
 
 		//lastY = y;
 		lastY = transAmount;
+
 
 	}
 }

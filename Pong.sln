@@ -23,7 +23,14 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< HEAD
+																																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
 =======
 																																																																																																											GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
@@ -78,6 +85,7 @@ Global
 		GlobalSection(MonoDevelopProperties) = preSolution
 	EndGlobalSection
 																																																																																GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
 =======
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
 																																																											GlobalSection(MonoDevelopProperties) = preSolution
@@ -179,6 +187,13 @@ Global
 		$3.scope = text/plain
 		GlobalSection(MonoDevelopProperties) = preSolution
 	EndGlobalSection
+																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< HEAD
+																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
+=======
+=======
 																																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
@@ -334,6 +349,7 @@ Global
 	EndGlobalSection
 																																																																																																															GlobalSection(MonoDevelopProperties) = preSolution
 =======
+>>>>>>> FETCH_HEAD
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
 																																																											GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
@@ -384,6 +400,14 @@ Global
 		GlobalSection(MonoDevelopProperties) = preSolution
 	EndGlobalSection
 																																																																																GlobalSection(MonoDevelopProperties) = preSolution
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+																																																																																			GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
+=======
 =======
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
 																																																											GlobalSection(MonoDevelopProperties) = preSolution
@@ -537,6 +561,7 @@ Global
 		GlobalSection(MonoDevelopProperties) = preSolution
 	EndGlobalSection
 																																																																																GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
 =======
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
 																																																											GlobalSection(MonoDevelopProperties) = preSolution
@@ -638,7 +663,10 @@ Global
 		$3.scope = text/plain
 		GlobalSection(MonoDevelopProperties) = preSolution
 	EndGlobalSection
+																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
+=======
 																																																																																																											GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> FETCH_HEAD
 =======
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
 																																																											GlobalSection(MonoDevelopProperties) = preSolution

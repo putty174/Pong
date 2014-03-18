@@ -145,6 +145,14 @@ public class GameProcess : MonoBehaviour {
 						//                        //Stores information on opponent position (Y), 
 						//opponent velocity, ball position (X, Y),
 						//angle of ball, server time.
+
+						float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
+						opPosY = (int)client.receiverBuffer.Dequeue() / wallRatio;
+						
+
+						Debug.Log("opponent position: " + opPosY);
+						
+
 						//opPosY = ((float)(client.receiverBuffer.Dequeue())) / wallRatio;
 //						if(player == 1)
 //						{
@@ -224,6 +232,37 @@ public class GameProcess : MonoBehaviour {
 		{
 			try
 			{
+//<<<<<<< HEAD
+				//send Player1.x
+				//send Player1.y
+				//client.Send ((byte)Player1.player1PosX);
+				//Debug.Log ("Paddle 1 x position sent"+(byte)Player1.player1PosX);
+				
+				//get paddle position
+				// offeset so positive (add botwall.y)
+				// then use ratio to convert to 0~250
+				// send to server
+				
+				////float pos = (Player1.player1PosY - bWall.transform.position.y) * wallRatio;
+				////int result = Convert.ToInt16(pos);
+				//Debug.Log ("Player Position: " + result);
+				//Debug.Log("Player 1 Position: " + result);
+				////client.Send((byte)result);//player position * (manual byte range / boardwidth)
+
+
+
+//				Debug.Log("result: " + result);
+
+
+				
+				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
+				
+				//number 0 to 250 is the number that server recognizes as a position.  
+				//number 251 is recognized as pause in the server
+				//number 252 is ..
+				//etc.  
+				
+//=======
 				if(player == 1)
 				{
 					//send Player1.x
@@ -270,6 +309,7 @@ public class GameProcess : MonoBehaviour {
 					
 					
 				}
+//>>>>>>> FETCH_HEAD
 				
 			}
 			catch(Exception ex)

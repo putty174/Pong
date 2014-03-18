@@ -44,6 +44,11 @@ public class BallScript : MonoBehaviour {
 	// velocity reset
 	private int velocityReset;
 
+	//Received ball positions
+	public static float receivedBallX;
+	public static float receivedBallY;
+	public static float receivedBallVel;
+
 
 
 	// Use this for initialization
@@ -55,6 +60,15 @@ public class BallScript : MonoBehaviour {
 		changeBallColor ();
 		//________SEND POSITIONS TO SERVER HERE_________
 		ballPosition = transform.position;
+
+		//Receiving ball positions from server
+		receivedBallX = ((GameProcess.ballPosX/ Screen.width) * 12) - 6;
+		receivedBallY = ((GameProcess.ballPosY/ Screen.height) * 12) - 6;
+		receivedBallVel = GameProcess.ballVel;
+
+		ballPosition = new Vector3(receivedBallX, receivedBallY, 0);
+		currentSpeed = receivedBallVel;
+
 	}
 
 	public void BallStart()

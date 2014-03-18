@@ -19,6 +19,15 @@ public class ScoreManager : MonoBehaviour {
 	GameProcess gp;
 
 
+
+	void Start()
+	{
+		gp = GameObject.Find ("_GameManager").GetComponent<GameProcess>();
+	}
+
+
+
+
 	static public void ScoreCounter(string goal)
 	{
 		// on player 1's goal
@@ -73,10 +82,9 @@ public class ScoreManager : MonoBehaviour {
 	}
 
 
-	// Use this for initialization
-	void Start () {
-		gp = GameObject.Find ("_GameManager").GetComponent<GameProcess> ();
-	}
+
+
+
 	
 	// Update is called once per frame
 	void Update () {
