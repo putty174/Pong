@@ -83,6 +83,7 @@ public class Player1 : MonoBehaviour {
 			deltaPosition = transAmount - lastY;
 //			Debug.Log("current possition: " + y);
 //			Debug.Log("last position: " + lastY);
+<<<<<<< HEAD:Assets/Player1.cs
 //			Debug.Log("delta position: " + deltaPosition);
 			
 
@@ -91,6 +92,19 @@ public class Player1 : MonoBehaviour {
 
 				
 
+=======
+//			//Debug.Log("delta position: " + deltaPosition);
+			//
+//			if(deltaPosition > .04)
+//			{
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//				gp.sendPositions ();
+//			}
+//				
+			GameProcess.sendPositions();
+>>>>>>> FETCH_HEAD:Assets/Scripts/Player1.cs
 		}
 
 
@@ -103,7 +117,7 @@ public class Player1 : MonoBehaviour {
 			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
 //			Debug.Log("opponent position: " + GameProcess.opPosY);
-			float oppY = (GameProcess.opPosY / gp.wallRatio) + gp.bWall.transform.position.y;
+			float oppY = (GameProcess.opPosY / GameProcess.wallRatio) + GameProcess.bWall.transform.position.y;
 			transform.position = new Vector3(-8, oppY, 0);
 		}
 

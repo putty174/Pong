@@ -10,8 +10,13 @@ using System.Diagnostics;
 using System.Threading;
 
 public class Client : MonoBehaviour {
+<<<<<<< HEAD
 	public static Stopwatch uniClock;
 	public static DateTime dTime;
+=======
+	public Stopwatch uniClock;
+	public DateTime dTime;
+>>>>>>> FETCH_HEAD
 	const string serverLocation = "128.195.11.124";
 	//const int maxLimit = 7;
 	const int portNumber = 4000;
@@ -52,10 +57,25 @@ public class Client : MonoBehaviour {
 		serverEndPoint = new IPEndPoint(IPAddress.Parse(serverLocation), portNumber); 
 
 		receiverBuffer = new Queue ();
+<<<<<<< HEAD
 		//dTime = getNTPTime(ref uniClock);
 
 
 		receiverBuffer = new Queue ();
+=======
+
+<<<<<<< HEAD
+		dTime = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
+
+
+
+=======
+		uniClock = new Stopwatch();
+		//dTime = getNTPTime(ref uniClock);
+
+		
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
 
 	}
 	
@@ -176,6 +196,7 @@ public class Client : MonoBehaviour {
 		}
 	}
 
+<<<<<<< HEAD
 	public static DateTime getNTPTime( ref Stopwatch uniClock )
 	{
 		Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
@@ -303,5 +324,8 @@ host, in 64-bit timestamp format.
 		return dt;
 		
 	}
+=======
+
+>>>>>>> FETCH_HEAD
 
 }

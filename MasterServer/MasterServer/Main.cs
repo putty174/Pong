@@ -6,7 +6,10 @@ using System.Threading;
 using System.Text;
 using System.Net.Sockets;
 using System.Linq;
+<<<<<<< HEAD
 using System.Timers;
+=======
+>>>>>>> FETCH_HEAD
 using System.Diagnostics;
 
 
@@ -83,6 +86,8 @@ namespace MasterServer
 			listenThread1.Start ();
 			listenThread2 = new Thread (new ThreadStart (ListendForTCPClients));
 			listenThread2.Start ();
+			uniClock = new Stopwatch();
+			dTime = getNTPTime(ref uniClock);
             restart();
 		}
 
@@ -163,12 +168,14 @@ namespace MasterServer
             {
                 //startTime = DateTime.Now;
                 //lastTime = startTime;
-                //stream1.WriteByte(255);
-                //stream2.WriteByte(255);
+                stream1.WriteByte(255);
+                stream2.WriteByte(255);
                 //stream1.WriteByte(128);
                 //stream1.WriteByte(0);
                 //stream2.WriteByte(128);
                 //stream2.WriteByte(0);
+                stream1.Flush();
+                stream2.Flush();
                 stream1.WriteByte(128);
                 stream2.WriteByte(128);
                 startGame = true;
@@ -414,7 +421,10 @@ host, in 64-bit timestamp format.
 			return dt;
 			
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 	}
 
 

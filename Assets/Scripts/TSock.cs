@@ -26,7 +26,7 @@ public class TSock : MonoBehaviour
 				buffer = ns.ReadByte();
 				lock(sock.receiverBuffer)
 				{
-					Debug.Log(buffer);
+					//Debug.Log(buffer);
 					sock.receiverBuffer.Enqueue(buffer);
 //					if(sock.receiverBuffer.Count > serverLength)
 //					{
