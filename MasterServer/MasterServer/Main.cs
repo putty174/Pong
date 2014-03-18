@@ -45,6 +45,7 @@ namespace MasterServer
 
         DateTime startTime;
         DateTime lastTime;
+        DateTime timeStamp;
         Random rand = new Random();
 
         int pos1, pos2;
@@ -56,6 +57,10 @@ namespace MasterServer
         double angle;
         int vel;
         double angleRatio;
+
+        byte[] packet1;
+        byte[] packet2;
+        byte[] milliHold;
 		
 		public MainServer()
 		{
@@ -67,6 +72,9 @@ namespace MasterServer
             start1 = false;
             start2 = false;
 			clientList = new TcpClient[maxPlayers];
+            packet1 = new byte[8];
+            packet2 = new byte[8];
+            milliHold = new byte[2];
 
             //IPHostEntry host;
             //IPAddress thisComputer;
@@ -91,6 +99,26 @@ namespace MasterServer
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
             vel = 10;
+
+            packet1[0] = (byte) 128;
+            packet1[1] = (byte) 128;
+            packet1[2] = (byte) 128;
+            dTime = getNTPTime(ref uniClock);
+            packet1[3] = (byte)dTime.Minute;
+            packet1[4] = (byte)dTime.Second;
+            milliHold = BitConverter.GetBytes(dTime.Millisecond);
+            packet1[5] = milliHold[0];
+            packet1[6] = milliHold[1];
+
+            packet2[0] = (byte) 128;
+            packet2[1] = (byte) 128;
+            packet2[2] = (byte) 128;
+            dTime = getNTPTime(ref uniClock);
+            packet1[3] = (byte)dTime.Minute;
+            packet1[4] = (byte)dTime.Second;
+            milliHold = BitConverter.GetBytes(dTime.Millisecond);
+            packet1[5] = milliHold[0];
+            packet1[6] = milliHold[1];
         }
 		
 		public void ListendForTCPClients()
@@ -107,12 +135,14 @@ namespace MasterServer
                     if (connectedPlayers == 0)
                     {
                         stream1 = clientList[connectedPlayers].GetStream();
-                        stream1.WriteByte(0);
+                        packet1[0] = 0;
+                        stream1.Write(packet1, 0, packet1.Length);
                     }
                     else if (connectedPlayers == 1)
                     {
                         stream2 = clientList[connectedPlayers].GetStream();
-                        stream2.WriteByte(1);
+                        packet2[0] = 1;
+                        stream2.Write(packet2, 0, packet2.Length);
                     }
                     //handleClient client = new handleClient(); 
                     //client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
@@ -126,6 +156,7 @@ namespace MasterServer
                     waitReady();
                     process();
                     update();
+                    send();
                 }
             }
             catch (Exception ex)
@@ -157,16 +188,12 @@ namespace MasterServer
             {
                 //startTime = DateTime.Now;
                 //lastTime = startTime;
-                stream1.WriteByte(255);
-                stream2.WriteByte(255);
                 //stream1.WriteByte(128);
                 //stream1.WriteByte(0);
                 //stream2.WriteByte(128);
                 //stream2.WriteByte(0);
                 stream1.Flush();
                 stream2.Flush();
-                stream1.WriteByte(128);
-                stream2.WriteByte(128);
                 startGame = true;
             }
         }
@@ -177,7 +204,7 @@ namespace MasterServer
 
 			//stream 1
 			pos2 = stream2.ReadByte();
-			stream1.WriteByte((byte)pos2);
+            
 			//vel2 = stream2.ReadByte();
 			//stream1.WriteByte((byte)vel2);
 			//col2 = stream2.ReadByte();
@@ -185,7 +212,7 @@ namespace MasterServer
 
 			//stream 2
 			pos1 = stream1.ReadByte();
-			stream2.WriteByte((byte)pos1);
+            packet2[0] = (byte)pos1;
 			//vel1 = stream1.ReadByte();
 			//stream2.WriteByte((byte)vel1);
 			//col1 = stream1.ReadByte();
@@ -238,17 +265,35 @@ namespace MasterServer
                 angle = changeAngle(angle);
             }
 
-            stream1.WriteByte((byte)Convert.ToInt16(nposx));
-            stream1.WriteByte((byte)Convert.ToInt16(nposy));
-            stream1.WriteByte((byte)Convert.ToInt16(angle * angleRatio));
-            stream1.WriteByte((byte)vel);
-
-            stream2.WriteByte((byte)Convert.ToInt16(nposx));
-            stream2.WriteByte((byte)Convert.ToInt16(nposy));
-            stream2.WriteByte((byte)Convert.ToInt16(angle * angleRatio));
-            stream2.WriteByte((byte)vel);
-
             lastTime = DateTime.Now;
+        }
+
+        public void send()
+        {
+            packet1[0] = (byte)pos2;
+            packet1[1] = (byte)nposx;
+            packet1[2] = (byte)nposy;
+            dTime = getNTPTime(ref uniClock);
+            packet1[3] = (byte)dTime.Minute;
+            packet1[4] = (byte)dTime.Second;
+            milliHold = new byte[2];
+            milliHold = BitConverter.GetBytes(dTime.Millisecond);
+            packet1[5] = milliHold[0];
+            packet1[6] = milliHold[1];
+
+            packet2[0] = (byte)pos1;
+            packet2[1] = (byte)nposx;
+            packet2[2] = (byte)nposy;
+            dTime = getNTPTime(ref uniClock);
+            packet2[3] = (byte)dTime.Minute;
+            packet2[4] = (byte)dTime.Second;
+            milliHold = new byte[2];
+            milliHold = BitConverter.GetBytes(dTime.Millisecond);
+            packet2[5] = milliHold[0];
+            packet2[6] = milliHold[1];
+
+            stream1.Write(packet1, 0, packet1.Length);
+            stream2.Write(packet2, 0, packet2.Length);
         }
 
         public double changeAngle(double a)
@@ -264,8 +309,6 @@ namespace MasterServer
 		public static DateTime getNTPTime( ref Stopwatch uniClock )
 		{
 			Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-			
-            
 
 			//IPAddress serverAddr = IPAddress.Parse("nist1-la.ustiming.org ");
 			
@@ -377,18 +420,13 @@ host, in 64-bit timestamp format.
 			
 			//Console.WriteLine( "Network Latency to NTP Server : " + (delay / 2.0)) ;
 			
-			
 			//tsOffset = tsOffset.Add(dt.Subtract(T4));
 			
 			dt = dt.AddMilliseconds(networkDelay);
 			
-			
-			
-			
 			uniClock.Start();
 			
 			return dt;
-			
 		}
 	}
 

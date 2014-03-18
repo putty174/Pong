@@ -163,6 +163,7 @@ public class GameProcess : MonoBehaviour {
 						ballPosY = (int) client.receiverBuffer.Dequeue();
 						angle = (int) client.receiverBuffer.Dequeue();
 						ballVel = (int) client.receiverBuffer.Dequeue();
+						Debug.Log("Opp Pos: " + opPosY + ", BallX: " + ballPosX + ", BallY: " + ballPosY + ", Angle: " + angle + ", BallVel: " + ballVel);
                     }
 				}
 			}
