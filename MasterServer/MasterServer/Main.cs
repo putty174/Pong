@@ -191,31 +191,43 @@ namespace MasterServer
             //Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 || !start2)
             {
-                mes1 = stream1.ReadByte();
-                if (mes1 == 255)
+                try
                 {
-                    //Console.WriteLine("Client 1 has sent Start");
-                    start1 = true;
-                }
+                    mes1 = stream1.ReadByte();
+                    if (mes1 == 255)
+                    {
+                        //Console.WriteLine("Client 1 has sent Start");
+                        start1 = true;
+                    }
 
-                mes2 = stream2.ReadByte();
-                if (mes2 == 255)
+                    mes2 = stream2.ReadByte();
+                    if (mes2 == 255)
+                    {
+                        //Console.WriteLine("Client 2 has sent Start");
+                        start2 = true;
+                    }
+                }
+                catch (Exception ex)
                 {
-                    //Console.WriteLine("Client 2 has sent Start");
-                    start2 = true;
+                    Console.WriteLine(ex.ToString());
                 }
             }
-            stream1.Flush();
-            stream2.Flush();
         }
 
         public void process()
         {
-            pos1 = stream1.ReadByte();
-            Console.WriteLine("Player1 Pos: " + pos1);
+            try
+            {
+                pos1 = stream1.ReadByte();
+                Console.WriteLine("Player1 Pos: " + pos1);
 
-            pos2 = stream2.ReadByte();
-            Console.WriteLine("Player2 Pos: " + pos2);
+                pos2 = stream2.ReadByte();
+                Console.WriteLine("Player2 Pos: " + pos2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 			//stream 1
 			
             
@@ -284,57 +296,65 @@ namespace MasterServer
 
         public void send()
         {
-            int ballx = Convert.ToInt16(nposx);
-            int bally = Convert.ToInt16(nposy);
+            try
+            {
+                int ballx = Convert.ToInt16(nposx);
+                int bally = Convert.ToInt16(nposy);
 
-            //Console.WriteLine("Writing P1-1: " + pos2);
-            packet1[0] = (byte)pos2;
-            //Console.WriteLine("Writing P1-2: " + ballx);
-            packet1[1] = (byte)ballx;
-            //Console.WriteLine("Writing P1-3: " + bally);
-            packet1[2] = (byte)bally;
-            //Console.WriteLine("Checking NTP Time");
-            //dTime = getNTPTime(ref uniClock);
-            //Console.WriteLine("Writing P1-4: " + dTime.Minute);
-            packet1[3] = (byte)dTime.Minute;
-            //Console.WriteLine("Writing P1-5: " + dTime.Second);
-            packet1[4] = (byte)dTime.Second;
-            milliHold = new byte[2];
-            milliHold = BitConverter.GetBytes(dTime.Millisecond);
-            //Console.WriteLine("Writing P1-67: " + dTime.Millisecond);
-            packet1[5] = milliHold[0];
-            packet1[6] = milliHold[1];
+                //Console.WriteLine("Writing P1-1: " + pos2);
+                packet1[0] = (byte)pos2;
+                //Console.WriteLine("Writing P1-2: " + ballx);
+                packet1[1] = (byte)ballx;
+                //Console.WriteLine("Writing P1-3: " + bally);
+                packet1[2] = (byte)bally;
+                //Console.WriteLine("Checking NTP Time");
+                //dTime = getNTPTime(ref uniClock);
+                //Console.WriteLine("Writing P1-4: " + dTime.Minute);
+                packet1[3] = (byte)dTime.Minute;
+                //Console.WriteLine("Writing P1-5: " + dTime.Second);
+                packet1[4] = (byte)dTime.Second;
+                milliHold = new byte[2];
+                milliHold = BitConverter.GetBytes(dTime.Millisecond);
+                //Console.WriteLine("Writing P1-67: " + dTime.Millisecond);
+                packet1[5] = milliHold[0];
+                packet1[6] = milliHold[1];
 
-            int milli = BitConverter.ToInt16(milliHold, 0);
-            //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                int milli = BitConverter.ToInt16(milliHold, 0);
+                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
-            //Console.WriteLine("Writing P2-1 " + pos1);
-            packet2[0] = (byte)pos1;
-            //Console.WriteLine("Writing P2-2: " + ballx);
-            packet2[1] = (byte)ballx;
-            //Console.WriteLine("Writing P2-3: " + bally);
-            packet2[2] = (byte)bally;
-            //Console.WriteLine("Finished Writing P2-3");
-            //dTime = getNTPTime(ref uniClock);
-            //Console.WriteLine("Writing P2-4: " + dTime.Minute);
-            packet2[3] = (byte)dTime.Minute;
-            //Console.WriteLine("Writing P2-5: " + dTime.Second);
-            packet2[4] = (byte)dTime.Second;
-            milliHold = new byte[2];
-            milliHold = BitConverter.GetBytes(dTime.Millisecond);
-            //Console.WriteLine("Writing P2-67: " + dTime.Millisecond);
-            packet2[5] = milliHold[0];
-            packet2[6] = milliHold[1];
+                //Console.WriteLine("Writing P2-1 " + pos1);
+                packet2[0] = (byte)pos1;
+                //Console.WriteLine("Writing P2-2: " + ballx);
+                packet2[1] = (byte)ballx;
+                //Console.WriteLine("Writing P2-3: " + bally);
+                packet2[2] = (byte)bally;
+                //Console.WriteLine("Finished Writing P2-3");
+                //dTime = getNTPTime(ref uniClock);
+                //Console.WriteLine("Writing P2-4: " + dTime.Minute);
+                packet2[3] = (byte)dTime.Minute;
+                //Console.WriteLine("Writing P2-5: " + dTime.Second);
+                packet2[4] = (byte)dTime.Second;
+                milliHold = new byte[2];
+                milliHold = BitConverter.GetBytes(dTime.Millisecond);
+                //Console.WriteLine("Writing P2-67: " + dTime.Millisecond);
+                packet2[5] = milliHold[0];
+                packet2[6] = milliHold[1];
 
-            milli = BitConverter.ToInt16(milliHold, 0);
-            //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                milli = BitConverter.ToInt16(milliHold, 0);
+                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
-            //Console.WriteLine("Sending Packet1");
-            stream1.Write(packet1, 0, packet1.Length);
-            //Console.WriteLine("Sending Packet2");
-            stream2.Write(packet2, 0, packet2.Length);
+                //Console.WriteLine("Sending Packet1");
+                stream1.Write(packet1, 0, packet1.Length);
+                //Console.WriteLine("Sending Packet2");
+                stream2.Write(packet2, 0, packet2.Length);
 
-            Console.WriteLine(System.Environment.NewLine);
+                Console.WriteLine(System.Environment.NewLine);
+            }
+            
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         public double changeAngle(double a)
