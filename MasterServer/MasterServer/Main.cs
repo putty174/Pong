@@ -41,7 +41,7 @@ namespace MasterServer
 
 		NetworkStream stream1;
 		NetworkStream stream2;
-        int mes;
+        int mes1, mes2;
 
         DateTime startTime;
         DateTime lastTime;
@@ -191,12 +191,12 @@ namespace MasterServer
             Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 && !start2)
             {
-                mes = stream1.ReadByte();
-                if (mes == 255)
+                mes1 = stream1.ReadByte();
+                if (mes1 == 255)
                     start1 = true;
 
-                mes = stream2.ReadByte();
-                if (mes == 255)
+                mes2 = stream2.ReadByte();
+                if (mes2 == 255)
                     start2 = true;
 
 
