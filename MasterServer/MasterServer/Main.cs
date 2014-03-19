@@ -193,17 +193,17 @@ namespace MasterServer
             {
                 mes1 = stream1.ReadByte();
                 if (mes1 == 255)
+                {
+                    Console.WriteLine("Client 1 has sent Start");
                     start1 = true;
+                }
 
                 mes2 = stream2.ReadByte();
                 if (mes2 == 255)
+                {
+                    Console.WriteLine("Client 2 has sent Start");
                     start2 = true;
-
-
-                if(!start1)
-                    Console.WriteLine("Client 1 has not sent Start");
-                if (!start2)
-                    Console.WriteLine("Client 2 has not sent Start");
+                }
             }
             if (start1 && start2 && !startGame)
             {
