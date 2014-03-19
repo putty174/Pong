@@ -5,7 +5,9 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
-
+	public int min;
+	public int sec;
+	public int milli;
 
 	public bool gameStart;
 	private GameObject ball;
@@ -24,8 +26,8 @@ public class GameProcess : MonoBehaviour {
 	private GUIScript gui;
     private Vector2 collisionLoc; //collision location
 
-	private int buffer;
-    public static float opPosY;
+	private byte[] buffer;
+    public static int opPosY;
     public static int opVel;
     public static int ballPosX;
     public static int ballPosY;
@@ -45,6 +47,7 @@ public class GameProcess : MonoBehaviour {
 		opPosY = 128;
 		ballPosX = 128;
 		ballPosY = 128;
+		buffer = new byte[6];
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
@@ -98,41 +101,29 @@ public class GameProcess : MonoBehaviour {
 				while(client.receiverBuffer.Count > 0)
 				{
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
+					opPosY = (int) client.receiverBuffer.Dequeue();
+					ballPosX = (int) client.receiverBuffer.Dequeue();
+					ballPosY = (int) client.receiverBuffer.Dequeue();
+					min = (int) client.receiverBuffer.Dequeue();
+					sec = (int) client.receiverBuffer.Dequeue();
+					milli = (int) client.receiverBuffer.Dequeue();
+
                     if (player == -1)
                     {
-                        buffer = (int)client.receiverBuffer.Dequeue();
-                        switch (buffer)
-		                {
-	                    case 0:
-	                        if (player == -1)
-	                        {
-	                            player = 1;
-	                            Debug.Log("Player 1");
-	                        }
-	                        break;
-	                    case 1:
-	                        if (player == -1)
-	                        {
-	                            player = 2;
-	                            Debug.Log("Player 2");
-	                        }
-	                        break;
-                        }
+						if(opPosY == 0)
+						{
+							player = 1;
+							Debug.Log("Player 1");
+						}
+						else if(opPosY == 1)
+						{
+							player = 2;
+							Debug.Log("Player 2");
+						}
+						opPosY = 128;
                     }
                     else
                     {
-						buffer = (int)client.receiverBuffer.Dequeue();
-						switch(buffer)
-						{
-						case 255:
-							bscript.BallStart();
-							gameStart = true;
-							Debug.Log("Start");
-							break;
-						default:
-							opPosY = buffer;
-							break;
-						}
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
                         //angle of ball, server time.

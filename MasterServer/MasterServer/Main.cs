@@ -140,27 +140,35 @@ namespace MasterServer
                         stream1 = clientList[connectedPlayers].GetStream();
                         packet1[0] = 0;
                         stream1.Write(packet1, 0, packet1.Length);
+                        packet1[0] = 128;
                     }
                     else if (connectedPlayers == 1)
                     {
                         stream2 = clientList[connectedPlayers].GetStream();
                         packet2[0] = 1;
                         stream2.Write(packet2, 0, packet2.Length);
+                        packet2[0] = 128;
                     }
 
                     //handleClient client = new handleClient(); 
                     //client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
 
                     connectedPlayers++;
-
-
                 }
 
-                while (true)
+                while (!startGame)
                 {
                     waitReady();
+                }
+
+                Console.WriteLine("Entering: Main Game Loop");
+                while (true)
+                {
+                    Console.WriteLine("Entering: process()");
                     process();
+                    Console.WriteLine("Entering: update()");
                     update();
+                    Console.WriteLine("Entering: send()");
                     send();
                 }
             }
@@ -207,8 +215,6 @@ namespace MasterServer
 
         public void process()
         {
-            
-
 			//stream 1
 			pos2 = stream2.ReadByte();
             
@@ -288,6 +294,9 @@ namespace MasterServer
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
 
+            int milli = BitConverter.ToInt16(milliHold, 0);
+            Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+
             packet2[0] = (byte)pos1;
             packet2[1] = (byte)nposx;
             packet2[2] = (byte)nposy;
@@ -298,6 +307,9 @@ namespace MasterServer
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
             packet2[5] = milliHold[0];
             packet2[6] = milliHold[1];
+
+            milli = BitConverter.ToInt16(milliHold, 0);
+            Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
             stream1.Write(packet1, 0, packet1.Length);
             stream2.Write(packet2, 0, packet2.Length);
@@ -354,24 +366,24 @@ namespace MasterServer
 			
 			sock.Connect(endPoint);
 			DateTime T1 = DateTime.UtcNow;
-			Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
+			//Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
 			sock.Send(ntpData);
 			while (sock.Receive(ntpData) < 44) { Console.WriteLine("getting NTP"); }
 			DateTime T4 = DateTime.UtcNow;
-			Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
+			//Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
 			//UInt32 destTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
 			sock.Close();
 			
-			Console.WriteLine("LI (lead indicator) : " + (ntpData[0] >> 6));
+			//Console.WriteLine("LI (lead indicator) : " + (ntpData[0] >> 6));
 			int temp = ntpData[0] << 2;
 			temp = temp >> 5;
-			Console.WriteLine("VN (version number) : " + temp);
+			//Console.WriteLine("VN (version number) : " + temp);
 			temp = (byte)(ntpData[0] << 5);
 			temp = temp >> 5;
-			Console.WriteLine("Mode : " + temp);
-			Console.WriteLine("Stratum Level : " + ntpData[1]);
-			Console.WriteLine("Poll Interval :  " + ntpData[2]);
-			Console.WriteLine("Precision : " + ntpData[3]);
+			//Console.WriteLine("Mode : " + temp);
+			//Console.WriteLine("Stratum Level : " + ntpData[1]);
+			//Console.WriteLine("Poll Interval :  " + ntpData[2]);
+			//Console.WriteLine("Precision : " + ntpData[3]);
 			
 			/*
 These are the 4 time stamps that are retrieved from the NTP Packet.
@@ -409,8 +421,8 @@ host, in 64-bit timestamp format.
 			
 			
 			DateTime BaseDateExample = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-			Console.WriteLine("Reference time stamp : " + BaseDateExample.AddSeconds(refTime).AddMilliseconds(refTimemilliseconds));
-			Console.WriteLine("Originate time stamp : " + BaseDateExample.AddSeconds(origTime).AddMilliseconds(origTimemilliseconds));
+			//Console.WriteLine("Reference time stamp : " + BaseDateExample.AddSeconds(refTime).AddMilliseconds(refTimemilliseconds));
+			//Console.WriteLine("Originate time stamp : " + BaseDateExample.AddSeconds(origTime).AddMilliseconds(origTimemilliseconds));
 			
 			
 			Console.WriteLine("Receive time stamp   : " + BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds) + " " + (BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds)).Millisecond);
