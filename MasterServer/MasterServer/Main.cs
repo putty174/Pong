@@ -205,20 +205,17 @@ namespace MasterServer
                     start2 = true;
                 }
             }
+            stream1.Flush();
+            stream2.Flush();
         }
 
         public void process()
         {
-            while (stream1.DataAvailable)
-            {
-                pos1 = stream1.ReadByte();
-                Console.WriteLine("Player1 Pos: " + pos1);
-            }
-            while (stream2.DataAvailable)
-            {
-                pos2 = stream2.ReadByte();
-                Console.WriteLine("Player2 Pos: " + pos2);
-            }
+            pos1 = stream1.ReadByte();
+            Console.WriteLine("Player1 Pos: " + pos1);
+
+            pos2 = stream2.ReadByte();
+            Console.WriteLine("Player2 Pos: " + pos2);
 			//stream 1
 			
             
