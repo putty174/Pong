@@ -189,7 +189,7 @@ namespace MasterServer
         {
             Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
             Console.WriteLine("<< Waiting for clients to send the start command....");
-            while (!start1 && !start2)
+            while (!start1 || !start2)
             {
                 mes1 = stream1.ReadByte();
                 if (mes1 == 255)
