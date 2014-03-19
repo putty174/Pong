@@ -303,7 +303,7 @@ namespace MasterServer
             Console.WriteLine("Writing P1-3: " + bally);
             packet1[2] = (byte)bally;
             Console.WriteLine("Checking NTP Time");
-            dTime = getNTPTime(ref uniClock);
+            //dTime = getNTPTime(ref uniClock);
             Console.WriteLine("Writing P1-4: " + dTime.Minute);
             packet1[3] = (byte)dTime.Minute;
             Console.WriteLine("Writing P1-5: " + dTime.Second);
