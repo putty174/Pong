@@ -205,19 +205,6 @@ namespace MasterServer
                     start2 = true;
                 }
             }
-            if (start1 && start2 && !startGame)
-            {
-                //startTime = DateTime.Now;
-                //lastTime = startTime;
-                //stream1.WriteByte(128);
-                //stream1.WriteByte(0);
-                //stream2.WriteByte(128);
-                //stream2.WriteByte(0);
-                Console.WriteLine("Flushing both Streams");
-                stream1.Flush();
-                stream2.Flush();
-                startGame = true;
-            }
         }
 
         public void process()
@@ -261,6 +248,8 @@ namespace MasterServer
             //Console.WriteLine(" >> Client 1: " + pos1);
             //Console.WriteLine("    >> Client 2 " + pos2);
             //Console.WriteLine(System.Environment.NewLine);
+            stream1.Flush();
+            stream2.Flush();
         }
 
         public void update()

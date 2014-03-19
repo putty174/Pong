@@ -91,12 +91,12 @@ public class GameProcess : MonoBehaviour {
 //		             + BallScript.ballPosition.z);
 
 
-		//Debug.Log (client.receiverBuffer.Count);
-		if(client.receiverBuffer.Count > 0)
+		Debug.Log (client.receiverBuffer.Count);
+		if(client.receiverBuffer.Count > buffer.Length)
 		{
 			lock(client.receiverBuffer)
 			{
-				while(client.receiverBuffer.Count > 0)
+				while(client.receiverBuffer.Count > buffer.Length)
 				{
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
 					opPosY = (int) client.receiverBuffer.Dequeue();
