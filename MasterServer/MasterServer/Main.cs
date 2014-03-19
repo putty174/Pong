@@ -156,14 +156,11 @@ namespace MasterServer
                     connectedPlayers++;
                 }
 
-                while (!startGame)
-                {
-                    waitReady();
-                }
-
                 Console.WriteLine("Entering: Main Game Loop");
                 while (true)
                 {
+                    Console.WriteLine("Entering: waitReady()");
+                    waitReady();
                     Console.WriteLine("Entering: process()");
                     process();
                     Console.WriteLine("Entering: update()");
