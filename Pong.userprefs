@@ -1,4 +1,15 @@
 ﻿<Properties>
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MasterServer/MasterServer/Main.cs">
+    <Files>
+      <File FileName="MasterServer/MasterServer/MainServer.cs" Line="1" Column="1" />
+      <File FileName="MasterServer/MasterServer/Main.cs" Line="101" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Client.cs">
     <Files>
@@ -16,6 +27,7 @@
     <BreakpointStore>
       <Breakpoint file="E:\Users\Max\Documents\GitHub\Pong\Assets\Scripts\GameProcess.cs" line="101" />
     </BreakpointStore>
+>>>>>>> FETCH_HEAD
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
