@@ -160,16 +160,17 @@ namespace MasterServer
                     connectedPlayers++;
                 }
 
-                while (!startGame)
-                {
-                    waitReady();
-                }
-
+                Console.WriteLine("Entering: Main Game Loop");
                 while (true)
                 {
-                    process();
-                    update();
-                    send();
+                        Console.WriteLine("Entering: waitReady()");
+                        waitReady();
+                        Console.WriteLine("Entering: process()");
+                        process();
+                        Console.WriteLine("Entering: update()");
+                        update();
+                        Console.WriteLine("Entering: send()");
+                        send();
                 }
             }
             catch (Exception ex)
@@ -186,11 +187,10 @@ namespace MasterServer
 
         public void waitReady()
         {
+            Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
+            Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 && !start2)
             {
-                Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
-                Console.WriteLine("<< Waiting for clients to send the start command....");
-
                 mes = stream1.ReadByte();
                 if (mes == 255)
                     start1 = true;
@@ -198,6 +198,12 @@ namespace MasterServer
                 mes = stream2.ReadByte();
                 if (mes == 255)
                     start2 = true;
+
+
+                if(!start1)
+                    Console.WriteLine("Client 1 has not sent Start");
+                if (!start2)
+                    Console.WriteLine("Client 2 has not sent Start");
             }
             if (start1 && start2 && !startGame)
             {
@@ -215,8 +221,10 @@ namespace MasterServer
 
         public void process()
         {
+            pos1 = stream1.ReadByte();
+            pos2 = stream2.ReadByte();
 			//stream 1
-			pos2 = stream2.ReadByte();
+			
             
 			//vel2 = stream2.ReadByte();
 			//stream1.WriteByte((byte)vel2);
@@ -224,8 +232,8 @@ namespace MasterServer
 			//time2 = stream2.ReadByte();
 
 			//stream 2
-			pos1 = stream1.ReadByte();
-            packet2[0] = (byte)pos1;
+			
+            
 			//vel1 = stream1.ReadByte();
 			//stream2.WriteByte((byte)vel1);
 			//col1 = stream1.ReadByte();
@@ -283,35 +291,51 @@ namespace MasterServer
 
         public void send()
         {
+            Console.WriteLine("Writing P1-1");
             packet1[0] = (byte)pos2;
+            Console.WriteLine("Writing P1-2");
             packet1[1] = (byte)nposx;
+            Console.WriteLine("Writing P1-3");
             packet1[2] = (byte)nposy;
             dTime = getNTPTime(ref uniClock);
+            Console.WriteLine("Writing P1-4");
             packet1[3] = (byte)dTime.Minute;
+            Console.WriteLine("Writing P1-5");
             packet1[4] = (byte)dTime.Second;
             milliHold = new byte[2];
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
+            Console.WriteLine("Writing P1-6");
             packet1[5] = milliHold[0];
+            Console.WriteLine("Writing P1-7");
             packet1[6] = milliHold[1];
 
             int milli = BitConverter.ToInt16(milliHold, 0);
             Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
+            Console.WriteLine("Writing P2-1");
             packet2[0] = (byte)pos1;
+            Console.WriteLine("Writing P2-2");
             packet2[1] = (byte)nposx;
+            Console.WriteLine("Writing P2-3");
             packet2[2] = (byte)nposy;
             dTime = getNTPTime(ref uniClock);
+            Console.WriteLine("Writing P2-4");
             packet2[3] = (byte)dTime.Minute;
+            Console.WriteLine("Writing P2-5");
             packet2[4] = (byte)dTime.Second;
             milliHold = new byte[2];
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
+            Console.WriteLine("Writing P2-6");
             packet2[5] = milliHold[0];
+            Console.WriteLine("Writing P2-7");
             packet2[6] = milliHold[1];
 
             milli = BitConverter.ToInt16(milliHold, 0);
             Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
+            Console.WriteLine("Sending Packet1");
             stream1.Write(packet1, 0, packet1.Length);
+            Console.WriteLine("Sending Packet2");
             stream2.Write(packet2, 0, packet2.Length);
         }
 
