@@ -140,25 +140,29 @@ namespace MasterServer
                         stream1 = clientList[connectedPlayers].GetStream();
                         packet1[0] = 0;
                         stream1.Write(packet1, 0, packet1.Length);
+                        packet1[0] = 128;
                     }
                     else if (connectedPlayers == 1)
                     {
                         stream2 = clientList[connectedPlayers].GetStream();
                         packet2[0] = 1;
                         stream2.Write(packet2, 0, packet2.Length);
+                        packet2[0] = 128;
                     }
 
                     //handleClient client = new handleClient(); 
                     //client.startClient(clientList[connectedPlayers], Convert.ToString(connectedPlayers));
 
                     connectedPlayers++;
+                }
 
-
+                while (!startGame)
+                {
+                    waitReady();
                 }
 
                 while (true)
                 {
-                    waitReady();
                     process();
                     update();
                     send();
@@ -207,8 +211,6 @@ namespace MasterServer
 
         public void process()
         {
-            
-
 			//stream 1
 			pos2 = stream2.ReadByte();
             
