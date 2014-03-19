@@ -12,8 +12,8 @@ using System.Threading;
 
 public class Client : MonoBehaviour {
 
-	Stopwatch uniClock;
-	DateTime dTime;
+	public static Stopwatch uniClock;
+	public static DateTime dTime;
 
 	const string serverLocation = "128.195.11.124";
 	public const int maxLimit = 600;
