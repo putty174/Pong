@@ -7,11 +7,11 @@ using System.Net.Sockets;
 
 public class TSock : MonoBehaviour
 {
+	int[] buffer;
 	byte[] bytes;
 	private NetworkStream ns;
-	private int buffer;
 	private Client sock;
-	private int serverLength = 21;
+	private int serverLength = 24;
 
 
 	public TSock (NetworkStream nsIn, Client sIn)
@@ -27,12 +27,22 @@ public class TSock : MonoBehaviour
 		{
 			while (sock.isConnected)
 			{
-				buffer = ns.Read(bytes, 0, bytes.Length);
-				Debug.Log(buffer);
+				ns.Read(bytes, 0, bytes.Length);
+				byte[] milliHold = new byte[2];
+				milliHold[0] = bytes[5];
+				milliHold[1] = bytes[6];
+				int milli = BitConverter.ToInt16(milliHold,0);
+				Debug.Log(bytes[0] + ", " + bytes[1] + ", " + bytes[2] + ", " + bytes[3] + ", " + bytes[4] + ", " + ", " + milli);
 				lock(sock.receiverBuffer)
 				{
-					//Debug.Log(buffer);
-					sock.receiverBuffer.Enqueue(buffer);
+
+					sock.receiverBuffer.Enqueue((int)bytes[0]);
+					sock.receiverBuffer.Enqueue((int)bytes[1]);
+					sock.receiverBuffer.Enqueue((int)bytes[2]);
+					sock.receiverBuffer.Enqueue((int)bytes[3]);
+					sock.receiverBuffer.Enqueue((int)bytes[4]);
+					sock.receiverBuffer.Enqueue(milli);
+
 
 //					if(sock.receiverBuffer.Count > serverLength)
 //					{
