@@ -187,8 +187,8 @@ namespace MasterServer
 
         public void waitReady()
         {
-            Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
-            Console.WriteLine("<< Waiting for clients to send the start command....");
+            //Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
+            //Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 || !start2)
             {
                 mes1 = stream1.ReadByte();
@@ -342,6 +342,8 @@ namespace MasterServer
             stream1.Write(packet1, 0, packet1.Length);
             //Console.WriteLine("Sending Packet2");
             stream2.Write(packet2, 0, packet2.Length);
+
+            Console.WriteLine(System.Environment.NewLine);
         }
 
         public double changeAngle(double a)
