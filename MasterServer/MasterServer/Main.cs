@@ -397,7 +397,9 @@ namespace MasterServer
 			DateTime T1 = DateTime.UtcNow;
 			Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
 			sock.Send(ntpData);
+            Console.WriteLine("sock.Send OK!!!");
 			while (sock.Receive(ntpData) < 44) { Console.WriteLine("getting NTP"); }
+            Console.WriteLine("while loop OK!!!");
 			DateTime T4 = DateTime.UtcNow;
 			Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
 			//UInt32 destTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
