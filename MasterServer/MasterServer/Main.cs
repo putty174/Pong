@@ -209,10 +209,16 @@ namespace MasterServer
 
         public void process()
         {
-            pos1 = stream1.ReadByte();
-            Console.WriteLine("Player1 Pos: " + pos1);
-            pos2 = stream2.ReadByte();
-            Console.WriteLine("Player2 Pos: " + pos2);
+            while (stream1.DataAvailable)
+            {
+                pos1 = stream1.ReadByte();
+                Console.WriteLine("Player1 Pos: " + pos1);
+            }
+            while (stream2.DataAvailable)
+            {
+                pos2 = stream2.ReadByte();
+                Console.WriteLine("Player2 Pos: " + pos2);
+            }
 			//stream 1
 			
             
@@ -248,8 +254,6 @@ namespace MasterServer
             //Console.WriteLine(" >> Client 1: " + pos1);
             //Console.WriteLine("    >> Client 2 " + pos2);
             //Console.WriteLine(System.Environment.NewLine);
-            stream1.Flush();
-            stream2.Flush();
         }
 
         public void update()
