@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MasterServer/Main.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Assets/Scripts/BallScript.cs">
     <Files>
-      <File FileName="MasterServer/Main.cs" Line="57" Column="17" />
+      <File FileName="../Assets/Scripts/Client.cs" Line="16" Column="31" />
+      <File FileName="../Assets/Scripts/BallScript.cs" Line="69" Column="123" />
+      <File FileName="../Assets/Scripts/GameProcess.cs" Line="33" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

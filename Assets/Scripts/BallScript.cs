@@ -51,6 +51,32 @@ public class BallScript : MonoBehaviour {
 		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
 		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
 		transform.position = new Vector3 (x,y,0);
+		//Comment out above later
+
+		//Lag compensation
+
+		//packets come from GameProcess.cs
+		//NTPTime material comes from Client.cs
+
+		//GameProcess.cs:
+		//aposxaposy and bposxbposy comes from GameProcess.cs
+//		public static int ballPosX; //first receive assumed to be oposx.  second receive assumed to be nposx
+		//		public static int ballPosY;  //first receive assumed to be oposx.  second receive assumed to be nposx
+//		public static int ballVel;
+		//Assuming these assigned already
+
+		//Client.cs:
+		//		public static Stopwatch uniClock; //first receive assumed to be timeStampA.  second receive assumed to be timeStampB
+//		public static DateTime dTime;
+
+
+
+
+
+
+
+
+
 	}
 
 	public void BallStart()
@@ -80,7 +106,7 @@ public class BallScript : MonoBehaviour {
 		GameObject pad = colInfo.gameObject;
 		ContactPoint2D[] points = colInfo.contacts;
 		float y = points [0].point.y - pad.transform.position.y;
-        gp.sendPositions(); //send positions immediately upon collision
+        //gp.sendPositions(); //send positions immediately upon collision
 
 		if (y > 0.5)
 		{

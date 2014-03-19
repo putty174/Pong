@@ -12,11 +12,12 @@ using System.Threading;
 
 public class Client : MonoBehaviour {
 
-	Stopwatch uniClock;
-	DateTime dTime;
+	public static Stopwatch uniClock;
+	public static DateTime dTime;
 
 	const string serverLocation = "128.195.11.124";
-	const int maxLimit = 6;
+	public const int maxLimit = 600;
+	public const int packetSize = 6;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;
