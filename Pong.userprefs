@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameProcess.cs">
     <Files>
-      <File FileName="Assets\Scripts\TSock.cs" Line="22" Column="2" />
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="120" Column="8" />
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="51" Column="21" />
+      <File FileName="Assets\Scripts\TSock.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Client.cs" Line="173" Column="6" />
+      <File FileName="Assets\Scripts\GUIScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

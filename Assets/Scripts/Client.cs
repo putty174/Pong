@@ -172,8 +172,9 @@ public class Client : MonoBehaviour {
 	{
 		try
 		{
+			nws.Flush();
 			nws.WriteByte(message);
-			Console.WriteLine ("Sent: " + message);
+			//UnityEngine.Debug.Log("Sent: " + message);
 		}
 		catch(ArgumentException e)
 		{

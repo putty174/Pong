@@ -25,6 +25,7 @@ public class GameProcess : MonoBehaviour {
 	private GUIScript gui;
     private Vector2 collisionLoc; //collision location
 
+	public bool gameStart;
 	private byte[] buffer;
     public static int opPosY;
     public static int opVel;
@@ -47,6 +48,7 @@ public class GameProcess : MonoBehaviour {
 		ballPosX = 128;
 		ballPosY = 128;
 		buffer = new byte[6];
+		gameStart = false;
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
@@ -91,7 +93,7 @@ public class GameProcess : MonoBehaviour {
 //		             + BallScript.ballPosition.z);
 
 
-		Debug.Log (client.receiverBuffer.Count);
+		//Debug.Log (client.receiverBuffer.Count);
 		if(client.receiverBuffer.Count > buffer.Length)
 		{
 			lock(client.receiverBuffer)

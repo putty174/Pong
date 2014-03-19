@@ -210,9 +210,9 @@ namespace MasterServer
         public void process()
         {
             pos1 = stream1.ReadByte();
-            //Console.WriteLine("Player1 Pos: " + pos1);
+            Console.WriteLine("Player1 Pos: " + pos1);
             pos2 = stream2.ReadByte();
-            //Console.WriteLine("Player2 Pos: " + pos2);
+            Console.WriteLine("Player2 Pos: " + pos2);
 			//stream 1
 			
             
@@ -305,7 +305,7 @@ namespace MasterServer
             packet1[6] = milliHold[1];
 
             int milli = BitConverter.ToInt16(milliHold, 0);
-            Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+            //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
             //Console.WriteLine("Writing P2-1 " + pos1);
             packet2[0] = (byte)pos1;
@@ -326,7 +326,7 @@ namespace MasterServer
             packet2[6] = milliHold[1];
 
             milli = BitConverter.ToInt16(milliHold, 0);
-            Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+            //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
             //Console.WriteLine("Sending Packet1");
             stream1.Write(packet1, 0, packet1.Length);
