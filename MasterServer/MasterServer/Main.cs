@@ -186,11 +186,10 @@ namespace MasterServer
 
         public void waitReady()
         {
+            Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
+            Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 && !start2)
             {
-                Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
-                Console.WriteLine("<< Waiting for clients to send the start command....");
-
                 mes = stream1.ReadByte();
                 if (mes == 255)
                     start1 = true;
@@ -198,6 +197,12 @@ namespace MasterServer
                 mes = stream2.ReadByte();
                 if (mes == 255)
                     start2 = true;
+
+
+                if(!start1)
+                    Console.WriteLine("Client 1 has not sent Start");
+                if (!start2)
+                    Console.WriteLine("Client 2 has not sent Start");
             }
             if (start1 && start2 && !startGame)
             {
