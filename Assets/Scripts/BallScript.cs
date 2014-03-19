@@ -80,7 +80,7 @@ public class BallScript : MonoBehaviour {
 		GameObject pad = colInfo.gameObject;
 		ContactPoint2D[] points = colInfo.contacts;
 		float y = points [0].point.y - pad.transform.position.y;
-        gp.sendPositions(); //send positions immediately upon collision
+        //gp.sendPositions(); //send positions immediately upon collision
 
 		if (y > 0.5)
 		{

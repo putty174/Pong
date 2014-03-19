@@ -222,7 +222,9 @@ namespace MasterServer
         public void process()
         {
             pos1 = stream1.ReadByte();
+            Console.WriteLine("Player1 Pos: " + pos1);
             pos2 = stream2.ReadByte();
+            Console.WriteLine("Player2 Pos: " + pos2);
 			//stream 1
 			
             
@@ -300,6 +302,7 @@ namespace MasterServer
             packet1[1] = (byte)ballx;
             Console.WriteLine("Writing P1-3: " + bally);
             packet1[2] = (byte)bally;
+            Console.WriteLine("Checking NTP Time");
             dTime = getNTPTime(ref uniClock);
             Console.WriteLine("Writing P1-4: " + dTime.Minute);
             packet1[3] = (byte)dTime.Minute;
@@ -320,6 +323,7 @@ namespace MasterServer
             packet2[1] = (byte)ballx;
             Console.WriteLine("Writing P2-3: " + bally);
             packet2[2] = (byte)bally;
+            Console.WriteLine("Finished Writing P2-3");
             //dTime = getNTPTime(ref uniClock);
             Console.WriteLine("Writing P2-4: " + dTime.Minute);
             packet2[3] = (byte)dTime.Minute;

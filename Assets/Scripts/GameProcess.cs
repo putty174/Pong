@@ -179,39 +179,39 @@ public class GameProcess : MonoBehaviour {
 
     //return estimated time of collision.
     //Parameters (ball position, ball angle, ball velocity)
-    public int timeOfcollide(Vector2 pos, int angle, int velocity)
-    {
-        float dirX = (float)(velocity * Mathf.Cos(angle));
-        float dirY = (float)(velocity * Mathf.Sin(angle));
-        Vector2 dir = new Vector2(dirX, dirY);
-
-        ball.transform.position = pos;
-        ball.rigidbody2D.AddForce(dir);
-
-				//get paddle position
-				// offeset so positive (add botwall.y)
-				// then use ratio to convert to 0~250
-				// send to server
-        RaycastHit2D raycastHit = Physics2D.Raycast(pos, dir);
-        pointOfCollision = raycastHit.point;
-
-
-				
-
-				float temp1 = Player1.player1PosY - bWall.transform.position.y;
-				int result = Convert.ToInt32(temp1 * wallRatio);
-				client.Send((byte)result);//player position * (manual byte range / boardwidth)
-
-				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
-
-				//number 0 to 250 is the number that server recognizes as a position.  
-				//number 251 is recognized as pause in the server
-				//number 252 is ..
-				//etc.  
-        float distance = Vector2.Distance(pos, pointOfCollision) - 0.1f;
-        
-        return (int)(distance / velocity);
-    }
+//    public int timeOfcollide(Vector2 pos, int angle, int velocity)
+//    {
+//        float dirX = (float)(velocity * Mathf.Cos(angle));
+//        float dirY = (float)(velocity * Mathf.Sin(angle));
+//        Vector2 dir = new Vector2(dirX, dirY);
+//
+//        ball.transform.position = pos;
+//        ball.rigidbody2D.AddForce(dir);
+//
+//				//get paddle position
+//				// offeset so positive (add botwall.y)
+//				// then use ratio to convert to 0~250
+//				// send to server
+//        RaycastHit2D raycastHit = Physics2D.Raycast(pos, dir);
+//        pointOfCollision = raycastHit.point;
+//
+//
+//				
+//
+//				float temp1 = Player1.player1PosY - bWall.transform.position.y;
+//				int result = Convert.ToInt32(temp1 * wallRatio);
+//				client.Send((byte)result);//player position * (manual byte range / boardwidth)
+//
+//				//Debug.Log ("Paddle 1 y position sent" + (byte)(temp1 * wallRatio));
+//
+//				//number 0 to 250 is the number that server recognizes as a position.  
+//				//number 251 is recognized as pause in the server
+//				//number 252 is ..
+//				//etc.  
+//        float distance = Vector2.Distance(pos, pointOfCollision) - 0.1f;
+//        
+//        return (int)(distance / velocity);
+//    }
 
     public bool collide()
     {
@@ -261,8 +261,9 @@ public class GameProcess : MonoBehaviour {
 
 				float temp1 = Player2.player2PosY - bWall.transform.position.y;
 				int result = Convert.ToInt32(temp1 * wallRatio);
-				client.Send ((byte)result);//player position * (manual byte range / boardwidth)
 				//Debug.Log("Player 2 Position: " + result);
+				client.Send ((byte)result);//player position * (manual byte range / boardwidth)
+
 				//Debug.Log ("Paddle 2 y position sent"+(byte)Player2.player2PosY);
 				//Debug.Log ("Paddle 1 y position sent"+(byte)((int)(Player2.player2PosY * (250/13))));
 				
