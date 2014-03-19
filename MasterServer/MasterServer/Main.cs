@@ -213,8 +213,11 @@ namespace MasterServer
                 //stream1.WriteByte(0);
                 //stream2.WriteByte(128);
                 //stream2.WriteByte(0);
+                Console.WriteLine("Flushing both Streams");
                 stream1.Flush();
                 stream2.Flush();
+                Console.WriteLine("Client1 Stream size: " + stream1.Length);
+                Console.WriteLine("Client2 Stream size: " + stream2.Length);
                 startGame = true;
             }
         }
