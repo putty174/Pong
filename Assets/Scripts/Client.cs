@@ -16,7 +16,8 @@ public class Client : MonoBehaviour {
 	DateTime dTime;
 
 	const string serverLocation = "128.195.11.124";
-	const int maxLimit = 6;
+	public const int maxLimit = 24;
+	public const int packetSize = 6;
 	const int portNumber = 4000;
 	public TcpClient client;
 	public NetworkStream nws;

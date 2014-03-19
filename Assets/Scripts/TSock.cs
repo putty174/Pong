@@ -11,7 +11,6 @@ public class TSock : MonoBehaviour
 	byte[] bytes;
 	private NetworkStream ns;
 	private Client sock;
-	private int serverLength = 24;
 
 
 	public TSock (NetworkStream nsIn, Client sIn)
@@ -44,12 +43,12 @@ public class TSock : MonoBehaviour
 					sock.receiverBuffer.Enqueue(milli);
 
 
-//					if(sock.receiverBuffer.Count > serverLength)
-//					{
-//						for(int i = 0; i < 7; i++) {
-//							sock.receiverBuffer.Dequeue();
-//						}
-//					}
+					if(sock.receiverBuffer.Count > Client.maxLimit)
+					{
+						for(int i = 0; i < Client.packetSize; i++) {
+							sock.receiverBuffer.Dequeue();
+						}
+					}
 				}
 			}
 		}
