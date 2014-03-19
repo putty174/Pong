@@ -64,10 +64,12 @@ namespace MasterServer
 		
 		public MainServer()
 		{
+		
 
 			//dTime = getNTPTime(ref uniClock);
 
             uniClock = new Stopwatch();
+
             dTime = getNTPTime(ref uniClock);
 
             angleRatio = 2 * Math.PI / 250;
@@ -96,6 +98,7 @@ namespace MasterServer
 
         public void restart()
         {
+
             startGame = false;
             oposx = 128;
             oposy = 128;
@@ -122,6 +125,7 @@ namespace MasterServer
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
+
         }
 		
 		public void ListendForTCPClients()
