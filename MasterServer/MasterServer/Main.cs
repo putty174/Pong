@@ -314,13 +314,13 @@ namespace MasterServer
             int milli = BitConverter.ToInt16(milliHold, 0);
             Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
-            Console.WriteLine("Writing P2-1" + pos1);
+            Console.WriteLine("Writing P2-1 " + pos1);
             packet2[0] = (byte)pos1;
             Console.WriteLine("Writing P2-2: " + ballx);
             packet2[1] = (byte)ballx;
             Console.WriteLine("Writing P2-3: " + bally);
             packet2[2] = (byte)bally;
-            dTime = getNTPTime(ref uniClock);
+            //dTime = getNTPTime(ref uniClock);
             Console.WriteLine("Writing P2-4: " + dTime.Minute);
             packet2[3] = (byte)dTime.Minute;
             Console.WriteLine("Writing P2-5: " + dTime.Second);
