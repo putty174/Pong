@@ -124,13 +124,6 @@ public class GameProcess : MonoBehaviour {
                     }
                     else
                     {
-						Debug.Log("Queue count: " + client.receiverBuffer.Count);
-						opPosY = (int) client.receiverBuffer.Dequeue();
-						ballPosX = (int) client.receiverBuffer.Dequeue();
-						ballPosY = (int) client.receiverBuffer.Dequeue();
-						min = (int) client.receiverBuffer.Dequeue();
-						sec = (int) client.receiverBuffer.Dequeue();
-						milli = (int) client.receiverBuffer.Dequeue();
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
                         //angle of ball, server time.

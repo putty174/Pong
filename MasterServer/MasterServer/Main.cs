@@ -161,10 +161,14 @@ namespace MasterServer
                     waitReady();
                 }
 
+                Console.WriteLine("Entering: Main Game Loop");
                 while (true)
                 {
+                    Console.WriteLine("Entering: process()");
                     process();
+                    Console.WriteLine("Entering: update()");
                     update();
+                    Console.WriteLine("Entering: send()");
                     send();
                 }
             }
