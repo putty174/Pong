@@ -216,8 +216,6 @@ namespace MasterServer
                 Console.WriteLine("Flushing both Streams");
                 stream1.Flush();
                 stream2.Flush();
-                Console.WriteLine("Client1 Stream size: " + stream1.Length);
-                Console.WriteLine("Client2 Stream size: " + stream2.Length);
                 startGame = true;
             }
         }
