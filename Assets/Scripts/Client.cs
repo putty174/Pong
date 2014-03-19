@@ -16,7 +16,7 @@ public class Client : MonoBehaviour {
 	public static DateTime dTime;
 
 	const string serverLocation = "128.195.11.124";
-	public const int maxLimit = 600;
+	public const int maxLimit = 60;
 	public const int packetSize = 6;
 	const int portNumber = 4000;
 	public TcpClient client;
@@ -172,8 +172,9 @@ public class Client : MonoBehaviour {
 	{
 		try
 		{
+			nws.Flush();
 			nws.WriteByte(message);
-			Console.WriteLine ("Sent: " + message);
+			//UnityEngine.Debug.Log("Sent: " + message);
 		}
 		catch(ArgumentException e)
 		{
