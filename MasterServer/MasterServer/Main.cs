@@ -44,6 +44,7 @@ namespace MasterServer
 		NetworkStream stream2;
         int mes1, mes2;
 
+        int startDelay = 500;
         int delay1, delay2;
         DateTime startTime;
         DateTime lastTime;
@@ -68,8 +69,8 @@ namespace MasterServer
 		
 		public MainServer()
 		{
-            leftPaddlePad = 50;
-            rightPaddlePad = 50;
+            leftPaddlePad = 35;
+            rightPaddlePad = 35;
             topWallPad = 10;
             botWallPad = 8;
 
@@ -289,12 +290,22 @@ namespace MasterServer
 
         public void update()
         {
-            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            //Console.WriteLine("BallX: " + nposx);
-            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            //Console.WriteLine("BallY: " + nposy);
-            lastTime = DateTime.Now;
-            //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+            if (dstart1 == 2 && dstart2 == 2)
+            {
+                nposx = 128;
+                nposy = 128;
+                dstart1 = 3;
+                dstart2 = 3;
+            }
+            if (start1 && start2)
+            {
+                nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                Console.WriteLine("BallX: " + nposx);
+                nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                Console.WriteLine("BallY: " + nposy);
+                lastTime = DateTime.Now;
+                //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+            }
 
             if (angle < 0.0)
                 angle += 2 * Math.PI;
@@ -383,6 +394,13 @@ namespace MasterServer
         {
             try
             {
+                if (dstart1 == 3 && dstart2 == 3 && startDelay > 0)
+                {
+                    nposx = 128;
+                    nposy = 128;
+                    startDelay--;
+                }
+
                 int ballx = Convert.ToInt16(nposx);
                 int bally = Convert.ToInt16(nposy);
 
@@ -434,7 +452,6 @@ namespace MasterServer
                     dstart1 = 1;
                     dstart2 = 1;
                 }
-
                 //Console.WriteLine("Sending Packet1");
                 stream1.Write(packet1, 0, packet1.Length);
                 //Console.WriteLine("Sending Packet2");
