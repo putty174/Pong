@@ -26,6 +26,7 @@ namespace MasterServer
 	{
 		public static Stopwatch uniClock;
 		public static DateTime dTime;
+        public static DateTime dTimeNew;
 		const int maxPlayers = 2;
 		const int portNumber = 4000;
 		int connectedPlayers;
@@ -34,7 +35,7 @@ namespace MasterServer
 		Thread listenThread1;
 		Thread listenThread2;
 
-        bool startGame;
+        int dstart1, dstart2;
         bool client1Start = false;
         bool client2Start = false;
         bool start1, start2;
@@ -43,6 +44,7 @@ namespace MasterServer
 		NetworkStream stream2;
         int mes1, mes2;
 
+        TimeSpan delay1, delay2;
         DateTime startTime;
         DateTime lastTime;
         DateTime timeStamp;
@@ -99,7 +101,8 @@ namespace MasterServer
         public void restart()
         {
 
-            startGame = false;
+            dstart1 = 0;
+            dstart2 = 0;
             oposx = 128;
             oposy = 128;
             nposx = rand.Next(0, 250);
@@ -198,7 +201,6 @@ namespace MasterServer
                     {
                         Console.WriteLine("Client 1 has sent Start");
                         start1 = true;
-                        stream1.Flush();
                     }
 
                     mes2 = stream2.ReadByte();
@@ -206,7 +208,6 @@ namespace MasterServer
                     {
                         Console.WriteLine("Client 2 has sent Start");
                         start2 = true;
-                        stream2.Flush();
                     }
                 }
                 catch (Exception ex)
@@ -221,10 +222,24 @@ namespace MasterServer
             try
             {
                 pos1 = stream1.ReadByte();
-                Console.WriteLine("Player1 Pos: " + pos1);
+                //Console.WriteLine("Player1 Pos: " + pos1);
+                if (dstart1 == 1)
+                {
+                    dTimeNew = getNTPTime(ref uniClock);
+                    delay1 = dTimeNew.Subtract(dTime);
+                    Console.WriteLine(delay1.Milliseconds / 2);
+                    dstart1 = 2;
+                }
 
                 pos2 = stream2.ReadByte();
-                Console.WriteLine("Player2 Pos: " + pos2);
+                //Console.WriteLine("Player2 Pos: " + pos2);
+                if (dstart2 == 1)
+                {
+                    dTimeNew = getNTPTime(ref uniClock);
+                    delay2 = dTimeNew.Subtract(dTime);
+                    Console.WriteLine(delay2.Milliseconds / 2);
+                    dstart2 = 2;
+                }
             }
             catch (Exception ex)
             {
@@ -270,11 +285,11 @@ namespace MasterServer
         public void update()
         {
             nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            Console.WriteLine("BallX: " + nposx);
+            //Console.WriteLine("BallX: " + nposx);
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            Console.WriteLine("BallY: " + nposy);
+            //Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
-            Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+            //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
 
             if (angle < 0.0)
                 angle += 2 * Math.PI;
@@ -307,7 +322,7 @@ namespace MasterServer
                 angle = bounceTop(angle);
                 nposy = 240;
             }
-            Console.WriteLine("Angle: " + (angle / Math.PI));
+            //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
         public double bounceLeft(double a)
@@ -330,12 +345,12 @@ namespace MasterServer
         {
             if (a < (0.5 * Math.PI))
             {
-                Console.WriteLine("BounceRight() - Up");
+                //Console.WriteLine("BounceRight() - Up");
                 return (Math.PI - a);
             }
             else if (a > (1.5 * Math.PI))
             {
-                Console.WriteLine("BounceRight() - Down");
+                //Console.WriteLine("BounceRight() - Down");
                 return (3 * Math.PI - a);
             }
             else
@@ -407,6 +422,13 @@ namespace MasterServer
 
                 milli = BitConverter.ToInt16(milliHold, 0);
                 //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+
+                if (dstart1 == 0 && dstart2 == 0)
+                {
+                    dTime = getNTPTime(ref uniClock);
+                    dstart1 = 1;
+                    dstart2 = 1;
+                }
 
                 //Console.WriteLine("Sending Packet1");
                 stream1.Write(packet1, 0, packet1.Length);
