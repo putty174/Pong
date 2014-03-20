@@ -329,12 +329,12 @@ namespace MasterServer
         {
             if (a > (0.5 * Math.PI))
             {
-                Console.WriteLine("BounceLeft() - Up");
+                //Console.WriteLine("BounceLeft() - Up");
                 return (Math.PI - a);
             }
             else if (a < (1.5 * Math.PI))
             {
-                Console.WriteLine("BounceLeft() - Down");
+                //Console.WriteLine("BounceLeft() - Down");
                 return (3 * Math.PI - a);
             }
             else
@@ -435,7 +435,7 @@ namespace MasterServer
                 //Console.WriteLine("Sending Packet2");
                 stream2.Write(packet2, 0, packet2.Length);
 
-                Console.WriteLine(System.Environment.NewLine);
+                //Console.WriteLine(System.Environment.NewLine);
             }
             
             catch (Exception ex)
