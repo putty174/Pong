@@ -68,8 +68,8 @@ namespace MasterServer
 		
 		public MainServer()
 		{
-            leftPaddlePad = 50;
-            rightPaddlePad = 50;
+            leftPaddlePad = 35;
+            rightPaddlePad = 35;
             topWallPad = 10;
             botWallPad = 8;
 
@@ -290,9 +290,9 @@ namespace MasterServer
         public void update()
         {
             nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            //Console.WriteLine("BallX: " + nposx);
+            Console.WriteLine("BallX: " + nposx);
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            //Console.WriteLine("BallY: " + nposy);
+            Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
             //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
 
