@@ -94,11 +94,11 @@ public class GameProcess : MonoBehaviour {
 
 
 		//Debug.Log (client.receiverBuffer.Count);
-		if(client.receiverBuffer.Count > (buffer.Length * 2))
+		if(client.receiverBuffer.Count > buffer.Length)
 		{
 			lock(client.receiverBuffer)
 			{
-				while(client.receiverBuffer.Count > (buffer.Length * 2))
+				while(client.receiverBuffer.Count > buffer.Length)
 				{
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
 					opPosY = (int) client.receiverBuffer.Dequeue();
