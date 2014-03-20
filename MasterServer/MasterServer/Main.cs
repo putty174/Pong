@@ -279,25 +279,25 @@ namespace MasterServer
             {
                 //nposx = Math.Abs(nposx);
                 angle = bounceLeft(angle);
-                nposx = 1;
+                nposx = 15;
             }
             else if (nposx > 250.0)
             {
                 //nposx = 250 - (nposx - 250);
                 angle = bounceRight(angle);
-                nposx = 249;
+                nposx = 235;
             }
             if (nposy < 0.0)
             {
                 //nposy = Math.Abs(nposy);
                 angle = changeAngle(angle);
-                nposy = 1;
+                nposy = 15;
             }
             else if (nposy > 250.0)
             {
                 //nposy = 250 - (nposy - 250);
                 angle = changeAngle(angle);
-                nposy = 249;
+                nposy = 235;
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
