@@ -33,8 +33,7 @@ public class GameProcess : MonoBehaviour {
     public static int ballPosY;
 	public static int ballVel;
     private int angle;
-    //private int time;
-	public static int time;
+    private int time;
     private Vector2 hit;
     private Vector2 pointOfCollision;
 	public static float wallRatio;
