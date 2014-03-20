@@ -55,7 +55,7 @@ namespace MasterServer
         double oposx, oposy;
         double nposx, nposy;
         double angle;
-        int vel;
+        double vel;
         double angleRatio;
 
         byte[] packet1;
@@ -105,7 +105,7 @@ namespace MasterServer
             nposx = rand.Next(0, 250);
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
-            vel = 10;
+            vel = .1;
             packet1[0] = (byte) 128;
             packet1[1] = (byte) 128;
             packet1[2] = (byte) 128;
@@ -191,31 +191,45 @@ namespace MasterServer
             //Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 || !start2)
             {
-                mes1 = stream1.ReadByte();
-                if (mes1 == 255)
+                try
                 {
-                    //Console.WriteLine("Client 1 has sent Start");
-                    start1 = true;
-                }
+                    mes1 = stream1.ReadByte();
+                    if (mes1 == 255)
+                    {
+                        Console.WriteLine("Client 1 has sent Start");
+                        start1 = true;
+                        stream1.Flush();
+                    }
 
-                mes2 = stream2.ReadByte();
-                if (mes2 == 255)
+                    mes2 = stream2.ReadByte();
+                    if (mes2 == 255)
+                    {
+                        Console.WriteLine("Client 2 has sent Start");
+                        start2 = true;
+                        stream2.Flush();
+                    }
+                }
+                catch (Exception ex)
                 {
-                    //Console.WriteLine("Client 2 has sent Start");
-                    start2 = true;
+                    Console.WriteLine(ex.ToString());
                 }
             }
-            stream1.Flush();
-            stream2.Flush();
         }
 
         public void process()
         {
-            pos1 = stream1.ReadByte();
-            Console.WriteLine("Player1 Pos: " + pos1);
+            try
+            {
+                pos1 = stream1.ReadByte();
+                Console.WriteLine("Player1 Pos: " + pos1);
 
-            pos2 = stream2.ReadByte();
-            Console.WriteLine("Player2 Pos: " + pos2);
+                pos2 = stream2.ReadByte();
+                Console.WriteLine("Player2 Pos: " + pos2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 			//stream 1
 			
             
@@ -255,104 +269,150 @@ namespace MasterServer
 
         public void update()
         {
-            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Seconds;
-            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Seconds;
-
-            if (nposx < 0)
-            {
-                nposx = Math.Abs(nposx);
-                angle = changeAngle(angle);
-            }
-            else if (nposx > 250)
-            {
-                nposx = 250 - (nposx - 250);
-                angle = changeAngle(angle);
-            }
-            if (nposy < 0)
-            {
-                nposy = Math.Abs(nposy);
-                angle = changeAngle(angle);
-            }
-            else if (nposy > 250)
-            {
-                nposy = 250 - (nposy - 250);
-                angle = changeAngle(angle);
-            }
-
+            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+            Console.WriteLine("BallX: " + nposx);
+            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+            Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
 
+            if (nposx < 0.0)
+            {
+                //nposx = Math.Abs(nposx);
+                angle = bounceLeft(angle);
+                nposx = 10;
+            }
+            else if (nposx > 250.0)
+            {
+                //nposx = 250 - (nposx - 250);
+                angle = bounceRight(angle);
+                nposx = 240;
+            }
+            if (nposy < 0.0)
+            {
+                //nposy = Math.Abs(nposy);
+                angle = bounceBot(angle);
+                nposy = 10;
+            }
+            else if (nposy > 250.0)
+            {
+                //nposy = 250 - (nposy - 250);
+                angle = bounceTop(angle);
+                nposy = 240;
+            }
+            Console.WriteLine("Angle: " + (angle / Math.PI));
+        }
 
+        public double bounceLeft(double a)
+        {
+            if (a > (0.5 * Math.PI))
+            {
+                Console.WriteLine("BounceLeft() - Up");
+                return (Math.PI - a);
+            }
+            else if (a < (1.5 * Math.PI))
+            {
+                Console.WriteLine("BounceLeft() - Down");
+                return (3 * Math.PI - a);
+            }
+            else
+                return a;
+        }
+
+        public double bounceRight(double a)
+        {
+            if (a < (0.5 * Math.PI))
+            {
+                Console.WriteLine("BounceRight() - Up");
+                return (Math.PI - a);
+            }
+            else if (a > (1.5 * Math.PI))
+            {
+                Console.WriteLine("BounceRight() - Down");
+                return (3 * Math.PI - a);
+            }
+            else
+                return a;
+        }
+
+        public double bounceBot(double a)
+        {
+            if(a > Math.PI)
+                return (2 * Math.PI - a);
+            else
+                return a;
+            //return (2 - a);
+        }
+
+        public double bounceTop(double a)
+        {
+            if (a < Math.PI)
+                return (2 * Math.PI - a);
+            else
+                return a;
         }
 
         public void send()
         {
-            int ballx = Convert.ToInt16(nposx);
-            int bally = Convert.ToInt16(nposy);
+            try
+            {
+                int ballx = Convert.ToInt16(nposx);
+                int bally = Convert.ToInt16(nposy);
 
-            //Console.WriteLine("Writing P1-1: " + pos2);
-            packet1[0] = (byte)pos2;
-            //Console.WriteLine("Writing P1-2: " + ballx);
-            packet1[1] = (byte)ballx;
-            //Console.WriteLine("Writing P1-3: " + bally);
-            packet1[2] = (byte)bally;
-            //Console.WriteLine("Checking NTP Time");
-            //dTime = getNTPTime(ref uniClock);
-            //Console.WriteLine("Writing P1-4: " + dTime.Minute);
-            packet1[3] = (byte)dTime.Minute;
-            //Console.WriteLine("Writing P1-5: " + dTime.Second);
-            packet1[4] = (byte)dTime.Second;
-            milliHold = new byte[2];
-            milliHold = BitConverter.GetBytes(dTime.Millisecond);
-            //Console.WriteLine("Writing P1-67: " + dTime.Millisecond);
-            packet1[5] = milliHold[0];
-            packet1[6] = milliHold[1];
+                //Console.WriteLine("Writing P1-1: " + pos2);
+                packet1[0] = (byte)pos2;
+                //Console.WriteLine("Writing P1-2: " + ballx);
+                packet1[1] = (byte)ballx;
+                //Console.WriteLine("Writing P1-3: " + bally);
+                packet1[2] = (byte)bally;
+                //Console.WriteLine("Checking NTP Time");
+                //dTime = getNTPTime(ref uniClock);
+                //Console.WriteLine("Writing P1-4: " + dTime.Minute);
+                packet1[3] = (byte)dTime.Minute;
+                //Console.WriteLine("Writing P1-5: " + dTime.Second);
+                packet1[4] = (byte)dTime.Second;
+                milliHold = new byte[2];
+                milliHold = BitConverter.GetBytes(dTime.Millisecond);
+                //Console.WriteLine("Writing P1-67: " + dTime.Millisecond);
+                packet1[5] = milliHold[0];
+                packet1[6] = milliHold[1];
 
-            int milli = BitConverter.ToInt16(milliHold, 0);
-            //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                int milli = BitConverter.ToInt16(milliHold, 0);
+                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
-            //Console.WriteLine("Writing P2-1 " + pos1);
-            packet2[0] = (byte)pos1;
-            //Console.WriteLine("Writing P2-2: " + ballx);
-            packet2[1] = (byte)ballx;
-            //Console.WriteLine("Writing P2-3: " + bally);
-            packet2[2] = (byte)bally;
-            //Console.WriteLine("Finished Writing P2-3");
-            //dTime = getNTPTime(ref uniClock);
-            //Console.WriteLine("Writing P2-4: " + dTime.Minute);
-            packet2[3] = (byte)dTime.Minute;
-            //Console.WriteLine("Writing P2-5: " + dTime.Second);
-            packet2[4] = (byte)dTime.Second;
-            milliHold = new byte[2];
-            milliHold = BitConverter.GetBytes(dTime.Millisecond);
-            //Console.WriteLine("Writing P2-67: " + dTime.Millisecond);
-            packet2[5] = milliHold[0];
-            packet2[6] = milliHold[1];
+                //Console.WriteLine("Writing P2-1 " + pos1);
+                packet2[0] = (byte)pos1;
+                //Console.WriteLine("Writing P2-2: " + ballx);
+                packet2[1] = (byte)ballx;
+                //Console.WriteLine("Writing P2-3: " + bally);
+                packet2[2] = (byte)bally;
+                //Console.WriteLine("Finished Writing P2-3");
+                //dTime = getNTPTime(ref uniClock);
+                //Console.WriteLine("Writing P2-4: " + dTime.Minute);
+                packet2[3] = (byte)dTime.Minute;
+                //Console.WriteLine("Writing P2-5: " + dTime.Second);
+                packet2[4] = (byte)dTime.Second;
+                milliHold = new byte[2];
+                milliHold = BitConverter.GetBytes(dTime.Millisecond);
+                //Console.WriteLine("Writing P2-67: " + dTime.Millisecond);
+                packet2[5] = milliHold[0];
+                packet2[6] = milliHold[1];
 
-            milli = BitConverter.ToInt16(milliHold, 0);
-            //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                milli = BitConverter.ToInt16(milliHold, 0);
+                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
-            //Console.WriteLine("Sending Packet1");
-            stream1.Write(packet1, 0, packet1.Length);
-            //Console.WriteLine("Sending Packet2");
-            stream2.Write(packet2, 0, packet2.Length);
+                //Console.WriteLine("Sending Packet1");
+                stream1.Write(packet1, 0, packet1.Length);
+                //Console.WriteLine("Sending Packet2");
+                stream2.Write(packet2, 0, packet2.Length);
 
-            Console.WriteLine(System.Environment.NewLine);
-                 
+                Console.WriteLine(System.Environment.NewLine);
+            }
+            
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
-
-        public double changeAngle(double a)
-        {
-            if (a == 0)
-                return Math.PI;
-            else if (a == Math.PI)
-                return 0;
-            else
-				return (2*Math.PI);
-                //return (2 - a);
-        }
-
-
-
 
 		public static DateTime getNTPTime( ref Stopwatch uniClock )
 		{
