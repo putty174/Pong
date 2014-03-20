@@ -304,16 +304,32 @@ namespace MasterServer
 
         public double bounceLeft(double a)
         {
-            if (a > (0.5 * Math.PI) && a < (1.5 * Math.PI))
-                return (2 * Math.PI - a);
+            if (a > (0.5 * Math.PI))
+            {
+                Console.WriteLine("BounceLeft() - Up");
+                return (Math.PI - a);
+            }
+            else if (a < (1.5 * Math.PI))
+            {
+                Console.WriteLine("BounceLeft() - Down");
+                return (3 * Math.PI - a);
+            }
             else
                 return a;
         }
 
         public double bounceRight(double a)
         {
-            if (a < (0.5 * Math.PI) && a > (1.5 * Math.PI))
-                return (2 * Math.PI - a);
+            if (a < (0.5 * Math.PI))
+            {
+                Console.WriteLine("BounceRight() - Up");
+                return (Math.PI - a);
+            }
+            else if (a > (1.5 * Math.PI))
+            {
+                Console.WriteLine("BounceRight() - Down");
+                return (3 * Math.PI - a);
+            }
             else
                 return a;
         }
