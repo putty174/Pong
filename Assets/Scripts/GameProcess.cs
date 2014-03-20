@@ -31,9 +31,9 @@ public class GameProcess : MonoBehaviour {
 
     };
 
-    positions[] posHistory = new positions[20];
-    int histPos; //Keeps track of posHistory position
-    int lerpTime;
+    public positions[] posHistory = new positions[20];
+    public int histPos; //Keeps track of posHistory position
+    public int lerpTime; //Time for interpolation
 
 	public int min;
 	public int sec;
@@ -277,6 +277,7 @@ public class GameProcess : MonoBehaviour {
 		try
 		{
 
+            DateTime targetTime = client.getTime().AddMilliseconds(lerpTime);           
 
 			if(player == 1)
 			{
@@ -345,8 +346,11 @@ public class GameProcess : MonoBehaviour {
 	{
 		return client;
 	}
-    
-    
+
+    public positions findLerpTarget(int min, int sec, int ms)
+    {
+
+    }
     
     
 
