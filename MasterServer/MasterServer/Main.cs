@@ -289,12 +289,15 @@ namespace MasterServer
 
         public void update()
         {
-            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            Console.WriteLine("BallX: " + nposx);
-            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-            Console.WriteLine("BallY: " + nposy);
-            lastTime = DateTime.Now;
-            //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+            if (start1 && start2)
+            {
+                nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                Console.WriteLine("BallX: " + nposx);
+                nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                Console.WriteLine("BallY: " + nposy);
+                lastTime = DateTime.Now;
+                //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+            }
 
             if (angle < 0.0)
                 angle += 2 * Math.PI;
