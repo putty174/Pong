@@ -269,10 +269,11 @@ namespace MasterServer
 
         public void update()
         {
-            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Seconds;
+            nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
             Console.WriteLine("BallX: " + nposx);
-            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Seconds;
+            nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
             Console.WriteLine("BallY: " + nposy);
+            lastTime = DateTime.Now;
 
             if (nposx < 0)
             {
@@ -294,8 +295,6 @@ namespace MasterServer
                 nposy = 250 - (nposy - 250);
                 angle = changeAngle(angle);
             }
-
-            lastTime = DateTime.Now;
         }
 
         public void send()
