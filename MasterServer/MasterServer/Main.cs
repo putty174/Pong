@@ -275,11 +275,11 @@ namespace MasterServer
             Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
 
-            if (nposx < 5.0)
+            if (nposx < 7.5)
             {
                 //nposx = Math.Abs(nposx);
                 angle = bounceLeft(angle);
-                nposx = 10;
+                nposx = 7.5;
             }
             else if (nposx > 245.0)
             {
@@ -287,11 +287,11 @@ namespace MasterServer
                 angle = bounceRight(angle);
                 nposx = 240;
             }
-            if (nposy < 5.0)
+            if (nposy < 7.5)
             {
                 //nposy = Math.Abs(nposy);
                 angle = bounceBot(angle);
-                nposy = 5;
+                nposy = 7.5;
             }
             else if (nposy > 245.0)
             {
