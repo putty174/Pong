@@ -274,6 +274,7 @@ namespace MasterServer
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
             Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
+            Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
 
             if (angle < 0.0)
                 angle += 2 * Math.PI;
@@ -286,7 +287,6 @@ namespace MasterServer
                 dTime = getNTPTime(ref uniClock);
                 angle = bounceLeft(angle);
                 nposx = 7.5;
-                Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
             else if (nposx > 245.0)
             {
@@ -294,7 +294,6 @@ namespace MasterServer
                 dTime = getNTPTime(ref uniClock);
                 angle = bounceRight(angle);
                 nposx = 245;
-                Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
             if (nposy < 7.5)
             {
