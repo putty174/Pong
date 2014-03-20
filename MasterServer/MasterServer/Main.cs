@@ -275,26 +275,27 @@ namespace MasterServer
             Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
 
-            if (nposx < 0)
+            if (nposx < 0.0)
             {
                 nposx = Math.Abs(nposx);
                 angle = changeAngle(angle);
             }
-            else if (nposx > 250)
+            else if (nposx > 250.0)
             {
                 nposx = 250 - (nposx - 250);
                 angle = changeAngle(angle);
             }
-            if (nposy < 0)
+            if (nposy < 0.0)
             {
                 nposy = Math.Abs(nposy);
                 angle = changeAngle(angle);
             }
-            else if (nposy > 250)
+            else if (nposy > 250.0)
             {
                 nposy = 250 - (nposy - 250);
                 angle = changeAngle(angle);
             }
+            Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
         public void send()
@@ -367,7 +368,7 @@ namespace MasterServer
             else if (a == Math.PI)
                 return 0;
             else
-				return (2*Math.PI);
+				return (2*Math.PI - a);
                 //return (2 - a);
         }
 
