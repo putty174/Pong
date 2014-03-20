@@ -5,6 +5,35 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
+    //screenshot of game state
+    struct positions
+    {
+     
+        int opY; //opponent's Y position
+        int bX; //ball's X position
+        int bY; //ball's Y position
+
+        //timestamp of this world state
+        int min; 
+        int sec;
+        int ms;
+
+        public positions(int opY, int bX, int bY, int min, int sec, int ms)
+        {         
+            this.opY = opY;
+            this.bX = bX;
+            this.bY = bY;
+     
+            this.min = min;
+            this.sec = sec;
+            this.ms = ms;
+        }
+
+    };
+
+    positions[] posHistory = new positions[20];
+    int histPos; //Keeps track of posHistory position
+
 	public int min;
 	public int sec;
 	public int milli;
@@ -49,6 +78,7 @@ public class GameProcess : MonoBehaviour {
 		ballPosY = 128;
 		buffer = new byte[6];
 		gameStart = false;
+        histPos = 0;
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
@@ -107,6 +137,23 @@ public class GameProcess : MonoBehaviour {
 					min = (int) client.receiverBuffer.Dequeue();
 					sec = (int) client.receiverBuffer.Dequeue();
 					milli = (int) client.receiverBuffer.Dequeue();
+
+                    //starts saving "screenshots" of the game state
+                    if (posHistory.Length < 20)
+                    {
+                        positions p = new positions(opPosY, ballPosX, ballPosY, min, sec, milli);
+
+                        if (histPos < 20)
+                        {
+                            posHistory[histPos] = p;
+                            histPos++;
+                        }
+                        else
+                        {
+                            histPos = 0;
+                            posHistory[histPos] = p;
+                        }
+                    }
 
                     if (player == -1)
                     {
@@ -215,15 +262,14 @@ public class GameProcess : MonoBehaviour {
 //        return (int)(distance / velocity);
 //    }
 
-    public bool collide()
-    {
-        return true;
-    }
+ 
 
 	public void sendPositions ()
 	{
 		try
 		{
+
+
 			if(player == 1)
 			{
 				//send Player1.x
@@ -291,4 +337,9 @@ public class GameProcess : MonoBehaviour {
 	{
 		return client;
 	}
+    
+
+    
+    
+
 }

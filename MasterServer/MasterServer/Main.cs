@@ -280,6 +280,8 @@ namespace MasterServer
             }
 
             lastTime = DateTime.Now;
+
+
         }
 
         public void send()
@@ -335,6 +337,7 @@ namespace MasterServer
             stream2.Write(packet2, 0, packet2.Length);
 
             Console.WriteLine(System.Environment.NewLine);
+                 
         }
 
         public double changeAngle(double a)
