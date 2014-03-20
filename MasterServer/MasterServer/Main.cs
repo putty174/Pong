@@ -283,14 +283,18 @@ namespace MasterServer
             if (nposx < 7.5)
             {
                 //nposx = Math.Abs(nposx);
+                dTime = getNTPTime(ref uniClock);
                 angle = bounceLeft(angle);
                 nposx = 7.5;
+                Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
             else if (nposx > 245.0)
             {
                 //nposx = 250 - (nposx - 250);
+                dTime = getNTPTime(ref uniClock);
                 angle = bounceRight(angle);
                 nposx = 245;
+                Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
             if (nposy < 7.5)
             {
