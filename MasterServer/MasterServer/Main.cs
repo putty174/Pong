@@ -196,7 +196,7 @@ namespace MasterServer
                     mes1 = stream1.ReadByte();
                     if (mes1 == 255)
                     {
-                        //Console.WriteLine("Client 1 has sent Start");
+                        Console.WriteLine("Client 1 has sent Start");
                         start1 = true;
                         stream1.Flush();
                     }
@@ -204,7 +204,7 @@ namespace MasterServer
                     mes2 = stream2.ReadByte();
                     if (mes2 == 255)
                     {
-                        //Console.WriteLine("Client 2 has sent Start");
+                        Console.WriteLine("Client 2 has sent Start");
                         start2 = true;
                         stream2.Flush();
                     }
@@ -277,23 +277,27 @@ namespace MasterServer
 
             if (nposx < 0.0)
             {
-                nposx = Math.Abs(nposx);
+                //nposx = Math.Abs(nposx);
                 angle = bounceLeft(angle);
+                nposx = 1;
             }
             else if (nposx > 250.0)
             {
-                nposx = 250 - (nposx - 250);
+                //nposx = 250 - (nposx - 250);
                 angle = bounceRight(angle);
+                nposx = 249;
             }
             if (nposy < 0.0)
             {
-                nposy = Math.Abs(nposy);
+                //nposy = Math.Abs(nposy);
                 angle = changeAngle(angle);
+                nposy = 1;
             }
             else if (nposy > 250.0)
             {
-                nposy = 250 - (nposy - 250);
+                //nposy = 250 - (nposy - 250);
                 angle = changeAngle(angle);
+                nposy = 249;
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
