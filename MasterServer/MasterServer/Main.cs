@@ -198,6 +198,7 @@ namespace MasterServer
                     {
                         //Console.WriteLine("Client 1 has sent Start");
                         start1 = true;
+                        stream1.Flush();
                     }
 
                     mes2 = stream2.ReadByte();
@@ -205,6 +206,7 @@ namespace MasterServer
                     {
                         //Console.WriteLine("Client 2 has sent Start");
                         start2 = true;
+                        stream2.Flush();
                     }
                 }
                 catch (Exception ex)
@@ -268,7 +270,9 @@ namespace MasterServer
         public void update()
         {
             nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Seconds;
+            Console.WriteLine("BallX: " + nposx);
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Seconds;
+            Console.WriteLine("BallY: " + nposy);
 
             if (nposx < 0)
             {
