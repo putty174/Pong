@@ -85,8 +85,9 @@ public class Player1 : MonoBehaviour {
 //				gp.sendPositions ();
 //				gp.sendPositions ();
 //			}
-//				
-			gp.sendPositions();
+//			
+			if(GameProcess.ballPosX != 0)
+				gp.sendPositions();
 		}
 		else
 		{

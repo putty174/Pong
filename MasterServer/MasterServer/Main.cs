@@ -106,9 +106,9 @@ namespace MasterServer
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
             vel = .1;
-            packet1[0] = (byte) 128;
-            packet1[1] = (byte) 128;
-            packet1[2] = (byte) 128;
+            packet1[0] = (byte) 0;
+            packet1[1] = (byte) 0;
+            packet1[2] = (byte) 0;
             dTime = getNTPTime(ref uniClock);
             packet1[3] = (byte)dTime.Minute;
             packet1[4] = (byte)dTime.Second;
@@ -116,9 +116,9 @@ namespace MasterServer
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
 
-            packet2[0] = (byte) 128;
-            packet2[1] = (byte) 128;
-            packet2[2] = (byte) 128;
+            packet2[0] = (byte) 1;
+            packet2[1] = (byte) 0;
+            packet2[2] = (byte) 0;
             dTime = getNTPTime(ref uniClock);
             packet1[3] = (byte)dTime.Minute;
             packet1[4] = (byte)dTime.Second;
@@ -275,29 +275,29 @@ namespace MasterServer
             Console.WriteLine("BallY: " + nposy);
             lastTime = DateTime.Now;
 
-            if (nposx < 0.0)
+            if (nposx < 5.0)
             {
                 //nposx = Math.Abs(nposx);
                 angle = bounceLeft(angle);
                 nposx = 10;
             }
-            else if (nposx > 250.0)
+            else if (nposx > 245.0)
             {
                 //nposx = 250 - (nposx - 250);
                 angle = bounceRight(angle);
                 nposx = 240;
             }
-            if (nposy < 0.0)
+            if (nposy < 5.0)
             {
                 //nposy = Math.Abs(nposy);
                 angle = bounceBot(angle);
-                nposy = 10;
+                nposy = 5;
             }
-            else if (nposy > 250.0)
+            else if (nposy > 245.0)
             {
                 //nposy = 250 - (nposy - 250);
                 angle = bounceTop(angle);
-                nposy = 240;
+                nposy = 245;
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }

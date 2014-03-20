@@ -45,8 +45,8 @@ public class GameProcess : MonoBehaviour {
 		sockets = new Sockets();
 		client = new Client();
 		opPosY = 128;
-		ballPosX = 128;
-		ballPosY = 128;
+		ballPosX = 0;
+		ballPosY = 0;
 		buffer = new byte[6];
 		gameStart = false;
 
