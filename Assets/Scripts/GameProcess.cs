@@ -31,7 +31,7 @@ public class GameProcess : MonoBehaviour {
 
     };
 
-    public positions[] posHistory = new positions[20];
+    positions[] posHistory = new positions[20];
     public int histPos; //Keeps track of posHistory position
     public int lerpTime; //Time for interpolation
 
@@ -142,6 +142,7 @@ public class GameProcess : MonoBehaviour {
 					sec = (int) client.receiverBuffer.Dequeue();
 					milli = (int) client.receiverBuffer.Dequeue();
 
+                    /*
                     //starts saving "screenshots" of the game state
                     if (posHistory.Length < 20)
                     {
@@ -158,7 +159,7 @@ public class GameProcess : MonoBehaviour {
                             posHistory[histPos] = p;
                         }
                     }                                  
-                    
+                    */
                     if (player == -1)
                     {
 						if(opPosY == 0)
@@ -277,7 +278,7 @@ public class GameProcess : MonoBehaviour {
 		try
 		{
 
-            DateTime targetTime = client.getTime().AddMilliseconds(lerpTime);           
+         //   DateTime targetTime = client.getTime().AddMilliseconds(lerpTime);           
 
 			if(player == 1)
 			{
@@ -347,11 +348,12 @@ public class GameProcess : MonoBehaviour {
 		return client;
 	}
 
+    /*
     public positions findLerpTarget(int min, int sec, int ms)
     {
-
+        
     }
-    
+    */
     
 
 }
