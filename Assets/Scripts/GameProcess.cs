@@ -7,7 +7,7 @@ public class GameProcess : MonoBehaviour {
 
 	public int min;
 	public int sec;
-	public int milli;
+	public static int milli;
 	
 	private GameObject ball;
 	private Player1 p1;
