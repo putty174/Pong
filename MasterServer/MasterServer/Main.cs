@@ -289,6 +289,13 @@ namespace MasterServer
 
         public void update()
         {
+            if (dstart1 == 2 && dstart2 == 2)
+            {
+                nposx = 128;
+                nposy = 128;
+                dstart1 = 3;
+                dstart2 = 3;
+            }
             if (start1 && start2)
             {
                 nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
