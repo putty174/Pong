@@ -33,6 +33,7 @@ public class GameProcess : MonoBehaviour {
 
     positions[] posHistory = new positions[20];
     int histPos; //Keeps track of posHistory position
+    int lerpTime;
 
 	public int min;
 	public int sec;
@@ -74,11 +75,13 @@ public class GameProcess : MonoBehaviour {
 		sockets = new Sockets();
 		client = new Client();
 		opPosY = 128;
-		ballPosX = 128;
-		ballPosY = 128;
+		ballPosX = 0;
+		ballPosY = 0;
 		buffer = new byte[6];
 		gameStart = false;
+
         histPos = 0;
+        lerpTime = -100; //Negative time in milliseconds for subtraction
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
@@ -153,8 +156,8 @@ public class GameProcess : MonoBehaviour {
                             histPos = 0;
                             posHistory[histPos] = p;
                         }
-                    }
-
+                    }                                  
+                    
                     if (player == -1)
                     {
 						if(opPosY == 0)
@@ -206,10 +209,14 @@ public class GameProcess : MonoBehaviour {
 						//ballPosY = (int) client.receiverBuffer.Dequeue();
 						//angle = (int) client.receiverBuffer.Dequeue();
 						//ballVel = (int) client.receiverBuffer.Dequeue();
+
+
                     }
 				}
 			}
 		}
+
+
 	}
 
 	public void win(int player)
@@ -338,7 +345,7 @@ public class GameProcess : MonoBehaviour {
 		return client;
 	}
     
-
+    
     
     
 

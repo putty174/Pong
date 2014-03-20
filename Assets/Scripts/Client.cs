@@ -192,4 +192,10 @@ public class Client : MonoBehaviour {
 		}
 	}
 
+    public DateTime getTime()
+    {
+        DateTime dt = ServerPongEmpty.NTPTime.getNTPTime(ref uniClock);
+        
+        return dt;
+    }
 }

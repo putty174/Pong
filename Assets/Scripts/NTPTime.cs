@@ -10,27 +10,27 @@ namespace ServerPongEmpty
 {
     static class NTPTime
     {
-    	/*
-    	This function will query an NTP server stated as the URL or IP address.
-    	I call this function only once at the beginning when I initialize the client code and when I initialize the server.
-    	This function is static so you don't have to instantiate the class. It will require a C# timer
-    	in order to start the timer from the time that you receive the time from the NTP server. So as your
-    	game is running, in order for you to return and set a time, or make a timestamp for that matter, add the
-    	elapsed time of the timer to the NTP time that you received.
+        /*
+        This function will query an NTP server stated as the URL or IP address.
+        I call this function only once at the beginning when I initialize the client code and when I initialize the server.
+        This function is static so you don't have to instantiate the class. It will require a C# timer
+        in order to start the timer from the time that you receive the time from the NTP server. So as your
+        game is running, in order for you to return and set a time, or make a timestamp for that matter, add the
+        elapsed time of the timer to the NTP time that you received.
     	
-    	So, to call this function successfully from your game, I make a universal timer to my program called
-    	uniClock and a universal DateTime object and I call
-    	dt = getNTPTime ( uniClock );
-    	This will set my DateTime object in my game and start the clock.
-    	Any time throughout my game that I wish to make a TimeStamp, I simply call
-    	((dt.AddMinutes(uniClock.Elapsed.Minutes).AddSeconds(uniClock.Elapsed.Seconds).AddMilliseconds(uniClock.Elapsed.Milliseconds)).Ticks))
-    	In essence, it is just emulating the computer time, which will be sufficient for the short duration of our game.
+        So, to call this function successfully from your game, I make a universal timer to my program called
+        uniClock and a universal DateTime object and I call
+        dt = getNTPTime ( uniClock );
+        This will set my DateTime object in my game and start the clock.
+        Any time throughout my game that I wish to make a TimeStamp, I simply call
+        ((dt.AddMinutes(uniClock.Elapsed.Minutes).AddSeconds(uniClock.Elapsed.Seconds).AddMilliseconds(uniClock.Elapsed.Milliseconds)).Ticks))
+        In essence, it is just emulating the computer time, which will be sufficient for the short duration of our game.
     	
-    	For this NTP time to work, ALL THE CLIENTS AND THE SERVER MUST USE THIS FUNCTION AND MUST RETRIEVE THE TIME FROM THE SAME TIME SERVER.	
+        For this NTP time to work, ALL THE CLIENTS AND THE SERVER MUST USE THIS FUNCTION AND MUST RETRIEVE THE TIME FROM THE SAME TIME SERVER.	
     	
-    	Pay attention to the way that the network latency is being calculated and added to the time.
-    	*/
-        public static DateTime getNTPTime( ref Stopwatch uniClock )
+        Pay attention to the way that the network latency is being calculated and added to the time.
+        */
+        public static DateTime getNTPTime(ref Stopwatch uniClock)
         {
             Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
@@ -86,23 +86,23 @@ namespace ServerPongEmpty
             Console.WriteLine("Poll Interval :  " + ntpData[2]);
             Console.WriteLine("Precision : " + ntpData[3]);
 
-			/*
-			These are the 4 time stamps that are retrieved from the NTP Packet.
-			More on the details of these packets can be researched from the NTP documentation.
+            /*
+            These are the 4 time stamps that are retrieved from the NTP Packet.
+            More on the details of these packets can be researched from the NTP documentation.
 			
-			Reference Timestamp: This is the local time at which the local clock was last set or corrected, in
-			64-bit timestamp format.
+            Reference Timestamp: This is the local time at which the local clock was last set or corrected, in
+            64-bit timestamp format.
 
-			Originate Timestamp: This is the local time at which the request departed the client host for the
-			service host, in 64-bit timestamp format.
+            Originate Timestamp: This is the local time at which the request departed the client host for the
+            service host, in 64-bit timestamp format.
 			
-			Receive Timestamp: This is the local time at which the request arrived at the service host, in 64-bit
-			timestamp format.
+            Receive Timestamp: This is the local time at which the request arrived at the service host, in 64-bit
+            timestamp format.
 			
-			Transmit Timestamp: This is the local time at which the reply departed the service host for the client
-			host, in 64-bit timestamp format.
+            Transmit Timestamp: This is the local time at which the reply departed the service host for the client
+            host, in 64-bit timestamp format.
 			
-			*/
+            */
             TimeSpan calculationTime;
             UInt32 refTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
             UInt32 refTimeMicro = (UInt32)(ntpData[20] << 24) | (UInt32)(ntpData[21] << 16) | (UInt32)(ntpData[22] << 8) | (UInt32)(ntpData[23]);
@@ -149,13 +149,13 @@ namespace ServerPongEmpty
 
             dt = dt.AddMilliseconds(networkDelay);
 
-            
+
 
 
             uniClock.Start();
 
             return dt;
-            
+
         }
 
     }
