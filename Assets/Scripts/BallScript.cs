@@ -60,8 +60,10 @@ public class BallScript : MonoBehaviour {
 
 		//}
 
-		float newPosX = x + (speed * Client.dTime.Millisecond);
-		float newPosY = y + (speed * Client.dTime.Millisecond);
+		//float newPosX = x + (speed * Client.dTime.Millisecond);
+		//float newPosY = y + (speed * Client.dTime.Millisecond);
+		float newPosX = x + (speed * GameProcess.time);
+		float newPosY = y + (speed * GameProcess.time);
 
 		transform.position = new Vector3(newPosX, newPosY, 0);
 
