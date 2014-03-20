@@ -285,7 +285,7 @@ namespace MasterServer
             {
                 //nposx = 250 - (nposx - 250);
                 angle = bounceRight(angle);
-                nposx = 240;
+                nposx = 245;
             }
             if (nposy < 7.5)
             {
@@ -293,11 +293,11 @@ namespace MasterServer
                 angle = bounceBot(angle);
                 nposy = 7.5;
             }
-            else if (nposy > 245.0)
+            else if (nposy > 240.0)
             {
                 //nposy = 250 - (nposy - 250);
                 angle = bounceTop(angle);
-                nposy = 245;
+                nposy = 240;
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
