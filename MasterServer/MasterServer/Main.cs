@@ -279,25 +279,25 @@ namespace MasterServer
             {
                 //nposx = Math.Abs(nposx);
                 angle = bounceLeft(angle);
-                nposx = 15;
+                nposx = 10;
             }
             else if (nposx > 250.0)
             {
                 //nposx = 250 - (nposx - 250);
                 angle = bounceRight(angle);
-                nposx = 235;
+                nposx = 240;
             }
             if (nposy < 0.0)
             {
                 //nposy = Math.Abs(nposy);
-                angle = changeAngle(angle);
-                nposy = 15;
+                angle = bounceBot(angle);
+                nposy = 10;
             }
             else if (nposy > 250.0)
             {
                 //nposy = 250 - (nposy - 250);
-                angle = changeAngle(angle);
-                nposy = 235;
+                angle = bounceTop(angle);
+                nposy = 240;
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
@@ -305,9 +305,7 @@ namespace MasterServer
         public double bounceLeft(double a)
         {
             if (a > (0.5 * Math.PI) && a < (1.5 * Math.PI))
-            {
                 return (2 * Math.PI - a);
-            }
             else
                 return a;
         }
@@ -315,22 +313,26 @@ namespace MasterServer
         public double bounceRight(double a)
         {
             if (a < (0.5 * Math.PI) && a > (1.5 * Math.PI))
-            {
                 return (2 * Math.PI - a);
-            }
             else
                 return a;
         }
 
-        public double changeAngle(double a)
+        public double bounceBot(double a)
         {
-            if (a == 0)
-                return Math.PI;
-            else if (a == Math.PI)
-                return 0;
-            else
+            if(a > Math.PI)
                 return (2 * Math.PI - a);
+            else
+                return a;
             //return (2 - a);
+        }
+
+        public double bounceTop(double a)
+        {
+            if (a < Math.PI)
+                return (2 * Math.PI - a);
+            else
+                return a;
         }
 
         public void send()
