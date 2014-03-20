@@ -44,6 +44,7 @@ namespace MasterServer
 		NetworkStream stream2;
         int mes1, mes2;
 
+        int startDelay = 500;
         int delay1, delay2;
         DateTime startTime;
         DateTime lastTime;
@@ -393,6 +394,13 @@ namespace MasterServer
         {
             try
             {
+                if (dstart1 == 3 && dstart2 == 3 && startDelay > 0)
+                {
+                    nposx = 128;
+                    nposy = 128;
+                    startDelay--;
+                }
+
                 int ballx = Convert.ToInt16(nposx);
                 int bally = Convert.ToInt16(nposy);
 
@@ -444,7 +452,6 @@ namespace MasterServer
                     dstart1 = 1;
                     dstart2 = 1;
                 }
-
                 //Console.WriteLine("Sending Packet1");
                 stream1.Write(packet1, 0, packet1.Length);
                 //Console.WriteLine("Sending Packet2");
