@@ -55,9 +55,9 @@ public class GameProcess : MonoBehaviour {
 		p1 = (Player1) GameObject.Find ("Player1").GetComponent ("Player1");
 		p2 = (Player2) GameObject.Find ("Player2").GetComponent ("Player2");
 		bscript = (BallScript) GameObject.Find ("GameBall").GetComponent("BallScript");
-		lPaddle = GameObject.Find ("Player1");
+		lPaddle = GameObject.Find ("Goal2");
 		bWall = GameObject.Find ("BottomWall");
-		paddleRatio = (250.0f / (GameObject.Find("Player2").transform.position.x - GameObject.Find("Player1").transform.position.x));
+		paddleRatio = (250.0f / (GameObject.Find("Goal1").transform.position.x - GameObject.Find("Goal2").transform.position.x));
 		wallRatio = (250.0f / (GameObject.Find ("TopWall").transform.position.y - bWall.transform.position.y));
 	}
 	
