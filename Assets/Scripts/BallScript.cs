@@ -62,10 +62,10 @@ public class BallScript : MonoBehaviour {
 
 		//float newPosX = x + (speed * Client.dTime.Millisecond);
 		//float newPosY = y + (speed * Client.dTime.Millisecond);
-		float newPosX = x + (speed * GameProcess.time);
-		float newPosY = y + (speed * GameProcess.time);
+		//float newPosX = x + (speed * GameProcess.time);//
+		//float newPosY = y + (speed * GameProcess.time);//
 
-		transform.position = new Vector3(newPosX, newPosY, 0);
+		//transform.position = new Vector3(newPosX, newPosY, 0);//
 
 
 		//speed = pos / dTime
@@ -78,7 +78,7 @@ public class BallScript : MonoBehaviour {
 
 
 
-		//transform.position = new Vector3 (x,y,0);
+		transform.position = new Vector3 (x,y,0);
 		//Comment out above later
 
 		//Lag compensation
