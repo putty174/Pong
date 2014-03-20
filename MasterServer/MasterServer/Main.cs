@@ -44,7 +44,7 @@ namespace MasterServer
 		NetworkStream stream2;
         int mes1, mes2;
 
-        TimeSpan delay1, delay2;
+        int delay1, delay2;
         DateTime startTime;
         DateTime lastTime;
         DateTime timeStamp;
@@ -226,8 +226,8 @@ namespace MasterServer
                 if (dstart1 == 1)
                 {
                     dTimeNew = getNTPTime(ref uniClock);
-                    delay1 = dTimeNew.Subtract(dTime);
-                    Console.WriteLine(delay1.Milliseconds / 2);
+                    delay1 = Convert.ToInt32(dTimeNew.Subtract(dTime).TotalMilliseconds / 2);
+                    Console.WriteLine("P1 delay: " + delay1);
                     dstart1 = 2;
                 }
 
@@ -236,8 +236,8 @@ namespace MasterServer
                 if (dstart2 == 1)
                 {
                     dTimeNew = getNTPTime(ref uniClock);
-                    delay2 = dTimeNew.Subtract(dTime);
-                    Console.WriteLine(delay2.Milliseconds / 2);
+                    delay2 = Convert.ToInt32(dTimeNew.Subtract(dTime).TotalMilliseconds / 2);
+                    Console.WriteLine("P2 delay: " + delay2);
                     dstart2 = 2;
                 }
             }
