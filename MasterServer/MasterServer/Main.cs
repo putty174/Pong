@@ -68,8 +68,8 @@ namespace MasterServer
 		
 		public MainServer()
 		{
-            leftPaddlePad = 20;
-            rightPaddlePad = 20;
+            leftPaddlePad = 50;
+            rightPaddlePad = 50;
             topWallPad = 10;
             botWallPad = 8;
 
