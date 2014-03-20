@@ -50,33 +50,7 @@ public class BallScript : MonoBehaviour {
 
 		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
 		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
-
-		float speed = GameProcess.ballVel;//vel is constant.  can treat as speed
-
-		//for(int i = 0; i < (int)x; i++)
-		//	for(int j = 0; j < (int)y; j++){
-
-
-
-		//}
-
-		float newPosX = x + (speed * Client.dTime.Millisecond);
-		float newPosY = y + (speed * Client.dTime.Millisecond);
-
-		transform.position = new Vector3(newPosX, newPosY, 0);
-
-
-		//speed = pos / dTime
-		//posToMoveThisBallNow = posxy + (speed * dTime)
-
-
-
-
-
-
-
-
-		//transform.position = new Vector3 (x,y,0);
+		transform.position = new Vector3 (x,y,0);
 		//Comment out above later
 
 		//Lag compensation
@@ -93,7 +67,7 @@ public class BallScript : MonoBehaviour {
 
 		//Client.cs:
 		//		public static Stopwatch uniClock; //first receive assumed to be timeStampA.  second receive assumed to be timeStampB
-//		public static DateTime dTime;//actual timeStamp
+//		public static DateTime dTime;
 
 
 
