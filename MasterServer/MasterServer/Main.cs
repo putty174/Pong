@@ -278,12 +278,12 @@ namespace MasterServer
             if (nposx < 0.0)
             {
                 nposx = Math.Abs(nposx);
-                angle = changeAngle(angle);
+                angle = bounceLeft(angle);
             }
             else if (nposx > 250.0)
             {
                 nposx = 250 - (nposx - 250);
-                angle = changeAngle(angle);
+                angle = bounceRight(angle);
             }
             if (nposy < 0.0)
             {
@@ -296,6 +296,37 @@ namespace MasterServer
                 angle = changeAngle(angle);
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
+        }
+
+        public double bounceLeft(double a)
+        {
+            if (a > (0.5 * Math.PI) && a < (1.5 * Math.PI))
+            {
+                return (2 * Math.PI - a);
+            }
+            else
+                return a;
+        }
+
+        public double bounceRight(double a)
+        {
+            if (a < (0.5 * Math.PI) && a > (1.5 * Math.PI))
+            {
+                return (2 * Math.PI - a);
+            }
+            else
+                return a;
+        }
+
+        public double changeAngle(double a)
+        {
+            if (a == 0)
+                return Math.PI;
+            else if (a == Math.PI)
+                return 0;
+            else
+                return (2 * Math.PI - a);
+            //return (2 - a);
         }
 
         public void send()
@@ -360,20 +391,6 @@ namespace MasterServer
                 Console.WriteLine(ex.ToString());
             }
         }
-
-        public double changeAngle(double a)
-        {
-            if (a == 0)
-                return Math.PI;
-            else if (a == Math.PI)
-                return 0;
-            else
-				return (2*Math.PI - a);
-                //return (2 - a);
-        }
-
-
-
 
 		public static DateTime getNTPTime( ref Stopwatch uniClock )
 		{
