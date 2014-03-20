@@ -60,13 +60,18 @@ namespace MasterServer
         double vel;
         double angleRatio;
 
+        int leftPaddlePad, rightPaddlePad, topWallPad, botWallPad;
+
         byte[] packet1;
         byte[] packet2;
         byte[] milliHold;
 		
 		public MainServer()
 		{
-		
+            leftPaddlePad = 20;
+            rightPaddlePad = 20;
+            topWallPad = 10;
+            botWallPad = 8;
 
 			//dTime = getNTPTime(ref uniClock);
 
@@ -296,31 +301,31 @@ namespace MasterServer
             else if (angle > 2 * Math.PI)
                 angle -= 2 * Math.PI;
 
-            if (nposx < 7.5)
+            if (nposx < leftPaddlePad)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
                 angle = bounceLeft(angle);
-                nposx = 7.5;
+                nposx = leftPaddlePad;
             }
-            else if (nposx > 245.0)
+            else if (nposx > 250 - rightPaddlePad)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
                 angle = bounceRight(angle);
-                nposx = 245;
+                nposx = 250 - rightPaddlePad;
             }
-            if (nposy < 7.5)
+            if (nposy < botWallPad)
             {
                 //nposy = Math.Abs(nposy);
                 angle = bounceBot(angle);
-                nposy = 8;
+                nposy = botWallPad;
             }
-            else if (nposy > 240.0)
+            else if (nposy > 250 - topWallPad)
             {
                 //nposy = 250 - (nposy - 250);
                 angle = bounceTop(angle);
-                nposy = 240;
+                nposy = 250 - topWallPad;
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
