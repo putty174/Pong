@@ -223,9 +223,9 @@ namespace MasterServer
                 //Console.WriteLine("Player1 Pos: " + pos1);
                 if (dstart1 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
-                    delay1 = dTimeNew.Subtract(dTime);
-                    Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2));
+                    dTimeNew = getNTPTime(ref uniClock); //time received from client
+                    delay1 = dTimeNew.Subtract(dTime); //time receive - server time
+                    Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2)); 
                     dstart1 = 2;
                 }
 
@@ -269,6 +269,7 @@ namespace MasterServer
             else if (angle > 2 * Math.PI)
                 angle -= 2 * Math.PI;
 
+            //if ball is to the left of the left paddle, record it
             if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
@@ -280,6 +281,7 @@ namespace MasterServer
                 //nposx = leftPaddlePad;
                 checkCollide = 1;
             }
+            //if the ball is to the right of the right paddle, record it
             else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
             {
                 //nposx = 250 - (nposx - 250);
@@ -291,6 +293,7 @@ namespace MasterServer
                 //nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
+            
             if (nposy < botWallPad)
             {
                 //nposy = Math.Abs(nposy);
