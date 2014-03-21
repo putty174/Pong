@@ -122,8 +122,11 @@ public class GameProcess : MonoBehaviour {
 						}
 						opPosY = 128;
                     }
-                    else
+                    else if(opPosY == 1)
                     {
+						Debug.Log ("player 1 scores");
+					}
+
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
                         //angle of ball, server time.
@@ -159,7 +162,7 @@ public class GameProcess : MonoBehaviour {
 						//ballPosY = (int) client.receiverBuffer.Dequeue();
 						//angle = (int) client.receiverBuffer.Dequeue();
 						//ballVel = (int) client.receiverBuffer.Dequeue();
-                    }
+                    
 				}
 			}
 		}
