@@ -41,10 +41,9 @@ public class BallScript : MonoBehaviour {
 	private int velocityReset;
 
     DateTime dt;
-	private int counter = 0;
-
-    int playerLag;
-
+	private float counter = 0;
+    private float lag;
+    bool start = true;
 
 	// Use this for initialization
 	void Start () { 
@@ -62,10 +61,26 @@ public class BallScript : MonoBehaviour {
 		//calculate new position;
 		transform.position = new Vector3 (x,y,0);
 
+        //Get a new lag to start; one time thing
+        if (start)
+        {
+            lag = GameProcess.getLag();
+            start = false;
+        }
+
+        //If there is a collision (in which a new time stamp is sent), update NTP time and get new lag
+        if (GameProcess.hasCollided())
+        {
+            lag = GameProcess.getLag(); //returns number of seconds total lag as float
+        }
+
+        //Counter to keep track of elapsed time.
+        if (counter < lag)
+        {
+            transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
+            counter += Time.deltaTime;
+        }
         
-
-        transform.Translate(transform.position.x + ballSpeed * Time.deltaTime,transform.position.y + ballSpeed * Time.deltaTime, 0);
-
 	
 /*
 		//int currentTime = Client.dTime.Millisecond;
@@ -138,6 +153,10 @@ public class BallScript : MonoBehaviour {
 		//                                            transform.position.y + speed * (timeStamp),
 		//                                            0);
 	}
+
+    public static void setLag(float l)
+    { 
+    }
 
 	public void BallStart()
 	{

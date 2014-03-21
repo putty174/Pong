@@ -8,6 +8,10 @@ public class GameProcess : MonoBehaviour {
 	public static int min;
 	public static int sec;
 	public static int milli;
+
+    public static int oldMin = 0;
+    public static int oldSec = 0;
+    public static int oldMilli = 0;
 	
 	private GameObject ball;
 	private Player1 p1;
@@ -44,7 +48,7 @@ public class GameProcess : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+       
 		sockets = new Sockets();
 		client = new Client();
 		opPosY = 128;
@@ -141,7 +145,10 @@ public class GameProcess : MonoBehaviour {
 						player1Score++;
 					}
 
-
+                       oldMin = min;
+                       oldSec = sec;
+                       oldMilli = milli;
+                  
                     
 //					else if(x >= 7.8)
 //                    {
@@ -291,8 +298,26 @@ public class GameProcess : MonoBehaviour {
 			print ( ex.Message + " : Sending positions" );
 		}
 	}
+    //checks whether or not there is a collision
+    public static bool hasCollided()
+    {
+        if (oldMin == min && oldSec == sec && oldMilli == milli)
+        {
+            return false;
+        }
+        else
+            return true;
+    }
 
+    //Returns the lag in seconds
+    public static float getLag()
+    {
+        DateTime dt = Client.updateNTPTime();
 
+        dt = dt.AddMinutes(-min).AddSeconds(-sec).AddMilliseconds(-milli);
+
+        return (float) TimeSpan.FromTicks(dt.Ticks).TotalSeconds;
+    }
 
 
 	public Sockets returnSocket ()
