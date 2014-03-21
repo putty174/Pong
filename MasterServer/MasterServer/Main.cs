@@ -325,14 +325,14 @@ namespace MasterServer
             {
                 pos1 = 2;
                 pos2 = 2;
-				restart();
+
                  
             }
             else if (nposx > (250.0 - (rightPaddlePad / 2.0)))
             {
                 pos1 = 1;
                 pos2 = 1;
-				restart();
+
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
@@ -445,6 +445,8 @@ namespace MasterServer
                 {
                     nposx = 128;
                     nposy = 128;
+					nposx = rand.Next(0, 250);
+					nposy = rand.Next(0, 250);
                     startDelay--;
                 }
 
