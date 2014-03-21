@@ -142,31 +142,31 @@ public class BallScript : MonoBehaviour {
     public void updateBall()
     {
         //Get a new lag to start; one time thing
-        if (start)
-        {
-            lag = GameProcess.getLag();
-            start = false;
-        }
-
-        //If there is a collision (in which a new time stamp is sent), update NTP time and get new lag
-        if (GameProcess.hasCollided())
-        {
-            lag = GameProcess.getLag(); //returns number of seconds total lag as float
-            elapsedTime = 0f;
-        }
-
-        //Counter to keep track of elapsed time.
-        if (elapsedTime < lag)
-        {
-            transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
-            elapsedTime += Time.deltaTime;
-        }
-        else
-        {
-            //Once the lag time is over, get a new lag time and continue interpolating
-            lag = GameProcess.getLag();
-            elapsedTime = 0f;
-        }
+//        if (start)
+//        {
+//            lag = GameProcess.getLag();
+//            start = false;
+//        }
+//
+//        //If there is a collision (in which a new time stamp is sent), update NTP time and get new lag
+//        if (GameProcess.hasCollided())
+//        {
+//            lag = GameProcess.getLag(); //returns number of seconds total lag as float
+//            elapsedTime = 0f;
+//        }
+//
+//        //Counter to keep track of elapsed time.
+//        if (elapsedTime < lag)
+//        {
+//            transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
+//            elapsedTime += Time.deltaTime;
+//        }
+//        else
+//        {
+//            //Once the lag time is over, get a new lag time and continue interpolating
+//            lag = GameProcess.getLag();
+//            elapsedTime = 0f;
+//        }
  
     }
 

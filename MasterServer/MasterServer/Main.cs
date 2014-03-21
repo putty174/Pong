@@ -148,14 +148,14 @@ namespace MasterServer
                     if (connectedPlayers == 0)
                     {
                         stream1 = clientList[connectedPlayers].GetStream();
-                        packet1[0] = 0;
+                        packet1[0] = 1;
                         stream1.Write(packet1, 0, packet1.Length);
                         packet1[0] = 128;
                     }
                     else if (connectedPlayers == 1)
                     {
                         stream2 = clientList[connectedPlayers].GetStream();
-                        packet2[0] = 1;
+                        packet2[0] = 2;
                         stream2.Write(packet2, 0, packet2.Length);
                         packet2[0] = 128;
                     }
@@ -281,11 +281,11 @@ namespace MasterServer
             if (start1 && start2)
             {
                 nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-                //Console.WriteLine("BallX: " + nposx);
+                Console.WriteLine("BallX: " + nposx);
                 nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-                //Console.WriteLine("BallY: " + nposy);
+                Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
-                //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+                Console.WriteLine("Last collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
             //if(nposx < 30)
             //{
@@ -306,8 +306,8 @@ namespace MasterServer
                 collideX = nposx;
                 collideY = nposy;
                 //Console.WriteLine("Collision - Left");
-                //angle = bounceLeft(angle);
-                //nposx = leftPaddlePad;
+                angle = bounceLeft(angle);
+                nposx = leftPaddlePad;
                 checkCollide = 1;
             }
             else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
@@ -318,8 +318,8 @@ namespace MasterServer
                 collideX = nposx;
                 collideY = nposy;
                 //Console.WriteLine("Collision - Left");
-                //angle = bounceRight(angle);
-                //nposx = 250 - rightPaddlePad;
+                angle = bounceRight(angle);
+                nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
             if (nposy < botWallPad)
@@ -336,14 +336,7 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                nposx = collideX;
-                nposy = collideY;
                 confirmCollide();
-
-
-
-
-
             }
 
             if (nposx < (leftPaddlePad / 2.0))
@@ -386,51 +379,78 @@ namespace MasterServer
         {
             if (checkCollide == 1)
             {
-                if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+                if (Math.Abs(collideY - pos1) > 30)
                 {
-                    if (Math.Abs(collideY - pos1) < 15)
-                    {
-                        angle = bounceLeft(angle);
-                        nposx = collideX;
-                        nposy = collideY;
-                        checkCollide = 0;
-                        Console.WriteLine("P1 hit");
-                    }
-                    else
-                    {
-                        checkCollide = 3;
-                        Console.WriteLine("P1 missed");
-                    }
+                    Console.WriteLine("P1 missed");
+                    angle = bounceRight(angle);
+                    nposx = collideX;
+                    nposy = collideY;
+                    checkCollide = 3;
                 }
                 else
                 {
-                    Console.WriteLine("P1 - Not Yet");
+                    checkCollide = 0;
+                    Console.WriteLine("P1 hit");
                 }
+                //if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+                //{
+                //    if (Math.Abs(collideY - pos1) > 30)
+                //    {
+                //        Console.WriteLine("P1 missed");
+                //        angle = bounceRight(angle);
+                //        nposx = collideX;
+                //        nposy = collideY;
+                //        checkCollide = 3;
+                //    }
+                //    else
+                //    {
+                //        checkCollide = 0;
+                //        Console.WriteLine("P1 hit");
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine("P1 - Not Yet");
+                //}
             }
 
 
             if (checkCollide == 2)
             {
-                if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+                if (Math.Abs(collideY - pos2) > 30)
                 {
-                    if (Math.Abs(collideY - pos2) < 15)
-                    {
-                        angle = bounceRight(angle);
-                        nposx = collideX;
-                        nposy = collideY;
-                        checkCollide = 0;
-                        Console.WriteLine("P2 hit");
-                    }
-                    else
-                    {
-                        checkCollide = 3;
-                        Console.WriteLine("P2 missed");
-                    }
+                    Console.WriteLine("P2 missed");
+                    angle = bounceRight(angle);
+                    nposx = collideX;
+                    nposy = collideY;
+                    checkCollide = 3;
                 }
                 else
                 {
-                    Console.WriteLine("P2 - Not Yet");
+                    checkCollide = 0;
+                    Console.WriteLine("P2 hit");
                 }
+                //if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+                //{
+                //    if (Math.Abs(collideY - pos2) > 30)
+                //    {
+                //        checkCollide = 3;
+                //        angle = bounceLeft(angle);
+                //        nposx = collideX;
+                //        nposy = collideY;
+                //        Console.WriteLine("P2 missed");
+                //    }
+                //    else
+                //    {
+                //        checkCollide = 0;
+                //        Console.WriteLine("P2 hit");
+                        
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine("P2 - Not Yet");
+                //}
             }
         }
 
@@ -516,7 +536,7 @@ namespace MasterServer
                 packet1[6] = milliHold[1];
 
                 int milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
                 //Console.WriteLine("Writing P2-1 " + pos1);
                 packet2[0] = (byte)pos1;
@@ -537,7 +557,7 @@ namespace MasterServer
                 packet2[6] = milliHold[1];
 
                 milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
@@ -554,8 +574,9 @@ namespace MasterServer
                     startDelay = 100;
                     nposx = 128;
                     nposy = 128;
+                    checkCollide = 0;
                 }
-                Console.WriteLine(System.Environment.NewLine);
+                //Console.WriteLine(System.Environment.NewLine);
             }
             
             catch (Exception ex)
