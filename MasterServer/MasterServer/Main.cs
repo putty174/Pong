@@ -72,8 +72,6 @@ namespace MasterServer
 
             uniClock = new Stopwatch();
 
-            dTime = getNTPTime(ref uniClock);
-
             
 			connectedPlayers = 0;
             start1 = false;
@@ -99,7 +97,7 @@ namespace MasterServer
 
         public void restart()
         {
-
+            dTime = getNTPTime(ref uniClock);
             dstart1 = 0;
             dstart2 = 0;
             checkCollide = 0;
@@ -110,7 +108,7 @@ namespace MasterServer
             packet1[0] = (byte) 0;
             packet1[1] = (byte) 0;
             packet1[2] = (byte) 0;
-            dTime = getNTPTime(ref uniClock);
+            
             packet1[3] = (byte)dTime.Minute;
             packet1[4] = (byte)dTime.Second;
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
@@ -120,7 +118,6 @@ namespace MasterServer
             packet2[0] = (byte) 1;
             packet2[1] = (byte) 0;
             packet2[2] = (byte) 0;
-            dTime = getNTPTime(ref uniClock);
             packet1[3] = (byte)dTime.Minute;
             packet1[4] = (byte)dTime.Second;
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
@@ -219,11 +216,11 @@ namespace MasterServer
         {
             try
             {
+                dTimeNew = getNTPTime(ref uniClock);
                 pos1 = stream1.ReadByte();
                 Console.WriteLine("Player1 Pos: " + pos1);
                 if (dstart1 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
                     delay1 = new TimeSpan(dTimeNew.Subtract(dTime).Ticks / 2);
                     Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds));
                     dstart1 = 2;
@@ -233,7 +230,7 @@ namespace MasterServer
                 Console.WriteLine("Player2 Pos: " + pos2);
                 if (dstart2 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
+                    
                     delay2 = new TimeSpan(dTimeNew.Subtract(dTime).Ticks / 2);
                     Console.WriteLine("P2 delay: " + (delay2.TotalMilliseconds));
                     dstart2 = 2;
