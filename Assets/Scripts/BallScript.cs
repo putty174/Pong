@@ -52,7 +52,7 @@ public class BallScript : MonoBehaviour {
 
 	void Update()
 	{
-		changeBallColor ();
+		//changeBallColor ();
 
         //this is the ball position that the gameprocess records
 		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
@@ -65,16 +65,6 @@ public class BallScript : MonoBehaviour {
 		//int currentTime = Client.dTime.Millisecond;
 		int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
-		//int timeOfCollision = GameProcess.milli;
-		int timeOfCollision = (GameProcess.min * 60000)+(GameProcess.sec*1000)+(GameProcess.milli);
-		int timeStamp = Math.Abs (timeOfCollision - currentTime);
-
-		int speed = GameProcess.ballVel;
-
-		if(counter < timeStamp) 
-            counter++;
-
-		transform.Translate(transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
 
 		//Not for how this game is structured...
 		//calculate dead reckoning position	

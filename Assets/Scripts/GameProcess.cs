@@ -103,6 +103,8 @@ public class GameProcess : MonoBehaviour {
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
 					opPosY = (int) client.receiverBuffer.Dequeue();
 					ballPosX = (int) client.receiverBuffer.Dequeue();
+					float x = (ballPosX / paddleRatio) + lPaddle.transform.position.x;
+					Debug.Log ("ball position: " + x);
 					ballPosY = (int) client.receiverBuffer.Dequeue();
 					min = (int) client.receiverBuffer.Dequeue();
 					sec = (int) client.receiverBuffer.Dequeue();
@@ -122,10 +124,17 @@ public class GameProcess : MonoBehaviour {
 						}
 						opPosY = 128;
                     }
-                    else if(opPosY == 1)
-                    {
-						Debug.Log ("player 1 scores");
-					}
+
+
+                    
+//					else if(x >= 7.8)
+//                    {
+//						Debug.Log ("player 2 scores");
+//					}
+//					else if(x <= -7.8)
+//					{
+//						Debug.Log ("player 1 scores");
+//					}
 
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
