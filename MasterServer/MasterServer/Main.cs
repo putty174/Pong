@@ -443,10 +443,9 @@ namespace MasterServer
             {
                 if (dstart1 == 3 && dstart2 == 3 && startDelay > 0)
                 {
-                    nposx = 128;
-                    nposy = 128;
-					nposx = rand.Next(0, 250);
-					nposy = rand.Next(0, 250);
+                    nposx = 100;
+                    nposy = 100;
+
                     startDelay--;
                 }
 
