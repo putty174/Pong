@@ -131,14 +131,14 @@ public class GameProcess : MonoBehaviour {
                     }
 					else if(opPosY == 1)
 					{
-						Debug.Log("player 1 scores!");
-						player1Score++;
+						Debug.Log("player 2 scores!");
+						player2Score++;
 
 					}
 					else if(opPosY == 2)
 					{
-						Debug.Log("player 2 scores!");
-						player2Score++;
+						Debug.Log("player 1 scores!");
+						player1Score++;
 					}
 
 

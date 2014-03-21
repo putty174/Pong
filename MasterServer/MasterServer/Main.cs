@@ -443,8 +443,8 @@ namespace MasterServer
             {
                 if (dstart1 == 3 && dstart2 == 3 && startDelay > 0)
                 {
-                    nposx = 100;
-                    nposy = 100;
+                    nposx = 128;
+                    nposy = 128;
 
                     startDelay--;
                 }
