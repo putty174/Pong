@@ -9,25 +9,27 @@ public class GameProcess : MonoBehaviour {
     struct positions
     {
      
-        int opY; //opponent's Y position
-        int bX; //ball's X position
-        int bY; //ball's Y position
+        public int opY; //opponent's Y position
+        public int bX; //ball's X position
+        public int bY; //ball's Y position
 
         //timestamp of this world state
-        int min; 
-        int sec;
-        int ms;
+        DateTime dt;
+
+        public long ticks;
 
         public positions(int opY, int bX, int bY, int min, int sec, int ms)
-        {         
+        {
             this.opY = opY;
             this.bX = bX;
             this.bY = bY;
-     
-            this.min = min;
-            this.sec = sec;
-            this.ms = ms;
+
+            dt = new DateTime();
+            dt = dt.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms);
+
+            ticks = dt.Ticks;
         }
+           
 
     };
 
@@ -141,7 +143,7 @@ public class GameProcess : MonoBehaviour {
 					sec = (int) client.receiverBuffer.Dequeue();
 					milli = (int) client.receiverBuffer.Dequeue();
 
-                    /*
+                    
                     //starts saving "screenshots" of the game state
                     if (posHistory.Length < 20)
                     {
@@ -158,7 +160,7 @@ public class GameProcess : MonoBehaviour {
                             posHistory[histPos] = p;
                         }
                     }                                  
-                    */
+                    
                     if (player == -1)
                     {
 						if(opPosY == 0)
@@ -276,7 +278,7 @@ public class GameProcess : MonoBehaviour {
 	{
 		try
 		{
-
+            
          //   DateTime targetTime = client.getTime().AddMilliseconds(lerpTime);           
 
 			if(player == 1)
@@ -347,12 +349,22 @@ public class GameProcess : MonoBehaviour {
 		return client;
 	}
 
+    
     /*
+    //findLerpTarget should look for a snapshot that the parameters fall between and return it
     public positions findLerpTarget(int min, int sec, int ms)
     {
-        
+        DateTime d = new DateTime();
+        long lerpTick = (d.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms)).Ticks;
+
+        positions upperBound;
+        positions lowerBound;
+
+        for (int i = 0; i < posHistory.Length; i++)
+        {
+            if (posHistory[i].ticks 
+        }
     }
     */
-    
 
 }

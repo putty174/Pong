@@ -57,7 +57,7 @@ public class Client : MonoBehaviour {
 
 		receiverBuffer = new Queue (maxLimit);
 
-
+       
 		uniClock = new Stopwatch();
 		
 

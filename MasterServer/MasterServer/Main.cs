@@ -24,6 +24,31 @@ namespace MasterServer
 
 	class MainServer : MainClass
 	{
+
+        struct positions
+        {
+           public int pos1;
+           public int pos2;
+
+           public DateTime dt;
+           public long ticks;
+
+           public positions(int pos1, int pos2, int min, int sec, int ms)
+           {
+               this.pos1 = pos1;
+               this.pos2 = pos2;
+               dt = new DateTime();
+               dt = dt.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms);
+
+               ticks = dt.Ticks;
+           }
+        };
+
+        positions[] history = new positions[10];
+        positions recentPos;
+        int lastHisPos = 0;
+        int histPos = 0;
+
 		public static Stopwatch uniClock;
 		public static DateTime dTime;
 		const int maxPlayers = 2;
@@ -48,6 +73,7 @@ namespace MasterServer
         DateTime timeStamp;
         Random rand = new Random();
 
+        int temp1, temp2;
         int pos1, pos2;
         int vel1, vel2;
         int time1, time2;
@@ -61,7 +87,7 @@ namespace MasterServer
         byte[] packet1;
         byte[] packet2;
         byte[] milliHold;
-		
+
 		public MainServer()
 		{
 		
@@ -71,7 +97,7 @@ namespace MasterServer
             uniClock = new Stopwatch();
 
             dTime = getNTPTime(ref uniClock);
-
+                        
             angleRatio = 2 * Math.PI / 250;
 
 			connectedPlayers = 0;
@@ -81,6 +107,9 @@ namespace MasterServer
             packet1 = new byte[8];
             packet2 = new byte[8];
             milliHold = new byte[2];
+
+            pos1 = 0;
+            pos2 = 0;
 
             //IPHostEntry host;
             //IPAddress thisComputer;
@@ -220,16 +249,40 @@ namespace MasterServer
         {
             try
             {
-                pos1 = stream1.ReadByte();
-                Console.WriteLine("Player1 Pos: " + pos1);
 
-                pos2 = stream2.ReadByte();
-                Console.WriteLine("Player2 Pos: " + pos2);
+                temp1 = stream1.ReadByte();
+                
+                Console.WriteLine("Player1 Pos: " + temp1);
+                
+                temp2 = stream2.ReadByte();
+                
+                Console.WriteLine("Player2 Pos: " + temp2);                
+
+                
+
+                positions p = new positions(pos1, pos2, dTime.Minute, dTime.Second,dTime.Millisecond);
+
+                if (history.Length < 50)
+                {
+                    history[histPos] = p;
+                    histPos++;
+                }
+                else
+                {
+                    histPos = 0;
+                    history[histPos] = p;
+                }
+
+                recentPos = p;
+
+                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
+
+            
 			//stream 1
 			
             
@@ -269,6 +322,12 @@ namespace MasterServer
 
         public void update()
         {
+
+            pos1 = recentPos.pos1;
+            pos2 = recentPos.pos2;
+
+            //if position collide
+
             nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
             Console.WriteLine("BallX: " + nposx);
             nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
@@ -547,8 +606,26 @@ host, in 64-bit timestamp format.
 			return dt;
 		}
 
+        public long computeLag(int min, int sec, int ms)
+        {
+            long ticks1;
+            long ticks2;
+            dTime = getNTPTime(ref uniClock);
+
+            DateTime dt1 = new DateTime();
+            dt1 = dt1.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms);
+            ticks1 = dt1.Ticks;
+
+            DateTime dt2 = new DateTime();
+            dt2 = dt2.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms);
+            ticks2 = dt2.Ticks;
+            
+            return (ticks2 - ticks1);
+        }
+
 	}
 
+    
 
 //	public class handleClient
 //	{
