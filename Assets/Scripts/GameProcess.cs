@@ -111,12 +111,12 @@ public class GameProcess : MonoBehaviour {
 				while(client.receiverBuffer.Count > buffer.Length)
 				{
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
-					opPosY = (int) client.receiverBuffer.Dequeue();
-					ballPosX = (int) client.receiverBuffer.Dequeue();
-					ballPosY = (int) client.receiverBuffer.Dequeue();
-					min = (int) client.receiverBuffer.Dequeue();
-					sec = (int) client.receiverBuffer.Dequeue();
-					milli = (int) client.receiverBuffer.Dequeue();
+//					opPosY = (int) client.receiverBuffer.Dequeue();
+//					ballPosX = (int) client.receiverBuffer.Dequeue();
+//					ballPosY = (int) client.receiverBuffer.Dequeue();
+//					min = (int) client.receiverBuffer.Dequeue();
+//					sec = (int) client.receiverBuffer.Dequeue();
+//					milli = (int) client.receiverBuffer.Dequeue();
 					Debug.Log(opPosY + ", " + ballPosX + ", " + ballPosY + ", " + min + ", " + sec + ", " + milli);
 
                     if (player == -1)
