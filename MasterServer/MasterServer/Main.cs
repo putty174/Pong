@@ -324,6 +324,22 @@ namespace MasterServer
                 nposx = collideX;
                 nposy = collideY;
                 confirmCollide();
+
+				win1 = stream1.ReadByte ();
+				Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
+				win2 = stream2.ReadByte ();
+				Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
+				if(win1 == 128)
+				{
+					Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				}
+				else if(win2 == 128)
+				{
+					Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				}
+
+
+
             }
 
             if (nposx < (leftPaddlePad / 2.0))
@@ -344,17 +360,17 @@ namespace MasterServer
 
 
 			//stream1.ReadByte (win1);
-			win1 = stream1.ReadByte ();
-			Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
-			win2 = stream2.ReadByte ();
-			Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
+			//win1 = stream1.ReadByte ();
+			//Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
+			//win2 = stream2.ReadByte ();
+			//Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
 			//if(win1 == 128)
 			//{
-				Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				//Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			//}
 			//else if(win2 == 128)
 			//{
-				Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				//Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			//}
 			//stream2.ReadByte (win2);
 
