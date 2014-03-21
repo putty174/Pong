@@ -337,7 +337,7 @@ namespace MasterServer
                 }
                 else
                 {
-                    Console.WriteLine("P1 missed");
+                    //Console.WriteLine("P1 missed");
                 }
             }
 
@@ -353,7 +353,7 @@ namespace MasterServer
                 }
                 else
                 {
-                    Console.WriteLine("P2 missed");
+                    //Console.WriteLine("P2 missed");
                 }
             }
         }
