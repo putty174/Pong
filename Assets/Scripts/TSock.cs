@@ -42,10 +42,10 @@ public class TSock : MonoBehaviour
 					sock.receiverBuffer.Enqueue((int)bytes[4]);
 					sock.receiverBuffer.Enqueue(milli);
 				}
-				if(sock.receiverBuffer.Count > Client.maxLimit - 6)
-				{
-					ns.Read (bytes,0,bytes.Length);
-				}
+//				if(sock.receiverBuffer.Count > Client.maxLimit - 6)
+//				{
+//					ns.Read (bytes,0,bytes.Length);
+//				}
 			}
 		}
 		catch(Exception e)

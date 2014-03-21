@@ -48,7 +48,7 @@ public class BallScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () { 
 		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
-        InvokeRepeating("updateBall", 0f, 0.1f);
+       // InvokeRepeating("updateBall", 0f, 0.1f);
         
 	}
 
@@ -62,7 +62,7 @@ public class BallScript : MonoBehaviour {
 
         
 		//calculate new position;
-		//transform.position = new Vector3 (x,y,0);
+		transform.position = new Vector3 (x,y,0);
 
        
         
