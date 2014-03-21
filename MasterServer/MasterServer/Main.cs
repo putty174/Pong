@@ -298,7 +298,7 @@ namespace MasterServer
             //    nposy = 128;
             //}
 
-            if (nposx < leftPaddlePad /*&& checkCollide == 0*/)
+            if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
@@ -310,7 +310,7 @@ namespace MasterServer
                 nposx = leftPaddlePad;
                 checkCollide = 1;
             }
-            else if (nposx > 250 - rightPaddlePad/* && checkCollide == 0*/)
+            else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
@@ -379,52 +379,78 @@ namespace MasterServer
         {
             if (checkCollide == 1)
             {
-                if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+                if (Math.Abs(collideY - pos1) > 30)
                 {
-                    if (Math.Abs(collideY - pos1) > 30)
-                    {
-                        Console.WriteLine("P1 missed");
-                        angle = bounceRight(angle);
-                        nposx = collideX;
-                        nposy = collideY;
-                        checkCollide = 3;
-                    }
-                    else
-                    {
-                        checkCollide = 0;
-                        Console.WriteLine("P1 hit");
-                    }
+                    Console.WriteLine("P1 missed");
+                    angle = bounceRight(angle);
+                    nposx = collideX;
+                    nposy = collideY;
+                    checkCollide = 3;
                 }
                 else
                 {
-                    Console.WriteLine("P1 - Not Yet");
+                    checkCollide = 0;
+                    Console.WriteLine("P1 hit");
                 }
+                //if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+                //{
+                //    if (Math.Abs(collideY - pos1) > 30)
+                //    {
+                //        Console.WriteLine("P1 missed");
+                //        angle = bounceRight(angle);
+                //        nposx = collideX;
+                //        nposy = collideY;
+                //        checkCollide = 3;
+                //    }
+                //    else
+                //    {
+                //        checkCollide = 0;
+                //        Console.WriteLine("P1 hit");
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine("P1 - Not Yet");
+                //}
             }
 
 
             if (checkCollide == 2)
             {
-                if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+                if (Math.Abs(collideY - pos2) > 30)
                 {
-                    if (Math.Abs(collideY - pos2) > 30)
-                    {
-                        checkCollide = 3;
-                        angle = bounceLeft(angle);
-                        nposx = collideX;
-                        nposy = collideY;
-                        Console.WriteLine("P2 missed");
-                    }
-                    else
-                    {
-                        checkCollide = 0;
-                        Console.WriteLine("P2 hit");
-                        
-                    }
+                    Console.WriteLine("P2 missed");
+                    angle = bounceRight(angle);
+                    nposx = collideX;
+                    nposy = collideY;
+                    checkCollide = 3;
                 }
                 else
                 {
-                    Console.WriteLine("P2 - Not Yet");
+                    checkCollide = 0;
+                    Console.WriteLine("P2 hit");
                 }
+                //if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+                //{
+                //    if (Math.Abs(collideY - pos2) > 30)
+                //    {
+                //        checkCollide = 3;
+                //        angle = bounceLeft(angle);
+                //        nposx = collideX;
+                //        nposy = collideY;
+                //        Console.WriteLine("P2 missed");
+                //    }
+                //    else
+                //    {
+                //        checkCollide = 0;
+                //        Console.WriteLine("P2 hit");
+                        
+                //    }
+                //}
+                //else
+                //{
+                //    Console.WriteLine("P2 - Not Yet");
+                //}
             }
         }
 
