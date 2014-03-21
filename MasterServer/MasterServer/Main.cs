@@ -316,9 +316,9 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                //confirmCollide();
+                confirmCollide();
             }
-            Console.WriteLine("Angle: " + (angle / Math.PI));
+            //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
         public void confirmCollide()
