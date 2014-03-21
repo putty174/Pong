@@ -143,11 +143,8 @@ public class GameProcess : MonoBehaviour {
 							Debug.Log("Player 2 won the game");
 							player1Score = 0;
 							player2Score = 0;
-<<<<<<< HEAD
 							client.Send (5);
-=======
 							//client.Send (128);
->>>>>>> FETCH_HEAD
 
 						}
 
@@ -161,11 +158,8 @@ public class GameProcess : MonoBehaviour {
 							Debug.Log("Player 1 won the game");
 							player1Score = 0;
 							player2Score = 0;
-<<<<<<< HEAD
 							client.Send (5);
-=======
 							//client.Send (128);
->>>>>>> FETCH_HEAD
 
 						}
 					}
