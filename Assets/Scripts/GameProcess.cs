@@ -5,8 +5,8 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
-	public int min;
-	public int sec;
+	public static int min;
+	public static int sec;
 	public static int milli;
 	
 	private GameObject ball;
