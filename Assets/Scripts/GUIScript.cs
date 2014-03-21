@@ -7,7 +7,7 @@ public class GUIScript : MonoBehaviour {
 	public GUIText guiText;
 	//public GameProcess process;
 	private bool toggleButton = false;
-//	public GUISkin skin;
+	public GUISkin skin;
 	string title = "Pong2D";
 
 	// Use this for initialization
@@ -23,12 +23,11 @@ public class GUIScript : MonoBehaviour {
 
 	void OnGUI () {
 
-/*
 		GUI.color = Color.white;
 		GUI.skin = skin;
 		GUIStyle centeredStyle = GUI.skin.GetStyle("Label");
 		centeredStyle.alignment = TextAnchor.UpperCenter;
-		GUI.Label (new Rect (Screen.width/2 -140, 20, 300,300), title);*/
+		GUI.Label (new Rect (Screen.width/2 -140, 20, 300,300), title);
 
 		// Make a background box
 		GUI.Box(new Rect(10,10,100,70), "Main Menu");
