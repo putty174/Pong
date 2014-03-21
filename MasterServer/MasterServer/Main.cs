@@ -223,9 +223,9 @@ namespace MasterServer
                 //Console.WriteLine("Player1 Pos: " + pos1);
                 if (dstart1 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock); //time received from client
-                    delay1 = dTimeNew.Subtract(dTime); //time receive - server time
-                    Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2)); 
+                    dTimeNew = getNTPTime(ref uniClock);
+                    delay1 = dTimeNew.Subtract(dTime);
+                    Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2));
                     dstart1 = 2;
                 }
 
@@ -269,32 +269,28 @@ namespace MasterServer
             else if (angle > 2 * Math.PI)
                 angle -= 2 * Math.PI;
 
-            //if ball is to the left of the left paddle, record it
-            if (nposx < leftPaddlePad && checkCollide == 0)
+            if (nposx < leftPaddlePad /*&& checkCollide == 0*/)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                //angle = bounceLeft(angle);
-                //nposx = leftPaddlePad;
+                angle = bounceLeft(angle);
+                nposx = leftPaddlePad;
                 checkCollide = 1;
             }
-            //if the ball is to the right of the right paddle, record it
-            else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
+            else if (nposx > 250 - rightPaddlePad /*&& checkCollide == 0*/)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                //angle = bounceRight(angle);
-                //nposx = 250 - rightPaddlePad;
+                angle = bounceRight(angle);
+                nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
-            
-            //if the ball is getting close to the bottom
             if (nposy < botWallPad)
             {
                 //nposy = Math.Abs(nposy);
@@ -309,7 +305,7 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                confirmCollide();
+                //confirmCollide();
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
@@ -324,6 +320,11 @@ namespace MasterServer
                     nposx = collideX;
                     nposy = collideY;
                     checkCollide = 0;
+                    Console.WriteLine("P1 hit");
+                }
+                else
+                {
+                    Console.WriteLine("P1 missed");
                 }
             }
 
@@ -335,6 +336,11 @@ namespace MasterServer
                     nposx = collideX;
                     nposy = collideY;
                     checkCollide = 0;
+                    Console.WriteLine("P2 hit");
+                }
+                else
+                {
+                    Console.WriteLine("P2 missed");
                 }
             }
         }

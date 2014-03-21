@@ -7,38 +7,6 @@ public class GameProcess : MonoBehaviour {
 
 	public static int min;
 	public static int sec;
-    //screenshot of game state
-    struct positions
-    {
-     
-        public int opY; //opponent's Y position
-        public int bX; //ball's X position
-        public int bY; //ball's Y position
-
-        //timestamp of this world state
-        DateTime dt;
-
-        public long ticks;
-
-        public positions(int opY, int bX, int bY, int min, int sec, int ms)
-        {
-            this.opY = opY;
-            this.bX = bX;
-            this.bY = bY;
-
-            dt = new DateTime();
-            dt = dt.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms);
-
-            ticks = dt.Ticks;
-        }
-           
-
-    };
-
-    positions[] posHistory = new positions[20];
-    public int histPos; //Keeps track of posHistory position
-    public int lerpTime; //Time for interpolation
-
 	public static int milli;
 	
 	private GameObject ball;
@@ -81,9 +49,6 @@ public class GameProcess : MonoBehaviour {
 		ballPosY = 0;
 		buffer = new byte[6];
 		gameStart = false;
-
-        histPos = 0;
-        lerpTime = -100; //Negative time in milliseconds for subtraction
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
@@ -143,24 +108,6 @@ public class GameProcess : MonoBehaviour {
 					sec = (int) client.receiverBuffer.Dequeue();
 					milli = (int) client.receiverBuffer.Dequeue();
 
-                    
-                    //starts saving "screenshots" of the game state
-                    if (posHistory.Length < 20)
-                    {
-                        positions p = new positions(opPosY, ballPosX, ballPosY, min, sec, milli);
-
-                        if (histPos < 20)
-                        {
-                            posHistory[histPos] = p;
-                            histPos++;
-                        }
-                        else
-                        {
-                            histPos = 0;
-                            posHistory[histPos] = p;
-                        }
-                    }                                  
-                    
                     if (player == -1)
                     {
 						if(opPosY == 0)
@@ -175,8 +122,11 @@ public class GameProcess : MonoBehaviour {
 						}
 						opPosY = 128;
                     }
-                    else
+                    else if(opPosY == 1)
                     {
+						Debug.Log ("player 1 scores");
+					}
+
                         //Stores information on opponent position (Y), 
                         //opponent velocity, ball position (X, Y),
                         //angle of ball, server time.
@@ -212,14 +162,10 @@ public class GameProcess : MonoBehaviour {
 						//ballPosY = (int) client.receiverBuffer.Dequeue();
 						//angle = (int) client.receiverBuffer.Dequeue();
 						//ballVel = (int) client.receiverBuffer.Dequeue();
-
-
-                    }
+                    
 				}
 			}
 		}
-
-
 	}
     //return estimated time of collision.
     //Parameters (ball position, ball angle, ball velocity)
@@ -257,15 +203,15 @@ public class GameProcess : MonoBehaviour {
 //        return (int)(distance / velocity);
 //    }
 
- 
+    public bool collide()
+    {
+        return true;
+    }
 
 	public void sendPositions ()
 	{
 		try
 		{
-            
-         //   DateTime targetTime = client.getTime().AddMilliseconds(lerpTime);           
-
 			if(player == 1)
 			{
 				//send Player1.x
@@ -333,23 +279,4 @@ public class GameProcess : MonoBehaviour {
 	{
 		return client;
 	}
-
-    
-    /*
-    //findLerpTarget should look for a snapshot that the parameters fall between and return it
-    public positions findLerpTarget(int min, int sec, int ms)
-    {
-        DateTime d = new DateTime();
-        long lerpTick = (d.AddMinutes(min).AddSeconds(sec).AddMilliseconds(ms)).Ticks;
-
-        positions upperBound;
-        positions lowerBound;
-
-        for (int i = 0; i < posHistory.Length; i++)
-        {
-            if (posHistory[i].ticks 
-        }
-    }
-    */
-
 }
