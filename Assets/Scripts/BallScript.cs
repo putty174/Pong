@@ -13,7 +13,7 @@ public class BallScript : MonoBehaviour {
 	public static Vector3 ballPosition;
 
 	// Start speed of the ball
-	public float ballSpeed = 10;
+	public float ballSpeed = 0.1f;
 
 	// max speed of the ball
 	public float maxSpeed = 20f;
@@ -32,7 +32,6 @@ public class BallScript : MonoBehaviour {
 
 
 	private int ballIsHit = 1;
-
 	// velocity
 	//private int velocityY = rigidbody2D.velocity.y;
 
@@ -41,8 +40,10 @@ public class BallScript : MonoBehaviour {
 	// velocity reset
 	private int velocityReset;
 
-
+    DateTime dt;
 	private int counter = 0;
+
+    int playerLag;
 
 
 	// Use this for initialization
@@ -60,10 +61,72 @@ public class BallScript : MonoBehaviour {
 
 		//calculate new position;
 		transform.position = new Vector3 (x,y,0);
+
+        
+
+        transform.Translate(transform.position.x + ballSpeed * Time.deltaTime,transform.position.y + ballSpeed * Time.deltaTime, 0);
+
 	
 /*
 		//int currentTime = Client.dTime.Millisecond;
-		int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
+<<<<<<< HEAD
+<<<<<<< HEAD
+		//int currentTime = (Client.dTime.Minute * 60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
+
+		/*
+		if(currentTime > 999)
+		{
+
+		}
+		else if (currentTime > 99999)
+		{
+		}
+		else if(currentTime > 9999999)
+		{
+		}
+		*/
+
+		//int timeOfCollision = GameProcess.milli;
+		//int timeOfCollision = (GameProcess.min * 60000)+(GameProcess.sec*1000)+(GameProcess.milli);
+		//int timeStamp = Math.Abs (timeOfCollision - currentTime);
+
+
+
+		//int speed = GameProcess.ballVel;
+
+
+		//if(counter < timeStamp) counter++;
+
+		//transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
+//		int currentTime = (Client.dTime.Minute * 60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
+//
+//		/*
+//		if(currentTime > 999)
+//		{
+//
+//		}
+//		else if (currentTime > 99999)
+//		{
+//		}
+//		else if(currentTime > 9999999)
+//		{
+//		}
+//		*/
+//
+//		//int timeOfCollision = GameProcess.milli;
+//		int timeOfCollision = (GameProcess.min * 60000)+(GameProcess.sec*1000)+(GameProcess.milli);
+//		int timeStamp = Math.Abs (timeOfCollision - currentTime);
+//
+//
+//
+//		int speed = GameProcess.ballVel;
+//
+//
+//		if(counter < timeStamp) counter++;
+//
+//		transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
+
+		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
 
 		//Not for how this game is structured...
@@ -71,10 +134,6 @@ public class BallScript : MonoBehaviour {
 		//Vector3 deadReckoningPosition = new Vector3(transform.position.x + speed * (timeStamp), 
 		//                                            transform.position.y + speed * (timeStamp),
 		//                                            0);
-
-
-
-        */
 	}
 
 	public void BallStart()

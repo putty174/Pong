@@ -39,6 +39,9 @@ public class GameProcess : MonoBehaviour {
 	public static float wallRatio;
 	public static float paddleRatio;
 
+	public int player1Score;
+	public int player2Score;
+
 	// Use this for initialization
 	void Start () {
 
@@ -49,6 +52,8 @@ public class GameProcess : MonoBehaviour {
 		ballPosY = 0;
 		buffer = new byte[6];
 		gameStart = false;
+		player1Score = 0;
+		player2Score = 0;
 
 		gui = GameObject.Find("GUI").GetComponent<GUIScript>();
 
@@ -124,6 +129,17 @@ public class GameProcess : MonoBehaviour {
 						}
 						opPosY = 128;
                     }
+					else if(opPosY == 1)
+					{
+						Debug.Log("player 1 scores!");
+						player1Score++;
+
+					}
+					else if(opPosY == 2)
+					{
+						Debug.Log("player 2 scores!");
+						player2Score++;
+					}
 
 
                     
