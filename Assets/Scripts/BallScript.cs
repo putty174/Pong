@@ -128,6 +128,9 @@ public class BallScript : MonoBehaviour {
 
 		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
+		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
+
+
 
 		//Not for how this game is structured...
 		//calculate dead reckoning position	
