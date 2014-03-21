@@ -8,10 +8,6 @@ public class GameProcess : MonoBehaviour {
 	public static int min;
 	public static int sec;
 	public static int milli;
-
-    public static int oldMin = 0;
-    public static int oldSec = 0;
-    public static int oldMilli = 0;
 	
 	private GameObject ball;
 	private Player1 p1;
@@ -45,11 +41,10 @@ public class GameProcess : MonoBehaviour {
 
 	public int player1Score;
 	public int player2Score;
-	static public int scoreLimit = 10;
 
 	// Use this for initialization
 	void Start () {
-       
+
 		sockets = new Sockets();
 		client = new Client();
 		opPosY = 128;
@@ -136,32 +131,17 @@ public class GameProcess : MonoBehaviour {
                     }
 					else if(opPosY == 1)
 					{
-						Debug.Log("player 2 scores!");
-						player2Score++;
-						if(player2Score == scoreLimit)
-						{
-							Debug.Log("Player 2 won the game");
-							player1Score = 0;
-							player2Score = 0;
-						}
+						Debug.Log("player 1 scores!");
+						player1Score++;
 
 					}
 					else if(opPosY == 2)
 					{
-						Debug.Log("player 1 scores!");
-						player1Score++;
-						if(player1Score == scoreLimit)
-						{
-							Debug.Log("Player 1 won the game");
-							player1Score = 0;
-							player2Score = 0;
-						}
+						Debug.Log("player 2 scores!");
+						player2Score++;
 					}
 
-                       oldMin = min;
-                       oldSec = sec;
-                       oldMilli = milli;
-                  
+
                     
 //					else if(x >= 7.8)
 //                    {
@@ -311,26 +291,8 @@ public class GameProcess : MonoBehaviour {
 			print ( ex.Message + " : Sending positions" );
 		}
 	}
-    //checks whether or not there is a collision
-    public static bool hasCollided()
-    {
-        if (oldMin == min && oldSec == sec && oldMilli == milli)
-        {
-            return false;
-        }
-        else
-            return true;
-    }
 
-    //Returns the lag in seconds
-    public static float getLag()
-    {
-        DateTime dt = Client.updateNTPTime();
 
-        dt = dt.AddMinutes(-min).AddSeconds(-sec).AddMilliseconds(-milli);
-
-        return (float)Math.Abs(TimeSpan.FromTicks(dt.Ticks).TotalSeconds);
-    }
 
 
 	public Sockets returnSocket ()
