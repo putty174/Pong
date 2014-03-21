@@ -73,8 +73,8 @@ public class ScoreManager : MonoBehaviour {
 	{
 		GUI.skin = skin;
 		GUI.Box (new Rect (10,Screen.height -230,100,90), "Score");
-		GUI.Label(new Rect(20,Screen.height -200, 100, 30), "Player1: " + player1Score);
-		GUI.Label(new Rect(20,Screen.height -170, 100, 30), "Player2: " + player2Score);
+		GUI.Label(new Rect(20,Screen.height -200, 100, 30), "Player1: " + gp.player1Score);
+		GUI.Label(new Rect(20,Screen.height -170, 100, 30), "Player2: " + gp.player2Score);
 
 
 

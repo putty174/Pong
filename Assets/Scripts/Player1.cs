@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 
 public class Player1 : MonoBehaviour {
@@ -96,6 +97,9 @@ public class Player1 : MonoBehaviour {
 			//float wallRatio = (250.0f / GameObject.Find ("TopWall").transform.position.y - GameObject.Find ("BottomWall").transform.position.y);
 			//float result = (float)(temp1 / wallRatio);//Convert.ToInt32(temp1 * wallRatio);
 //			Debug.Log("opponent position: " + GameProcess.opPosY);
+
+            //
+
 			if(GameProcess.opPosY != 0)
 			{
 				float oppY = (GameProcess.opPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
