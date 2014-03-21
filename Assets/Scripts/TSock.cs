@@ -36,18 +36,14 @@ public class TSock : MonoBehaviour
 				//Debug.Log(bytes[0] + ", " + bytes[1] + ", " + bytes[2] + ", " + bytes[3] + ", " + bytes[4] + ", " + milli);
 				for(int i = 0; i < 7; i++)
 				{
+
 					if(bytes[i] == 0)
 					{
 						trash = true;
 					}
 				}
-<<<<<<< HEAD
-//				if(sock.receiverBuffer.Count > Client.maxLimit - 6)
-//				{
-//					ns.Read (bytes,0,bytes.Length);
-//				}
-=======
-				if(trash)
+
+				if(!trash)
 				{
 					lock(sock.receiverBuffer)
 					{
@@ -59,7 +55,7 @@ public class TSock : MonoBehaviour
 						sock.receiverBuffer.Enqueue(milli);
 					}
 				}
->>>>>>> FETCH_HEAD
+
 			}
 		}
 		catch(Exception e)
