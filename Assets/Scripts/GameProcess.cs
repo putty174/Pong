@@ -45,6 +45,7 @@ public class GameProcess : MonoBehaviour {
 
 	public int player1Score;
 	public int player2Score;
+	static public int scoreLimit = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -137,12 +138,28 @@ public class GameProcess : MonoBehaviour {
 					{
 						Debug.Log("player 2 scores!");
 						player2Score++;
+						if(player2Score == scoreLimit)
+						{
+							Debug.Log("Player 2 won the game");
+							player1Score = 0;
+							player2Score = 0;
+							//client.Send (128);
+
+						}
 
 					}
 					else if(opPosY == 2)
 					{
 						Debug.Log("player 1 scores!");
 						player1Score++;
+						if(player1Score == scoreLimit)
+						{
+							Debug.Log("Player 1 won the game");
+							player1Score = 0;
+							player2Score = 0;
+							//client.Send (128);
+
+						}
 					}
 
                        oldMin = min;

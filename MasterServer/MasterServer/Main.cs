@@ -35,12 +35,17 @@ namespace MasterServer
 		Thread listenThread1;
 		Thread listenThread2;
 
+
+		int win1;
+		int win2;
+
         int dstart1, dstart2;
         bool start1, start2;
 
 		NetworkStream stream1;
 		NetworkStream stream2;
         int mes1, mes2;
+
 
         int startDelay = 100;
         TimeSpan delay1, delay2;
@@ -106,7 +111,7 @@ namespace MasterServer
             nposx = rand.Next(0, 250);
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
-            vel = .1;
+            vel = .2;
             packet1[0] = (byte) 0;
             packet1[1] = (byte) 0;
             packet1[2] = (byte) 0;
@@ -319,6 +324,22 @@ namespace MasterServer
                 nposx = collideX;
                 nposy = collideY;
                 confirmCollide();
+
+				win1 = stream1.ReadByte ();
+				Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
+				win2 = stream2.ReadByte ();
+				Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
+				if(win1 == 5)
+				{
+					Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				}
+				else if(win2 == 5)
+				{
+					Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				}
+
+
+
             }
 
             if (nposx < (leftPaddlePad / 2.0))
@@ -334,7 +355,27 @@ namespace MasterServer
                 pos2 = 1;
 
             }
+
             //Console.WriteLine("Angle: " + (angle / Math.PI));
+
+
+			//stream1.ReadByte (win1);
+			//win1 = stream1.ReadByte ();
+			//Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
+			//win2 = stream2.ReadByte ();
+			//Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
+			//if(win1 == 128)
+			//{
+				//Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			//}
+			//else if(win2 == 128)
+			//{
+				//Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			//}
+			//stream2.ReadByte (win2);
+
+
+
         }
 
         public void confirmCollide()
