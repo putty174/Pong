@@ -327,7 +327,7 @@ namespace MasterServer
                 pos2 = 2;
                  
             }
-            else if (nposx > (250 - (rightPaddlePad / 2.0)))
+            else if (nposx > (250.0 - (rightPaddlePad / 2.0)))
             {
                 pos1 = 1;
                 pos2 = 1;
@@ -353,6 +353,10 @@ namespace MasterServer
                     Console.WriteLine("P1 missed");
                 }
             }
+            else
+            {
+                Console.WriteLine("P1 - Not Yet");
+            }
 
             if (checkCollide == 2 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
             {
@@ -369,6 +373,10 @@ namespace MasterServer
                     checkCollide = 3;
                     Console.WriteLine("P2 missed");
                 }
+            }
+            else
+            {
+                Console.WriteLine("P2 - Not Yet");
             }
         }
 
