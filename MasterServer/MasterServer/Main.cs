@@ -63,8 +63,8 @@ namespace MasterServer
 		
 		public MainServer()
 		{
-            leftPaddlePad = 35;
-            rightPaddlePad = 35;
+            leftPaddlePad = 30;
+            rightPaddlePad = 30;
             topWallPad = 10;
             botWallPad = 8;
 
@@ -320,6 +320,18 @@ namespace MasterServer
                 nposy = collideY;
                 confirmCollide();
             }
+
+            if (nposx < (leftPaddlePad / 2.0))
+            {
+                pos1 = 2;
+                pos2 = 2;
+                 
+            }
+            else if (nposx > (250 - (rightPaddlePad / 2.0)))
+            {
+                pos1 = 1;
+                pos2 = 1;
+            }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
@@ -475,7 +487,12 @@ namespace MasterServer
                 stream1.Write(packet1, 0, packet1.Length);
                 //Console.WriteLine("Sending Packet2");
                 stream2.Write(packet2, 0, packet2.Length);
-
+                if ((pos1 == 1 && pos2 == 1) || (pos1 == 2 && pos2 == 2))
+                {
+                    startDelay = 100;
+                    nposx = 128;
+                    nposy = 128;
+                }
                 //Console.WriteLine(System.Environment.NewLine);
             }
             
