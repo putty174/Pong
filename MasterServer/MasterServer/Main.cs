@@ -306,8 +306,8 @@ namespace MasterServer
                 collideX = nposx;
                 collideY = nposy;
                 //Console.WriteLine("Collision - Left");
-                //angle = bounceLeft(angle);
-                //nposx = leftPaddlePad;
+                angle = bounceLeft(angle);
+                nposx = leftPaddlePad;
                 checkCollide = 1;
             }
             else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
@@ -318,8 +318,8 @@ namespace MasterServer
                 collideX = nposx;
                 collideY = nposy;
                 //Console.WriteLine("Collision - Left");
-                //angle = bounceRight(angle);
-                //nposx = 250 - rightPaddlePad;
+                angle = bounceRight(angle);
+                nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
             if (nposy < botWallPad)
@@ -339,11 +339,6 @@ namespace MasterServer
                 nposx = collideX;
                 nposy = collideY;
                 confirmCollide();
-
-
-
-
-
             }
 
             if (nposx < (leftPaddlePad / 2.0))
@@ -388,18 +383,15 @@ namespace MasterServer
             {
                 if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
                 {
-                    if (Math.Abs(collideY - pos1) < 15)
+                    if (Math.Abs(collideY - pos1) > 30)
                     {
-                        angle = bounceLeft(angle);
-                        nposx = collideX;
-                        nposy = collideY;
+                        Console.WriteLine("P1 missed");
                         checkCollide = 0;
-                        Console.WriteLine("P1 hit");
                     }
                     else
                     {
-                        checkCollide = 3;
-                        Console.WriteLine("P1 missed");
+                        checkCollide = 0;
+                        Console.WriteLine("P1 hit");
                     }
                 }
                 else
@@ -413,18 +405,16 @@ namespace MasterServer
             {
                 if (TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
                 {
-                    if (Math.Abs(collideY - pos2) < 15)
+                    if (Math.Abs(collideY - pos2) > 30)
                     {
-                        angle = bounceRight(angle);
-                        nposx = collideX;
-                        nposy = collideY;
                         checkCollide = 0;
-                        Console.WriteLine("P2 hit");
+                        Console.WriteLine("P2 missed");
                     }
                     else
                     {
-                        checkCollide = 3;
-                        Console.WriteLine("P2 missed");
+                        checkCollide = 0;
+                        Console.WriteLine("P2 hit");
+                        
                     }
                 }
                 else
