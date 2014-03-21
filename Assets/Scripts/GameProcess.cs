@@ -5,6 +5,8 @@ using System.Collections;
 //An example main function
 public class GameProcess : MonoBehaviour {
 
+	public static int min;
+	public static int sec;
     //screenshot of game state
     struct positions
     {
