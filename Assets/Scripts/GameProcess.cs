@@ -39,7 +39,7 @@ public class GameProcess : MonoBehaviour {
 
 	public int min;
 	public int sec;
-	public int milli;
+	public static int milli;
 	
 	private GameObject ball;
 	private Player1 p1;
@@ -90,9 +90,9 @@ public class GameProcess : MonoBehaviour {
 		p1 = (Player1) GameObject.Find ("Player1").GetComponent ("Player1");
 		p2 = (Player2) GameObject.Find ("Player2").GetComponent ("Player2");
 		bscript = (BallScript) GameObject.Find ("GameBall").GetComponent("BallScript");
-		lPaddle = GameObject.Find ("Player1");
+		lPaddle = GameObject.Find ("Goal2");
 		bWall = GameObject.Find ("BottomWall");
-		paddleRatio = (250.0f / (GameObject.Find("Player2").transform.position.x - GameObject.Find("Player1").transform.position.x));
+		paddleRatio = (250.0f / (GameObject.Find("Goal1").transform.position.x - GameObject.Find("Goal2").transform.position.x));
 		wallRatio = (250.0f / (GameObject.Find ("TopWall").transform.position.y - bWall.transform.position.y));
 	}
 	
@@ -221,21 +221,6 @@ public class GameProcess : MonoBehaviour {
 
 
 	}
-
-	public void win(int player)
-	{
-		if(player == 1)
-		{
-			client.Send (0);
-		}
-		else
-		{
-			client.Send (1);
-		}
-	}
-
-
-
     //return estimated time of collision.
     //Parameters (ball position, ball angle, ball velocity)
 //    public int timeOfcollide(Vector2 pos, int angle, int velocity)
