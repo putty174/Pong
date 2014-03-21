@@ -143,6 +143,8 @@ public class GameProcess : MonoBehaviour {
 							Debug.Log("Player 2 won the game");
 							player1Score = 0;
 							player2Score = 0;
+							client.Send (128);
+
 						}
 
 					}
@@ -155,6 +157,8 @@ public class GameProcess : MonoBehaviour {
 							Debug.Log("Player 1 won the game");
 							player1Score = 0;
 							player2Score = 0;
+							client.Send (128);
+
 						}
 					}
 
