@@ -336,7 +336,7 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                //confirmCollide();
+                confirmCollide();
             }
 
             if (nposx < (leftPaddlePad / 2.0))
