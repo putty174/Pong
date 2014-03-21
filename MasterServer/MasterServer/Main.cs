@@ -106,7 +106,7 @@ namespace MasterServer
             nposx = rand.Next(0, 250);
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
-            vel = .1;
+            vel = .5;
             packet1[0] = (byte) 0;
             packet1[1] = (byte) 0;
             packet1[2] = (byte) 0;
