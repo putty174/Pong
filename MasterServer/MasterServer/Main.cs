@@ -285,7 +285,7 @@ namespace MasterServer
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                Console.WriteLine("Collision - Left");
+                //Console.WriteLine("Collision - Left");
                 //angle = bounceLeft(angle);
                 //nposx = leftPaddlePad;
                 checkCollide = 1;
@@ -297,7 +297,7 @@ namespace MasterServer
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                Console.WriteLine("Collision - Left");
+                //Console.WriteLine("Collision - Left");
                 //angle = bounceRight(angle);
                 //nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
@@ -337,7 +337,8 @@ namespace MasterServer
                 }
                 else
                 {
-                    //Console.WriteLine("P1 missed");
+                    checkCollide = 3;
+                    Console.WriteLine("P1 missed");
                 }
             }
 
@@ -353,7 +354,8 @@ namespace MasterServer
                 }
                 else
                 {
-                    //Console.WriteLine("P2 missed");
+                    checkCollide = 3;
+                    Console.WriteLine("P2 missed");
                 }
             }
         }
@@ -362,12 +364,12 @@ namespace MasterServer
         {
             if (a > (0.5 * Math.PI))
             {
-                Console.WriteLine("BounceLeft() - Up");
+                //Console.WriteLine("BounceLeft() - Up");
                 return (Math.PI - a);
             }
             else if (a < (1.5 * Math.PI))
             {
-                Console.WriteLine("BounceLeft() - Down");
+                //Console.WriteLine("BounceLeft() - Down");
                 return (3 * Math.PI - a);
             }
             else
@@ -378,12 +380,12 @@ namespace MasterServer
         {
             if (a < (0.5 * Math.PI))
             {
-                Console.WriteLine("BounceRight() - Up");
+                //Console.WriteLine("BounceRight() - Up");
                 return (Math.PI - a);
             }
             else if (a > (1.5 * Math.PI))
             {
-                Console.WriteLine("BounceRight() - Down");
+                //Console.WriteLine("BounceRight() - Down");
                 return (3 * Math.PI - a);
             }
             else
