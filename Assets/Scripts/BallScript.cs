@@ -48,6 +48,8 @@ public class BallScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () { 
 		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
+        InvokeRepeating("updateBall", 0f, 0.1f);
+        
 	}
 
 	void Update()
@@ -58,35 +60,11 @@ public class BallScript : MonoBehaviour {
 		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
 		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
 
+        
 		//calculate new position;
-		transform.position = new Vector3 (x,y,0);
+		//transform.position = new Vector3 (x,y,0);
 
-        //Get a new lag to start; one time thing
-        if (start)
-        {
-            lag = GameProcess.getLag();
-            start = false;
-        }
-
-        //If there is a collision (in which a new time stamp is sent), update NTP time and get new lag
-        if (GameProcess.hasCollided())
-        {
-            lag = GameProcess.getLag(); //returns number of seconds total lag as float
-            elapsedTime = 0f;
-        }
-
-        //Counter to keep track of elapsed time.
-        if (elapsedTime < lag)
-        {
-            transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
-            elapsedTime += Time.deltaTime;
-        }
-        else
-        {
-            //Once the lag time is over, get a new lag time and continue interpolating
-            lag = GameProcess.getLag();
-            elapsedTime = 0f;
-        }
+       
         
 	
 /*
@@ -161,8 +139,35 @@ public class BallScript : MonoBehaviour {
 		//                                            0);
 	}
 
-    public static void setLag(float l)
-    { 
+    public void updateBall()
+    {
+        //Get a new lag to start; one time thing
+        if (start)
+        {
+            lag = GameProcess.getLag();
+            start = false;
+        }
+
+        //If there is a collision (in which a new time stamp is sent), update NTP time and get new lag
+        if (GameProcess.hasCollided())
+        {
+            lag = GameProcess.getLag(); //returns number of seconds total lag as float
+            elapsedTime = 0f;
+        }
+
+        //Counter to keep track of elapsed time.
+        if (elapsedTime < lag)
+        {
+            transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
+            elapsedTime += Time.deltaTime;
+        }
+        else
+        {
+            //Once the lag time is over, get a new lag time and continue interpolating
+            lag = GameProcess.getLag();
+            elapsedTime = 0f;
+        }
+ 
     }
 
 	public void BallStart()
