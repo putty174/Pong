@@ -113,21 +113,20 @@ public class GameProcess : MonoBehaviour {
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
 					opPosY = (int) client.receiverBuffer.Dequeue();
 					ballPosX = (int) client.receiverBuffer.Dequeue();
-					float x = (ballPosX / paddleRatio) + lPaddle.transform.position.x;
-					Debug.Log ("ball position: " + x);
 					ballPosY = (int) client.receiverBuffer.Dequeue();
 					min = (int) client.receiverBuffer.Dequeue();
 					sec = (int) client.receiverBuffer.Dequeue();
 					milli = (int) client.receiverBuffer.Dequeue();
+					Debug.Log(opPosY + ", " + ballPosX + ", " + ballPosY + ", " + min + ", " + sec + ", " + milli);
 
                     if (player == -1)
                     {
-						if(opPosY == 0)
+						if(opPosY == 1)
 						{
 							player = 1;
 							Debug.Log("Player 1");
 						}
-						else if(opPosY == 1)
+						else if(opPosY == 2)
 						{
 							player = 2;
 							Debug.Log("Player 2");

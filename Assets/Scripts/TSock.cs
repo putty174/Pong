@@ -11,6 +11,7 @@ public class TSock : MonoBehaviour
 	byte[] bytes;
 	private NetworkStream ns;
 	private Client sock;
+	bool trash;
 
 
 	public TSock (NetworkStream nsIn, Client sIn)
@@ -26,25 +27,31 @@ public class TSock : MonoBehaviour
 		{
 			while (sock.isConnected)
 			{
+				trash = false;
 				ns.Read(bytes, 0, bytes.Length);
 				byte[] milliHold = new byte[2];
 				milliHold[0] = bytes[5];
 				milliHold[1] = bytes[6];
 				int milli = BitConverter.ToInt16(milliHold,0);
 				//Debug.Log(bytes[0] + ", " + bytes[1] + ", " + bytes[2] + ", " + bytes[3] + ", " + bytes[4] + ", " + milli);
-				lock(sock.receiverBuffer)
+				for(int i = 0; i < 7; i++)
 				{
-
-					sock.receiverBuffer.Enqueue((int)bytes[0]);
-					sock.receiverBuffer.Enqueue((int)bytes[1]);
-					sock.receiverBuffer.Enqueue((int)bytes[2]);
-					sock.receiverBuffer.Enqueue((int)bytes[3]);
-					sock.receiverBuffer.Enqueue((int)bytes[4]);
-					sock.receiverBuffer.Enqueue(milli);
+					if(bytes[i] == 0)
+					{
+						trash = true;
+					}
 				}
-				if(sock.receiverBuffer.Count > Client.maxLimit - 6)
+				if(trash)
 				{
-					ns.Read (bytes,0,bytes.Length);
+					lock(sock.receiverBuffer)
+					{
+						sock.receiverBuffer.Enqueue((int)bytes[0]);
+						sock.receiverBuffer.Enqueue((int)bytes[1]);
+						sock.receiverBuffer.Enqueue((int)bytes[2]);
+						sock.receiverBuffer.Enqueue((int)bytes[3]);
+						sock.receiverBuffer.Enqueue((int)bytes[4]);
+						sock.receiverBuffer.Enqueue(milli);
+					}
 				}
 			}
 		}

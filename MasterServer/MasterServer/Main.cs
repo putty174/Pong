@@ -148,14 +148,14 @@ namespace MasterServer
                     if (connectedPlayers == 0)
                     {
                         stream1 = clientList[connectedPlayers].GetStream();
-                        packet1[0] = 0;
+                        packet1[0] = 1;
                         stream1.Write(packet1, 0, packet1.Length);
                         packet1[0] = 128;
                     }
                     else if (connectedPlayers == 1)
                     {
                         stream2 = clientList[connectedPlayers].GetStream();
-                        packet2[0] = 1;
+                        packet2[0] = 2;
                         stream2.Write(packet2, 0, packet2.Length);
                         packet2[0] = 128;
                     }
@@ -536,7 +536,7 @@ namespace MasterServer
                 packet1[6] = milliHold[1];
 
                 int milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
                 //Console.WriteLine("Writing P2-1 " + pos1);
                 packet2[0] = (byte)pos1;
@@ -557,7 +557,7 @@ namespace MasterServer
                 packet2[6] = milliHold[1];
 
                 milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
