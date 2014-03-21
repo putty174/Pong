@@ -197,6 +197,15 @@ public class Client : MonoBehaviour
         }
     }
 
+    public static DateTime updateNTPTime()
+    {
+        dTime = dTime.AddMinutes(uniClock.Elapsed.Minutes).AddSeconds(uniClock.Elapsed.Seconds).AddMilliseconds(uniClock.Elapsed.Milliseconds);
+
+        DateTime dt = new DateTime();
+        dt = dt.AddMinutes(dTime.Minute).AddSeconds(dTime.Second).AddMilliseconds(dTime.Millisecond);
+
+        return dt;
+    }
 
     //<<<<<<< HEAD
     public static DateTime getNTPTime(ref Stopwatch uniClock)

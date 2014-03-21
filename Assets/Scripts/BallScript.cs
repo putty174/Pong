@@ -13,7 +13,7 @@ public class BallScript : MonoBehaviour {
 	public static Vector3 ballPosition;
 
 	// Start speed of the ball
-	public float ballSpeed = 10;
+	public float ballSpeed = 0.1f;
 
 	// max speed of the ball
 	public float maxSpeed = 20f;
@@ -32,7 +32,6 @@ public class BallScript : MonoBehaviour {
 
 
 	private int ballIsHit = 1;
-
 	// velocity
 	//private int velocityY = rigidbody2D.velocity.y;
 
@@ -41,9 +40,10 @@ public class BallScript : MonoBehaviour {
 	// velocity reset
 	private int velocityReset;
 
-
-	private int counter = 0;
-
+    DateTime dt;
+	private float elapsedTime = 0f;
+    private float lag;
+    bool start = true;
 
 	// Use this for initialization
 	void Start () { 
@@ -60,6 +60,34 @@ public class BallScript : MonoBehaviour {
 
 		//calculate new position;
 		transform.position = new Vector3 (x,y,0);
+
+        //Get a new lag to start; one time thing
+        if (start)
+        {
+            lag = GameProcess.getLag();
+            start = false;
+        }
+
+        //If there is a collision (in which a new time stamp is sent), update NTP time and get new lag
+        if (GameProcess.hasCollided())
+        {
+            lag = GameProcess.getLag(); //returns number of seconds total lag as float
+            elapsedTime = 0f;
+        }
+
+        //Counter to keep track of elapsed time.
+        if (elapsedTime < lag)
+        {
+            transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
+            elapsedTime += Time.deltaTime;
+        }
+        else
+        {
+            //Once the lag time is over, get a new lag time and continue interpolating
+            lag = GameProcess.getLag();
+            elapsedTime = 0f;
+        }
+        
 	
 /*
 		//int currentTime = Client.dTime.Millisecond;
@@ -92,7 +120,6 @@ public class BallScript : MonoBehaviour {
 		//if(counter < timeStamp) counter++;
 
 		//transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
-
 //		int currentTime = (Client.dTime.Minute * 60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 //
 //		/*
@@ -121,6 +148,7 @@ public class BallScript : MonoBehaviour {
 //
 //		transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
 
+		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
 		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
@@ -131,11 +159,11 @@ public class BallScript : MonoBehaviour {
 		//Vector3 deadReckoningPosition = new Vector3(transform.position.x + speed * (timeStamp), 
 		//                                            transform.position.y + speed * (timeStamp),
 		//                                            0);
-
-
-
-
 	}
+
+    public static void setLag(float l)
+    { 
+    }
 
 	public void BallStart()
 	{
