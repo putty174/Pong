@@ -39,8 +39,6 @@ public class GameProcess : MonoBehaviour {
     public int histPos; //Keeps track of posHistory position
     public int lerpTime; //Time for interpolation
 
-	public int min;
-	public int sec;
 	public static int milli;
 	
 	private GameObject ball;

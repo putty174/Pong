@@ -294,6 +294,7 @@ namespace MasterServer
                 checkCollide = 2;
             }
             
+            //if the ball is getting close to the bottom
             if (nposy < botWallPad)
             {
                 //nposy = Math.Abs(nposy);
