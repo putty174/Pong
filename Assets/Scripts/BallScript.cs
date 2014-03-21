@@ -48,7 +48,7 @@ public class BallScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () { 
 		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
-        InvokeRepeating("updateBall", 0f, 0.1f);
+       // InvokeRepeating("updateBall", 0f, 0.1f);
         
 	}
 

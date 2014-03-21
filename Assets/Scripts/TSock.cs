@@ -29,7 +29,31 @@ public class TSock : MonoBehaviour
 		{
 			while (sock.isConnected)
 			{
+<<<<<<< HEAD
 				if(ns.DataAvailable)
+=======
+				trash = false;
+				ns.Read(bytes, 0, bytes.Length);
+				byte[] milliHold = new byte[2];
+				milliHold[0] = bytes[5];
+				milliHold[1] = bytes[6];
+				int milli = BitConverter.ToInt16(milliHold,0);
+				//Debug.Log(bytes[0] + ", " + bytes[1] + ", " + bytes[2] + ", " + bytes[3] + ", " + bytes[4] + ", " + milli);
+				for(int i = 0; i < 7; i++)
+				{
+					if(bytes[i] == 0)
+					{
+						trash = true;
+					}
+				}
+<<<<<<< HEAD
+//				if(sock.receiverBuffer.Count > Client.maxLimit - 6)
+//				{
+//					ns.Read (bytes,0,bytes.Length);
+//				}
+=======
+				if(trash)
+>>>>>>> 1f836056f9f83fdc9e418393106ce7ceb1299616
 				{
 					ns.Read(bytes,0,bytes.Length);
 					milliHold[0] = bytes[5];
@@ -46,6 +70,7 @@ public class TSock : MonoBehaviour
 						Debug.Log(GameProcess.opPosY + ", " + GameProcess.ballPosX + ", " + GameProcess.ballPosY + ", " + GameProcess.min + ", " + GameProcess.sec + ", " + GameProcess.milli);
 					}
 				}
+<<<<<<< HEAD
 //				trash = false;
 //				ns.Read(bytes, 0, bytes.Length);
 //
@@ -74,6 +99,9 @@ public class TSock : MonoBehaviour
 //						sock.receiverBuffer.Enqueue(milli);
 //					}
 //				}
+=======
+>>>>>>> FETCH_HEAD
+>>>>>>> 1f836056f9f83fdc9e418393106ce7ceb1299616
 			}
 		}
 		catch(Exception e)
