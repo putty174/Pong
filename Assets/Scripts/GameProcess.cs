@@ -316,7 +316,7 @@ public class GameProcess : MonoBehaviour {
 
         dt = dt.AddMinutes(-min).AddSeconds(-sec).AddMilliseconds(-milli);
 
-        return (float) TimeSpan.FromTicks(dt.Ticks).TotalSeconds;
+        return (float)Math.Abs(TimeSpan.FromTicks(dt.Ticks).TotalSeconds);
     }
 
 
