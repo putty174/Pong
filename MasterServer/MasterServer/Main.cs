@@ -325,18 +325,18 @@ namespace MasterServer
                 nposy = collideY;
                 confirmCollide();
 
-				//win1 = stream1.ReadByte ();
-				//Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
-				//win2 = stream2.ReadByte ();
-				//Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
-				//if(win1 == 128)
-				//{
-				//	Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				//}
-				//else if(win2 == 128)
-				//{
-				//	Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				//}
+				win1 = stream1.ReadByte ();
+				Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
+				win2 = stream2.ReadByte ();
+				Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
+				if(win1 == 5)
+				{
+					Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				}
+				else if(win2 == 5)
+				{
+					Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				}
 
 
 
