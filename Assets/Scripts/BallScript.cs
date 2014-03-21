@@ -58,39 +58,46 @@ public class BallScript : MonoBehaviour {
 
 		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
 		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
+
+		//calculate new position;
 		transform.position = new Vector3 (x,y,0);
-		//Comment out above later
+	
 
-		//Lag compensation
+		//int currentTime = Client.dTime.Millisecond;
+		int currentTime = (Client.dTime.Minute*100000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
-		//packets come from GameProcess.cs
-		//NTPTime material comes from Client.cs
+		/*
+		if(currentTime > 999)
+		{
 
-		//GameProcess.cs:
-		//aposxaposy and bposxbposy comes from GameProcess.cs
-//		public static int ballPosX; //first receive assumed to be oposx.  second receive assumed to be nposx
-		//		public static int ballPosY;  //first receive assumed to be oposx.  second receive assumed to be nposx
-//		public static int ballVel;
-		//Assuming these assigned already
+		}
+		else if (currentTime > 99999)
+		{
+		}
+		else if(currentTime > 9999999)
+		{
+		}
+		*/
 
-		//Client.cs:
-		//		public static Stopwatch uniClock; //first receive assumed to be timeStampA.  second receive assumed to be timeStampB
-//		public static DateTime dTime;
-
-
-		int currentTime = Client.dTime.Millisecond;
-		int timeOfCollision = GameProcess.milli;
-
+		//int timeOfCollision = GameProcess.milli;
+		int timeOfCollision = (GameProcess.min * 100000)+(GameProcess.sec*1000)+(GameProcess.milli);
 		int timeStamp = Math.Abs (timeOfCollision - currentTime);
 
 
-		//position = position + (speed * time)
 
 		int speed = GameProcess.ballVel;
+
 
 		if(counter < timeStamp) counter++;
 
 		transform.Translate (transform.position.x + (speed * counter), transform.position.x + (speed * counter), 0);
+
+		//Not for how this game is structured...
+		//calculate dead reckoning position	
+		//Vector3 deadReckoningPosition = new Vector3(transform.position.x + speed * (timeStamp), 
+		//                                            transform.position.y + speed * (timeStamp),
+		//                                            0);
+
 
 
 
@@ -128,10 +135,12 @@ public class BallScript : MonoBehaviour {
 		if (y > 0.5)
 		{
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, Mathf.Abs(rigidbody2D.velocity.y));
+			transform.audio.Play();
 		}
 		else if (y < -0.5)
 		{
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -Mathf.Abs(rigidbody2D.velocity.y));
+			transform.audio.Play ();
 		}
 //
 //		var randomUpAngle1 = Random.Range (0,80);//Random angle away from player 1 if ball hits top of paddle
