@@ -42,7 +42,6 @@ namespace MasterServer
 		NetworkStream stream2;
         int mes1, mes2;
 
-
         int startDelay = 100;
         TimeSpan delay1, delay2;
         DateTime lastTime;
@@ -335,7 +334,6 @@ namespace MasterServer
                 pos2 = 1;
 
             }
-
             //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
