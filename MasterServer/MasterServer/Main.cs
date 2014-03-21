@@ -247,6 +247,10 @@ namespace MasterServer
 
         public void update()
         {
+            if (angle < 0.0)
+                angle += 2 * Math.PI;
+            else if (angle > 2 * Math.PI)
+                angle -= 2 * Math.PI;
             if (dstart1 == 2 && dstart2 == 2)
             {
                 nposx = 128;
@@ -257,48 +261,45 @@ namespace MasterServer
             if (start1 && start2)
             {
                 nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
-                Console.WriteLine("BallX: " + nposx);
+                //Console.WriteLine("BallX: " + nposx);
                 nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
                 //Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
-			if(nposx < 30)
-			{
-				nposx = 128;
-				nposy = 128;
-			}
-			if(nposx > 250)
-			{
-				nposx = 128;
-				nposy = 128;
-			}
+            //if(nposx < 30)
+            //{
+            //    nposx = 128;
+            //    nposy = 128;
+            //}
+            //if(nposx > 250)
+            //{
+            //    nposx = 128;
+            //    nposy = 128;
+            //}
 
-            if (angle < 0.0)
-                angle += 2 * Math.PI;
-            else if (angle > 2 * Math.PI)
-                angle -= 2 * Math.PI;
-
-            if (nposx < leftPaddlePad /*&& checkCollide == 0*/)
+            if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                angle = bounceLeft(angle);
-                nposx = leftPaddlePad;
+                Console.WriteLine("Collision - Left");
+                //angle = bounceLeft(angle);
+                //nposx = leftPaddlePad;
                 checkCollide = 1;
             }
-            else if (nposx > 250 - rightPaddlePad /*&& checkCollide == 0*/)
+            else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                angle = bounceRight(angle);
-                nposx = 250 - rightPaddlePad;
+                Console.WriteLine("Collision - Left");
+                //angle = bounceRight(angle);
+                //nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
             if (nposy < botWallPad)
@@ -315,9 +316,11 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                //confirmCollide();
+                nposx = collideX;
+                nposy = collideY;
+                confirmCollide();
             }
-            Console.WriteLine("Angle: " + (angle / Math.PI));
+            //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
         public void confirmCollide()
@@ -334,7 +337,7 @@ namespace MasterServer
                 }
                 else
                 {
-                    Console.WriteLine("P1 missed");
+                    //Console.WriteLine("P1 missed");
                 }
             }
 
@@ -350,7 +353,7 @@ namespace MasterServer
                 }
                 else
                 {
-                    Console.WriteLine("P2 missed");
+                    //Console.WriteLine("P2 missed");
                 }
             }
         }
