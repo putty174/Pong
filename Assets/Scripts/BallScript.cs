@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using System.Net.Sockets;
+using System.Net;
+using System;
+using System.Diagnostics;
+using System.Linq;
 
 public class BallScript : MonoBehaviour {
 
@@ -38,6 +44,8 @@ public class BallScript : MonoBehaviour {
 	private int velocityReset;
 
 
+	private int counter = 0;
+
 
 	// Use this for initialization
 	void Start () { 
@@ -70,10 +78,19 @@ public class BallScript : MonoBehaviour {
 //		public static DateTime dTime;
 
 
+		int currentTime = Client.dTime.Millisecond;
+		int timeOfCollision = GameProcess.milli;
+
+		int timeStamp = Math.Abs (timeOfCollision - currentTime);
 
 
+		//position = position + (speed * time)
 
+		int speed = GameProcess.ballVel;
 
+		if(counter < timeStamp) counter++;
+
+		transform.Translate (transform.position.x + (speed * counter), transform.position.x + (speed * counter), 0);
 
 
 
