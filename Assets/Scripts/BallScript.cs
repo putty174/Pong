@@ -12,8 +12,6 @@ public class BallScript : MonoBehaviour {
 
 	public static Vector3 ballPosition;
 
-
-
 	// Start speed of the ball
 	public float ballSpeed = 10;
 
@@ -56,39 +54,25 @@ public class BallScript : MonoBehaviour {
 	{
 		changeBallColor ();
 
+        //this is the ball position that the gameprocess records
 		float x = (GameProcess.ballPosX / GameProcess.paddleRatio) + gp.lPaddle.transform.position.x;
 		float y = (GameProcess.ballPosY / GameProcess.wallRatio) + gp.bWall.transform.position.y;
 
 		//calculate new position;
 		transform.position = new Vector3 (x,y,0);
 	
-
+/*
 		//int currentTime = Client.dTime.Millisecond;
 		int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
-
-		/*
-		if(currentTime > 999)
-		{
-
-		}
-		else if (currentTime > 99999)
-		{
-		}
-		else if(currentTime > 9999999)
-		{
-		}
-		*/
 
 		//int timeOfCollision = GameProcess.milli;
 		int timeOfCollision = (GameProcess.min * 60000)+(GameProcess.sec*1000)+(GameProcess.milli);
 		int timeStamp = Math.Abs (timeOfCollision - currentTime);
 
-
-
 		int speed = GameProcess.ballVel;
 
-
-		if(counter < timeStamp) counter++;
+		if(counter < timeStamp) 
+            counter++;
 
 		transform.Translate(transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
 
@@ -100,7 +84,7 @@ public class BallScript : MonoBehaviour {
 
 
 
-
+        */
 	}
 
 	public void BallStart()

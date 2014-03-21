@@ -60,11 +60,12 @@ namespace MasterServer
         byte[] packet1;
         byte[] packet2;
         byte[] milliHold;
+
 		
 		public MainServer()
 		{
-            leftPaddlePad = 35;
-            rightPaddlePad = 35;
+            leftPaddlePad = 30;
+            rightPaddlePad = 30;
             topWallPad = 10;
             botWallPad = 8;
 
@@ -99,7 +100,7 @@ namespace MasterServer
 
         public void restart()
         {
-
+     
             dstart1 = 0;
             dstart2 = 0;
             checkCollide = 0;
@@ -126,7 +127,6 @@ namespace MasterServer
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
             packet1[5] = milliHold[0];
             packet1[6] = milliHold[1];
-
         }
 		
 		public void ListendForTCPClients()
@@ -303,10 +303,27 @@ namespace MasterServer
                 angle = bounceTop(angle);
                 nposy = 250 - topWallPad;
             }
+            
             if (checkCollide == 1 || checkCollide == 2)
             {
                 //confirmCollide();
             }
+
+            
+            if (nposx < (leftPaddlePad / 2.0))
+            {
+                pos1 = 2;
+                pos2 = 2;
+                
+            }
+            else if (nposx > (250 - (rightPaddlePad / 2.0)))
+            {
+                pos1 = 1;
+                pos2 = 1;
+            }
+            
+            
+            
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
 
@@ -461,6 +478,12 @@ namespace MasterServer
                 //Console.WriteLine("Sending Packet2");
                 stream2.Write(packet2, 0, packet2.Length);
 
+                if ((pos1 == 1 && pos2 == 1) || (pos1 == 2 && pos2 == 2))
+                {
+                    startDelay = 100;
+                    nposx = 128;
+                    nposy = 128;
+                }
                 //Console.WriteLine(System.Environment.NewLine);
             }
             
