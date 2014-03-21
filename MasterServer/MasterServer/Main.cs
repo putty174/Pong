@@ -35,6 +35,10 @@ namespace MasterServer
 		Thread listenThread1;
 		Thread listenThread2;
 
+
+		int win1;
+		int win2;
+
         int dstart1, dstart2;
         bool start1, start2;
 
@@ -335,6 +339,23 @@ namespace MasterServer
 
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
+
+
+			//stream1.ReadByte (win1);
+			win1 = stream1.ReadByte ();
+			win2 = stream2.ReadByte ();
+			if(win1 == 128)
+			{
+				Console.WriteLine ("Player 1 has won");
+			}
+			else if(win2 == 128)
+			{
+				Console.WriteLine ("Player 2 has won");
+			}
+			//stream2.ReadByte (win2);
+
+
+
         }
 
         public void confirmCollide()
