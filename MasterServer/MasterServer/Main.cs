@@ -336,8 +336,6 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                nposx = collideX;
-                nposy = collideY;
                 confirmCollide();
             }
 
@@ -386,7 +384,10 @@ namespace MasterServer
                     if (Math.Abs(collideY - pos1) > 30)
                     {
                         Console.WriteLine("P1 missed");
-                        checkCollide = 0;
+                        angle = bounceRight(angle);
+                        nposx = collideX;
+                        nposy = collideY;
+                        checkCollide = 3;
                     }
                     else
                     {
@@ -408,6 +409,9 @@ namespace MasterServer
                     if (Math.Abs(collideY - pos2) > 30)
                     {
                         checkCollide = 0;
+                        angle = bounceLeft(angle);
+                        nposx = collideX;
+                        nposy = collideY;
                         Console.WriteLine("P2 missed");
                     }
                     else
@@ -544,6 +548,7 @@ namespace MasterServer
                     startDelay = 100;
                     nposx = 128;
                     nposy = 128;
+                    checkCollide = 0;
                 }
                 //Console.WriteLine(System.Environment.NewLine);
             }
