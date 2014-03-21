@@ -263,6 +263,16 @@ namespace MasterServer
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
+			if(nposx < 0)
+			{
+				nposx = 128;
+				nposy = 128;
+			}
+			if(nposx > 250)
+			{
+				nposx = 128;
+				nposy = 128;
+			}
 
             if (angle < 0.0)
                 angle += 2 * Math.PI;
