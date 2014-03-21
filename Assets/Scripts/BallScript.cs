@@ -92,7 +92,7 @@ public class BallScript : MonoBehaviour {
 		//if(counter < timeStamp) counter++;
 
 		//transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
-=======
+
 //		int currentTime = (Client.dTime.Minute * 60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 //
 //		/*
@@ -120,10 +120,9 @@ public class BallScript : MonoBehaviour {
 //		if(counter < timeStamp) counter++;
 //
 //		transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
->>>>>>> FETCH_HEAD
-=======
-		int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
->>>>>>> FETCH_HEAD
+
+		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
+
 
 
 		//Not for how this game is structured...
@@ -134,7 +133,7 @@ public class BallScript : MonoBehaviour {
 
 
 
-        */
+
 	}
 
 	public void BallStart()
