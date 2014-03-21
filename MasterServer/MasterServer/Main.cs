@@ -279,26 +279,26 @@ namespace MasterServer
             else if (angle > 2 * Math.PI)
                 angle -= 2 * Math.PI;
 
-            if (nposx < leftPaddlePad && checkCollide == 0)
+            if (nposx < leftPaddlePad /*&& checkCollide == 0*/)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                //angle = bounceLeft(angle);
-                //nposx = leftPaddlePad;
+                angle = bounceLeft(angle);
+                nposx = leftPaddlePad;
                 checkCollide = 1;
             }
-            else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
+            else if (nposx > 250 - rightPaddlePad /*&& checkCollide == 0*/)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                //angle = bounceRight(angle);
-                //nposx = 250 - rightPaddlePad;
+                angle = bounceRight(angle);
+                nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
             if (nposy < botWallPad)
@@ -315,7 +315,7 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                confirmCollide();
+                //confirmCollide();
             }
             Console.WriteLine("Angle: " + (angle / Math.PI));
         }
@@ -330,6 +330,11 @@ namespace MasterServer
                     nposx = collideX;
                     nposy = collideY;
                     checkCollide = 0;
+                    Console.WriteLine("P1 hit");
+                }
+                else
+                {
+                    Console.WriteLine("P1 missed");
                 }
             }
 
@@ -341,6 +346,11 @@ namespace MasterServer
                     nposx = collideX;
                     nposy = collideY;
                     checkCollide = 0;
+                    Console.WriteLine("P2 hit");
+                }
+                else
+                {
+                    Console.WriteLine("P2 missed");
                 }
             }
         }
