@@ -164,21 +164,6 @@ public class GameProcess : MonoBehaviour {
 			}
 		}
 	}
-
-	public void win(int player)
-	{
-		if(player == 1)
-		{
-			client.Send (0);
-		}
-		else
-		{
-			client.Send (1);
-		}
-	}
-
-
-
     //return estimated time of collision.
     //Parameters (ball position, ball angle, ball velocity)
 //    public int timeOfcollide(Vector2 pos, int angle, int velocity)

@@ -1,10 +1,17 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BallScript.cs">
     <Files>
       <File FileName="Assets/Scripts/BallScript.cs" Line="65" Column="3" />
       <File FileName="Assets/Scripts/Client.cs" Line="62" Column="36" />
       <File FileName="Assets/Scripts/GameProcess.cs" Line="8" Column="16" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameProcess.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="10" Column="26" />
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

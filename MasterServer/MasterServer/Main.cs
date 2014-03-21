@@ -36,30 +36,24 @@ namespace MasterServer
 		Thread listenThread2;
 
         int dstart1, dstart2;
-        bool client1Start = false;
-        bool client2Start = false;
         bool start1, start2;
 
 		NetworkStream stream1;
 		NetworkStream stream2;
         int mes1, mes2;
 
-        int startDelay = 500;
-        int delay1, delay2;
-        DateTime startTime;
+        int startDelay = 100;
+        TimeSpan delay1, delay2;
         DateTime lastTime;
-        DateTime timeStamp;
         Random rand = new Random();
 
         int pos1, pos2;
-        int vel1, vel2;
-        int time1, time2;
-        int col1, col2;
-        double oposx, oposy;
         double nposx, nposy;
+        double collideX, collideY;
+        int checkCollide;
+        DateTime collideTime;
         double angle;
         double vel;
-        double angleRatio;
 
         int leftPaddlePad, rightPaddlePad, topWallPad, botWallPad;
 
@@ -80,8 +74,7 @@ namespace MasterServer
 
             dTime = getNTPTime(ref uniClock);
 
-            angleRatio = 2 * Math.PI / 250;
-
+            
 			connectedPlayers = 0;
             start1 = false;
             start2 = false;
@@ -109,8 +102,7 @@ namespace MasterServer
 
             dstart1 = 0;
             dstart2 = 0;
-            oposx = 128;
-            oposy = 128;
+            checkCollide = 0;
             nposx = rand.Next(0, 250);
             nposy = rand.Next(0, 250);
             angle = rand.NextDouble() * 2 * Math.PI;
@@ -232,8 +224,8 @@ namespace MasterServer
                 if (dstart1 == 1)
                 {
                     dTimeNew = getNTPTime(ref uniClock);
-                    delay1 = Convert.ToInt32(dTimeNew.Subtract(dTime).TotalMilliseconds / 2);
-                    Console.WriteLine("P1 delay: " + delay1);
+                    delay1 = dTimeNew.Subtract(dTime);
+                    Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2));
                     dstart1 = 2;
                 }
 
@@ -242,8 +234,8 @@ namespace MasterServer
                 if (dstart2 == 1)
                 {
                     dTimeNew = getNTPTime(ref uniClock);
-                    delay2 = Convert.ToInt32(dTimeNew.Subtract(dTime).TotalMilliseconds / 2);
-                    Console.WriteLine("P2 delay: " + delay2);
+                    delay2 = dTimeNew.Subtract(dTime);
+                    Console.WriteLine("P2 delay: " + (delay2.TotalMilliseconds / 2));
                     dstart2 = 2;
                 }
             }
@@ -251,41 +243,6 @@ namespace MasterServer
             {
                 Console.WriteLine(ex.ToString());
             }
-			//stream 1
-			
-            
-			//vel2 = stream2.ReadByte();
-			//stream1.WriteByte((byte)vel2);
-			//col2 = stream2.ReadByte();
-			//time2 = stream2.ReadByte();
-
-			//stream 2
-			
-            
-			//vel1 = stream1.ReadByte();
-			//stream2.WriteByte((byte)vel1);
-			//col1 = stream1.ReadByte();
-			//time1 = stream1.ReadByte();
-
-			//stream 1
-            //stream1.WriteByte((byte)Convert.ToInt32(nposx));
-            //stream1.WriteByte((byte)Convert.ToInt32(nposy));
-            //stream1.WriteByte((byte)Convert.ToInt32(vel));
-            //stream1.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
-            //stream1.WriteByte((byte)lastTime.Second);
-            
-			//stream 2
-			//stream2.WriteByte((byte)Convert.ToInt32(nposx));
-            //stream2.WriteByte((byte)Convert.ToInt32(nposy));
-            //stream2.WriteByte((byte)Convert.ToInt32(vel));
-            //stream2.WriteByte((byte)Convert.ToInt32((angle*250) / (2*Math.PI)));
-           //stream2.WriteByte((byte)lastTime.Second);
-
-            //Console.WriteLine(" >> Client 1: " + pos1 + " , " + vel1 + " , " + col1 + " , " + time1);
-            //Console.WriteLine("    >> Client 2: " + pos2 + " , " + vel2 + " , " + col2 + " , " + time2);
-            //Console.WriteLine(" >> Client 1: " + pos1);
-            //Console.WriteLine("    >> Client 2 " + pos2);
-            //Console.WriteLine(System.Environment.NewLine);
         }
 
         public void update()
@@ -312,19 +269,27 @@ namespace MasterServer
             else if (angle > 2 * Math.PI)
                 angle -= 2 * Math.PI;
 
-            if (nposx < leftPaddlePad)
+            if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
-                angle = bounceLeft(angle);
-                nposx = leftPaddlePad;
+                collideTime = DateTime.Now;
+                collideX = nposx;
+                collideY = nposy;
+                //angle = bounceLeft(angle);
+                //nposx = leftPaddlePad;
+                checkCollide = 1;
             }
-            else if (nposx > 250 - rightPaddlePad)
+            else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
-                angle = bounceRight(angle);
-                nposx = 250 - rightPaddlePad;
+                collideTime = DateTime.Now;
+                collideX = nposx;
+                collideY = nposy;
+                //angle = bounceRight(angle);
+                //nposx = 250 - rightPaddlePad;
+                checkCollide = 2;
             }
             if (nposy < botWallPad)
             {
@@ -338,19 +303,48 @@ namespace MasterServer
                 angle = bounceTop(angle);
                 nposy = 250 - topWallPad;
             }
-            //Console.WriteLine("Angle: " + (angle / Math.PI));
+            if (checkCollide == 1 || checkCollide == 2)
+            {
+                confirmCollide();
+            }
+            Console.WriteLine("Angle: " + (angle / Math.PI));
+        }
+
+        public void confirmCollide()
+        {
+            if (checkCollide == 1 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+            {
+                if (Math.Abs(collideY - pos1) < 30)
+                {
+                    angle = bounceLeft(angle);
+                    nposx = collideX;
+                    nposy = collideY;
+                    checkCollide = 0;
+                }
+            }
+
+            if (checkCollide == 2 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+            {
+                if (Math.Abs(collideY - pos2) < 30)
+                {
+                    angle = bounceRight(angle);
+                    nposx = collideX;
+                    nposy = collideY;
+                    checkCollide = 0;
+                }
+            }
         }
 
         public double bounceLeft(double a)
         {
             if (a > (0.5 * Math.PI))
             {
-                //Console.WriteLine("BounceLeft() - Up");
+                Console.WriteLine("BounceLeft() - Up");
                 return (Math.PI - a);
             }
             else if (a < (1.5 * Math.PI))
             {
-                //Console.WriteLine("BounceLeft() - Down");
+                Console.WriteLine("BounceLeft() - Down");
                 return (3 * Math.PI - a);
             }
             else
@@ -361,12 +355,12 @@ namespace MasterServer
         {
             if (a < (0.5 * Math.PI))
             {
-                //Console.WriteLine("BounceRight() - Up");
+                Console.WriteLine("BounceRight() - Up");
                 return (Math.PI - a);
             }
             else if (a > (1.5 * Math.PI))
             {
-                //Console.WriteLine("BounceRight() - Down");
+                Console.WriteLine("BounceRight() - Down");
                 return (3 * Math.PI - a);
             }
             else
