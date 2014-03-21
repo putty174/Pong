@@ -298,7 +298,7 @@ namespace MasterServer
             //    nposy = 128;
             //}
 
-            if (nposx < leftPaddlePad && checkCollide == 0)
+            if (nposx < leftPaddlePad /*&& checkCollide == 0*/)
             {
                 //nposx = Math.Abs(nposx);
                 dTime = getNTPTime(ref uniClock);
@@ -310,7 +310,7 @@ namespace MasterServer
                 nposx = leftPaddlePad;
                 checkCollide = 1;
             }
-            else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
+            else if (nposx > 250 - rightPaddlePad/* && checkCollide == 0*/)
             {
                 //nposx = 250 - (nposx - 250);
                 dTime = getNTPTime(ref uniClock);
@@ -336,7 +336,7 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
-                confirmCollide();
+                //confirmCollide();
             }
 
             if (nposx < (leftPaddlePad / 2.0))
@@ -408,7 +408,7 @@ namespace MasterServer
                 {
                     if (Math.Abs(collideY - pos2) > 30)
                     {
-                        checkCollide = 0;
+                        checkCollide = 3;
                         angle = bounceLeft(angle);
                         nposx = collideX;
                         nposy = collideY;
