@@ -36,8 +36,8 @@ namespace MasterServer
 		Thread listenThread2;
 
 
-		int win1;
-		int win2;
+		int win1 = 0;
+		int win2 = 0;
 
         int dstart1, dstart2;
         bool start1, start2;
@@ -252,6 +252,21 @@ namespace MasterServer
 
         public void update()
         {
+
+			//Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
+		
+			//Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
+			if(pos1 == 5)
+			{
+				Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			}
+			else if(pos1 == 5)
+			{
+				Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			}
+
+
+
             if (angle < 0.0)
                 angle += 2 * Math.PI;
             else if (angle > 2 * Math.PI)
@@ -325,18 +340,7 @@ namespace MasterServer
                 nposy = collideY;
                 confirmCollide();
 
-				win1 = stream1.ReadByte ();
-				Console.WriteLine ("Player 1 WIN VALUE: " + win1 + "**********************");
-				win2 = stream2.ReadByte ();
-				Console.WriteLine ("Player 2 WIN VALUE: " + win2 + "**********************");
-				if(win1 == 5)
-				{
-					Console.WriteLine ("Player 1 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				}
-				else if(win2 == 5)
-				{
-					Console.WriteLine ("Player 2 has won !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				}
+
 
 
 
