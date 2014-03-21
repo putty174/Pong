@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TSock.cs">
     <Files>
       <File FileName="Assets/Scripts/GameProcess.cs" Line="326" Column="20" />
@@ -9,6 +10,12 @@
       <File FileName="Assets/Scripts/BallScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BoardScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TSock.cs" Line="48" Column="8" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TSock.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="145" Column="1" />
+      <File FileName="Assets\Scripts\TSock.cs" Line="33" Column="36" />
+>>>>>>> FETCH_HEAD
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
