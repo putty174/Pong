@@ -121,10 +121,7 @@ public class BallScript : MonoBehaviour {
 //
 //		transform.Translate (transform.position.x + (speed * counter), transform.position.y + (speed * counter), 0);
 
-<<<<<<< HEAD
 
-=======
->>>>>>> FETCH_HEAD
 		//int currentTime = (Client.dTime.Minute*60000)+(Client.dTime.Second*1000)+(Client.dTime.Millisecond);
 
 
@@ -137,11 +134,7 @@ public class BallScript : MonoBehaviour {
 
 
 
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> FETCH_HEAD
 	}
 
 	public void BallStart()
