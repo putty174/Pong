@@ -41,7 +41,7 @@ public class BallScript : MonoBehaviour {
 	private int velocityReset;
 
     DateTime dt;
-	private float counter = 0;
+	private float elapsedTime = 0f;
     private float lag;
     bool start = true;
 
@@ -72,13 +72,20 @@ public class BallScript : MonoBehaviour {
         if (GameProcess.hasCollided())
         {
             lag = GameProcess.getLag(); //returns number of seconds total lag as float
+            elapsedTime = 0f;
         }
 
         //Counter to keep track of elapsed time.
-        if (counter < lag)
+        if (elapsedTime < lag)
         {
             transform.Translate(transform.position.x + ballSpeed * Time.deltaTime, transform.position.y + ballSpeed * Time.deltaTime, 0);
-            counter += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
+        }
+        else
+        {
+            //Once the lag time is over, get a new lag time and continue interpolating
+            lag = GameProcess.getLag();
+            elapsedTime = 0f;
         }
         
 	
