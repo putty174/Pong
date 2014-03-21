@@ -316,6 +316,8 @@ namespace MasterServer
             }
             if (checkCollide == 1 || checkCollide == 2)
             {
+                nposx = collideX;
+                nposy = collideY;
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
