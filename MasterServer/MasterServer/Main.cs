@@ -286,8 +286,8 @@ namespace MasterServer
                 collideX = nposx;
                 collideY = nposy;
                 //Console.WriteLine("Collision - Left");
-                angle = bounceLeft(angle);
-                nposx = leftPaddlePad;
+                //angle = bounceLeft(angle);
+                //nposx = leftPaddlePad;
                 checkCollide = 1;
             }
             else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
@@ -298,8 +298,8 @@ namespace MasterServer
                 collideX = nposx;
                 collideY = nposy;
                 //Console.WriteLine("Collision - Left");
-                angle = bounceRight(angle);
-                nposx = 250 - rightPaddlePad;
+                //angle = bounceRight(angle);
+                //nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
             }
             if (nposy < botWallPad)
@@ -325,12 +325,14 @@ namespace MasterServer
             {
                 pos1 = 2;
                 pos2 = 2;
+				restart();
                  
             }
             else if (nposx > (250.0 - (rightPaddlePad / 2.0)))
             {
                 pos1 = 1;
                 pos2 = 1;
+				restart();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
         }
