@@ -263,7 +263,7 @@ namespace MasterServer
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
-			if(nposx < 0)
+			if(nposx < 30)
 			{
 				nposx = 128;
 				nposy = 128;
