@@ -30,17 +30,15 @@ public class TSock : MonoBehaviour
 			{
 				if(ns.DataAvailable)
 				{
-<<<<<<< HEAD
 
-					if(bytes[i] == 0)
-=======
+
+
+
 					ns.Read(bytes,0,bytes.Length);
 					milliHold[0] = bytes[5];
 					milliHold[1] = bytes[6];
 					int milli = BitConverter.ToInt16(milliHold,0);
-					lock(sock.receiverBuffer)
->>>>>>> FETCH_HEAD
-					{
+
 						GameProcess.opPosY = (int)bytes[0];
 						GameProcess.ballPosX = (int)bytes[1];
 						GameProcess.ballPosY = (int)bytes[2];
@@ -48,24 +46,24 @@ public class TSock : MonoBehaviour
 						GameProcess.sec = (int)bytes[4];
 						GameProcess.milli = milli;
 						Debug.Log(GameProcess.opPosY + ", " + GameProcess.ballPosX + ", " + GameProcess.ballPosY + ", " + GameProcess.min + ", " + GameProcess.sec + ", " + GameProcess.milli);
-					}
-				}
-<<<<<<< HEAD
 
-				if(!trash)
-				{
-					lock(sock.receiverBuffer)
-					{
-						sock.receiverBuffer.Enqueue((int)bytes[0]);
-						sock.receiverBuffer.Enqueue((int)bytes[1]);
-						sock.receiverBuffer.Enqueue((int)bytes[2]);
-						sock.receiverBuffer.Enqueue((int)bytes[3]);
-						sock.receiverBuffer.Enqueue((int)bytes[4]);
-						sock.receiverBuffer.Enqueue(milli);
-					}
 				}
 
-=======
+
+//				if(!trash)
+//				{
+//					lock(sock.receiverBuffer)
+//					{
+//						sock.receiverBuffer.Enqueue((int)bytes[0]);
+//						sock.receiverBuffer.Enqueue((int)bytes[1]);
+//						sock.receiverBuffer.Enqueue((int)bytes[2]);
+//						sock.receiverBuffer.Enqueue((int)bytes[3]);
+//						sock.receiverBuffer.Enqueue((int)bytes[4]);
+//						sock.receiverBuffer.Enqueue(milli);
+//					}
+//				}
+
+
 //				ns.Read(bytes, 0, bytes.Length);
 //				byte[] milliHold = new byte[2];
 //				milliHold[0] = bytes[5];
@@ -111,7 +109,7 @@ public class TSock : MonoBehaviour
 //						sock.receiverBuffer.Enqueue(milli);
 //					}
 //				}
->>>>>>> FETCH_HEAD
+
 			}
 		}
 		catch(Exception e)
