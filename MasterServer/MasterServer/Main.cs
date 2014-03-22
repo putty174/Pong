@@ -344,16 +344,16 @@ namespace MasterServer
                 stream1.Flush();
                 stream2.Flush();
                 restart();
-                pos1 = 2;
-                pos2 = 2;
+                pos1 = 1;
+                pos2 = 1;
             }
             if (nposx > 240)
             {
                 stream1.Flush();
                 stream2.Flush();
                 restart();
-                pos1 = 1;
-                pos2 = 1;
+                pos1 = 2;
+                pos2 = 2;
             }
         }
 
