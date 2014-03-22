@@ -324,13 +324,19 @@ namespace MasterServer
                 angle = bounceTop(angle);
                 nposy = 250 - topWallPad;
             }
-            if (checkCollide == 1 || checkCollide == 2)
+            if (checkCollide == 1)
             {
-                nposx = collideX;
-                nposy = collideY;
+                confirmCollide();
+            }
+            if (checkCollide == 2)
+            {
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
+            if (checkCollide == 3)
+            {
+                restart();
+            }
         }
 
         public void confirmCollide()
@@ -433,6 +439,8 @@ namespace MasterServer
                 int ballx = Convert.ToInt16(nposx);
                 int bally = Convert.ToInt16(nposy);
 
+                Console.WriteLine("Ball: " + ballx + ", " + bally);
+
                 //Console.WriteLine("Writing P1-1: " + pos2);
                 packet1[0] = (byte)pos2;
                 //Console.WriteLine("Writing P1-2: " + ballx);
@@ -452,7 +460,7 @@ namespace MasterServer
                 packet1[6] = milliHold[1];
 
                 int milli = BitConverter.ToInt16(milliHold, 0);
-                Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
                 //Console.WriteLine("Writing P2-1 " + pos1);
                 packet2[0] = (byte)pos1;
@@ -473,7 +481,7 @@ namespace MasterServer
                 packet2[6] = milliHold[1];
 
                 milli = BitConverter.ToInt16(milliHold, 0);
-                Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
