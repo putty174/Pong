@@ -336,7 +336,7 @@ namespace MasterServer
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
-            if (checkCollide == 3 && (nposx < 10 || nposx > 240))
+            if (nposx < 10 || nposx > 240)
             {
                 restart();
             }
