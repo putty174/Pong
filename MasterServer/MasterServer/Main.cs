@@ -325,7 +325,7 @@ namespace MasterServer
 
         public void confirmCollide()
         {
-            if (checkCollide == 1 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+            if (checkCollide == 1/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1*/)
             {
                 if (Math.Abs(collideY - pos1) < 30)
                 {
@@ -341,7 +341,7 @@ namespace MasterServer
                 }
             }
 
-            if (checkCollide == 2 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+            if (checkCollide == 2/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1*/)
             {
                 if (Math.Abs(collideY - pos2) < 30)
                 {
@@ -522,9 +522,9 @@ namespace MasterServer
 			DateTime T1 = DateTime.UtcNow;
 			//Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
 			sock.Send(ntpData);
-            //Console.WriteLine("sock.Send OK!!!");
+            Console.WriteLine("sock.Send OK!!!");
 			while (sock.Receive(ntpData) < 44) { Console.WriteLine("getting NTP"); }
-            //Console.WriteLine("while loop OK!!!");
+            Console.WriteLine("while loop OK!!!");
 			DateTime T4 = DateTime.UtcNow;
 			//Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
 			//UInt32 destTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
