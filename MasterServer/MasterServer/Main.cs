@@ -67,12 +67,12 @@ namespace MasterServer
             rightPaddlePad = 35;
             topWallPad = 10;
             botWallPad = 8;
-
+            dTime = DateTime.Now;
 			//dTime = getNTPTime(ref uniClock);
 
             uniClock = new Stopwatch();
 
-            dTime = getNTPTime(ref uniClock);
+            //dTime = getNTPTime(ref uniClock);
 
             
 			connectedPlayers = 0;
@@ -99,18 +99,19 @@ namespace MasterServer
 
         public void restart()
         {
-
+            //dTime = getNTPTime(ref uniClock);
             dstart1 = 0;
             dstart2 = 0;
             checkCollide = 0;
-            nposx = rand.Next(0, 250);
-            nposy = rand.Next(0, 250);
+            startDelay = 100;
+            nposx = 128;
+            nposy = 128;
             angle = rand.NextDouble() * 2 * Math.PI;
             vel = .1;
             packet1[0] = (byte) 0;
             packet1[1] = (byte) 0;
             packet1[2] = (byte) 0;
-            dTime = getNTPTime(ref uniClock);
+
             packet1[3] = (byte)dTime.Minute;
             packet1[4] = (byte)dTime.Second;
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
@@ -120,7 +121,6 @@ namespace MasterServer
             packet2[0] = (byte) 1;
             packet2[1] = (byte) 0;
             packet2[2] = (byte) 0;
-            dTime = getNTPTime(ref uniClock);
             packet1[3] = (byte)dTime.Minute;
             packet1[4] = (byte)dTime.Second;
             milliHold = BitConverter.GetBytes(dTime.Millisecond);
@@ -219,11 +219,13 @@ namespace MasterServer
         {
             try
             {
+                dTimeNew = DateTime.Now;
                 pos1 = stream1.ReadByte();
                 //Console.WriteLine("Player1 Pos: " + pos1);
                 if (dstart1 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
+                    
+                    //dTimeNew = getNTPTime(ref uniClock);
                     delay1 = dTimeNew.Subtract(dTime);
                     Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2));
                     dstart1 = 2;
@@ -233,7 +235,7 @@ namespace MasterServer
                 //Console.WriteLine("Player2 Pos: " + pos2);
                 if (dstart2 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
+                    //dTimeNew = getNTPTime(ref uniClock);
                     delay2 = dTimeNew.Subtract(dTime);
                     Console.WriteLine("P2 delay: " + (delay2.TotalMilliseconds / 2));
                     dstart2 = 2;
@@ -260,9 +262,26 @@ namespace MasterServer
             }
             if (start1 && start2)
             {
+<<<<<<< HEAD
 				nposx += vel * Math.Cos(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
                 //Console.WriteLine("BallX: " + nposx);
 				nposy += vel * Math.Sin(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
+=======
+                double dx = vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                if (dx > 1)
+                    dx = 1;
+                else if (dx < -1)
+                    dx = -1;
+                nposx += dx;
+                
+                //Console.WriteLine("BallX: " + nposx);
+                double dy = vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                if (dy > 1)
+                    dy = 1;
+                else if (dy < -1)
+                    dy = -1;
+                nposy += dy;
+>>>>>>> FETCH_HEAD
                 //Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
@@ -297,7 +316,7 @@ namespace MasterServer
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                Console.WriteLine("Collision - Left");
+                Console.WriteLine("Collision - Right");
                 //angle = bounceRight(angle);
                 //nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
@@ -314,42 +333,62 @@ namespace MasterServer
                 angle = bounceTop(angle);
                 nposy = 250 - topWallPad;
             }
-            if (checkCollide == 1 || checkCollide == 2)
+            if (checkCollide == 1)
             {
-                nposx = collideX;
-                nposy = collideY;
+                confirmCollide();
+            }
+            if (checkCollide == 2)
+            {
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
+            if (nposx < 10)
+            {
+                stream1.Flush();
+                stream2.Flush();
+                restart();
+                pos1 = 2;
+                pos2 = 2;
+            }
+            if (nposx > 240)
+            {
+                stream1.Flush();
+                stream2.Flush();
+                restart();
+                pos1 = 1;
+                pos2 = 1;
+            }
         }
 
         public void confirmCollide()
         {
-            if (checkCollide == 1 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
+            if (checkCollide == 1/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1*/)
             {
-                if (Math.Abs(collideY - pos1) < 30)
+                if (Math.Abs(collideY - pos2) < 30)
                 {
                     angle = bounceLeft(angle);
-                    nposx = collideX;
+                    nposx = collideX+5;
                     nposy = collideY;
                     checkCollide = 0;
                     Console.WriteLine("P1 hit");
                 }
                 else
                 {
+                    checkCollide = 3;
                     //Console.WriteLine("P1 missed");
                 }
             }
 
-            if (checkCollide == 2 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
+            if (checkCollide == 2/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1*/)
             {
-                if (Math.Abs(collideY - pos2) < 30)
+                if (Math.Abs(collideY - pos1) < 30)
                 {
                     angle = bounceRight(angle);
-                    nposx = collideX;
+                    nposx = collideX-5;
                     nposy = collideY;
                     checkCollide = 0;
                     Console.WriteLine("P2 hit");
+                    checkCollide = 3;
                 }
                 else
                 {
@@ -421,6 +460,8 @@ namespace MasterServer
                 int ballx = Convert.ToInt16(nposx);
                 int bally = Convert.ToInt16(nposy);
 
+                Console.WriteLine("Ball: " + ballx + ", " + bally);
+
                 //Console.WriteLine("Writing P1-1: " + pos2);
                 packet1[0] = (byte)pos2;
                 //Console.WriteLine("Writing P1-2: " + ballx);
@@ -465,7 +506,7 @@ namespace MasterServer
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
-                    dTime = getNTPTime(ref uniClock);
+                    //dTime = getNTPTime(ref uniClock);
                     dstart1 = 1;
                     dstart2 = 1;
                 }
@@ -522,9 +563,9 @@ namespace MasterServer
 			DateTime T1 = DateTime.UtcNow;
 			//Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
 			sock.Send(ntpData);
-            //Console.WriteLine("sock.Send OK!!!");
+            Console.WriteLine("sock.Send OK!!!");
 			while (sock.Receive(ntpData) < 44) { Console.WriteLine("getting NTP"); }
-            //Console.WriteLine("while loop OK!!!");
+            Console.WriteLine("while loop OK!!!");
 			DateTime T4 = DateTime.UtcNow;
 			//Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
 			//UInt32 destTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
