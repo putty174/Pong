@@ -330,7 +330,7 @@ namespace MasterServer
                 if (Math.Abs(collideY - pos1) < 30)
                 {
                     angle = bounceLeft(angle);
-                    nposx = collideX;
+                    nposx = collideX+5;
                     nposy = collideY;
                     checkCollide = 0;
                     Console.WriteLine("P1 hit");
@@ -346,7 +346,7 @@ namespace MasterServer
                 if (Math.Abs(collideY - pos2) < 30)
                 {
                     angle = bounceRight(angle);
-                    nposx = collideX;
+                    nposx = collideX-5;
                     nposy = collideY;
                     checkCollide = 0;
                     Console.WriteLine("P2 hit");
@@ -440,7 +440,7 @@ namespace MasterServer
                 packet1[6] = milliHold[1];
 
                 int milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
                 //Console.WriteLine("Writing P2-1 " + pos1);
                 packet2[0] = (byte)pos1;
@@ -461,7 +461,7 @@ namespace MasterServer
                 packet2[6] = milliHold[1];
 
                 milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
