@@ -337,6 +337,7 @@ namespace MasterServer
                 }
                 else
                 {
+                    checkCollide = 3;
                     //Console.WriteLine("P1 missed");
                 }
             }
@@ -350,6 +351,7 @@ namespace MasterServer
                     nposy = collideY;
                     checkCollide = 0;
                     Console.WriteLine("P2 hit");
+                    checkCollide = 3;
                 }
                 else
                 {
