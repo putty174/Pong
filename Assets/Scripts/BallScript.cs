@@ -169,7 +169,7 @@ public class BallScript : MonoBehaviour {
 		if (y > 0.5)
 		{
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, Mathf.Abs(rigidbody2D.velocity.y));
-			transform.audio.Play();
+			//transform.audio.Play();
 		}
 		else if (y < -0.5)
 		{

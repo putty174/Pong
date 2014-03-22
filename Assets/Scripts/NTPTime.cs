@@ -8,7 +8,8 @@ using System.Diagnostics;
 
 namespace ServerPongEmpty
 {
-    static class NTPTime
+    
+	static class NTPTime
     {
         /*
         This function will query an NTP server stated as the URL or IP address.
