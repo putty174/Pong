@@ -108,8 +108,7 @@ public class GameProcess : MonoBehaviour {
 					//Debug.Log("Queue count: " + client.receiverBuffer.Count);
 					opPosY = (int) client.receiverBuffer.Dequeue();
 					ballPosX = (int) client.receiverBuffer.Dequeue();
-					float x = (ballPosX / paddleRatio) + lPaddle.transform.position.x;
-					Debug.Log ("ball position: " + x);
+
 					ballPosY = (int) client.receiverBuffer.Dequeue();
 					min = (int) client.receiverBuffer.Dequeue();
 					sec = (int) client.receiverBuffer.Dequeue();

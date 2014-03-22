@@ -281,8 +281,8 @@ namespace MasterServer
             if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
-                dTime = getNTPTime(ref uniClock);
-                collideTime = DateTime.Now;
+                //dTime = getNTPTime(ref uniClock);
+                //collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
                 Console.WriteLine("Collision - Left");
@@ -293,8 +293,8 @@ namespace MasterServer
             else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
             {
                 //nposx = 250 - (nposx - 250);
-                dTime = getNTPTime(ref uniClock);
-                collideTime = DateTime.Now;
+                //dTime = getNTPTime(ref uniClock);
+                //collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
                 Console.WriteLine("Collision - Left");
