@@ -174,7 +174,7 @@ public class BallScript : MonoBehaviour {
 		else if (y < -0.5)
 		{
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, -Mathf.Abs(rigidbody2D.velocity.y));
-			transform.audio.Play ();
+			//transform.audio.Play ();
 		}
 //
 //		var randomUpAngle1 = Random.Range (0,80);//Random angle away from player 1 if ball hits top of paddle

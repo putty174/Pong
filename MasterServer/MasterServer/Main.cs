@@ -262,11 +262,9 @@ namespace MasterServer
             }
             if (start1 && start2)
             {
-<<<<<<< HEAD
-				nposx += vel * Math.Cos(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
+				//nposx += vel * Math.Cos(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
                 //Console.WriteLine("BallX: " + nposx);
-				nposy += vel * Math.Sin(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
-=======
+				//nposy += vel * Math.Sin(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
                 double dx = vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
                 if (dx > 1)
                     dx = 1;
@@ -281,7 +279,6 @@ namespace MasterServer
                 else if (dy < -1)
                     dy = -1;
                 nposy += dy;
->>>>>>> FETCH_HEAD
                 //Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
@@ -347,16 +344,16 @@ namespace MasterServer
                 stream1.Flush();
                 stream2.Flush();
                 restart();
-                pos1 = 2;
-                pos2 = 2;
+                pos1 = 1;
+                pos2 = 1;
             }
             if (nposx > 240)
             {
                 stream1.Flush();
                 stream2.Flush();
                 restart();
-                pos1 = 1;
-                pos2 = 1;
+                pos1 = 2;
+                pos2 = 2;
             }
         }
 
@@ -388,10 +385,11 @@ namespace MasterServer
                     nposy = collideY;
                     checkCollide = 0;
                     Console.WriteLine("P2 hit");
-                    checkCollide = 3;
+                    checkCollide = 0;
                 }
                 else
                 {
+                    checkCollide = 3;
                     //Console.WriteLine("P2 missed");
                 }
             }
@@ -460,6 +458,8 @@ namespace MasterServer
                 int ballx = Convert.ToInt16(nposx);
                 int bally = Convert.ToInt16(nposy);
 
+                Console.WriteLine("P1: " + pos1);
+                Console.WriteLine("P2: " + pos2);
                 Console.WriteLine("Ball: " + ballx + ", " + bally);
 
                 //Console.WriteLine("Writing P1-1: " + pos2);
@@ -515,7 +515,7 @@ namespace MasterServer
                 //Console.WriteLine("Sending Packet2");
                 stream2.Write(packet2, 0, packet2.Length);
 
-                //Console.WriteLine(System.Environment.NewLine);
+                Console.WriteLine(System.Environment.NewLine);
             }
             
             catch (Exception ex)

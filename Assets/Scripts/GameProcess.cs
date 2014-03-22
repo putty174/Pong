@@ -133,25 +133,25 @@ public class GameProcess : MonoBehaviour {
 					{
 						Debug.Log("player 1 scores!");
 						player1Score++;
+						client.receiverBuffer.Clear();
 						if(player1Score == 10)
 						{
 							Debug.Log ("Player 1 won!");
 							player1Score = 0;
 							player2Score = 0;
 						}
-
 					}
 					else if(opPosY == 2)
 					{
 						Debug.Log("player 2 scores!");
 						player2Score++;
+						client.receiverBuffer.Clear();
 						if(player2Score == 10)
 						{
 							Debug.Log ("Player 2 won!");
 							player1Score = 0;
 							player2Score = 0;
 						}
-
 					}
 
 
