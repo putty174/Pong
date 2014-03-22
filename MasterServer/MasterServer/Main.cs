@@ -336,9 +336,21 @@ namespace MasterServer
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
-            if (nposx < 10 || nposx > 240)
+            if (nposx < 10)
             {
+                stream1.Flush();
+                stream2.Flush();
                 restart();
+                pos1 = 2;
+                pos2 = 2;
+            }
+            if (nposx > 240)
+            {
+                stream1.Flush();
+                stream2.Flush();
+                restart();
+                pos1 = 1;
+                pos2 = 1;
             }
         }
 
