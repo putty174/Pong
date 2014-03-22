@@ -67,12 +67,12 @@ namespace MasterServer
             rightPaddlePad = 35;
             topWallPad = 10;
             botWallPad = 8;
-
+            dTime = DateTime.Now;
 			//dTime = getNTPTime(ref uniClock);
 
             uniClock = new Stopwatch();
 
-            dTime = getNTPTime(ref uniClock);
+            //dTime = getNTPTime(ref uniClock);
 
             
 			connectedPlayers = 0;
@@ -99,12 +99,13 @@ namespace MasterServer
 
         public void restart()
         {
-            dTime = getNTPTime(ref uniClock);
+            //dTime = getNTPTime(ref uniClock);
             dstart1 = 0;
             dstart2 = 0;
             checkCollide = 0;
-            nposx = rand.Next(0, 250);
-            nposy = rand.Next(0, 250);
+            startDelay = 100;
+            nposx = 128;
+            nposy = 128;
             angle = rand.NextDouble() * 2 * Math.PI;
             vel = .1;
             packet1[0] = (byte) 0;
@@ -218,11 +219,13 @@ namespace MasterServer
         {
             try
             {
+                dTimeNew = DateTime.Now;
                 pos1 = stream1.ReadByte();
                 //Console.WriteLine("Player1 Pos: " + pos1);
                 if (dstart1 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
+                    
+                    //dTimeNew = getNTPTime(ref uniClock);
                     delay1 = dTimeNew.Subtract(dTime);
                     Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2));
                     dstart1 = 2;
@@ -232,7 +235,7 @@ namespace MasterServer
                 //Console.WriteLine("Player2 Pos: " + pos2);
                 if (dstart2 == 1)
                 {
-                    dTimeNew = getNTPTime(ref uniClock);
+                    //dTimeNew = getNTPTime(ref uniClock);
                     delay2 = dTimeNew.Subtract(dTime);
                     Console.WriteLine("P2 delay: " + (delay2.TotalMilliseconds / 2));
                     dstart2 = 2;
@@ -485,7 +488,7 @@ namespace MasterServer
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
-                    dTime = getNTPTime(ref uniClock);
+                    //dTime = getNTPTime(ref uniClock);
                     dstart1 = 1;
                     dstart2 = 1;
                 }
