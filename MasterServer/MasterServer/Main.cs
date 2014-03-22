@@ -260,9 +260,9 @@ namespace MasterServer
             }
             if (start1 && start2)
             {
-                nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+				nposx += vel * Math.Cos(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
                 //Console.WriteLine("BallX: " + nposx);
-                nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+				nposy += vel * Math.Sin(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
                 //Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
@@ -281,8 +281,8 @@ namespace MasterServer
             if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
-                //dTime = getNTPTime(ref uniClock);
-                //collideTime = DateTime.Now;
+                dTime = getNTPTime(ref uniClock); // make sure to recomment
+                collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
                 Console.WriteLine("Collision - Left");
@@ -293,8 +293,8 @@ namespace MasterServer
             else if (nposx > 250 - rightPaddlePad && checkCollide == 0)
             {
                 //nposx = 250 - (nposx - 250);
-                //dTime = getNTPTime(ref uniClock);
-                //collideTime = DateTime.Now;
+                dTime = getNTPTime(ref uniClock);
+                collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
                 Console.WriteLine("Collision - Left");
