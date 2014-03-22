@@ -1,33 +1,8 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameProcess.cs">
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player1.cs">
     <Files>
-      <File FileName="Assets/Scripts/TSock.cs" Line="1" Column="19" />
-      <File FileName="Assets/Scripts/BallScript.cs" Line="93" Column="3" />
-      <File FileName="Assets/Scripts/GameProcess.cs" Line="104" Column="31" />
-      <File FileName="Assets/Scripts/Client.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NTPTime.cs" Line="12" Column="2" />
-      <File FileName="Assets/Scripts/GUIScript.cs" Line="88" Column="13" />
-      <File FileName="Assets/Scripts/Player1.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TSock.cs">
->>>>>>> 1b461b079717505aeee6b3ee437b75e260122ebc
-    <Files>
-      <File FileName="Assets\Scripts\TSock.cs" Line="39" Column="7" />
-      <File FileName="Assets\Scripts\TSock.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BallScript.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="308" Column="1" />
-      <File FileName="Assets\Scripts\ScoreManager.cs" Line="76" Column="77" />
-=======
-      <File FileName="Assets\Scripts\GameProcess.cs" Line="1" Column="1" />
->>>>>>> FETCH_HEAD
->>>>>>> 1b461b079717505aeee6b3ee437b75e260122ebc
+      <File FileName="Assets\Scripts\GameProcess.cs" Line="321" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
