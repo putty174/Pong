@@ -232,7 +232,7 @@ namespace MasterServer
                 }
 
                 pos2 = stream2.ReadByte();
-                //Console.WriteLine("Player2 Pos: " + pos2);
+                Console.WriteLine("Player2 Pos: " + pos2);
                 if (dstart2 == 1)
                 {
                     //dTimeNew = getNTPTime(ref uniClock);
