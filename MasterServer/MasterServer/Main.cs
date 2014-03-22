@@ -226,6 +226,7 @@ namespace MasterServer
                 {
                     
                     //dTimeNew = getNTPTime(ref uniClock);
+                    dTimeNew = DateTime.Now;
                     delay1 = dTimeNew.Subtract(dTime);
                     Console.WriteLine("P1 delay: " + (delay1.TotalMilliseconds / 2));
                     dstart1 = 2;
@@ -236,6 +237,7 @@ namespace MasterServer
                 if (dstart2 == 1)
                 {
                     //dTimeNew = getNTPTime(ref uniClock);
+                    dTimeNew = DateTime.Now;
                     delay2 = dTimeNew.Subtract(dTime);
                     Console.WriteLine("P2 delay: " + (delay2.TotalMilliseconds / 2));
                     dstart2 = 2;
@@ -297,7 +299,7 @@ namespace MasterServer
             if (nposx < leftPaddlePad && checkCollide == 0)
             {
                 //nposx = Math.Abs(nposx);
-                dTime = getNTPTime(ref uniClock); // make sure to recomment
+                //dTime = getNTPTime(ref uniClock); // make sure to recomment
                 collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
@@ -359,7 +361,7 @@ namespace MasterServer
 
         public void confirmCollide()
         {
-            if (checkCollide == 1/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1*/)
+            if (checkCollide == 1 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1)
             {
                 if (Math.Abs(collideY - pos2) < 30)
                 {
@@ -376,7 +378,7 @@ namespace MasterServer
                 }
             }
 
-            if (checkCollide == 2/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1*/)
+            if (checkCollide == 2 && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1)
             {
                 if (Math.Abs(collideY - pos1) < 30)
                 {
@@ -507,6 +509,7 @@ namespace MasterServer
                 if (dstart1 == 0 && dstart2 == 0)
                 {
                     //dTime = getNTPTime(ref uniClock);
+                    dTime = DateTime.Now;
                     dstart1 = 1;
                     dstart2 = 1;
                 }
