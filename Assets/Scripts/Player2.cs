@@ -25,6 +25,8 @@ public class Player2 : MonoBehaviour {
 	void Start () {
 	
 		gp = GameObject.Find("_GameManager").GetComponent<GameProcess>();
+		lastY = 128;
+		transform.position = new Vector3 (8, 0, 0);
 
 	}
 	
