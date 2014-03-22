@@ -132,12 +132,13 @@ public class GameProcess : MonoBehaviour {
 					{
 						Debug.Log("player 1 scores!");
 						player1Score++;
-
+						client.receiverBuffer.Clear();
 					}
 					else if(opPosY == 2)
 					{
 						Debug.Log("player 2 scores!");
 						player2Score++;
+						client.receiverBuffer.Clear();
 					}
 
 

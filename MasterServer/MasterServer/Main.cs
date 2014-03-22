@@ -454,6 +454,8 @@ namespace MasterServer
                 int ballx = Convert.ToInt16(nposx);
                 int bally = Convert.ToInt16(nposy);
 
+                Console.WriteLine("P1: " + pos1);
+                Console.WriteLine("P2: " + pos2);
                 Console.WriteLine("Ball: " + ballx + ", " + bally);
 
                 //Console.WriteLine("Writing P1-1: " + pos2);
@@ -509,7 +511,7 @@ namespace MasterServer
                 //Console.WriteLine("Sending Packet2");
                 stream2.Write(packet2, 0, packet2.Length);
 
-                //Console.WriteLine(System.Environment.NewLine);
+                Console.WriteLine(System.Environment.NewLine);
             }
             
             catch (Exception ex)
