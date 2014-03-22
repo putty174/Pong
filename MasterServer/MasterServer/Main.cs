@@ -336,7 +336,7 @@ namespace MasterServer
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
-            if (checkCollide == 3 && (nposx < 5.0 || nposx > 245))
+            if (checkCollide == 3 && (nposx < 10 || nposx > 240))
             {
                 restart();
             }
@@ -346,7 +346,7 @@ namespace MasterServer
         {
             if (checkCollide == 1/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay1) == 1*/)
             {
-                if (Math.Abs(collideY - pos1) < 30)
+                if (Math.Abs(collideY - pos2) < 30)
                 {
                     angle = bounceLeft(angle);
                     nposx = collideX+5;
@@ -363,7 +363,7 @@ namespace MasterServer
 
             if (checkCollide == 2/* && TimeSpan.Compare(DateTime.Now.Subtract(collideTime), delay2) == 1*/)
             {
-                if (Math.Abs(collideY - pos2) < 30)
+                if (Math.Abs(collideY - pos1) < 30)
                 {
                     angle = bounceRight(angle);
                     nposx = collideX-5;
