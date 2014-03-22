@@ -31,7 +31,7 @@ public class TSock : MonoBehaviour
 				milliHold[0] = bytes[5];
 				milliHold[1] = bytes[6];
 				int milli = BitConverter.ToInt16(milliHold,0);
-				//Debug.Log(bytes[0] + ", " + bytes[1] + ", " + bytes[2] + ", " + bytes[3] + ", " + bytes[4] + ", " + milli);
+				Debug.Log(bytes[0] + ", " + bytes[1] + ", " + bytes[2] + ", " + bytes[3] + ", " + bytes[4] + ", " + milli);
 				lock(sock.receiverBuffer)
 				{
 
