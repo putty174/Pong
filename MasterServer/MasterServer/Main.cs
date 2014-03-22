@@ -260,9 +260,20 @@ namespace MasterServer
             }
             if (start1 && start2)
             {
-                nposx += vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                double dx = vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                if (dx > 1)
+                    dx = 1;
+                else if (dx < -1)
+                    dx = -1;
+                nposx += dx;
+                
                 //Console.WriteLine("BallX: " + nposx);
-                nposy += vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                double dy = vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
+                if (dy > 1)
+                    dy = 1;
+                else if (dy < -1)
+                    dy = -1;
+                nposy += dy;
                 //Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
                 //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
