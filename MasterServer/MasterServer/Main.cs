@@ -310,7 +310,7 @@ namespace MasterServer
                 //collideTime = DateTime.Now;
                 collideX = nposx;
                 collideY = nposy;
-                Console.WriteLine("Collision - Left");
+                Console.WriteLine("Collision - Right");
                 //angle = bounceRight(angle);
                 //nposx = 250 - rightPaddlePad;
                 checkCollide = 2;
@@ -336,7 +336,7 @@ namespace MasterServer
                 confirmCollide();
             }
             //Console.WriteLine("Angle: " + (angle / Math.PI));
-            if (checkCollide == 3)
+            if (checkCollide == 3 && (nposx < 5.0 || nposx > 245))
             {
                 restart();
             }
