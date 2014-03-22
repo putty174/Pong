@@ -161,16 +161,16 @@ namespace MasterServer
                     connectedPlayers++;
                 }
 
-                //Console.WriteLine("Entering: Main Game Loop");
+                Console.WriteLine("Entering: Main Game Loop");
                 while (true)
                 {
-                        //Console.WriteLine("Entering: waitReady()");
+                        Console.WriteLine("Entering: waitReady()");
                         waitReady();
-                        //Console.WriteLine("Entering: process()");
+                        Console.WriteLine("Entering: process()");
                         process();
-                        //Console.WriteLine("Entering: update()");
+                        Console.WriteLine("Entering: update()");
                         update();
-                        //Console.WriteLine("Entering: send()");
+                        Console.WriteLine("Entering: send()");
                         send();
                 }
             }
@@ -188,8 +188,8 @@ namespace MasterServer
 
         public void waitReady()
         {
-            //Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
-            //Console.WriteLine("<< Waiting for clients to send the start command....");
+            Console.WriteLine("<< 2 clients have connected to the the Pong2D server");
+            Console.WriteLine("<< Waiting for clients to send the start command....");
             while (!start1 || !start2)
             {
                 try
@@ -221,7 +221,7 @@ namespace MasterServer
             {
                 dTimeNew = DateTime.Now;
                 pos1 = stream1.ReadByte();
-                //Console.WriteLine("Player1 Pos: " + pos1);
+                Console.WriteLine("Player1 Pos: " + pos1);
                 if (dstart1 == 1)
                 {
                     
@@ -263,7 +263,7 @@ namespace MasterServer
             if (start1 && start2)
             {
 				//nposx += vel * Math.Cos(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
-                //Console.WriteLine("BallX: " + nposx);
+                Console.WriteLine("BallX: " + nposx);
 				//nposy += vel * Math.Sin(angle); //* DateTime.Now.Subtract(lastTime).Milliseconds;
                 double dx = vel * Math.Cos(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
                 if (dx > 1)
@@ -272,16 +272,16 @@ namespace MasterServer
                     dx = -1;
                 nposx += dx;
                 
-                //Console.WriteLine("BallX: " + nposx);
+                Console.WriteLine("BallX: " + nposx);
                 double dy = vel * Math.Sin(angle) * DateTime.Now.Subtract(lastTime).Milliseconds;
                 if (dy > 1)
                     dy = 1;
                 else if (dy < -1)
                     dy = -1;
                 nposy += dy;
-                //Console.WriteLine("BallY: " + nposy);
+                Console.WriteLine("BallY: " + nposy);
                 lastTime = DateTime.Now;
-                //Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
+                Console.WriteLine("Collision at: " + dTime.Minute + ":" + dTime.Second + " . " + dTime.Millisecond);
             }
             //if(nposx < 30)
             //{
@@ -338,7 +338,7 @@ namespace MasterServer
             {
                 confirmCollide();
             }
-            //Console.WriteLine("Angle: " + (angle / Math.PI));
+            Console.WriteLine("Angle: " + (angle / Math.PI));
             if (nposx < 10)
             {
                 stream1.Flush();
@@ -372,7 +372,7 @@ namespace MasterServer
                 else
                 {
                     checkCollide = 3;
-                    //Console.WriteLine("P1 missed");
+                    Console.WriteLine("P1 missed");
                 }
             }
 
@@ -390,7 +390,7 @@ namespace MasterServer
                 else
                 {
                     checkCollide = 3;
-                    //Console.WriteLine("P2 missed");
+                    Console.WriteLine("P2 missed");
                 }
             }
         }
@@ -462,47 +462,47 @@ namespace MasterServer
                 Console.WriteLine("P2: " + pos2);
                 Console.WriteLine("Ball: " + ballx + ", " + bally);
 
-                //Console.WriteLine("Writing P1-1: " + pos2);
+                Console.WriteLine("Writing P1-1: " + pos2);
                 packet1[0] = (byte)pos2;
-                //Console.WriteLine("Writing P1-2: " + ballx);
+                Console.WriteLine("Writing P1-2: " + ballx);
                 packet1[1] = (byte)ballx;
-                //Console.WriteLine("Writing P1-3: " + bally);
+                Console.WriteLine("Writing P1-3: " + bally);
                 packet1[2] = (byte)bally;
-                //Console.WriteLine("Checking NTP Time");
+                Console.WriteLine("Checking NTP Time");
                 //dTime = getNTPTime(ref uniClock);
-                //Console.WriteLine("Writing P1-4: " + dTime.Minute);
+                Console.WriteLine("Writing P1-4: " + dTime.Minute);
                 packet1[3] = (byte)dTime.Minute;
-                //Console.WriteLine("Writing P1-5: " + dTime.Second);
+                Console.WriteLine("Writing P1-5: " + dTime.Second);
                 packet1[4] = (byte)dTime.Second;
                 milliHold = new byte[2];
                 milliHold = BitConverter.GetBytes(dTime.Millisecond);
-                //Console.WriteLine("Writing P1-67: " + dTime.Millisecond);
+                Console.WriteLine("Writing P1-67: " + dTime.Millisecond);
                 packet1[5] = milliHold[0];
                 packet1[6] = milliHold[1];
 
                 int milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
+                Console.WriteLine("<< To Client1: " + packet1[0] + ", " + packet1[1] + ", " + packet1[2] + ", " + packet1[3] + ", " + packet1[4] + ", " + milli);
 
-                //Console.WriteLine("Writing P2-1 " + pos1);
+                Console.WriteLine("Writing P2-1 " + pos1);
                 packet2[0] = (byte)pos1;
-                //Console.WriteLine("Writing P2-2: " + ballx);
+                Console.WriteLine("Writing P2-2: " + ballx);
                 packet2[1] = (byte)ballx;
-                //Console.WriteLine("Writing P2-3: " + bally);
+                Console.WriteLine("Writing P2-3: " + bally);
                 packet2[2] = (byte)bally;
-                //Console.WriteLine("Finished Writing P2-3");
+                Console.WriteLine("Finished Writing P2-3");
                 //dTime = getNTPTime(ref uniClock);
-                //Console.WriteLine("Writing P2-4: " + dTime.Minute);
+                Console.WriteLine("Writing P2-4: " + dTime.Minute);
                 packet2[3] = (byte)dTime.Minute;
-                //Console.WriteLine("Writing P2-5: " + dTime.Second);
+                Console.WriteLine("Writing P2-5: " + dTime.Second);
                 packet2[4] = (byte)dTime.Second;
                 milliHold = new byte[2];
                 milliHold = BitConverter.GetBytes(dTime.Millisecond);
-                //Console.WriteLine("Writing P2-67: " + dTime.Millisecond);
+                Console.WriteLine("Writing P2-67: " + dTime.Millisecond);
                 packet2[5] = milliHold[0];
                 packet2[6] = milliHold[1];
 
                 milli = BitConverter.ToInt16(milliHold, 0);
-                //Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
+                Console.WriteLine("  << To Client2: " + packet2[0] + ", " + packet2[1] + ", " + packet2[2] + ", " + packet2[3] + ", " + packet2[4] + ", " + milli);
 
                 if (dstart1 == 0 && dstart2 == 0)
                 {
@@ -510,9 +510,9 @@ namespace MasterServer
                     dstart1 = 1;
                     dstart2 = 1;
                 }
-                //Console.WriteLine("Sending Packet1");
+                Console.WriteLine("Sending Packet1");
                 stream1.Write(packet1, 0, packet1.Length);
-                //Console.WriteLine("Sending Packet2");
+                Console.WriteLine("Sending Packet2");
                 stream2.Write(packet2, 0, packet2.Length);
 
                 Console.WriteLine(System.Environment.NewLine);
@@ -561,26 +561,26 @@ namespace MasterServer
 			
 			sock.Connect(endPoint);
 			DateTime T1 = DateTime.UtcNow;
-			//Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
+			Console.WriteLine("T1 : = " + T1 + " " + T1.Millisecond);
 			sock.Send(ntpData);
             Console.WriteLine("sock.Send OK!!!");
 			while (sock.Receive(ntpData) < 44) { Console.WriteLine("getting NTP"); }
             Console.WriteLine("while loop OK!!!");
 			DateTime T4 = DateTime.UtcNow;
-			//Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
+			Console.WriteLine("T4 : = " + T4 + " " + T4.Millisecond);
 			//UInt32 destTime = (UInt32)(ntpData[16] << 24) | (UInt32)(ntpData[17] << 16) | (UInt32)(ntpData[18] << 8) | (UInt32)(ntpData[19]);
 			sock.Close();
 			
-			//Console.WriteLine("LI (lead indicator) : " + (ntpData[0] >> 6));
+			Console.WriteLine("LI (lead indicator) : " + (ntpData[0] >> 6));
 			int temp = ntpData[0] << 2;
 			temp = temp >> 5;
-			//Console.WriteLine("VN (version number) : " + temp);
+			Console.WriteLine("VN (version number) : " + temp);
 			temp = (byte)(ntpData[0] << 5);
 			temp = temp >> 5;
-			//Console.WriteLine("Mode : " + temp);
-			//Console.WriteLine("Stratum Level : " + ntpData[1]);
-			//Console.WriteLine("Poll Interval :  " + ntpData[2]);
-			//Console.WriteLine("Precision : " + ntpData[3]);
+			Console.WriteLine("Mode : " + temp);
+			Console.WriteLine("Stratum Level : " + ntpData[1]);
+			Console.WriteLine("Poll Interval :  " + ntpData[2]);
+			Console.WriteLine("Precision : " + ntpData[3]);
 			
 			/*
 These are the 4 time stamps that are retrieved from the NTP Packet.
@@ -618,12 +618,12 @@ host, in 64-bit timestamp format.
 			
 			
 			DateTime BaseDateExample = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-			//Console.WriteLine("Reference time stamp : " + BaseDateExample.AddSeconds(refTime).AddMilliseconds(refTimemilliseconds));
-			//Console.WriteLine("Originate time stamp : " + BaseDateExample.AddSeconds(origTime).AddMilliseconds(origTimemilliseconds));
+			Console.WriteLine("Reference time stamp : " + BaseDateExample.AddSeconds(refTime).AddMilliseconds(refTimemilliseconds));
+			Console.WriteLine("Originate time stamp : " + BaseDateExample.AddSeconds(origTime).AddMilliseconds(origTimemilliseconds));
 			
 			
-			//Console.WriteLine("Receive time stamp   : " + BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds) + " " + (BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds)).Millisecond);
-			//Console.WriteLine("Transmit time stamp  : " + BaseDateExample.AddSeconds(transTime).AddMilliseconds(milliseconds) + " " + (BaseDateExample.AddSeconds(transTime).AddMilliseconds(milliseconds)).Millisecond);
+			Console.WriteLine("Receive time stamp   : " + BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds) + " " + (BaseDateExample.AddSeconds(recTime).AddMilliseconds(recTimemilliseconds)).Millisecond);
+			Console.WriteLine("Transmit time stamp  : " + BaseDateExample.AddSeconds(transTime).AddMilliseconds(milliseconds) + " " + (BaseDateExample.AddSeconds(transTime).AddMilliseconds(milliseconds)).Millisecond);
 			
 			DateTime BaseDate = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 			DateTime dt = BaseDate.AddSeconds(transTime).AddMilliseconds(milliseconds);
@@ -638,7 +638,7 @@ host, in 64-bit timestamp format.
 			TimeSpan delay = T4.Subtract(T1);
 			double networkDelay = delay.Milliseconds / 2.0;
 
-            //Console.WriteLine("Network Latency to NTP Server : " + (networkDelay));
+            Console.WriteLine("Network Latency to NTP Server : " + (networkDelay));
 			
 			//tsOffset = tsOffset.Add(dt.Subtract(T4));
 			
@@ -650,55 +650,4 @@ host, in 64-bit timestamp format.
 		}
 
 	}
-
-
-//	public class handleClient
-//	{
-//		TcpClient clientSocket;
-//		string clientNo;
-//		public void startClient(TcpClient inClientSocket, string clientNo)
-//		{
-//			this.clientSocket = inClientSocket;
-//			this.clientNo = clientNo;
-//
-//		}
-//
-//		private void ChattingTime()
-//		{
-//
-//			int requestCount = 0;
-//			byte[] bytesFrom = new byte[1024];
-//			string dataFromClient = null;
-//			Byte[] sendBytes = null;
-//			string serverResponse = null;
-//			string rCount = null;
-//			requestCount = 0;
-//			
-//			String mes1, mes2;
-//			while(true)
-//			{
-//				try
-//				{
-//					requestCount = requestCount + 1;
-//					NetworkStream nws = clientSocket.GetStream();
-//					nws.Read(bytesFrom, 0, (int)clientSocket.ReceiveBufferSize);
-//					dataFromClient = System.Text.Encoding.ASCII.GetString(bytesFrom);
-//					dataFromClient = dataFromClient.Substring(0, dataFromClient.IndexOf("$"));
-//					Console.WriteLine(" >> " + "From client-" + clientNo + dataFromClient);
-//					
-//					rCount = Convert.ToString(requestCount);
-//					serverResponse = "Server to clinet(" + clientNo + ") " + rCount;
-//					sendBytes = Encoding.ASCII.GetBytes(serverResponse);
-//					nws.Write(sendBytes, 0, sendBytes.Length);
-//					nws.Flush();
-//					Console.WriteLine(" >> " + serverResponse);
-//				}
-//				catch(Exception ex)
-//				{
-//					Console.WriteLine(" >> " + ex.ToString());
-//				}
-//
-//			}
-//		}
-//	}
 }
